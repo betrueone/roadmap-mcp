@@ -13,7 +13,13 @@ from .conftest import DATA_DIR, all_categories, all_skills
 async def test_real_mcp_discovery_structured_output_and_lookup_errors(catalog):
     async with Client(create_server(catalog)) as client:
         tools = {tool.name: tool for tool in (await client.list_tools()).tools}
-        assert set(tools) == {"list_catalog", "get_roadmap"}
+        assert set(tools) == {
+            "list_catalog",
+            "get_roadmap",
+            "list_bullet_catalog",
+            "get_bullets",
+            "get_bullets_text",
+        }
         assert tools["get_roadmap"].output_schema
         assert set(tools["get_roadmap"].output_schema["properties"]) == {
             "hard_skills",
@@ -149,3 +155,40 @@ async def test_stdio_subprocess_serves_catalog(catalog):
         assert not compact.is_error
         assert compact.structured_content["hard_skills"][0]["skills"][0] == {"name": "Python"}
         assert compact.structured_content["soft_skills"] == []
+        bullets = await client.call_tool(
+            "get_bullets",
+            {
+                "role_name": "Backend Engineer",
+                "industry": "Fintech",
+                "seniority_level": "Senior",
+                "count": 5,
+            },
+        )
+        assert not bullets.is_error
+        assert bullets.structured_content["available_count"] == 60
+        assert bullets.structured_content["returned_count"] == 5
+        assert [bullet["industry_id"] for bullet in bullets.structured_content["bullets"][:3]] == [
+            "fintech-payments",
+            "fintech-payments",
+            "fintech-payments",
+        ]
+        assert all(
+            bullet["industry_id"] != "fintech-payments"
+            for bullet in bullets.structured_content["bullets"][3:]
+        )
+        assert all(
+            bullet["evidence_to_request"] for bullet in bullets.structured_content["bullets"]
+        )
+        defaults = await client.call_tool(
+            "get_bullets", {"role_name": "Backend Engineer", "count": 1}
+        )
+        assert not defaults.is_error
+        assert defaults.structured_content["industry"] is None
+        assert defaults.structured_content["seniority_level"]["id"] == "junior"
+        assert defaults.structured_content["available_count"] == 120
+        text = await client.call_tool(
+            "get_bullets_text", {"role_name": "Backend Engineer", "count": 1}
+        )
+        assert not text.is_error
+        assert text.structured_content is None
+        assert "All industries | Junior and above" in text.content[0].text

@@ -1,6 +1,7 @@
 # Roadmap MCP
 
-A file-backed MCP server that returns a skills roadmap for a role, industry, and seniority level.
+A file-backed MCP server that returns skills roadmaps and resume bullet baselines for a role,
+industry, and seniority level.
 
 ```json
 {
@@ -95,6 +96,124 @@ The response shape has changed from `categories` to `hard_skills` and `soft_skil
 
 Hard skills include technologies, learned methods, and industry knowledge, including system design, technical documentation, statistical analysis, user research, budget planning, and payment workflows. Soft skills cover leadership, listening, communication, collaboration, mentoring, delegation, and conflict resolution. Use hard skills as candidates for a resume's Skills section and soft skills to inform evidence-based experience bullets. Seniority filtering applies to both sections. Engineering profiles generally introduce leadership at Senior; design and management profiles include interpersonal skills at earlier levels where relevant. A section without eligible entries remains `[]`.
 
+## Resume bullet baselines
+
+Call `get_bullets` with a role and optional filters. Only `role_name` is required:
+
+```json
+{"role_name": "Backend Engineer"}
+```
+
+`industry` defaults to all industries. `seniority_level` defaults to `junior` and acts as a
+minimum: Junior includes every level; Mid-level includes Mid-level, Senior, and Staff; Senior
+includes Senior and Staff; Staff includes Staff. Both fields can also be `null`, which uses
+their defaults. `count` defaults to 5 and accepts integers from 1 to 100.
+
+For example, prefer Fintech and select Senior or Staff bullets:
+
+```json
+{
+  "role_name": "Backend Engineer",
+  "industry": "Fintech",
+  "seniority_level": "Senior",
+  "count": 5
+}
+```
+
+The response includes resolved `role`, `industry`, and `seniority_level` entries (IDs, names,
+and aliases), `requested_count`, `returned_count`, `available_count`, and `bullets`. `industry`
+is `null` when no industry was requested; `seniority_level` identifies the minimum level. For this
+request the resolved IDs are `backend-engineer`, `fintech-payments`, and `senior`; the requested
+count is 5, available count is 60, and returned count is 5. The first three bullets match Fintech
+(two Senior and one Staff); the remaining two come from other industries for the same role
+at Senior or above. One returned bullet is:
+
+```json
+{
+  "id": "rib_3d7ae3a8067d",
+  "role_id": "backend-engineer",
+  "industry_id": "fintech-payments",
+  "bullet": "Designed asynchronous processing for webhook and settlement events with idempotent handlers and failure recovery.",
+  "focus": "distributed systems",
+  "seniority": "senior",
+  "evidence_to_request": ["queue design", "failure tests"]
+}
+```
+
+This is the complete bullet record format. The datasource and response contain only these seven
+fields: `id`, `role_id`, `industry_id`, `seniority`, `focus`, `bullet`, and `evidence_to_request`.
+
+The seed contains **2,040 original editorial examples: 17 roles × 20 industries × 6 bullets**.
+Each role/industry pair has one Junior, two Mid-level, two Senior, and one Staff example.
+`count` is an integer from 1 to 100, defaults to 5, and limits the number returned. Selection
+matches the role exactly, includes seniority at or above the minimum, and prioritizes a requested
+industry. If there are fewer
+unique industry matches than requested, it fills the shortfall from other industries for that
+role at or above the minimum seniority. With industry omitted, select from all industries in
+datasource order. Bullet text is deduplicated ignoring case and extra whitespace; the requested
+industry's copy takes priority. Datasource order is preserved within the industry matches and
+then within the fallback matches. Each bullet keeps its original `industry_id`.
+
+`available_count` reports the total unique pool for the role at or above the minimum seniority
+across all industries, independent of the requested count. Return fewer than requested only when
+that pool is exhausted.
+A known industry with no direct matches can still return fallback bullets. If no bullets exist
+for the role at or above the minimum seniority in any industry, return `bullets: []` and zero
+available/returned counts. Unknown dimensions return an error.
+
+Call **`get_bullets_text`** for the same selection as readable plain text, using identical
+arguments and defaults:
+
+```python
+result = await client.call_tool(
+    "get_bullets_text",
+    {
+        "role_name": "Backend Engineer",
+        "industry": "Fintech",
+        "seniority_level": "Senior",
+        "count": 5,
+    },
+)
+print(result.content[0].text)
+```
+
+The response is MCP text content with a title, counts, numbered bullets, seniority, fallback
+industry labels, and evidence prompts. It uses the same formatter as `tests/test_bullets_tool.py`.
+It has no JSON wrapper or structured content. `get_bullets` continues to return structured JSON.
+
+Use `list_bullet_catalog` to discover the bullet taxonomy, accepted aliases, role/industry coverage,
+and total count. Its 17-role/20-industry taxonomy differs from
+the 20-role/15-industry skills catalog. Reference IDs remain canonical; explicit aliases support
+familiar inputs such as `Fintech`, `SaaS`, `Full Stack Engineer`, and `AI Engineer`. The separate
+QA Analyst, QA Automation Engineer, and SDET roles remain distinct; the ambiguous `QA Engineer`
+input is unsupported for bullets.
+
+These examples are prompts for collecting evidence and tailoring a resume. They do not establish
+that a candidate performed the work. Verify `evidence_to_request` against the person's experience
+before using a bullet.
+
+The runtime datasource lives in [`data/bullets/`](data/bullets/):
+
+- `catalog.json`: role, industry, and seniority names, IDs, and aliases.
+- `bullets.jsonl`: baseline IDs, filtering dimensions, focus, text, and evidence prompts.
+- `manifest.json`: dataset name, version, dimension counts, seniority IDs, and bullet count.
+
+Rebuild it from the attached [`reference/`](reference/) files with:
+
+```bash
+uv run python scripts/import_bullets.py
+uv run roadmap-mcp validate
+```
+
+The importer accepts `--reference-dir` and `--data-dir`, validates a complete staged import before
+replacing runtime files, and produces deterministic output. It projects only the seven bullet
+fields above into the runtime datasource and removes the obsolete runtime `sources.json` file.
+It uses `bullets.jsonl` as the
+authoritative seed; JSON and CSV are alternate exports. The server loads only `data/bullets/`,
+so the attachments are not needed at runtime. Both `serve` and `validate` validate this datasource
+alongside the skills catalog. The existing Docker data copy and Compose mount include it;
+restart the server after updating data.
+
 ## Skill coverage
 
 Role profiles live in [`data/roles/`](data/roles/):
@@ -159,12 +278,15 @@ Additional domain references include [Stripe subscriptions](https://docs.stripe.
 
 ## Architecture
 
-Python 3.12+, the official MCP Python SDK, Pydantic validation, and JSON files. The server makes no runtime LLM calls, external requests, or database connections.
+Python 3.12+, the official MCP Python SDK, Pydantic validation, and JSON/JSONL files. The server makes no runtime LLM calls, external requests, or database connections.
 
 ```mermaid
 flowchart LR
     Client[MCP client] --> MCP[Typed MCP tools]
     MCP --> Service[Roadmap composition]
+    MCP --> Bullets[Bullet selection with industry fallback]
+    Bullets --> BulletSnapshot[Validated bullet index in memory]
+    BulletFiles[Read-only bullet JSON and JSONL] -->|Load at startup| BulletSnapshot
     Service --> Snapshot[Validated catalog in memory]
     Files[Read-only JSON files] -->|Load at startup| Snapshot
     Snapshot --> Role[Role requirements]
@@ -176,7 +298,7 @@ A roadmap combines role skills, shared industry skills, and role-specific indust
 
 This avoids maintaining a separate complete roadmap for every role × industry × level. Exact names and explicit aliases resolve to canonical IDs. Unknown inputs and uncovered combinations return actionable errors. There is no fuzzy substitution or generic fallback.
 
-Streamable HTTP at `/mcp` is the Docker transport; stdio is available for local clients. This follows the [official SDK transport guidance](https://py.sdk.modelcontextprotocol.io/run/). Tool results expose typed structured content and an output schema.
+Streamable HTTP at `/mcp` is the Docker transport; stdio is available for local clients. This follows the [official SDK transport guidance](https://py.sdk.modelcontextprotocol.io/run/). JSON tools expose typed structured content and an output schema; `get_bullets_text` returns plain text content.
 
 ```text
 data/
@@ -186,13 +308,18 @@ data/
   skills/*.json                   # Additional technical and industry skills
   roles/*.json                    # Role requirements and minimum seniority
   industries/*.json               # Shared and role-specific industry requirements
+  bullets/                        # Baselines, taxonomy, and manifest
 src/roadmap_mcp/
   models.py                       # Authoring and response schemas
   catalog.py                      # File loading, indexing, reference validation
   service.py                      # Deterministic composition
+  bullet_models.py                # Baseline data and response schemas
+  bullets.py                      # Bullet validation, industry priority, fallback, deduplication
+  bullet_text.py                  # Shared readable formatting for the MCP tool and local client
   server.py                       # MCP tools and health endpoint
   __main__.py                     # Serve and validate commands
 tests/                            # Composition, invalid data, and MCP integration
+scripts/import_bullets.py          # Validated reference-to-runtime data import
 Dockerfile
 compose.yaml
 uv.lock                           # Locked application and development dependencies
@@ -212,6 +339,9 @@ Connect an MCP client to `http://localhost:8000/mcp`. `/mcp` speaks MCP, not a c
 | --- | --- | --- |
 | `list_catalog` | None | Names, IDs, aliases, seniority levels, and role/industry coverage |
 | `get_roadmap` | `role_name`, `industry`, `seniority_level`; optional `include_descriptions` (default `true`) | Separate `hard_skills` and `soft_skills` lists containing named categories |
+| `list_bullet_catalog` | None | Bullet taxonomy, aliases, role/industry coverage, and total count |
+| `get_bullets` | `role_name`; optional `industry` (all), `seniority_level` (minimum `junior`), `count` (`5`, range `1`–`100`) | Matching baselines with evidence prompts and available/returned counts |
+| `get_bullets_text` | Same as `get_bullets` | The same selection as readable MCP text content |
 
 If port 8000 is occupied, use `ROADMAP_PORT=8001 docker compose up --build -d` and connect to `http://localhost:8001/mcp`. The container continues to listen on port 8000 internally.
 
@@ -319,6 +449,30 @@ uv run python tests/test_tool.py --no-descriptions
 ```
 
 The flag sets `include_descriptions` on the MCP request, so descriptions are omitted by the server.
+
+Test bullet retrieval with the matching readable client script:
+
+```bash
+uv run python tests/test_bullets_tool.py
+uv run python tests/test_bullets_tool.py --count 1
+uv run python tests/test_bullets_tool.py --role "AI Engineer" --industry "SaaS" --seniority "Mid-level"
+uv run python tests/test_bullets_tool.py --json
+uv run python tests/test_bullets_tool.py --text
+uv run python tests/test_bullets_tool.py --text --industry "Fintech" --seniority "Senior"
+```
+
+It defaults to the same local server as `test_tool.py` (`http://192.168.6.128:8004/mcp`), with
+Backend Engineer / all industries / Junior and above, with a count of 5. Output shows requested,
+available, and returned counts, each bullet, and evidence prompts. Fallback bullets display their original
+industry ID. Use `--json` for the complete structured response, or `--text` to call the
+`get_bullets_text` endpoint directly. The two flags are mutually exclusive.
+For a server started with the default local settings:
+
+```bash
+uv run roadmap-mcp serve
+# In another terminal:
+uv run python tests/test_bullets_tool.py --url http://localhost:8000/mcp
+```
 
 ## Extend the catalog
 

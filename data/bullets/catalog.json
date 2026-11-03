@@ -1,0 +1,340 @@
+{
+  "roles": [
+    {
+      "id": "software-engineer",
+      "name": "Software Engineer",
+      "aliases": []
+    },
+    {
+      "id": "backend-engineer",
+      "name": "Backend Engineer",
+      "aliases": [
+        "back-end engineer",
+        "backend developer",
+        "server-side engineer"
+      ]
+    },
+    {
+      "id": "frontend-engineer",
+      "name": "Frontend Engineer",
+      "aliases": [
+        "front-end engineer",
+        "frontend developer",
+        "ui engineer"
+      ]
+    },
+    {
+      "id": "fullstack-engineer",
+      "name": "Full-Stack Engineer",
+      "aliases": [
+        "full stack developer"
+      ]
+    },
+    {
+      "id": "product-engineer",
+      "name": "Product Engineer",
+      "aliases": []
+    },
+    {
+      "id": "devops-engineer",
+      "name": "DevOps Engineer",
+      "aliases": [
+        "devops",
+        "devops specialist"
+      ]
+    },
+    {
+      "id": "site-reliability-engineer",
+      "name": "Site Reliability Engineer",
+      "aliases": [
+        "reliability engineer",
+        "site reliability engineering",
+        "sre"
+      ]
+    },
+    {
+      "id": "platform-engineer",
+      "name": "Platform Engineer",
+      "aliases": [
+        "developer platform engineer",
+        "internal platform engineer"
+      ]
+    },
+    {
+      "id": "cloud-engineer",
+      "name": "Cloud Engineer",
+      "aliases": [
+        "cloud infrastructure engineer",
+        "cloud specialist"
+      ]
+    },
+    {
+      "id": "qa-analyst",
+      "name": "QA Analyst",
+      "aliases": []
+    },
+    {
+      "id": "qa-automation-engineer",
+      "name": "QA Automation Engineer",
+      "aliases": []
+    },
+    {
+      "id": "sdet",
+      "name": "Software Development Engineer in Test",
+      "aliases": []
+    },
+    {
+      "id": "data-engineer",
+      "name": "Data Engineer",
+      "aliases": [
+        "data pipeline engineer",
+        "etl developer"
+      ]
+    },
+    {
+      "id": "machine-learning-engineer",
+      "name": "Machine Learning Engineer",
+      "aliases": [
+        "machine learning developer",
+        "ml engineer"
+      ]
+    },
+    {
+      "id": "ai-llm-engineer",
+      "name": "AI / LLM Engineer",
+      "aliases": [
+        "AI Engineer",
+        "artificial intelligence engineer",
+        "generative ai engineer",
+        "llm engineer"
+      ]
+    },
+    {
+      "id": "security-engineer",
+      "name": "Security Engineer",
+      "aliases": [
+        "cyber security engineer",
+        "Cybersecurity Engineer",
+        "information security engineer"
+      ]
+    },
+    {
+      "id": "mobile-engineer",
+      "name": "Mobile Engineer",
+      "aliases": [
+        "cross-platform mobile developer",
+        "mobile application developer",
+        "mobile developer"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "id": "b2b-saas",
+      "name": "B2B SaaS",
+      "aliases": [
+        "SaaS",
+        "software",
+        "software as a service"
+      ]
+    },
+    {
+      "id": "fintech-payments",
+      "name": "Fintech & Payments",
+      "aliases": [
+        "financial services",
+        "financial technology",
+        "Fintech"
+      ]
+    },
+    {
+      "id": "banking-lending",
+      "name": "Banking & Lending",
+      "aliases": [
+        "Banking",
+        "banks",
+        "commercial banking",
+        "retail banking"
+      ]
+    },
+    {
+      "id": "healthtech",
+      "name": "Healthcare & Healthtech",
+      "aliases": [
+        "digital health",
+        "health tech",
+        "Healthcare"
+      ]
+    },
+    {
+      "id": "insurance-insurtech",
+      "name": "Insurance & Insurtech",
+      "aliases": [
+        "Insurance",
+        "insurance technology",
+        "insurtech"
+      ]
+    },
+    {
+      "id": "ecommerce-retail",
+      "name": "E-commerce & Retail",
+      "aliases": [
+        "E-commerce",
+        "ecommerce",
+        "online retail"
+      ]
+    },
+    {
+      "id": "edtech",
+      "name": "Education & EdTech",
+      "aliases": [
+        "e-learning",
+        "Education",
+        "education technology"
+      ]
+    },
+    {
+      "id": "logistics-supplychain",
+      "name": "Logistics & Supply Chain",
+      "aliases": [
+        "logistics",
+        "Logistics and Supply Chain",
+        "supply chain",
+        "transportation"
+      ]
+    },
+    {
+      "id": "gaming-entertainment",
+      "name": "Gaming & Interactive Entertainment",
+      "aliases": [
+        "game industry",
+        "games",
+        "Gaming",
+        "video games"
+      ]
+    },
+    {
+      "id": "igaming",
+      "name": "iGaming & Regulated Betting",
+      "aliases": []
+    },
+    {
+      "id": "proptech",
+      "name": "Real Estate & PropTech",
+      "aliases": [
+        "property technology",
+        "Real Estate",
+        "real estate technology"
+      ]
+    },
+    {
+      "id": "manufacturing-iot",
+      "name": "Manufacturing & Industrial IoT",
+      "aliases": [
+        "industrial manufacturing",
+        "industrial technology",
+        "industry 4.0",
+        "Manufacturing"
+      ]
+    },
+    {
+      "id": "media-streaming",
+      "name": "Media & Streaming",
+      "aliases": [
+        "entertainment",
+        "media",
+        "Media and Entertainment",
+        "media-entertainment",
+        "streaming media"
+      ]
+    },
+    {
+      "id": "travel-hospitality",
+      "name": "Travel & Hospitality",
+      "aliases": []
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity Products",
+      "aliases": []
+    },
+    {
+      "id": "ai-developer-tools",
+      "name": "AI Platforms & Developer Tools",
+      "aliases": []
+    },
+    {
+      "id": "crypto-web3",
+      "name": "Crypto & Web3",
+      "aliases": []
+    },
+    {
+      "id": "government-public",
+      "name": "Government & Public Sector",
+      "aliases": [
+        "civic technology",
+        "government",
+        "Government and Public Sector",
+        "govtech",
+        "public sector"
+      ]
+    },
+    {
+      "id": "energy-utilities",
+      "name": "Energy & Utilities",
+      "aliases": [
+        "energy",
+        "Energy and Utilities",
+        "energy technology",
+        "utilities"
+      ]
+    },
+    {
+      "id": "telecommunications",
+      "name": "Telecommunications",
+      "aliases": [
+        "telco",
+        "telecom",
+        "telecommunications services"
+      ]
+    }
+  ],
+  "seniority_levels": [
+    {
+      "id": "junior",
+      "name": "Junior",
+      "aliases": [
+        "entry level",
+        "associate"
+      ],
+      "rank": 0
+    },
+    {
+      "id": "mid",
+      "name": "Mid-level",
+      "aliases": [
+        "mid level",
+        "middle",
+        "intermediate"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "senior",
+      "name": "Senior",
+      "aliases": [
+        "sr",
+        "sr."
+      ],
+      "rank": 2
+    },
+    {
+      "id": "staff",
+      "name": "Staff",
+      "aliases": [
+        "staff engineer"
+      ],
+      "rank": 3
+    }
+  ]
+}

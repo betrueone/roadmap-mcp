@@ -7,6 +7,7 @@ from pathlib import Path
 
 from mcp.server.transport_security import TransportSecuritySettings
 
+from roadmap_mcp.bullets import BulletCatalog
 from roadmap_mcp.catalog import Catalog, CatalogError
 from roadmap_mcp.server import create_server
 
@@ -19,7 +20,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     validate = commands.add_parser("validate", help="Validate all data files and cross-references")
-    serve = commands.add_parser("serve", help="Serve skill roadmaps over MCP")
+    serve = commands.add_parser("serve", help="Serve skill roadmaps and resume baselines over MCP")
     for command in (validate, serve):
         command.add_argument(
             "--data-dir", type=Path, default=Path(os.environ.get("ROADMAP_DATA_DIR", "data"))
@@ -36,6 +37,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         catalog = Catalog(args.data_dir)
+        bullet_catalog = BulletCatalog(args.data_dir / "bullets")
     except CatalogError as error:
         parser.exit(1, f"Catalog validation failed: {error}\n")
     if args.command == "validate":
@@ -48,12 +50,19 @@ def main() -> None:
                     "seniority_levels": len(catalog.levels),
                     "skills": len(catalog.skills),
                     "categories": len(catalog.categories),
+                    "bullet_catalog": {
+                        "roles": len(bullet_catalog.roles),
+                        "industries": len(bullet_catalog.industries),
+                        "seniority_levels": len(bullet_catalog.levels),
+                        "bullets": len(bullet_catalog.bullets),
+                        "dataset_version": bullet_catalog.manifest.version,
+                    },
                 },
                 indent=2,
             )
         )
         return
-    server = create_server(catalog)
+    server = create_server(catalog, bullet_catalog)
     if args.transport == "stdio":
         server.run(transport="stdio")
     else:

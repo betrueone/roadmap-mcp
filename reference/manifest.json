@@ -1,0 +1,18 @@
+{
+  "dataset": "role-industry-resume-bullet-baselines",
+  "version": "1.0.0",
+  "created": "2026-11-03",
+  "role_count": 17,
+  "industry_count": 20,
+  "seniority_levels": [
+    "junior",
+    "mid",
+    "senior",
+    "staff"
+  ],
+  "bullet_count": 2040,
+  "classification": "original-editorial-synthetic-baselines",
+  "not_fact_checked_candidate_claims": true,
+  "license_note": "Original baseline text was authored for this seed. External taxonomies are referenced, not redistributed. Check individual external licenses before direct import.",
+  "source_import_status": "No full O*NET or ESCO source dump imported; source URLs/role mapping recorded for follow-up ingestion."
+}
