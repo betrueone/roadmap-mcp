@@ -1,0 +1,686 @@
+{
+  "python": {
+    "name": "Python",
+    "description": "Write applications and automation using Python modules, collections, exceptions, and asynchronous code."
+  },
+  "java": {
+    "name": "Java",
+    "description": "Build typed applications using Java classes, collections, concurrency, and runtime tooling."
+  },
+  "go": {
+    "name": "Go",
+    "description": "Build services using Go interfaces, error handling, goroutines, and channels."
+  },
+  "csharp": {
+    "name": "C#",
+    "description": "Develop applications using C# types, LINQ, asynchronous operations, and .NET libraries."
+  },
+  "php": {
+    "name": "PHP",
+    "description": "Build server-side applications using PHP types, request handling, and package dependencies."
+  },
+  "ruby": {
+    "name": "Ruby",
+    "description": "Write server-side applications using Ruby objects, modules, collections, and libraries."
+  },
+  "rust": {
+    "name": "Rust",
+    "description": "Build memory-safe applications using Rust ownership, borrowing, traits, and error handling."
+  },
+  "django": {
+    "name": "Django",
+    "description": "Build Python web applications using Django models, views, authentication, and migrations."
+  },
+  "flask": {
+    "name": "Flask",
+    "description": "Build Python web services using Flask routes, request handling, and extensions."
+  },
+  "fastapi": {
+    "name": "FastAPI",
+    "description": "Build typed Python APIs using FastAPI validation, dependency injection, and asynchronous endpoints."
+  },
+  "spring-boot": {
+    "name": "Spring Boot",
+    "description": "Build Java services using Spring Boot configuration, dependency injection, and production integrations."
+  },
+  "expressjs": {
+    "name": "Express.js",
+    "description": "Build Node.js APIs using Express.js routes, middleware, and error handlers."
+  },
+  "nestjs": {
+    "name": "NestJS",
+    "description": "Build TypeScript services using NestJS modules, controllers, providers, and dependency injection."
+  },
+  "sqlalchemy": {
+    "name": "SQLAlchemy",
+    "description": "Map Python models to databases and manage SQL queries and transactions with SQLAlchemy."
+  },
+  "hibernate": {
+    "name": "Hibernate",
+    "description": "Persist Java entities and control mappings, fetching, and transactions with Hibernate."
+  },
+  "prisma": {
+    "name": "Prisma",
+    "description": "Define database schemas and use type-safe queries and migrations with Prisma."
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "description": "Build relational applications using PostgreSQL schemas, constraints, indexes, and transactions."
+  },
+  "mysql": {
+    "name": "MySQL",
+    "description": "Model relational data and operate MySQL queries, indexes, transactions, and access controls."
+  },
+  "sqlite": {
+    "name": "SQLite",
+    "description": "Store application data using SQLite schemas, SQL queries, transactions, and migrations."
+  },
+  "mongodb": {
+    "name": "MongoDB",
+    "description": "Model document data using MongoDB collections, indexes, aggregation, and consistency controls."
+  },
+  "redis": {
+    "name": "Redis",
+    "description": "Use Redis data structures for caching, counters, expiration, and atomic operations."
+  },
+  "dynamodb": {
+    "name": "DynamoDB",
+    "description": "Model DynamoDB tables around access patterns, partition keys, indexes, and conditional writes."
+  },
+  "cassandra": {
+    "name": "Cassandra",
+    "description": "Design Cassandra tables using partitioning, clustering, replication, and consistency settings."
+  },
+  "apache-kafka": {
+    "name": "Apache Kafka",
+    "description": "Build event streams using Apache Kafka topics, partitions, producers, and consumer groups."
+  },
+  "rabbitmq": {
+    "name": "RabbitMQ",
+    "description": "Implement asynchronous messaging using RabbitMQ exchanges, queues, acknowledgments, and routing."
+  },
+  "nginx": {
+    "name": "Nginx",
+    "description": "Configure Nginx reverse proxies, request routing, TLS termination, and connection limits."
+  },
+  "elasticsearch": {
+    "name": "Elasticsearch",
+    "description": "Implement searchable document indexes using Elasticsearch mappings, queries, and aggregations."
+  },
+  "graphql": {
+    "name": "GraphQL",
+    "description": "Define GraphQL schemas, resolvers, queries, mutations, and controlled data access."
+  },
+  "websockets": {
+    "name": "WebSockets",
+    "description": "Implement persistent bidirectional communication using WebSocket connections and message handling."
+  },
+  "oauth": {
+    "name": "OAuth",
+    "description": "Integrate delegated authorization using OAuth flows, scopes, token validation, and lifecycle controls."
+  },
+  "openid": {
+    "name": "OpenID",
+    "description": "Integrate OpenID-based sign-in and validate identity claims and provider metadata."
+  },
+  "jwt": {
+    "name": "JWT",
+    "description": "Validate JWT signatures, issuers, audiences, and expiration when using token-based authentication."
+  },
+  "docker-compose": {
+    "name": "Docker Compose",
+    "description": "Define and run local multi-container services with Docker Compose networks, volumes, and environment configuration."
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "description": "Operate containerized workloads using Kubernetes deployments, services, configuration, and resource controls."
+  },
+  "terraform": {
+    "name": "Terraform",
+    "description": "Provision infrastructure with Terraform configuration, state management, plans, and reusable modules."
+  },
+  "prometheus": {
+    "name": "Prometheus",
+    "description": "Collect service metrics and define Prometheus queries, recording rules, and alerts."
+  },
+  "datadog": {
+    "name": "Datadog",
+    "description": "Investigate application health using Datadog metrics, logs, traces, and monitors."
+  },
+  "sentry": {
+    "name": "Sentry",
+    "description": "Capture and investigate application errors and performance issues with Sentry."
+  },
+  "pytest": {
+    "name": "pytest",
+    "description": "Write Python tests with pytest fixtures, parametrization, assertions, and test isolation."
+  },
+  "junit": {
+    "name": "JUnit",
+    "description": "Write and organize Java tests using JUnit assertions, lifecycle hooks, and parameterized cases."
+  },
+  "react": {
+    "name": "React",
+    "description": "Build React interfaces using components, hooks, state, and reusable rendering patterns."
+  },
+  "vuejs": {
+    "name": "Vue.js",
+    "description": "Build Vue.js interfaces using reactive state, components, templates, and composables."
+  },
+  "angular": {
+    "name": "Angular",
+    "description": "Build Angular applications using components, services, dependency injection, and reactive forms."
+  },
+  "svelte": {
+    "name": "Svelte",
+    "description": "Build Svelte interfaces using reactive state, components, and compiled rendering."
+  },
+  "nextjs": {
+    "name": "Next.js",
+    "description": "Build React applications with Next.js routing, server rendering, and static generation."
+  },
+  "nuxtjs": {
+    "name": "Nuxt.js",
+    "description": "Build Vue.js applications with Nuxt.js routing, server rendering, and data fetching."
+  },
+  "vite": {
+    "name": "Vite",
+    "description": "Configure Vite development servers, module transformations, and production builds."
+  },
+  "tailwind-css": {
+    "name": "Tailwind CSS",
+    "description": "Build responsive interfaces using Tailwind CSS utility classes and theme configuration."
+  },
+  "npm": {
+    "name": "npm",
+    "description": "Manage JavaScript dependencies, scripts, and package publishing with npm."
+  },
+  "pnpm": {
+    "name": "pnpm",
+    "description": "Manage JavaScript dependencies and workspaces using pnpm and its lockfile."
+  },
+  "yarn": {
+    "name": "Yarn",
+    "description": "Manage JavaScript packages, dependency versions, and workspaces with Yarn."
+  },
+  "eslint": {
+    "name": "ESLint",
+    "description": "Configure ESLint rules to detect JavaScript and TypeScript code issues."
+  },
+  "prettier": {
+    "name": "Prettier",
+    "description": "Apply consistent source formatting with Prettier across supported project files."
+  },
+  "jest": {
+    "name": "Jest",
+    "description": "Test JavaScript and TypeScript behavior using Jest assertions, mocks, and test environments."
+  },
+  "vitest": {
+    "name": "Vitest",
+    "description": "Run JavaScript and TypeScript tests with Vitest fixtures, mocks, and Vite integration."
+  },
+  "playwright": {
+    "name": "Playwright",
+    "description": "Automate browser journeys and assertions across browser engines using Playwright."
+  },
+  "cypress": {
+    "name": "Cypress",
+    "description": "Test browser interactions and application journeys with Cypress."
+  },
+  "apache-airflow": {
+    "name": "Apache Airflow",
+    "description": "Schedule and monitor Airflow DAGs with task dependencies, retries, and backfills."
+  },
+  "dbt": {
+    "name": "dbt",
+    "description": "Build versioned SQL transformations with dbt models, tests, documentation, and dependency graphs."
+  },
+  "apache-spark": {
+    "name": "Apache Spark",
+    "description": "Process distributed datasets with Spark transformations, joins, partitioning, and execution tuning."
+  },
+  "apache-hadoop-yarn": {
+    "name": "Apache Hadoop YARN",
+    "description": "Manage distributed data-processing resources and application scheduling with Hadoop YARN."
+  },
+  "snowflake": {
+    "name": "Snowflake",
+    "description": "Load, transform, and query analytical data using Snowflake tables, warehouses, and access controls."
+  },
+  "google-bigquery": {
+    "name": "Google BigQuery",
+    "description": "Build analytical datasets and optimize partitioned SQL workloads in Google BigQuery."
+  },
+  "amazon-redshift": {
+    "name": "Amazon Redshift",
+    "description": "Load and query warehouse data using Amazon Redshift distribution, sort, and workload controls."
+  },
+  "s3": {
+    "name": "S3",
+    "description": "Store and organize datasets in S3 using object keys, access policies, and lifecycle rules."
+  },
+  "azure-blob-storage": {
+    "name": "Azure Blob Storage",
+    "description": "Store datasets in Azure Blob Storage with containers, access controls, and lifecycle management."
+  },
+  "azure-sql-database": {
+    "name": "Azure SQL Database",
+    "description": "Build managed relational datasets and SQL workloads with Azure SQL Database."
+  },
+  "azure-data-factory": {
+    "name": "Data Factory (ETL)",
+    "description": "Build Azure Data Factory ingestion and transformation pipelines with triggers and monitored activities."
+  },
+  "databricks-delta-lake": {
+    "name": "Databricks Delta Lake",
+    "description": "Build Delta Lake tables and data-processing jobs with reliable updates and schema management."
+  },
+  "hdfs": {
+    "name": "HDFS",
+    "description": "Store distributed datasets in HDFS and manage file placement, replication, and access."
+  },
+  "pandas": {
+    "name": "Pandas",
+    "description": "Clean, join, aggregate, and reshape tabular data using Pandas DataFrames."
+  },
+  "numpy": {
+    "name": "NumPy",
+    "description": "Process numerical arrays using NumPy vectorized operations, indexing, and broadcasting."
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "description": "Build server-side JavaScript applications using Node.js modules, asynchronous I/O, and runtime APIs."
+  },
+  "sql": {
+    "name": "SQL",
+    "description": "Query and modify relational data using joins, aggregation, constraints, and transactions."
+  },
+  "stripe-api": {
+    "name": "Stripe API",
+    "description": "Integrate Stripe payments and financial records using authenticated requests, idempotency, and verified webhooks."
+  },
+  "three-d-secure": {
+    "name": "3D Secure",
+    "description": "Integrate cardholder authentication challenges and preserve payment context across the authentication flow."
+  },
+  "smart-on-fhir": {
+    "name": "SMART on FHIR",
+    "description": "Authorize healthcare applications and backend clients using SMART scopes, launch context, and FHIR access tokens."
+  },
+  "shopify-storefront-api": {
+    "name": "Shopify Storefront API",
+    "description": "Query Shopify products and collections and manage carts using the GraphQL Storefront API."
+  },
+  "shopify-admin-api": {
+    "name": "Shopify GraphQL Admin API",
+    "description": "Integrate Shopify product, order, fulfillment, and inventory data using the GraphQL Admin API."
+  },
+  "git-version-control": {
+    "name": "Git",
+    "description": "Manage branches, commits, merges, and pull requests with Git."
+  },
+  "linux-cli": {
+    "name": "Linux",
+    "description": "Navigate files, inspect processes, manage permissions, and automate routine shell tasks."
+  },
+  "containers": {
+    "name": "Docker",
+    "description": "Build reproducible container images and configure runtime networking, storage, and resource limits."
+  },
+  "tls-cryptography": {
+    "name": "SSL/TLS",
+    "description": "Protect data in transit and choose appropriate hashing and encryption primitives."
+  },
+  "html-semantics": {
+    "name": "HTML",
+    "description": "Structure pages with meaningful elements, accessible forms, and appropriate document landmarks."
+  },
+  "css-layout": {
+    "name": "CSS",
+    "description": "Build adaptable layouts using the box model, Flexbox, Grid, and responsive styling."
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "description": "Implement browser behavior using functions, modules, events, promises, and asynchronous control flow."
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "description": "Use static types and type narrowing to make frontend contracts and state changes explicit."
+  },
+  "rpc-contracts": {
+    "name": "gRPC",
+    "description": "Define typed service calls and handle serialization, deadlines, and compatible contract changes."
+  },
+  "fhir-integration": {
+    "name": "HL7 FHIR",
+    "description": "Map and validate healthcare data using FHIR resources and profiles."
+  },
+  "bash": {
+    "name": "Bash",
+    "description": "Automate command-line workflows using shell scripts, pipes, variables, and exit codes."
+  },
+  "kotlin": {
+    "name": "Kotlin",
+    "description": "Build typed applications using Kotlin collections, null safety, classes, and functions."
+  },
+  "swift": {
+    "name": "Swift",
+    "description": "Develop applications using Swift types, protocols, optionals, and structured concurrency."
+  },
+  "dart": {
+    "name": "Dart",
+    "description": "Write typed applications using Dart collections, futures, streams, and classes."
+  },
+  "r": {
+    "name": "R",
+    "description": "Analyze datasets using R data structures, statistical functions, and reproducible scripts."
+  },
+  "aws": {
+    "name": "AWS",
+    "description": "Provision and operate compute, networking, storage, and identity services on AWS."
+  },
+  "azure": {
+    "name": "Azure",
+    "description": "Configure workloads using Azure compute, storage, networking, and identity services."
+  },
+  "google-cloud": {
+    "name": "Google Cloud",
+    "description": "Deploy workloads using Google Cloud compute, networking, storage, and access controls."
+  },
+  "ec2": {
+    "name": "EC2",
+    "description": "Operate virtual machines using EC2 images, instance types, security groups, and storage."
+  },
+  "aws-lambda": {
+    "name": "Lambda",
+    "description": "Deploy event-driven functions using Lambda triggers, execution roles, and runtime configuration."
+  },
+  "aws-vpc": {
+    "name": "VPC",
+    "description": "Design AWS networks using subnets, route tables, gateways, and security groups."
+  },
+  "cloudfront": {
+    "name": "CloudFront",
+    "description": "Deliver cached content through CloudFront distributions, origins, and cache policies."
+  },
+  "route53": {
+    "name": "Amazon Route 53",
+    "description": "Configure DNS records, routing policies, and health checks using Amazon Route 53."
+  },
+  "ansible": {
+    "name": "Ansible",
+    "description": "Manage repeatable server configuration using Ansible inventories, roles, and playbooks."
+  },
+  "pulumi": {
+    "name": "Pulumi",
+    "description": "Define and deploy cloud infrastructure using Pulumi programs and state management."
+  },
+  "aws-rds": {
+    "name": "RDS",
+    "description": "Operate managed relational databases using RDS backups, replicas, and availability settings."
+  },
+  "aws-iam": {
+    "name": "IAM",
+    "description": "Configure AWS identities, roles, and policies with narrowly scoped permissions."
+  },
+  "vault": {
+    "name": "Vault",
+    "description": "Manage application secrets, access policies, and credential lifecycles using Vault."
+  },
+  "wireshark": {
+    "name": "Wireshark",
+    "description": "Inspect network packets and investigate protocols using Wireshark captures and filters."
+  },
+  "nmap": {
+    "name": "NMAP",
+    "description": "Inventory authorized network hosts, exposed ports, and service versions using NMAP."
+  },
+  "tcpdump": {
+    "name": "Tcpdump",
+    "description": "Capture and filter network traffic from the command line using Tcpdump."
+  },
+  "github-actions": {
+    "name": "GitHub Actions",
+    "description": "Automate builds, tests, and deployments using GitHub Actions workflows and runners."
+  },
+  "gitlab-ci": {
+    "name": "GitLab CI",
+    "description": "Build delivery pipelines using GitLab CI jobs, stages, artifacts, and protected variables."
+  },
+  "jenkins": {
+    "name": "Jenkins",
+    "description": "Maintain automated delivery pipelines using Jenkins agents, stages, and credentials."
+  },
+  "helm": {
+    "name": "Helm",
+    "description": "Package and configure Kubernetes applications using Helm charts, values, and releases."
+  },
+  "argocd": {
+    "name": "ArgoCD",
+    "description": "Reconcile Kubernetes deployments from version-controlled manifests using ArgoCD."
+  },
+  "fastlane": {
+    "name": "Fastlane",
+    "description": "Automate mobile signing, testing, screenshots, and release workflows using Fastlane."
+  },
+  "grafana": {
+    "name": "Grafana",
+    "description": "Build dashboards and alerts from infrastructure and application telemetry using Grafana."
+  },
+  "opentelemetry": {
+    "name": "OpenTelemetry",
+    "description": "Instrument services with OpenTelemetry traces, metrics, logs, and context propagation."
+  },
+  "jaeger": {
+    "name": "Jaeger",
+    "description": "Investigate distributed request paths and service latency using Jaeger traces."
+  },
+  "loki": {
+    "name": "Loki",
+    "description": "Collect and query application logs using Loki labels and LogQL expressions."
+  },
+  "splunk": {
+    "name": "Splunk",
+    "description": "Search operational and security events using Splunk queries, dashboards, and alerts."
+  },
+  "gradle": {
+    "name": "Gradle",
+    "description": "Configure builds, dependencies, variants, and build tasks using Gradle."
+  },
+  "swift-package-manager": {
+    "name": "Swift Package Manager",
+    "description": "Organize Swift modules and resolve dependencies with Swift Package Manager."
+  },
+  "jetpack-compose": {
+    "name": "Jetpack Compose",
+    "description": "Create Android interfaces using composable functions, state, layouts, and recomposition."
+  },
+  "android-studio": {
+    "name": "Android Studio",
+    "description": "Build, debug, profile, and package Android applications using Android Studio."
+  },
+  "room": {
+    "name": "Room Database",
+    "description": "Implement Android persistence using Room entities, queries, migrations, and transactions."
+  },
+  "workmanager": {
+    "name": "WorkManager",
+    "description": "Schedule persistent Android background work with constraints, retries, and unique jobs."
+  },
+  "hilt": {
+    "name": "Hilt",
+    "description": "Configure Android dependency injection using Hilt components, modules, and scopes."
+  },
+  "retrofit": {
+    "name": "Retrofit",
+    "description": "Define typed Android HTTP clients using Retrofit service interfaces and converters."
+  },
+  "okhttp": {
+    "name": "OkHttp",
+    "description": "Configure HTTP connections, interceptors, timeouts, and caching with OkHttp."
+  },
+  "kotlin-coroutines": {
+    "name": "Coroutines",
+    "description": "Coordinate asynchronous Kotlin work using structured concurrency and cancellation."
+  },
+  "swiftui": {
+    "name": "SwiftUI",
+    "description": "Create Apple platform interfaces using SwiftUI views, state, bindings, and navigation."
+  },
+  "uikit": {
+    "name": "UIKit",
+    "description": "Implement iOS interfaces using UIKit view controllers, layouts, and event handling."
+  },
+  "xcode": {
+    "name": "Xcode",
+    "description": "Build, debug, profile, and distribute Apple platform applications using Xcode."
+  },
+  "core-data": {
+    "name": "Core Data",
+    "description": "Manage local object persistence using Core Data models, contexts, and migrations."
+  },
+  "combine": {
+    "name": "Combine",
+    "description": "Compose asynchronous event streams using Combine publishers, subscribers, and operators."
+  },
+  "react-native": {
+    "name": "React Native",
+    "description": "Build native mobile interfaces using React Native components and platform APIs."
+  },
+  "flutter": {
+    "name": "Flutter",
+    "description": "Develop mobile interfaces using Flutter widgets, layouts, navigation, and rendering tools."
+  },
+  "expo": {
+    "name": "Expo",
+    "description": "Build and distribute React Native applications using Expo modules and development tools."
+  },
+  "firebase": {
+    "name": "Firebase",
+    "description": "Integrate Firebase authentication, messaging, application data, and crash diagnostics."
+  },
+  "xctest": {
+    "name": "XCTest",
+    "description": "Write automated unit and interface tests using XCTest assertions and test fixtures."
+  },
+  "appium": {
+    "name": "Appium",
+    "description": "Automate mobile tests using Appium drivers, locators, and device sessions."
+  },
+  "selenium": {
+    "name": "Selenium",
+    "description": "Automate browser interactions using Selenium WebDriver sessions, selectors, and waits."
+  },
+  "postman": {
+    "name": "Postman",
+    "description": "Build repeatable API tests using Postman requests, assertions, environments, and collections."
+  },
+  "jmeter": {
+    "name": "JMeter",
+    "description": "Model concurrent users and evaluate performance using JMeter test plans."
+  },
+  "k6": {
+    "name": "k6",
+    "description": "Run scripted load tests with k6 scenarios, thresholds, and performance measurements."
+  },
+  "locust": {
+    "name": "Locust",
+    "description": "Simulate concurrent user behavior using Python-based Locust load tests."
+  },
+  "testrail": {
+    "name": "TestRail",
+    "description": "Organize test cases, test runs, traceability, and execution results using TestRail."
+  },
+  "excel": {
+    "name": "Excel",
+    "description": "Analyze tabular data using Excel formulas, pivot tables, charts, and validation."
+  },
+  "power-bi": {
+    "name": "Power BI",
+    "description": "Build data models, measures, and interactive reports using Power BI."
+  },
+  "tableau": {
+    "name": "Tableau",
+    "description": "Create analytical dashboards using Tableau dimensions, measures, and filters."
+  },
+  "matplotlib": {
+    "name": "Matplotlib",
+    "description": "Create reproducible charts and statistical figures from Python datasets using Matplotlib."
+  },
+  "seaborn": {
+    "name": "Seaborn",
+    "description": "Explore distributions and relationships using Seaborn statistical visualizations."
+  },
+  "amplitude": {
+    "name": "Amplitude",
+    "description": "Analyze product events, funnels, retention, and user cohorts using Amplitude."
+  },
+  "mixpanel": {
+    "name": "Mixpanel",
+    "description": "Measure product usage, conversion, and retention using Mixpanel event analysis."
+  },
+  "scikit-learn": {
+    "name": "Scikit-learn",
+    "description": "Build preprocessing pipelines and evaluate supervised and unsupervised models with Scikit-learn."
+  },
+  "pytorch": {
+    "name": "PyTorch",
+    "description": "Train and serve neural networks using PyTorch tensors, autograd, and modules."
+  },
+  "tensorflow": {
+    "name": "TensorFlow",
+    "description": "Build and deploy machine learning models using TensorFlow computation and training tools."
+  },
+  "keras": {
+    "name": "Keras",
+    "description": "Define and train neural networks using Keras layers, models, and callbacks."
+  },
+  "hugging-face": {
+    "name": "Hugging Face",
+    "description": "Evaluate and integrate pretrained models and tokenizers from the Hugging Face ecosystem."
+  },
+  "langchain": {
+    "name": "LangChain",
+    "description": "Compose language-model applications using LangChain model, retrieval, and tool integrations."
+  },
+  "llama-index": {
+    "name": "Llama Index",
+    "description": "Build document ingestion, indexing, and retrieval workflows using Llama Index."
+  },
+  "pinecone": {
+    "name": "Pinecone",
+    "description": "Store and query vector embeddings using Pinecone indexes and metadata filters."
+  },
+  "qdrant": {
+    "name": "Qdrant",
+    "description": "Implement vector search using Qdrant collections, payload filters, and similarity queries."
+  },
+  "chroma": {
+    "name": "Chroma",
+    "description": "Index and retrieve embedded documents using Chroma collections and metadata."
+  },
+  "faiss": {
+    "name": "FAISS",
+    "description": "Build efficient nearest-neighbor searches using FAISS vector indexes."
+  },
+  "figma": {
+    "name": "Figma",
+    "description": "Create interface layouts, interactive prototypes, and shared design components using Figma."
+  },
+  "sketch": {
+    "name": "Sketch",
+    "description": "Design interface assets and reusable component libraries using Sketch."
+  },
+  "balsamiq": {
+    "name": "Balsamiq",
+    "description": "Explore interface structures and user flows through low-fidelity Balsamiq wireframes."
+  },
+  "jira": {
+    "name": "Jira",
+    "description": "Manage work items, delivery boards, backlog refinement, and release tracking using Jira."
+  },
+  "linear": {
+    "name": "Linear",
+    "description": "Organize product issues, projects, cycles, and delivery priorities using Linear."
+  }
+}

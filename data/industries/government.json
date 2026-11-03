@@ -1,0 +1,206 @@
+{
+  "id": "government",
+  "name": "Government and Public Sector",
+  "aliases": [
+    "government",
+    "public sector",
+    "govtech",
+    "civic technology"
+  ],
+  "requirements": [
+    {
+      "skill_id": "government-domain"
+    },
+    {
+      "skill_id": "privacy-engineering"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "dcat",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-case-management",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-record-publication",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "dcat",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-data-pipelines",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "dcat",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-case-management",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-record-publication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "public-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "public-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "public-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "public-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "public-eligibility-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "public-service-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "public-service-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-demand-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "public-service-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-demand-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "public-guidance-retrieval",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "auditability",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "citizen-interfaces"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "public-service-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "public-service-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "public-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "public-information-controls",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "id": "manufacturing",
+  "name": "Manufacturing",
+  "aliases": [
+    "industrial manufacturing",
+    "industry 4.0",
+    "industrial technology"
+  ],
+  "requirements": [
+    {
+      "skill_id": "manufacturing-domain"
+    },
+    {
+      "skill_id": "privacy-engineering"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "opc-ua",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "production-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "material-traceability",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "opc-ua",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "industrial-event-pipelines",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "opc-ua",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "production-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "material-traceability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "industrial-edge-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "industrial-edge-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "industrial-edge-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "industrial-edge-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "production-workflow-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "production-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "production-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "predictive-maintenance",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "production-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "predictive-maintenance",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "maintenance-knowledge-retrieval",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "auditability",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "operator-interfaces"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "production-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "production-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "industrial-edge-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "ot-security",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

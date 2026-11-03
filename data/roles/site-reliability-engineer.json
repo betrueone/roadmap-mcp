@@ -1,0 +1,178 @@
+{
+  "id": "site-reliability-engineer",
+  "name": "Site Reliability Engineer",
+  "aliases": [
+    "sre",
+    "reliability engineer",
+    "site reliability engineering"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "go"
+    },
+    {
+      "skill_id": "bash"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "network-administration"
+    },
+    {
+      "skill_id": "containers"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "performance-profiling"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "aws",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "kubernetes",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "terraform",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "prometheus",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "grafana",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "opentelemetry",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jaeger",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "loki",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "alert-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "service-level-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "toil-reduction",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "incident-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "backup-restoration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "load-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "k6",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "release-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-systems",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "capacity-planning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "service-resilience",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "chaos-engineering",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cloud-network-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-region-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "container-security",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "platform-self-service",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

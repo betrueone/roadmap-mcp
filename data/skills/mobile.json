@@ -1,0 +1,54 @@
+{
+  "mobile-lifecycle": {
+    "name": "Mobile application lifecycle",
+    "description": "Handle screen transitions, process recreation, foreground work, and background execution."
+  },
+  "mobile-state": {
+    "name": "Mobile state management",
+    "description": "Keep application state consistent across navigation, asynchronous work, and lifecycle changes."
+  },
+  "mobile-networking": {
+    "name": "Mobile networking",
+    "description": "Integrate remote APIs with timeouts, retries, connectivity awareness, and response validation."
+  },
+  "mobile-persistence": {
+    "name": "Mobile data persistence",
+    "description": "Store application data locally with migration, concurrency, and retention controls."
+  },
+  "offline-synchronization": {
+    "name": "Offline synchronization",
+    "description": "Resolve local and remote changes through queued writes, conflict handling, and synchronization policies."
+  },
+  "mobile-accessibility": {
+    "name": "Mobile accessibility",
+    "description": "Support assistive technologies, scalable text, clear focus order, and accessible touch targets."
+  },
+  "push-notifications": {
+    "name": "Push notifications",
+    "description": "Manage device registration, notification permissions, delivery handling, and deep links."
+  },
+  "mobile-performance": {
+    "name": "Mobile performance optimization",
+    "description": "Profile launch time, rendering, memory use, battery impact, and network activity."
+  },
+  "native-integration": {
+    "name": "Native platform integration",
+    "description": "Bridge shared application code to platform-specific services and device capabilities."
+  },
+  "mobile-security": {
+    "name": "Mobile application security",
+    "description": "Protect credentials, device storage, platform permissions, and application communication."
+  },
+  "mobile-testing": {
+    "name": "Mobile application testing",
+    "description": "Verify device behavior, lifecycle changes, accessibility, and supported operating-system versions."
+  },
+  "mobile-release": {
+    "name": "Mobile release management",
+    "description": "Manage signing, store submissions, staged releases, and production crash monitoring."
+  },
+  "mobile-architecture": {
+    "name": "Mobile application architecture",
+    "description": "Separate interface, domain, and data responsibilities with testable dependency boundaries."
+  }
+}

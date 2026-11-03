@@ -1,0 +1,177 @@
+{
+  "id": "data-scientist",
+  "name": "Data Scientist",
+  "aliases": [
+    "ai and data scientist",
+    "applied data scientist"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "r"
+    },
+    {
+      "skill_id": "sql"
+    },
+    {
+      "skill_id": "pandas"
+    },
+    {
+      "skill_id": "numpy"
+    },
+    {
+      "skill_id": "matplotlib"
+    },
+    {
+      "skill_id": "seaborn"
+    },
+    {
+      "skill_id": "data-cleaning"
+    },
+    {
+      "skill_id": "exploratory-analysis"
+    },
+    {
+      "skill_id": "descriptive-statistics"
+    },
+    {
+      "skill_id": "probability"
+    },
+    {
+      "skill_id": "linear-algebra"
+    },
+    {
+      "skill_id": "statistical-modeling"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "scikit-learn",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "feature-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "supervised-learning",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "unsupervised-learning",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "model-evaluation",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "hyperparameter-tuning",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "hypothesis-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "experiment-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "time-series-analysis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pytorch",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tensorflow",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "keras",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "ml-experiment-tracking",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "automated-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "causal-inference",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "deep-learning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "nlp",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "computer-vision",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "recommendation-systems",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "model-explainability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "responsible-ml",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "ml-pipelines",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "model-monitoring",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "ml-system-design",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

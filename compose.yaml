@@ -1,0 +1,21 @@
+services:
+  roadmap:
+    build: .
+    image: roadmap-mcp:local
+    ports:
+      - "127.0.0.1:${ROADMAP_PORT:-8000}:8000"
+    environment:
+      ROADMAP_DATA_DIR: /app/data
+      ROADMAP_ALLOWED_HOSTS: ${ROADMAP_ALLOWED_HOSTS:-}
+      ROADMAP_ALLOWED_ORIGINS: ${ROADMAP_ALLOWED_ORIGINS:-}
+    volumes:
+      - ./data:/app/data:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    init: true
+    restart: unless-stopped

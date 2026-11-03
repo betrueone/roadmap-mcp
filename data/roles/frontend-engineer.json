@@ -1,0 +1,278 @@
+{
+  "id": "frontend-engineer",
+  "name": "Frontend Engineer",
+  "aliases": [
+    "frontend developer",
+    "front-end engineer",
+    "ui engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "html-semantics"
+    },
+    {
+      "skill_id": "css-layout"
+    },
+    {
+      "skill_id": "javascript"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "npm"
+    },
+    {
+      "skill_id": "pnpm"
+    },
+    {
+      "skill_id": "yarn"
+    },
+    {
+      "skill_id": "eslint"
+    },
+    {
+      "skill_id": "prettier"
+    },
+    {
+      "skill_id": "typescript",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "react",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vuejs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "angular",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "svelte",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nextjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nuxtjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nodejs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vite",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tailwind-css",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jest",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vitest",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "playwright",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cypress",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "graphql",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "websockets",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "oauth",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "openid",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jwt",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "sentry",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "web-platform"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "accessibility"
+    },
+    {
+      "skill_id": "application-security"
+    },
+    {
+      "skill_id": "frontend-state",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "web-performance",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "deployment",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "design-systems",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "package-management"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "browser-devtools"
+    },
+    {
+      "skill_id": "forms-validation"
+    },
+    {
+      "skill_id": "browser-compatibility"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dependency-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "authentication",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "authorization",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-routing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-tooling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "component-based-ui",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "browser-authentication",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-test-automation",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "internationalization",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "client-data-caching",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "contract-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "server-rendering",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "design-tokens",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "frontend-observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "frontend-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "visual-regression-testing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "frontend-release-strategies",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

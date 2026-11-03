@@ -1,0 +1,428 @@
+{
+  "id": "healthcare",
+  "name": "Healthcare",
+  "aliases": [
+    "healthtech",
+    "health tech",
+    "digital health"
+  ],
+  "requirements": [
+    {
+      "skill_id": "privacy-engineering"
+    },
+    {
+      "skill_id": "healthcare-data"
+    },
+    {
+      "skill_id": "auditability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "healthcare-access-controls"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "fhir-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-identity",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-terminology",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-provenance",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "healthcare-interoperability-architecture",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "fhir-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "data-lineage",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-identity",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-terminology",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-data-validation",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-deidentification",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-data-ingestion",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-provenance",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "healthcare-interoperability-architecture",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "fhir-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-identity",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-terminology",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-provenance",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "healthcare-interoperability-architecture",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "healthcare-access-controls",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "healthcare-access-controls",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "healthcare-access-controls",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "healthcare-access-controls",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "healthcare-workflow-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-data-validation",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "smart-on-fhir",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "healthcare-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-data-validation",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-deidentification",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "healthcare-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-deidentification",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-outcome-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "healthcare-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-deidentification",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-outcome-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "clinical-document-retrieval",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-provenance",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-deidentification",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-provenance",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "patient-portal-usability"
+      },
+      {
+        "skill_id": "accessible-healthcare-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "clinical-workflow-ui",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "healthcare-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "patient-portal-usability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "consent-enforcement",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "healthcare-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "healthcare-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "healthcare-access-controls",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

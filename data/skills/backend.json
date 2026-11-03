@@ -1,0 +1,110 @@
+{
+  "api-design": {
+    "name": "API design",
+    "description": "Design API contracts with validation, authorization, predictable errors, and versioning."
+  },
+  "sql-modeling": {
+    "name": "SQL and relational data modeling",
+    "description": "Design relational schemas and write efficient SQL queries using indexes and query plans."
+  },
+  "database-transactions": {
+    "name": "Transactions and concurrency",
+    "description": "Use transactions, isolation, and locking to preserve data correctness during concurrent updates."
+  },
+  "distributed-systems": {
+    "name": "Distributed service reliability",
+    "description": "Handle partial failures, retries, duplicate messages, and consistency across services."
+  },
+  "backend-frameworks": {
+    "name": "Backend framework development",
+    "description": "Build services using a primary backend framework and its routing, middleware, and configuration conventions."
+  },
+  "rest-apis": {
+    "name": "RESTful APIs",
+    "description": "Model resources and implement HTTP endpoints with consistent methods, status codes, and responses."
+  },
+  "openapi-contracts": {
+    "name": "OpenAPI specifications",
+    "description": "Describe API operations and schemas in OpenAPI for documentation and client integration."
+  },
+  "orm-data-access": {
+    "name": "ORMs and data access",
+    "description": "Map application models to persistence while controlling query behavior and transaction boundaries."
+  },
+  "database-indexing": {
+    "name": "Database indexing and query tuning",
+    "description": "Use execution plans and workload measurements to improve indexes and database queries."
+  },
+  "database-migrations": {
+    "name": "Database schema migrations",
+    "description": "Version schema changes and apply them safely across application deployments."
+  },
+  "caching": {
+    "name": "Application caching",
+    "description": "Choose cache keys, expiration, and invalidation rules to reduce repeated work safely."
+  },
+  "background-jobs": {
+    "name": "Background job processing",
+    "description": "Run asynchronous work with retry policies, job state tracking, and failure recovery."
+  },
+  "message-queues": {
+    "name": "Message queues and brokers",
+    "description": "Publish and consume queued messages with acknowledgments, retries, and dead-letter handling."
+  },
+  "webhook-integrations": {
+    "name": "Webhook integrations",
+    "description": "Validate, authenticate, and reliably process callbacks from external services."
+  },
+  "rate-limiting": {
+    "name": "Rate limiting and throttling",
+    "description": "Protect services by enforcing fair request limits and handling overload predictably."
+  },
+  "nosql-modeling": {
+    "name": "NoSQL data modeling",
+    "description": "Choose document or key-value structures around access patterns and consistency needs."
+  },
+  "search-indexing": {
+    "name": "Search indexing",
+    "description": "Build searchable document indexes and keep them synchronized with source data."
+  },
+  "real-time-apis": {
+    "name": "Real-time APIs",
+    "description": "Deliver live updates using WebSockets or server-sent events with connection recovery."
+  },
+  "api-versioning": {
+    "name": "API versioning and compatibility",
+    "description": "Evolve API contracts while preserving supported client behavior and migration paths."
+  },
+  "service-resilience": {
+    "name": "Service resilience patterns",
+    "description": "Use timeouts, retry limits, circuit breakers, and backpressure to contain dependency failures."
+  },
+  "event-driven-architecture": {
+    "name": "Event-driven architecture",
+    "description": "Design event contracts and service interactions that tolerate asynchronous delivery and replay."
+  },
+  "database-replication": {
+    "name": "Database replication and availability",
+    "description": "Use replicas and failover strategies while accounting for replication lag and consistency."
+  },
+  "partitioning-sharding": {
+    "name": "Data partitioning and sharding",
+    "description": "Distribute data by workload while managing hot partitions and cross-partition operations."
+  },
+  "domain-driven-design": {
+    "name": "Domain modeling and service boundaries",
+    "description": "Define domain concepts and service ownership around business capabilities."
+  },
+  "distributed-transactions": {
+    "name": "Distributed transaction patterns",
+    "description": "Coordinate cross-service updates with transactional outboxes, sagas, and compensating operations."
+  },
+  "zero-downtime-migrations": {
+    "name": "Zero-downtime migrations",
+    "description": "Sequence compatible schema and service changes while keeping live traffic available."
+  },
+  "multi-tenancy": {
+    "name": "Multi-tenant service design",
+    "description": "Isolate tenant data and resources while managing shared infrastructure and noisy neighbors."
+  }
+}

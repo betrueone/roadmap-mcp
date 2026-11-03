@@ -1,0 +1,122 @@
+{
+  "automated-testing": {
+    "name": "Automated testing",
+    "description": "Verify application behavior with unit and integration tests."
+  },
+  "application-security": {
+    "name": "Application security",
+    "description": "Protect applications through input validation, authorization, and secure secret handling."
+  },
+  "deployment": {
+    "name": "Deployment and delivery",
+    "description": "Automate builds, delivery checks, deployments, and rollbacks."
+  },
+  "observability": {
+    "name": "Observability",
+    "description": "Monitor service health and investigate failures using logs, metrics, and traces."
+  },
+  "system-design": {
+    "name": "System design",
+    "description": "Design systems around performance, reliability, scalability, and cost requirements."
+  },
+  "technical-leadership": {
+    "name": "Technical leadership",
+    "description": "Lead technical reviews, mentor engineers, and coordinate delivery decisions."
+  },
+  "technical-strategy": {
+    "name": "Cross-team technical strategy",
+    "description": "Set technical direction and coordinate architecture changes across teams."
+  },
+  "incident-management": {
+    "name": "Incident management",
+    "description": "Diagnose production incidents, coordinate recovery, and prevent repeat failures."
+  },
+  "privacy-engineering": {
+    "name": "Privacy engineering",
+    "description": "Protect sensitive data through access controls, redaction, and retention rules."
+  },
+  "auditability": {
+    "name": "Audit trails and traceability",
+    "description": "Track changes and access events to support reliable investigation."
+  },
+  "http-networking": {
+    "name": "HTTP and networking fundamentals",
+    "description": "Explain request lifecycles, HTTP methods, status codes, DNS, and connection behavior."
+  },
+  "package-management": {
+    "name": "Package and dependency management",
+    "description": "Install, pin, and update dependencies using package managers and lockfiles."
+  },
+  "debugging": {
+    "name": "Debugging and troubleshooting",
+    "description": "Reproduce failures, inspect runtime state, and isolate root causes."
+  },
+  "code-quality": {
+    "name": "Code quality and refactoring",
+    "description": "Improve maintainability through clear structure, static analysis, and behavior-preserving changes."
+  },
+  "technical-documentation": {
+    "name": "Technical documentation",
+    "description": "Document interfaces, implementation decisions, and operational procedures for other engineers."
+  },
+  "authentication": {
+    "name": "Authentication",
+    "description": "Implement identity verification, session handling, and secure token validation."
+  },
+  "authorization": {
+    "name": "Authorization and access control",
+    "description": "Enforce permissions and resource ownership at application boundaries."
+  },
+  "secrets-management": {
+    "name": "Secrets management",
+    "description": "Store, rotate, and restrict access to credentials without exposing them in code or logs."
+  },
+  "continuous-integration": {
+    "name": "Continuous integration",
+    "description": "Automate builds, static checks, and tests for changes before delivery."
+  },
+  "cloud-fundamentals": {
+    "name": "Cloud infrastructure fundamentals",
+    "description": "Use managed compute, storage, networking, and identity services to host applications."
+  },
+  "contract-testing": {
+    "name": "Contract testing",
+    "description": "Verify that API producers and consumers agree on request, response, and compatibility rules."
+  },
+  "load-testing": {
+    "name": "Load and performance testing",
+    "description": "Measure throughput, latency, and failure behavior under realistic traffic."
+  },
+  "dependency-security": {
+    "name": "Dependency security",
+    "description": "Identify vulnerable dependencies and apply verified updates without breaking application behavior."
+  },
+  "threat-modeling": {
+    "name": "Threat modeling",
+    "description": "Identify attack paths and select controls based on system boundaries and sensitive assets."
+  },
+  "reliability-objectives": {
+    "name": "Service reliability objectives",
+    "description": "Define service indicators, reliability targets, error budgets, and actionable alerts."
+  },
+  "disaster-recovery": {
+    "name": "Disaster recovery",
+    "description": "Design and test backup, restoration, and failover procedures against recovery objectives."
+  },
+  "architecture-decisions": {
+    "name": "Architecture decision making",
+    "description": "Compare design alternatives and record decisions with their constraints and tradeoffs."
+  },
+  "capacity-planning": {
+    "name": "Capacity planning",
+    "description": "Estimate workload growth and validate compute, storage, and network capacity requirements."
+  },
+  "cost-optimization": {
+    "name": "Infrastructure cost optimization",
+    "description": "Identify resource waste and balance infrastructure spending against performance and reliability needs."
+  },
+  "engineering-standards": {
+    "name": "Engineering standards and governance",
+    "description": "Establish shared technical practices and guide their adoption across teams."
+  }
+}

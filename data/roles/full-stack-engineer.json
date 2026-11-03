@@ -1,0 +1,236 @@
+{
+  "id": "full-stack-engineer",
+  "name": "Full Stack Engineer",
+  "aliases": [
+    "full stack developer",
+    "full-stack developer",
+    "fullstack engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "html-semantics"
+    },
+    {
+      "skill_id": "css-layout"
+    },
+    {
+      "skill_id": "javascript"
+    },
+    {
+      "skill_id": "nodejs"
+    },
+    {
+      "skill_id": "npm"
+    },
+    {
+      "skill_id": "sql"
+    },
+    {
+      "skill_id": "postgresql"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "rest-apis"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "forms-validation"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "typescript",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "react",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vuejs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nextjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "expressjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nestjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "python",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "fastapi",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "prisma",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "redis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "authentication",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "authorization",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-state",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "frontend-routing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "accessibility",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "api-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "sql-modeling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-transactions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "containers",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "docker-compose",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "github-actions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "deployment",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jest",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "playwright",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dependency-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "web-performance",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "distributed-systems",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "opentelemetry",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "caching",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "message-queues",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "service-resilience",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-tenancy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "frontend-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "server-rendering",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "contract-testing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "platform-self-service",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

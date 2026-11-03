@@ -1,0 +1,806 @@
+{
+  "financial-data": {
+    "name": "Financial data correctness",
+    "description": "Model monetary amounts, currencies, rounding, and financial operation states accurately."
+  },
+  "payment-idempotency": {
+    "name": "Idempotent payment workflows",
+    "description": "Prevent duplicate payment operations when requests are retried or events are delivered repeatedly."
+  },
+  "financial-reconciliation": {
+    "name": "Financial reconciliation",
+    "description": "Compare internal and external financial records, detect discrepancies, and track corrections."
+  },
+  "payment-ux": {
+    "name": "Reliable payment interfaces",
+    "description": "Build accessible payment interfaces with clear submission, confirmation, failure, and retry states."
+  },
+  "healthcare-data": {
+    "name": "Healthcare data concepts",
+    "description": "Model patient identities, clinical observations, encounters, and related healthcare records."
+  },
+  "accessible-healthcare-ux": {
+    "name": "Accessible healthcare workflows",
+    "description": "Build accessible healthcare forms and records that protect sensitive patient information."
+  },
+  "commerce-domain": {
+    "name": "Commerce domain concepts",
+    "description": "Model products, pricing, inventory, orders, fulfillment, and cancellations."
+  },
+  "inventory-consistency": {
+    "name": "Inventory consistency",
+    "description": "Keep inventory and orders consistent using reservations, atomic updates, and recovery rules."
+  },
+  "commerce-analytics": {
+    "name": "Commerce analytics models",
+    "description": "Build analytical models for orders, returns, inventory, and revenue."
+  },
+  "payment-lifecycle": {
+    "name": "Payment lifecycle modeling",
+    "description": "Track authorization, capture, cancellation, refunds, and settlement as explicit payment states."
+  },
+  "payment-data-protection": {
+    "name": "Payment data protection",
+    "description": "Reduce payment-data exposure through tokenization, restricted access, and safe logging."
+  },
+  "payment-gateway-integration": {
+    "name": "Payment gateway integration",
+    "description": "Integrate provider APIs and map their responses and failures to internal payment workflows."
+  },
+  "payment-webhooks": {
+    "name": "Payment event handling",
+    "description": "Verify payment event signatures and reconcile delayed, repeated, or out-of-order notifications."
+  },
+  "ledger-modeling": {
+    "name": "Financial ledger modeling",
+    "description": "Model balanced ledger entries and preserve traceability between financial operations and balances."
+  },
+  "settlement-processing": {
+    "name": "Settlement and payout processing",
+    "description": "Track settlement and payout records with clear accounting for fees, timing, and discrepancies."
+  },
+  "payment-disputes": {
+    "name": "Payment disputes and refunds",
+    "description": "Track refund and dispute states while preserving links to original transactions and supporting records."
+  },
+  "fraud-signals": {
+    "name": "Fraud signal integration",
+    "description": "Integrate risk signals into transaction workflows with traceable decisions and review paths."
+  },
+  "payment-authentication": {
+    "name": "Payment authentication interfaces",
+    "description": "Handle payment authentication redirects, challenges, and return states without losing transaction context."
+  },
+  "financial-reporting-data": {
+    "name": "Financial reporting datasets",
+    "description": "Build consistent reporting datasets for balances, fees, refunds, and settlement activity."
+  },
+  "payment-event-modeling": {
+    "name": "Payment event data modeling",
+    "description": "Transform payment events into consistent transaction histories despite duplicate or late delivery."
+  },
+  "fraud-feature-pipelines": {
+    "name": "Fraud analytics pipelines",
+    "description": "Produce timely risk-analysis datasets while monitoring data quality and feature freshness."
+  },
+  "financial-ui-formatting": {
+    "name": "Financial interface formatting",
+    "description": "Display monetary amounts, currencies, fees, and financial statuses without ambiguity."
+  },
+  "patient-identity": {
+    "name": "Patient identity matching",
+    "description": "Resolve patient identifiers across systems and prevent unsafe record merges or mismatches."
+  },
+  "clinical-terminology": {
+    "name": "Clinical terminology mapping",
+    "description": "Map clinical codes and units using agreed vocabularies while preserving source meaning."
+  },
+  "consent-enforcement": {
+    "name": "Patient consent enforcement",
+    "description": "Apply patient consent decisions to healthcare data access and sharing workflows."
+  },
+  "healthcare-access-controls": {
+    "name": "Healthcare access controls",
+    "description": "Restrict healthcare information by user role, patient context, and permitted purpose."
+  },
+  "clinical-data-validation": {
+    "name": "Clinical data validation",
+    "description": "Validate clinical values, units, timestamps, and record relationships before downstream use."
+  },
+  "healthcare-deidentification": {
+    "name": "Healthcare data de-identification",
+    "description": "Reduce re-identification risks when preparing healthcare datasets for non-production or analytical use."
+  },
+  "healthcare-provenance": {
+    "name": "Healthcare data provenance",
+    "description": "Preserve the origin, authorship, and transformation history of healthcare records."
+  },
+  "clinical-workflow-ui": {
+    "name": "Clinical workflow interfaces",
+    "description": "Present patient context, record status, and validation errors clearly in clinical workflows."
+  },
+  "patient-portal-usability": {
+    "name": "Patient portal usability",
+    "description": "Build understandable patient-facing forms and navigation with accessible status feedback."
+  },
+  "healthcare-data-ingestion": {
+    "name": "Healthcare data ingestion",
+    "description": "Ingest healthcare feeds with identity resolution, schema checks, and traceable error handling."
+  },
+  "healthcare-interoperability-architecture": {
+    "name": "Healthcare interoperability architecture",
+    "description": "Coordinate resource mappings and versioned interfaces across healthcare systems."
+  },
+  "pricing-promotions": {
+    "name": "Pricing and promotion rules",
+    "description": "Apply discounts and pricing rules consistently across product, cart, order, and reporting data."
+  },
+  "order-orchestration": {
+    "name": "Order processing workflows",
+    "description": "Coordinate order creation, payment, inventory reservation, cancellation, and fulfillment states."
+  },
+  "fulfillment-integration": {
+    "name": "Fulfillment integrations",
+    "description": "Exchange shipping and fulfillment updates with external systems while handling retries and partial fulfillment."
+  },
+  "returns-refunds": {
+    "name": "Returns and refund workflows",
+    "description": "Track returns and refunds consistently with order, payment, and inventory state."
+  },
+  "catalog-search": {
+    "name": "Product catalog search",
+    "description": "Index product attributes and availability for accurate filtering, search, and result updates."
+  },
+  "cart-state": {
+    "name": "Shopping cart state management",
+    "description": "Maintain cart contents and totals across navigation, sessions, stock changes, and failed requests."
+  },
+  "product-discovery-ui": {
+    "name": "Product discovery interfaces",
+    "description": "Build responsive product listings, search, filters, and product detail interactions."
+  },
+  "commerce-seo": {
+    "name": "Technical SEO for commerce",
+    "description": "Expose crawlable product pages with useful metadata, canonical URLs, and structured content."
+  },
+  "commerce-event-tracking": {
+    "name": "Commerce event instrumentation",
+    "description": "Capture consistent product, cart, checkout, and purchase events for product analysis."
+  },
+  "customer-identity-resolution": {
+    "name": "Commerce customer identity resolution",
+    "description": "Link customer activity across channels while respecting consent and avoiding incorrect identity merges."
+  },
+  "order-event-processing": {
+    "name": "Order event data processing",
+    "description": "Build consistent order histories from creation, fulfillment, cancellation, and return events."
+  },
+  "commerce-metrics": {
+    "name": "Commerce metric modeling",
+    "description": "Define consistent revenue, conversion, return, and inventory metrics for reporting."
+  },
+  "saas-domain": {
+    "name": "SaaS tenant modeling",
+    "description": "Model organizations, memberships, tenant boundaries, and customer account lifecycles."
+  },
+  "subscription-lifecycle": {
+    "name": "Subscription lifecycle management",
+    "description": "Model trials, renewals, cancellations, billing changes, and subscription state transitions."
+  },
+  "entitlement-management": {
+    "name": "Subscription entitlement management",
+    "description": "Map customer plans and usage limits to controlled access to product capabilities."
+  },
+  "tenant-isolation": {
+    "name": "Tenant data isolation",
+    "description": "Verify that tenant boundaries apply to storage, retrieval, processing, and administrative access."
+  },
+  "saas-account-ui": {
+    "name": "SaaS account interfaces",
+    "description": "Design organization switching, invitations, membership changes, and account settings."
+  },
+  "subscription-interface": {
+    "name": "Subscription management interfaces",
+    "description": "Present plan selection, billing status, usage limits, and cancellation flows clearly."
+  },
+  "subscription-metrics": {
+    "name": "Subscription revenue analytics",
+    "description": "Calculate recurring revenue, expansion, contraction, churn, and retention from billing records."
+  },
+  "product-event-pipelines": {
+    "name": "Product event pipelines",
+    "description": "Ingest and validate product usage events with tenant identity and stable event definitions."
+  },
+  "saas-usage-analytics": {
+    "name": "SaaS usage analytics",
+    "description": "Analyze activation, feature adoption, and retention across accounts and user groups."
+  },
+  "saas-churn-modeling": {
+    "name": "Subscription churn modeling",
+    "description": "Model cancellation risk using time-aware features and leakage-resistant validation."
+  },
+  "saas-knowledge-retrieval": {
+    "name": "Tenant-aware knowledge retrieval",
+    "description": "Retrieve customer knowledge while enforcing organization-level access and source freshness."
+  },
+  "saas-service-isolation": {
+    "name": "SaaS workload isolation",
+    "description": "Control noisy-neighbor effects through quotas, workload separation, and resource policies."
+  },
+  "saas-workflow-testing": {
+    "name": "SaaS lifecycle testing",
+    "description": "Verify tenant boundaries, membership changes, entitlements, and subscription transitions."
+  },
+  "education-domain": {
+    "name": "Learner and enrollment modeling",
+    "description": "Model learners, courses, enrollment states, teaching roles, and academic periods."
+  },
+  "lti": {
+    "name": "Learning Tools Interoperability (LTI)",
+    "description": "Integrate learning tools with learning platforms using LTI launches, roles, and grade services."
+  },
+  "learning-platform-integration": {
+    "name": "Learning platform integration",
+    "description": "Synchronize enrollments, assignments, course content, and grades across learning systems."
+  },
+  "assessment-workflows": {
+    "name": "Assessment workflows",
+    "description": "Model attempts, deadlines, accommodations, grading states, and feedback publication."
+  },
+  "learner-interfaces": {
+    "name": "Learner and educator interfaces",
+    "description": "Design course navigation, assignment submission, feedback, and educator review workflows."
+  },
+  "learning-event-pipelines": {
+    "name": "Learning event pipelines",
+    "description": "Process learning activity events with learner identity, course context, and timestamp validation."
+  },
+  "learning-analytics": {
+    "name": "Learning analytics",
+    "description": "Measure participation, completion, assessment outcomes, and learner progression."
+  },
+  "learner-outcome-modeling": {
+    "name": "Learner outcome modeling",
+    "description": "Evaluate progression models while controlling leakage, bias, and uncertainty in educational data."
+  },
+  "education-knowledge-retrieval": {
+    "name": "Educational content retrieval",
+    "description": "Retrieve learning materials with course boundaries, source attribution, and curriculum context."
+  },
+  "assessment-capacity": {
+    "name": "Assessment workload reliability",
+    "description": "Plan and validate service capacity for enrollment, timed assessments, and grading peaks."
+  },
+  "student-data-protection": {
+    "name": "Student data protection",
+    "description": "Control access, retention, and disclosure of learner records and assessment information."
+  },
+  "assessment-testing": {
+    "name": "Assessment integrity testing",
+    "description": "Verify scoring, attempts, deadlines, accommodations, and grade synchronization."
+  },
+  "banking-domain": {
+    "name": "Banking account lifecycles",
+    "description": "Model account opening, balances, account states, transfers, and account closure."
+  },
+  "iso20022": {
+    "name": "ISO 20022",
+    "description": "Map financial messages to ISO 20022 business concepts, message structures, and validation rules."
+  },
+  "banking-posting": {
+    "name": "Banking transaction posting",
+    "description": "Model balanced postings, holds, reversals, and transaction state changes."
+  },
+  "loan-servicing": {
+    "name": "Loan servicing workflows",
+    "description": "Model repayment schedules, interest accrual, adjustments, and delinquency states."
+  },
+  "banking-interfaces": {
+    "name": "Digital banking interfaces",
+    "description": "Design balance presentation, transaction history, transfer confirmation, and account controls."
+  },
+  "banking-event-pipelines": {
+    "name": "Banking transaction pipelines",
+    "description": "Process transaction and balance events with ordering, deduplication, and reconciliation checks."
+  },
+  "credit-portfolio-analytics": {
+    "name": "Credit portfolio analytics",
+    "description": "Analyze exposures, repayment behavior, delinquency, and credit portfolio performance."
+  },
+  "credit-risk-modeling": {
+    "name": "Credit risk modeling",
+    "description": "Estimate credit risk using time-aware validation, explainability, and calibrated predictions."
+  },
+  "banking-knowledge-retrieval": {
+    "name": "Banking knowledge retrieval",
+    "description": "Retrieve banking product and operating information with source versioning and access boundaries."
+  },
+  "banking-recovery": {
+    "name": "Banking recovery validation",
+    "description": "Verify recovery procedures against balance consistency, transaction replay, and service availability needs."
+  },
+  "banking-authorization": {
+    "name": "Banking transaction authorization",
+    "description": "Apply identity verification, transaction limits, approval controls, and authorization evidence."
+  },
+  "banking-invariant-testing": {
+    "name": "Banking balance invariant testing",
+    "description": "Verify balanced postings, hold behavior, reversals, and reconciliation under concurrent changes."
+  },
+  "insurance-domain": {
+    "name": "Insurance policy lifecycles",
+    "description": "Model quotes, coverage periods, endorsements, renewals, cancellations, and claims relationships."
+  },
+  "underwriting-workflows": {
+    "name": "Underwriting workflows",
+    "description": "Model risk intake, rating inputs, quote decisions, and underwriting review states."
+  },
+  "claims-workflows": {
+    "name": "Claims processing workflows",
+    "description": "Model claim intake, evidence, reserves, adjudication, and payment states."
+  },
+  "policyholder-interfaces": {
+    "name": "Policyholder interfaces",
+    "description": "Design quote comparison, coverage explanations, claim submission, and policy self-service."
+  },
+  "insurance-event-pipelines": {
+    "name": "Insurance event pipelines",
+    "description": "Process policy and claim events with effective dates, version history, and reconciliation."
+  },
+  "insurance-loss-analytics": {
+    "name": "Insurance loss analytics",
+    "description": "Analyze premiums, claims, loss ratios, claim frequency, and claim severity."
+  },
+  "insurance-risk-modeling": {
+    "name": "Insurance risk modeling",
+    "description": "Evaluate frequency and severity models using exposure data and appropriate validation periods."
+  },
+  "insurance-knowledge-retrieval": {
+    "name": "Insurance coverage retrieval",
+    "description": "Retrieve policy wording and claims guidance with effective dates and source attribution."
+  },
+  "insurance-service-reliability": {
+    "name": "Insurance service reliability",
+    "description": "Plan resilient quoting, policy servicing, and claims systems around operational demand."
+  },
+  "claims-access-controls": {
+    "name": "Claims information access controls",
+    "description": "Restrict sensitive claim records by role, case assignment, and documented access needs."
+  },
+  "coverage-rule-testing": {
+    "name": "Insurance coverage rule testing",
+    "description": "Verify coverage terms, effective dates, exclusions, endorsements, and claim decision boundaries."
+  },
+  "telecom-domain": {
+    "name": "Telecom service lifecycles",
+    "description": "Model service orders, subscriptions, activation, usage, changes, and service termination."
+  },
+  "tmforum-api": {
+    "name": "TM Forum Open APIs",
+    "description": "Integrate telecom business capabilities using TM Forum resource models and API contracts."
+  },
+  "telecom-provisioning": {
+    "name": "Telecom service provisioning",
+    "description": "Coordinate service activation and changes across ordering, inventory, and network systems."
+  },
+  "usage-charging": {
+    "name": "Usage charging workflows",
+    "description": "Process metered usage, rating rules, allowances, and charging adjustments."
+  },
+  "subscriber-interfaces": {
+    "name": "Subscriber self-service interfaces",
+    "description": "Design plan changes, usage views, service activation, and support workflows."
+  },
+  "call-detail-processing": {
+    "name": "Call detail record processing",
+    "description": "Validate and transform telecom usage records with event timing, subscriber identity, and deduplication."
+  },
+  "telecom-service-analytics": {
+    "name": "Telecom service analytics",
+    "description": "Analyze usage, service quality, churn, and subscriber-level performance measures."
+  },
+  "network-anomaly-modeling": {
+    "name": "Network anomaly detection",
+    "description": "Evaluate network anomaly models against traffic patterns, incident evidence, and false-alarm costs."
+  },
+  "telecom-knowledge-retrieval": {
+    "name": "Telecom operations knowledge retrieval",
+    "description": "Retrieve network and product documentation with service context and access controls."
+  },
+  "telecom-observability": {
+    "name": "Telecom service observability",
+    "description": "Correlate service availability, latency, failures, and provisioning events across network systems."
+  },
+  "subscriber-identity-controls": {
+    "name": "Subscriber identity controls",
+    "description": "Protect subscriber identity, account changes, service credentials, and sensitive usage records."
+  },
+  "telecom-provisioning-testing": {
+    "name": "Telecom provisioning testing",
+    "description": "Verify activation, suspension, number changes, billing events, and rollback behavior."
+  },
+  "media-domain": {
+    "name": "Media asset lifecycles",
+    "description": "Model content ingest, metadata, publishing states, rights windows, and archival."
+  },
+  "hls": {
+    "name": "HTTP Live Streaming (HLS)",
+    "description": "Deliver adaptive media using HLS playlists, renditions, segments, and playback compatibility checks."
+  },
+  "media-transcoding": {
+    "name": "Media transcoding workflows",
+    "description": "Coordinate media conversion, rendition generation, validation, and processing failures."
+  },
+  "media-rights": {
+    "name": "Media rights modeling",
+    "description": "Represent licensing periods, territories, availability rules, and distribution permissions."
+  },
+  "media-player-interfaces": {
+    "name": "Media player interfaces",
+    "description": "Design playback controls, captions, progress state, discovery, and recovery from playback failures."
+  },
+  "playback-event-pipelines": {
+    "name": "Playback event pipelines",
+    "description": "Process viewing events with session identity, playback state, and event quality checks."
+  },
+  "audience-analytics": {
+    "name": "Audience engagement analytics",
+    "description": "Measure viewing activity, completion, retention, and content performance across audiences."
+  },
+  "content-recommendation": {
+    "name": "Content recommendation modeling",
+    "description": "Evaluate content ranking using viewing context, availability constraints, and engagement outcomes."
+  },
+  "media-metadata-extraction": {
+    "name": "Media metadata extraction",
+    "description": "Extract and validate searchable metadata from transcripts, descriptions, and media assets."
+  },
+  "stream-delivery-operations": {
+    "name": "Streaming delivery operations",
+    "description": "Operate media delivery with cache behavior, bandwidth planning, and playback quality monitoring."
+  },
+  "media-entitlements": {
+    "name": "Media access entitlements",
+    "description": "Enforce subscription, territory, and licensing rules for content access."
+  },
+  "playback-testing": {
+    "name": "Media playback compatibility testing",
+    "description": "Verify playback, captions, seeking, adaptive quality, and supported client behavior."
+  },
+  "gaming-domain": {
+    "name": "Game session modeling",
+    "description": "Model players, sessions, game modes, match states, and progression records."
+  },
+  "matchmaking-services": {
+    "name": "Matchmaking services",
+    "description": "Match players using eligibility, latency, capacity, and skill constraints."
+  },
+  "player-economy": {
+    "name": "Game economy transactions",
+    "description": "Model virtual balances, item ownership, purchases, and duplicate-safe reward delivery."
+  },
+  "player-interfaces": {
+    "name": "Player interaction flows",
+    "description": "Design onboarding, session joining, progression feedback, and inventory interactions."
+  },
+  "game-event-pipelines": {
+    "name": "Game telemetry pipelines",
+    "description": "Process player and session events with stable schemas, identity, and event ordering."
+  },
+  "game-engagement-analytics": {
+    "name": "Game engagement analytics",
+    "description": "Analyze retention, session behavior, progression, and virtual economy activity."
+  },
+  "match-quality-modeling": {
+    "name": "Match quality modeling",
+    "description": "Evaluate player matching models using skill balance, latency, wait time, and observed outcomes."
+  },
+  "game-content-retrieval": {
+    "name": "Game content knowledge retrieval",
+    "description": "Retrieve game rules and support content with version, localization, and source context."
+  },
+  "game-session-reliability": {
+    "name": "Game session reliability",
+    "description": "Operate game sessions with capacity allocation, disconnect recovery, and latency monitoring."
+  },
+  "game-abuse-controls": {
+    "name": "Game abuse prevention",
+    "description": "Detect and limit account abuse, reward exploitation, and unauthorized game economy changes."
+  },
+  "multiplayer-testing": {
+    "name": "Multiplayer scenario testing",
+    "description": "Verify session joins, reconnects, synchronization, rewards, and concurrent player behavior."
+  },
+  "logistics-domain": {
+    "name": "Shipment lifecycle modeling",
+    "description": "Model orders, parcels, shipment states, locations, carriers, and delivery milestones."
+  },
+  "shipment-tracking": {
+    "name": "Shipment tracking integration",
+    "description": "Integrate carrier status updates with event deduplication, ordering, and delivery exceptions."
+  },
+  "warehouse-allocation": {
+    "name": "Warehouse order allocation",
+    "description": "Model stock reservation, picking, packing, dispatch, and allocation changes."
+  },
+  "dispatch-interfaces": {
+    "name": "Dispatch and tracking interfaces",
+    "description": "Design shipment search, route status, exception review, and delivery confirmation workflows."
+  },
+  "shipment-event-pipelines": {
+    "name": "Shipment event pipelines",
+    "description": "Process scan and carrier events with location, event-time, and shipment identity validation."
+  },
+  "logistics-analytics": {
+    "name": "Logistics performance analytics",
+    "description": "Measure delivery timeliness, transit times, carrier performance, and fulfillment costs."
+  },
+  "route-optimization": {
+    "name": "Route optimization modeling",
+    "description": "Evaluate routes against capacity, time windows, travel costs, and delivery constraints."
+  },
+  "logistics-document-extraction": {
+    "name": "Logistics document extraction",
+    "description": "Extract and validate shipment details from manifests, delivery documents, and carrier messages."
+  },
+  "tracking-service-reliability": {
+    "name": "Tracking service reliability",
+    "description": "Handle delayed carrier events, integration outages, and recovery without losing shipment history."
+  },
+  "shipment-access-controls": {
+    "name": "Shipment information access controls",
+    "description": "Restrict shipment, consignee, and tracking information by customer and operational role."
+  },
+  "shipment-workflow-testing": {
+    "name": "Shipment workflow testing",
+    "description": "Verify allocation, carrier updates, delivery exceptions, and duplicate tracking events."
+  },
+  "manufacturing-domain": {
+    "name": "Manufacturing production modeling",
+    "description": "Model production orders, work centers, materials, process steps, and finished goods."
+  },
+  "opc-ua": {
+    "name": "OPC UA",
+    "description": "Exchange industrial information using OPC UA information models, services, and secure connections."
+  },
+  "production-integration": {
+    "name": "Production system integration",
+    "description": "Connect production execution, equipment events, and enterprise order systems."
+  },
+  "material-traceability": {
+    "name": "Material traceability",
+    "description": "Track material lots and component relationships through production and quality events."
+  },
+  "operator-interfaces": {
+    "name": "Production operator interfaces",
+    "description": "Design work instructions, machine state views, quality entry, and exception handling."
+  },
+  "industrial-event-pipelines": {
+    "name": "Industrial event pipelines",
+    "description": "Process equipment telemetry and production events with device identity and timestamp validation."
+  },
+  "production-analytics": {
+    "name": "Production performance analytics",
+    "description": "Analyze throughput, downtime, scrap, yield, and equipment effectiveness."
+  },
+  "predictive-maintenance": {
+    "name": "Predictive maintenance modeling",
+    "description": "Evaluate equipment failure models using condition data and time-aware maintenance outcomes."
+  },
+  "maintenance-knowledge-retrieval": {
+    "name": "Maintenance knowledge retrieval",
+    "description": "Retrieve equipment instructions and maintenance history with asset identity and document versions."
+  },
+  "industrial-edge-reliability": {
+    "name": "Industrial edge reliability",
+    "description": "Operate edge workloads with intermittent connectivity, local buffering, and controlled updates."
+  },
+  "ot-security": {
+    "name": "Operational technology security",
+    "description": "Apply network separation, controlled access, and monitored changes to industrial systems."
+  },
+  "production-workflow-testing": {
+    "name": "Production workflow testing",
+    "description": "Verify equipment events, production state transitions, lot tracking, and quality exceptions."
+  },
+  "energy-domain": {
+    "name": "Energy asset and metering concepts",
+    "description": "Model energy assets, meters, readings, units, intervals, and consumption records."
+  },
+  "metering-workflows": {
+    "name": "Meter data workflows",
+    "description": "Process meter reads, corrections, estimated values, and interval aggregation."
+  },
+  "energy-asset-integration": {
+    "name": "Energy asset integration",
+    "description": "Integrate asset status, measurements, and maintenance events across energy systems."
+  },
+  "energy-interfaces": {
+    "name": "Energy customer and operator interfaces",
+    "description": "Design consumption views, outage status, asset monitoring, and service request workflows."
+  },
+  "energy-event-pipelines": {
+    "name": "Energy time series pipelines",
+    "description": "Process interval readings and asset telemetry with unit, timezone, and completeness checks."
+  },
+  "energy-analytics": {
+    "name": "Energy consumption analytics",
+    "description": "Analyze consumption patterns, peak demand, asset performance, and data gaps."
+  },
+  "energy-demand-forecasting": {
+    "name": "Energy demand forecasting",
+    "description": "Evaluate load forecasts using seasonality, weather inputs, and time-based validation."
+  },
+  "energy-document-retrieval": {
+    "name": "Energy operations document retrieval",
+    "description": "Retrieve asset guidance and operating information with versioned sources and access controls."
+  },
+  "energy-service-reliability": {
+    "name": "Energy data service reliability",
+    "description": "Plan resilient telemetry and metering services with buffering, recovery, and freshness monitoring."
+  },
+  "energy-system-security": {
+    "name": "Energy system access controls",
+    "description": "Protect asset telemetry and operational interfaces through segmented access and change evidence."
+  },
+  "metering-validation-testing": {
+    "name": "Metering validation testing",
+    "description": "Verify units, time boundaries, missing reads, corrections, and aggregation consistency."
+  },
+  "real-estate-domain": {
+    "name": "Property and listing lifecycles",
+    "description": "Model properties, listings, availability, ownership relationships, and transaction states."
+  },
+  "reso-web-api": {
+    "name": "RESO Web API",
+    "description": "Integrate real estate listings using RESO Web API resources, queries, and standardized fields."
+  },
+  "property-search": {
+    "name": "Geospatial property search",
+    "description": "Combine location, property attributes, availability, and filters for property discovery."
+  },
+  "lease-workflows": {
+    "name": "Lease management workflows",
+    "description": "Model lease terms, applications, signatures, renewals, and maintenance responsibilities."
+  },
+  "property-interfaces": {
+    "name": "Property discovery interfaces",
+    "description": "Design listing search, maps, property comparisons, and inquiry workflows."
+  },
+  "property-event-pipelines": {
+    "name": "Property data pipelines",
+    "description": "Ingest listing and property updates with identity matching, field normalization, and freshness checks."
+  },
+  "property-market-analytics": {
+    "name": "Property market analytics",
+    "description": "Analyze listing activity, occupancy, pricing, and comparable property trends."
+  },
+  "property-valuation": {
+    "name": "Property valuation modeling",
+    "description": "Evaluate property value estimates using comparable records, location features, and time-aware validation."
+  },
+  "property-document-extraction": {
+    "name": "Property document extraction",
+    "description": "Extract and validate listing, lease, and property details from versioned documents."
+  },
+  "listing-service-reliability": {
+    "name": "Listing service reliability",
+    "description": "Operate search and listing services with index freshness, feed recovery, and traffic capacity controls."
+  },
+  "property-data-access": {
+    "name": "Property information access controls",
+    "description": "Restrict applicant, tenant, owner, and transaction information by role and relationship."
+  },
+  "property-workflow-testing": {
+    "name": "Property workflow testing",
+    "description": "Verify listing availability, map filters, lease transitions, and property identity matching."
+  },
+  "government-domain": {
+    "name": "Public service case lifecycles",
+    "description": "Model service applications, eligibility review, case states, decisions, and notifications."
+  },
+  "dcat": {
+    "name": "DCAT",
+    "description": "Describe public datasets, distributions, and data services using the W3C Data Catalog Vocabulary."
+  },
+  "public-case-management": {
+    "name": "Public service case management",
+    "description": "Implement case intake, evidence handling, review, decisions, and appeal state transitions."
+  },
+  "public-record-publication": {
+    "name": "Public dataset publication",
+    "description": "Publish validated datasets with clear metadata, update schedules, and disclosure controls."
+  },
+  "citizen-interfaces": {
+    "name": "Accessible public service interfaces",
+    "description": "Design inclusive application forms, status tracking, evidence submission, and service guidance."
+  },
+  "public-data-pipelines": {
+    "name": "Public service data pipelines",
+    "description": "Integrate public service records with shared definitions, data lineage, and disclosure checks."
+  },
+  "public-service-analytics": {
+    "name": "Public service performance analytics",
+    "description": "Measure service demand, completion, processing time, and outcome differences across populations."
+  },
+  "public-demand-modeling": {
+    "name": "Public service demand modeling",
+    "description": "Evaluate demand forecasts with uncertainty, population coverage, and time-aware validation."
+  },
+  "public-guidance-retrieval": {
+    "name": "Public guidance retrieval",
+    "description": "Retrieve authoritative service guidance with jurisdiction, effective dates, and source attribution."
+  },
+  "public-service-reliability": {
+    "name": "Public service continuity",
+    "description": "Plan continuity for service applications, case processing, and citizen-facing information systems."
+  },
+  "public-information-controls": {
+    "name": "Public information access controls",
+    "description": "Apply role-based access, disclosure review, and traceability to sensitive public service records."
+  },
+  "public-eligibility-testing": {
+    "name": "Public service eligibility testing",
+    "description": "Verify eligibility boundaries, evidence requirements, decision paths, and appeal workflows."
+  },
+  "financial-risk-modeling": {
+    "name": "Financial fraud modeling",
+    "description": "Evaluate fraud risk models using temporal validation, imbalanced labels, and transaction error costs."
+  },
+  "financial-document-extraction": {
+    "name": "Financial document extraction",
+    "description": "Extract financial facts with source attribution, numerical validation, and sensitive-data controls."
+  },
+  "payment-scenario-testing": {
+    "name": "Payment scenario testing",
+    "description": "Verify authorization, capture, retries, refunds, disputes, and duplicate-safe processing."
+  },
+  "payment-workload-reliability": {
+    "name": "Payment workload reliability",
+    "description": "Validate payment service capacity, failover, event recovery, and transaction observability."
+  },
+  "financial-disclosure-design": {
+    "name": "Financial disclosure design",
+    "description": "Present fees, transaction states, consent choices, and financial risk information clearly."
+  },
+  "fintech-product-analytics": {
+    "name": "Financial product analytics",
+    "description": "Measure financial product activation, transaction completion, retention, and operational losses."
+  },
+  "clinical-outcome-modeling": {
+    "name": "Clinical outcome modeling",
+    "description": "Evaluate healthcare models using appropriate cohorts, temporal validation, calibration, and subgroup analysis."
+  },
+  "clinical-document-retrieval": {
+    "name": "Clinical document retrieval",
+    "description": "Retrieve clinical information with patient context, source provenance, and access restrictions."
+  },
+  "healthcare-workflow-testing": {
+    "name": "Healthcare workflow testing",
+    "description": "Verify patient identity, consent, clinical data exchange, and access boundaries in care workflows."
+  },
+  "healthcare-service-reliability": {
+    "name": "Healthcare service reliability",
+    "description": "Plan resilient clinical integrations with safe recovery, freshness checks, and incident traceability."
+  },
+  "healthcare-analytics": {
+    "name": "Healthcare service analytics",
+    "description": "Analyze care activity, access, operational outcomes, and data quality using clear cohort definitions."
+  },
+  "commerce-recommendation": {
+    "name": "Commerce recommendation modeling",
+    "description": "Evaluate product ranking using catalog availability, purchase behavior, and conversion outcomes."
+  },
+  "commerce-document-extraction": {
+    "name": "Commerce catalog enrichment",
+    "description": "Extract and validate product attributes from source documents while preserving catalog consistency."
+  },
+  "checkout-scenario-testing": {
+    "name": "Checkout scenario testing",
+    "description": "Verify pricing, promotions, inventory, payments, refunds, and order state transitions."
+  },
+  "commerce-peak-reliability": {
+    "name": "Commerce peak traffic reliability",
+    "description": "Validate capacity, caching, inventory consistency, and recovery during shopping traffic peaks."
+  }
+}

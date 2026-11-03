@@ -1,0 +1,74 @@
+{
+  "linear-algebra": {
+    "name": "Linear algebra",
+    "description": "Apply vectors, matrices, decompositions, and tensors to machine learning computations."
+  },
+  "probability": {
+    "name": "Probability",
+    "description": "Model uncertainty using distributions, conditional probability, and probabilistic reasoning."
+  },
+  "feature-engineering": {
+    "name": "Feature engineering",
+    "description": "Transform model inputs while preventing leakage and preserving training consistency."
+  },
+  "supervised-learning": {
+    "name": "Supervised learning",
+    "description": "Train classification and regression models using labeled examples and suitable objectives."
+  },
+  "unsupervised-learning": {
+    "name": "Unsupervised learning",
+    "description": "Discover structure in unlabeled data using clustering and dimensionality reduction."
+  },
+  "model-evaluation": {
+    "name": "Model evaluation",
+    "description": "Choose validation splits and metrics that reflect deployment conditions and error costs."
+  },
+  "hyperparameter-tuning": {
+    "name": "Hyperparameter tuning",
+    "description": "Compare model configurations through reproducible searches and independent validation."
+  },
+  "deep-learning": {
+    "name": "Deep learning",
+    "description": "Train neural networks using suitable architectures, losses, optimization, and regularization."
+  },
+  "nlp": {
+    "name": "Natural language processing",
+    "description": "Prepare and model text for classification, language understanding, and information extraction."
+  },
+  "computer-vision": {
+    "name": "Computer vision",
+    "description": "Build image models with suitable preprocessing, augmentation, and task metrics."
+  },
+  "recommendation-systems": {
+    "name": "Recommendation systems",
+    "description": "Rank relevant items using user behavior, item features, and offline and online evaluation."
+  },
+  "model-explainability": {
+    "name": "Model explainability",
+    "description": "Explain model behavior with interpretable methods and documented limitations."
+  },
+  "responsible-ml": {
+    "name": "Responsible machine learning",
+    "description": "Evaluate model fairness, privacy, data suitability, and potential operational harms."
+  },
+  "ml-pipelines": {
+    "name": "Machine learning pipelines",
+    "description": "Automate validated data preparation, training, evaluation, and promotion stages."
+  },
+  "model-serving": {
+    "name": "Model serving",
+    "description": "Deploy inference interfaces with versioning, batching, latency controls, and failure handling."
+  },
+  "model-monitoring": {
+    "name": "Model monitoring",
+    "description": "Track prediction quality, feature drift, data changes, and inference performance."
+  },
+  "ml-experiment-tracking": {
+    "name": "Machine learning experiment tracking",
+    "description": "Record datasets, parameters, metrics, artifacts, and code versions for reproducible training."
+  },
+  "ml-system-design": {
+    "name": "Machine learning system design",
+    "description": "Design training and inference systems around scale, freshness, reliability, and evaluation needs."
+  }
+}

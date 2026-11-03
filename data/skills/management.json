@@ -1,0 +1,58 @@
+{
+  "delivery-planning": {
+    "name": "Engineering delivery planning",
+    "description": "Plan scope, dependencies, milestones, and resources with explicit assumptions."
+  },
+  "engineering-metrics": {
+    "name": "Engineering metrics",
+    "description": "Measure delivery flow, quality, reliability, and capacity using consistent definitions."
+  },
+  "technical-debt-management": {
+    "name": "Technical debt management",
+    "description": "Prioritize technical debt by delivery impact, reliability risk, and maintenance cost."
+  },
+  "engineering-budgeting": {
+    "name": "Engineering budget planning",
+    "description": "Forecast staffing, infrastructure, and vendor costs against delivery needs and budgets."
+  },
+  "hiring-process-design": {
+    "name": "Hiring process design",
+    "description": "Design structured interviews and evaluation criteria aligned with role requirements."
+  },
+  "performance-management": {
+    "name": "Performance management",
+    "description": "Set role expectations and maintain consistent evaluation and development processes."
+  },
+  "engineering-risk-management": {
+    "name": "Engineering risk management",
+    "description": "Track delivery and technical risks with owners, mitigations, and review checkpoints."
+  },
+  "organizational-design": {
+    "name": "Engineering organization design",
+    "description": "Define team boundaries, responsibilities, and collaboration structures for delivery needs."
+  },
+  "active-listening": {
+    "name": "Active listening",
+    "description": "Clarify another person's needs through attentive listening and accurate reflection."
+  },
+  "stakeholder-communication": {
+    "name": "Stakeholder communication",
+    "description": "Explain decisions, progress, and tradeoffs clearly to people with different responsibilities."
+  },
+  "cross-functional-collaboration": {
+    "name": "Cross-functional collaboration",
+    "description": "Coordinate work across disciplines through shared expectations and clear responsibilities."
+  },
+  "conflict-resolution": {
+    "name": "Conflict resolution",
+    "description": "Resolve disagreements through discussion of interests, evidence, and workable agreements."
+  },
+  "mentoring-coaching": {
+    "name": "Mentoring and coaching",
+    "description": "Help colleagues develop skills through feedback, questions, and agreed development actions."
+  },
+  "delegation": {
+    "name": "Delegation",
+    "description": "Assign responsibility with clear outcomes, suitable autonomy, and agreed support."
+  }
+}

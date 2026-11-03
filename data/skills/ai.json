@@ -1,0 +1,58 @@
+{
+  "llm-fundamentals": {
+    "name": "Large language model fundamentals",
+    "description": "Understand tokenization, context limits, inference behavior, and language-model limitations."
+  },
+  "prompt-engineering": {
+    "name": "Prompt engineering",
+    "description": "Design and evaluate task instructions, examples, and output constraints for language models."
+  },
+  "embeddings": {
+    "name": "Embeddings",
+    "description": "Represent content as vectors and assess similarity for retrieval tasks."
+  },
+  "vector-search": {
+    "name": "Vector search",
+    "description": "Design similarity retrieval with index choices, metadata filters, and relevance evaluation."
+  },
+  "rag": {
+    "name": "Retrieval-augmented generation",
+    "description": "Ground generated answers in retrieved documents with traceable context and retrieval evaluation."
+  },
+  "document-ingestion": {
+    "name": "Document ingestion and chunking",
+    "description": "Parse and split documents while retaining structure, metadata, and access boundaries."
+  },
+  "llm-evaluation": {
+    "name": "Language model evaluation",
+    "description": "Assess quality using representative datasets, reproducible checks, and human review."
+  },
+  "structured-generation": {
+    "name": "Structured output generation",
+    "description": "Validate generated data against schemas and handle malformed or incomplete responses."
+  },
+  "tool-calling": {
+    "name": "Tool calling",
+    "description": "Connect model requests to validated tool inputs, scoped execution, and checked results."
+  },
+  "agent-workflows": {
+    "name": "AI agent workflows",
+    "description": "Coordinate model and tool steps with bounded execution, state, and recovery rules."
+  },
+  "inference-optimization": {
+    "name": "Inference optimization",
+    "description": "Reduce inference latency and resource use through batching, caching, and model selection."
+  },
+  "model-adaptation": {
+    "name": "Model adaptation",
+    "description": "Adapt pretrained models using suitable data, fine-tuning methods, and held-out evaluation."
+  },
+  "ai-security": {
+    "name": "AI application security",
+    "description": "Protect retrieval and tool workflows against prompt injection, data exposure, and unauthorized actions."
+  },
+  "llm-observability": {
+    "name": "Language model observability",
+    "description": "Trace model interactions and monitor latency, cost, failures, and output quality."
+  }
+}

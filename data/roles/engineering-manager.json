@@ -1,0 +1,118 @@
+{
+  "id": "engineering-manager",
+  "name": "Engineering Manager",
+  "aliases": [
+    "software engineering manager",
+    "development manager"
+  ],
+  "requirements": [
+    {
+      "skill_id": "jira"
+    },
+    {
+      "skill_id": "delivery-planning"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "technical-debt-management"
+    },
+    {
+      "skill_id": "engineering-metrics"
+    },
+    {
+      "skill_id": "hiring-process-design"
+    },
+    {
+      "skill_id": "performance-management"
+    },
+    {
+      "skill_id": "stakeholder-communication"
+    },
+    {
+      "skill_id": "cross-functional-collaboration"
+    },
+    {
+      "skill_id": "mentoring-coaching"
+    },
+    {
+      "skill_id": "delegation"
+    },
+    {
+      "skill_id": "active-listening"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "test-strategy",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "release-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "engineering-risk-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "incident-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "conflict-resolution",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "engineering-budgeting",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "organizational-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "portfolio-management",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

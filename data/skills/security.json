@@ -1,0 +1,50 @@
+{
+  "security-fundamentals": {
+    "name": "Security fundamentals",
+    "description": "Apply confidentiality, integrity, availability, least privilege, and defense in depth."
+  },
+  "network-security": {
+    "name": "Network security",
+    "description": "Control network access using segmentation, firewall rules, secure protocols, and traffic analysis."
+  },
+  "vulnerability-management": {
+    "name": "Vulnerability management",
+    "description": "Identify, prioritize, remediate, and verify weaknesses using exposure and impact evidence."
+  },
+  "identity-security": {
+    "name": "Identity security",
+    "description": "Protect identities with lifecycle controls, multifactor authentication, and access reviews."
+  },
+  "security-monitoring": {
+    "name": "Security monitoring",
+    "description": "Detect suspicious behavior through event collection, correlation rules, and alert investigation."
+  },
+  "security-incident-response": {
+    "name": "Security incident response",
+    "description": "Investigate and contain incidents while preserving evidence and coordinating recovery."
+  },
+  "penetration-testing": {
+    "name": "Penetration testing",
+    "description": "Assess authorized systems against an agreed scope and document reproducible weaknesses."
+  },
+  "security-risk-assessment": {
+    "name": "Security risk assessment",
+    "description": "Evaluate threats, exposure, impact, and controls to prioritize security improvements."
+  },
+  "secure-development": {
+    "name": "Secure software development",
+    "description": "Integrate security requirements, code review, dependency checks, and verification into delivery."
+  },
+  "cryptography-engineering": {
+    "name": "Applied cryptography",
+    "description": "Use established cryptographic libraries and manage keys, certificates, and secure protocols."
+  },
+  "security-architecture": {
+    "name": "Security architecture",
+    "description": "Design trust boundaries, access controls, and defense layers across systems and services."
+  },
+  "digital-forensics": {
+    "name": "Digital forensics",
+    "description": "Analyze digital evidence using documented integrity and preservation procedures."
+  }
+}

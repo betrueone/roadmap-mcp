@@ -1,0 +1,181 @@
+{
+  "id": "platform-engineer",
+  "name": "Platform Engineer",
+  "aliases": [
+    "developer platform engineer",
+    "internal platform engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "go"
+    },
+    {
+      "skill_id": "bash"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "containers"
+    },
+    {
+      "skill_id": "network-administration"
+    },
+    {
+      "skill_id": "cloud-fundamentals"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "kubernetes",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "helm",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "terraform",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "github-actions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "gitlab-ci",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "argocd",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "prometheus",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "grafana",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vault",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "infrastructure-as-code",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "configuration-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "gitops",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "release-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-identity",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-network-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "platform-api-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "platform-self-service",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "kubernetes-operations",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-tenancy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "container-security",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "infrastructure-testing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "capacity-planning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "incident-management",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-region-design",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

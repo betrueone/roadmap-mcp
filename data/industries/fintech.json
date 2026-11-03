@@ -1,0 +1,463 @@
+{
+  "id": "fintech",
+  "name": "Fintech",
+  "aliases": [
+    "financial technology",
+    "financial services"
+  ],
+  "requirements": [
+    {
+      "skill_id": "financial-data"
+    },
+    {
+      "skill_id": "privacy-engineering"
+    },
+    {
+      "skill_id": "auditability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "payment-lifecycle"
+    },
+    {
+      "skill_id": "payment-data-protection",
+      "minimum_seniority": "mid"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-idempotency",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-reconciliation",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "payment-gateway-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-webhooks",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ledger-modeling",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "settlement-processing",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-reconciliation",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "data-lineage",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "financial-reporting-data",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-event-modeling",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ledger-modeling",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fraud-feature-pipelines",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "settlement-processing",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-idempotency",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-reconciliation",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "payment-gateway-integration",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-webhooks",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "ledger-modeling",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "settlement-processing",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-workload-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-workload-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-workload-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-workload-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "payment-scenario-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-reconciliation",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "stripe-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "three-d-secure",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "incident-management",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "financial-reporting-data",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-reconciliation",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fintech-product-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fintech-product-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-risk-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fintech-product-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-risk-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "financial-document-extraction",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-authentication",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "financial-ui-formatting"
+      },
+      {
+        "skill_id": "payment-ux",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "financial-disclosure-design",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "fintech-product-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-disputes",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "fraud-signals",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "fintech-product-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "payment-workload-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "payment-data-protection",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

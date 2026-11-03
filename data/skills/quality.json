@@ -1,0 +1,46 @@
+{
+  "test-design": {
+    "name": "Test case design",
+    "description": "Derive cases using boundaries, equivalence classes, state transitions, and business rules."
+  },
+  "exploratory-testing": {
+    "name": "Exploratory testing",
+    "description": "Investigate application behavior through focused sessions and reproducible observations."
+  },
+  "defect-management": {
+    "name": "Defect management",
+    "description": "Document reproducible defects with expected behavior, evidence, severity, and verification results."
+  },
+  "api-testing": {
+    "name": "API testing",
+    "description": "Verify endpoint contracts, authentication, validation, failure responses, and integration behavior."
+  },
+  "regression-testing": {
+    "name": "Regression testing",
+    "description": "Maintain coverage that detects unintended changes to established application behavior."
+  },
+  "test-data-management": {
+    "name": "Test data management",
+    "description": "Prepare repeatable test datasets while controlling privacy, isolation, and cleanup."
+  },
+  "accessibility-testing": {
+    "name": "Accessibility testing",
+    "description": "Evaluate keyboard use, assistive technologies, semantics, and interface accessibility barriers."
+  },
+  "security-testing": {
+    "name": "Application security testing",
+    "description": "Test access boundaries, input handling, sessions, and known vulnerability classes."
+  },
+  "test-strategy": {
+    "name": "Test strategy",
+    "description": "Choose coverage, environments, automation scope, and release criteria based on product risk."
+  },
+  "test-automation-architecture": {
+    "name": "Test automation architecture",
+    "description": "Design maintainable automation with stable fixtures, reusable interfaces, and reliable execution."
+  },
+  "quality-metrics": {
+    "name": "Quality metrics",
+    "description": "Measure defect trends, test reliability, escaped issues, and release quality signals."
+  }
+}

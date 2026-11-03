@@ -1,0 +1,90 @@
+{
+  "web-platform": {
+    "name": "Web platform fundamentals",
+    "description": "Build semantic, responsive interfaces with HTML, CSS, JavaScript, and browser APIs."
+  },
+  "accessibility": {
+    "name": "Web accessibility",
+    "description": "Build and test interfaces for keyboard navigation and assistive technologies."
+  },
+  "frontend-state": {
+    "name": "Frontend state and API integration",
+    "description": "Manage interface and server state, including loading, validation, retries, and failed requests."
+  },
+  "web-performance": {
+    "name": "Web performance",
+    "description": "Measure and improve page loading, rendering, and interaction performance."
+  },
+  "design-systems": {
+    "name": "Design systems and UI architecture",
+    "description": "Build reusable, accessible UI components with consistent behavior and documented interfaces."
+  },
+  "browser-devtools": {
+    "name": "Browser developer tools",
+    "description": "Inspect page structure, network requests, runtime errors, and performance profiles."
+  },
+  "forms-validation": {
+    "name": "Form handling and validation",
+    "description": "Validate user input and present accessible errors without losing form state."
+  },
+  "browser-compatibility": {
+    "name": "Browser compatibility",
+    "description": "Test interfaces across supported browsers, devices, and input methods."
+  },
+  "frontend-routing": {
+    "name": "Client-side routing",
+    "description": "Manage navigation, route parameters, deep links, and protected application views."
+  },
+  "frontend-tooling": {
+    "name": "Frontend build tooling",
+    "description": "Configure module bundling, development servers, linting, and production builds."
+  },
+  "component-based-ui": {
+    "name": "Component-based UI development",
+    "description": "Build reusable interfaces using a primary component framework and clear component contracts."
+  },
+  "browser-authentication": {
+    "name": "Browser authentication flows",
+    "description": "Integrate sign-in and session renewal without exposing tokens or relying on client-only authorization."
+  },
+  "frontend-test-automation": {
+    "name": "Frontend test automation",
+    "description": "Test components and complete user journeys with appropriate browser and interaction checks."
+  },
+  "internationalization": {
+    "name": "Internationalization and localization",
+    "description": "Support translated content, locale-specific formatting, and adaptable interface layouts."
+  },
+  "client-data-caching": {
+    "name": "Client-side data caching",
+    "description": "Manage request deduplication, cache invalidation, stale data, and optimistic updates."
+  },
+  "frontend-security": {
+    "name": "Frontend security",
+    "description": "Prevent script injection and unsafe cross-origin behavior through safe rendering and browser security controls."
+  },
+  "server-rendering": {
+    "name": "Server rendering and hydration",
+    "description": "Choose rendering strategies and handle hydration, caching, and client-server boundaries."
+  },
+  "design-tokens": {
+    "name": "Design tokens and theming",
+    "description": "Represent shared visual decisions as reusable tokens for consistent themes and components."
+  },
+  "frontend-observability": {
+    "name": "Frontend observability",
+    "description": "Track browser errors and user-facing performance with actionable telemetry."
+  },
+  "frontend-architecture": {
+    "name": "Frontend application architecture",
+    "description": "Organize application boundaries, shared components, and dependencies for maintainable delivery."
+  },
+  "visual-regression-testing": {
+    "name": "Visual regression testing",
+    "description": "Detect unintended interface changes using stable visual baselines and focused review."
+  },
+  "frontend-release-strategies": {
+    "name": "Frontend release strategies",
+    "description": "Roll out interface changes safely using feature flags, versioned assets, and rollback plans."
+  }
+}

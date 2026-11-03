@@ -1,0 +1,197 @@
+{
+  "id": "cloud-engineer",
+  "name": "Cloud Engineer",
+  "aliases": [
+    "cloud infrastructure engineer",
+    "cloud specialist"
+  ],
+  "requirements": [
+    {
+      "skill_id": "bash"
+    },
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "network-administration"
+    },
+    {
+      "skill_id": "cloud-fundamentals"
+    },
+    {
+      "skill_id": "aws"
+    },
+    {
+      "skill_id": "azure"
+    },
+    {
+      "skill_id": "google-cloud"
+    },
+    {
+      "skill_id": "cloud-storage-design"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "terraform",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pulumi",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "ansible",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "ec2",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "aws-vpc",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "aws-iam",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "aws-rds",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "s3",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "aws-lambda",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloudfront",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "route53",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "containers",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "kubernetes",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "infrastructure-as-code",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-network-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-identity",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "configuration-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "prometheus",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "grafana",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "secrets-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "backup-restoration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "serverless-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-region-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cloud-security-posture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "infrastructure-testing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "capacity-planning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "incident-management",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "platform-self-service",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

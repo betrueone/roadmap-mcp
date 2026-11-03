@@ -1,0 +1,205 @@
+{
+  "id": "banking",
+  "name": "Banking",
+  "aliases": [
+    "retail banking",
+    "commercial banking",
+    "banks"
+  ],
+  "requirements": [
+    {
+      "skill_id": "banking-domain"
+    },
+    {
+      "skill_id": "privacy-engineering"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "iso20022",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-posting",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "loan-servicing",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "iso20022",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-event-pipelines",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "iso20022",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-posting",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "loan-servicing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "banking-recovery",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "banking-recovery",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "banking-recovery",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "banking-recovery",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "banking-invariant-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "credit-portfolio-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "credit-portfolio-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "credit-risk-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "credit-portfolio-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "credit-risk-modeling",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "banking-knowledge-retrieval",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "auditability",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "banking-interfaces"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "credit-portfolio-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "credit-portfolio-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "banking-recovery",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "banking-authorization",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

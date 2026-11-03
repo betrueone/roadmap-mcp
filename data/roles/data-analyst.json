@@ -1,0 +1,144 @@
+{
+  "id": "data-analyst",
+  "name": "Data Analyst",
+  "aliases": [
+    "analytics analyst",
+    "business data analyst"
+  ],
+  "requirements": [
+    {
+      "skill_id": "sql"
+    },
+    {
+      "skill_id": "excel"
+    },
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "pandas"
+    },
+    {
+      "skill_id": "data-cleaning"
+    },
+    {
+      "skill_id": "exploratory-analysis"
+    },
+    {
+      "skill_id": "descriptive-statistics"
+    },
+    {
+      "skill_id": "data-visualization"
+    },
+    {
+      "skill_id": "metric-modeling"
+    },
+    {
+      "skill_id": "data-quality"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "power-bi",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tableau",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "matplotlib",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "seaborn",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "advanced-sql",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dashboard-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "hypothesis-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "experiment-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cohort-analysis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "funnel-analysis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "statistical-modeling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "data-lineage",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "time-series-analysis",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "causal-inference",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-access-governance",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-contracts",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-warehousing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "product-metrics",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "network-administration": {
+    "name": "Network administration",
+    "description": "Configure and troubleshoot IP addressing, DNS, routing, firewalls, and connectivity."
+  },
+  "infrastructure-as-code": {
+    "name": "Infrastructure as code",
+    "description": "Define repeatable infrastructure changes with version control, review, and state management."
+  },
+  "configuration-management": {
+    "name": "Configuration management",
+    "description": "Keep server and application configuration consistent through automated desired-state changes."
+  },
+  "cloud-network-design": {
+    "name": "Cloud network design",
+    "description": "Design private networks, ingress, egress, and connectivity boundaries for cloud workloads."
+  },
+  "cloud-storage-design": {
+    "name": "Cloud storage design",
+    "description": "Choose object, block, and file storage based on durability, access, and lifecycle needs."
+  },
+  "cloud-identity": {
+    "name": "Cloud identity and access management",
+    "description": "Apply service identities, role-based permissions, and least-privilege access to cloud resources."
+  },
+  "container-security": {
+    "name": "Container security",
+    "description": "Harden container images and runtime access using scanning, isolation, and permission controls."
+  },
+  "cloud-security-posture": {
+    "name": "Cloud security posture management",
+    "description": "Identify and remediate risky cloud configuration, identity exposure, and policy drift."
+  },
+  "gitops": {
+    "name": "GitOps",
+    "description": "Manage deployment state through version-controlled configuration and automated reconciliation."
+  },
+  "release-engineering": {
+    "name": "Release engineering",
+    "description": "Build reproducible artifacts and control rollout, rollback, and release verification."
+  },
+  "kubernetes-operations": {
+    "name": "Kubernetes operations",
+    "description": "Operate cluster workloads, scheduling, networking, storage, and resource limits."
+  },
+  "service-level-engineering": {
+    "name": "Service level engineering",
+    "description": "Define service indicators, objectives, and error budgets from user-visible reliability needs."
+  },
+  "alert-engineering": {
+    "name": "Alert engineering",
+    "description": "Create actionable alerts with clear thresholds, ownership, routing, and diagnostic context."
+  },
+  "toil-reduction": {
+    "name": "Operational automation",
+    "description": "Automate repetitive operational tasks with safe execution, verification, and recovery procedures."
+  },
+  "performance-profiling": {
+    "name": "Performance profiling",
+    "description": "Measure resource use and identify CPU, memory, network, and storage bottlenecks."
+  },
+  "chaos-engineering": {
+    "name": "Chaos engineering",
+    "description": "Run bounded failure experiments to verify resilience assumptions and recovery behavior."
+  },
+  "backup-restoration": {
+    "name": "Backup and restoration",
+    "description": "Configure backups and verify recoverability through documented restoration exercises."
+  },
+  "infrastructure-testing": {
+    "name": "Infrastructure testing",
+    "description": "Validate infrastructure definitions and deployed resources with automated policy and integration checks."
+  },
+  "serverless-architecture": {
+    "name": "Serverless architecture",
+    "description": "Design event-driven functions around execution limits, failure handling, and managed integrations."
+  },
+  "platform-self-service": {
+    "name": "Self-service developer platforms",
+    "description": "Provide reusable deployment and infrastructure workflows with clear interfaces and access controls."
+  },
+  "multi-region-design": {
+    "name": "Multi-region architecture",
+    "description": "Design regional failover, data replication, and traffic routing for distributed workloads."
+  },
+  "platform-api-design": {
+    "name": "Platform API design",
+    "description": "Design provisioning interfaces with safe defaults, discoverability, and lifecycle management."
+  }
+}

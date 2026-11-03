@@ -1,0 +1,178 @@
+{
+  "id": "ai-engineer",
+  "name": "AI Engineer",
+  "aliases": [
+    "artificial intelligence engineer",
+    "generative ai engineer",
+    "llm engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "javascript"
+    },
+    {
+      "skill_id": "typescript"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "rest-apis"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "llm-fundamentals"
+    },
+    {
+      "skill_id": "prompt-engineering"
+    },
+    {
+      "skill_id": "structured-generation"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "hugging-face",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "langchain",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "llama-index",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pinecone",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "qdrant",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "chroma",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "faiss",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "embeddings",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vector-search",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "rag",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "document-ingestion",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "llm-evaluation",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tool-calling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "fastapi",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "containers",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "ai-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "agent-workflows",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "model-adaptation",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "inference-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "llm-observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "responsible-ml",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "model-serving",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "ml-system-design",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "data-access-governance",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

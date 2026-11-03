@@ -1,0 +1,340 @@
+{
+  "id": "data-engineer",
+  "name": "Data Engineer",
+  "aliases": [
+    "data pipeline engineer",
+    "etl developer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "sql"
+    },
+    {
+      "skill_id": "postgresql"
+    },
+    {
+      "skill_id": "mysql"
+    },
+    {
+      "skill_id": "pandas"
+    },
+    {
+      "skill_id": "numpy"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "pytest"
+    },
+    {
+      "skill_id": "java",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "sqlalchemy",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mongodb",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "redis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "apache-airflow",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dbt",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "apache-spark",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "snowflake",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "google-bigquery",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "amazon-redshift",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "s3",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "azure-blob-storage",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "azure-sql-database",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "azure-data-factory",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "databricks-delta-lake",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "containers",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "docker-compose",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tls-cryptography",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "apache-kafka",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cassandra",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "apache-hadoop-yarn",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "hdfs",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "kubernetes",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "terraform",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "prometheus",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "datadog",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "sql-modeling"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "data-pipelines"
+    },
+    {
+      "skill_id": "data-quality"
+    },
+    {
+      "skill_id": "application-security"
+    },
+    {
+      "skill_id": "data-warehousing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "deployment",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "stream-processing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "package-management"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "python-data-processing"
+    },
+    {
+      "skill_id": "batch-ingestion"
+    },
+    {
+      "skill_id": "data-file-formats"
+    },
+    {
+      "skill_id": "data-transformations"
+    },
+    {
+      "skill_id": "http-networking",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "secrets-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-fundamentals",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dependency-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "advanced-sql",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "object-storage",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pipeline-idempotency",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "workflow-scheduling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "schema-evolution",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "incremental-processing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "change-data-capture",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "data-catalogs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pipeline-observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "data-serving",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-transactions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-indexing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "capacity-planning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "lakehouse-storage",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "distributed-data-processing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-contracts",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-access-governance",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-platform-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-retention",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "data-recovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "load-testing",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

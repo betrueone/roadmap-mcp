@@ -1,0 +1,40 @@
+{
+  "levels": [
+    {
+      "id": "junior",
+      "name": "Junior",
+      "aliases": [
+        "entry level",
+        "associate"
+      ],
+      "rank": 0
+    },
+    {
+      "id": "mid",
+      "name": "Mid-level",
+      "aliases": [
+        "mid level",
+        "middle",
+        "intermediate"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "senior",
+      "name": "Senior",
+      "aliases": [
+        "sr",
+        "sr."
+      ],
+      "rank": 2
+    },
+    {
+      "id": "staff",
+      "name": "Staff",
+      "aliases": [
+        "staff engineer"
+      ],
+      "rank": 3
+    }
+  ]
+}

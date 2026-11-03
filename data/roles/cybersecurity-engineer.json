@@ -1,0 +1,171 @@
+{
+  "id": "cybersecurity-engineer",
+  "name": "Cybersecurity Engineer",
+  "aliases": [
+    "security engineer",
+    "cyber security engineer",
+    "information security engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "bash"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "security-fundamentals"
+    },
+    {
+      "skill_id": "network-administration"
+    },
+    {
+      "skill_id": "network-security"
+    },
+    {
+      "skill_id": "wireshark"
+    },
+    {
+      "skill_id": "nmap"
+    },
+    {
+      "skill_id": "tcpdump"
+    },
+    {
+      "skill_id": "authentication"
+    },
+    {
+      "skill_id": "authorization"
+    },
+    {
+      "skill_id": "vulnerability-management"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "splunk",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "vault",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "security-monitoring",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "identity-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "security-incident-response",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "penetration-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "secure-development",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "security-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cryptography-engineering",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tls-cryptography",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-identity",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-security-posture",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "auditability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dependency-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "secrets-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "security-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "digital-forensics",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "container-security",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "ai-security",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "incident-management",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

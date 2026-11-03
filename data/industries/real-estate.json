@@ -1,0 +1,205 @@
+{
+  "id": "real-estate",
+  "name": "Real Estate",
+  "aliases": [
+    "proptech",
+    "property technology",
+    "real estate technology"
+  ],
+  "requirements": [
+    {
+      "skill_id": "real-estate-domain"
+    },
+    {
+      "skill_id": "privacy-engineering"
+    }
+  ],
+  "role_requirements": {
+    "backend-engineer": [
+      {
+        "skill_id": "reso-web-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-search",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "lease-workflows",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "frontend-engineer": [
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "data-engineer": [
+      {
+        "skill_id": "reso-web-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-event-pipelines",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "full-stack-engineer": [
+      {
+        "skill_id": "reso-web-api",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-search",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "lease-workflows",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "devops-engineer": [
+      {
+        "skill_id": "listing-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "site-reliability-engineer": [
+      {
+        "skill_id": "listing-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "cloud-engineer": [
+      {
+        "skill_id": "listing-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "platform-engineer": [
+      {
+        "skill_id": "listing-service-reliability",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "qa-engineer": [
+      {
+        "skill_id": "property-workflow-testing",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "android-developer": [
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "ios-developer": [
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "mobile-engineer": [
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "data-analyst": [
+      {
+        "skill_id": "property-market-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "data-scientist": [
+      {
+        "skill_id": "property-market-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-valuation",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "machine-learning-engineer": [
+      {
+        "skill_id": "property-market-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-valuation",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "skill_id": "property-document-extraction",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "cybersecurity-engineer": [
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "auditability",
+        "minimum_seniority": "senior"
+      }
+    ],
+    "ux-designer": [
+      {
+        "skill_id": "property-interfaces"
+      }
+    ],
+    "product-manager": [
+      {
+        "skill_id": "property-market-analytics",
+        "minimum_seniority": "mid"
+      }
+    ],
+    "engineering-manager": [
+      {
+        "skill_id": "property-market-analytics",
+        "minimum_seniority": "mid"
+      },
+      {
+        "skill_id": "listing-service-reliability",
+        "minimum_seniority": "senior"
+      },
+      {
+        "skill_id": "property-data-access",
+        "minimum_seniority": "senior"
+      }
+    ]
+  }
+}

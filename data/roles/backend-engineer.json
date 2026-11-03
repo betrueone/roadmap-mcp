@@ -1,0 +1,395 @@
+{
+  "id": "backend-engineer",
+  "name": "Backend Engineer",
+  "aliases": [
+    "backend developer",
+    "back-end engineer",
+    "server-side engineer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "python"
+    },
+    {
+      "skill_id": "java"
+    },
+    {
+      "skill_id": "go"
+    },
+    {
+      "skill_id": "csharp"
+    },
+    {
+      "skill_id": "javascript"
+    },
+    {
+      "skill_id": "nodejs"
+    },
+    {
+      "skill_id": "sql"
+    },
+    {
+      "skill_id": "postgresql"
+    },
+    {
+      "skill_id": "mysql"
+    },
+    {
+      "skill_id": "sqlite"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "linux-cli"
+    },
+    {
+      "skill_id": "npm"
+    },
+    {
+      "skill_id": "typescript",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "rust",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "django",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "flask",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "fastapi",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "spring-boot",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "expressjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nestjs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "sqlalchemy",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "hibernate",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "prisma",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mongodb",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "redis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "apache-kafka",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "rabbitmq",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nginx",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "elasticsearch",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "graphql",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "websockets",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "oauth",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "openid",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jwt",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "containers",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "docker-compose",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "tls-cryptography",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pytest",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "junit",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "jest",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "rpc-contracts",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "dynamodb",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cassandra",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "kubernetes",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "terraform",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "prometheus",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "datadog",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "sentry",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "api-design"
+    },
+    {
+      "skill_id": "sql-modeling"
+    },
+    {
+      "skill_id": "application-security"
+    },
+    {
+      "skill_id": "deployment",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-transactions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-systems",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "system-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "http-networking"
+    },
+    {
+      "skill_id": "package-management"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "authentication"
+    },
+    {
+      "skill_id": "authorization"
+    },
+    {
+      "skill_id": "backend-frameworks"
+    },
+    {
+      "skill_id": "rest-apis"
+    },
+    {
+      "skill_id": "openapi-contracts"
+    },
+    {
+      "skill_id": "orm-data-access"
+    },
+    {
+      "skill_id": "secrets-management",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cloud-fundamentals",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "contract-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "load-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "dependency-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-indexing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "database-migrations",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "caching",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "background-jobs",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "message-queues",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "webhook-integrations",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "rate-limiting",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "nosql-modeling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "search-indexing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "real-time-apis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "api-versioning",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "threat-modeling",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "reliability-objectives",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "capacity-planning",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "cost-optimization",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "service-resilience",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "event-driven-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "database-replication",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "partitioning-sharding",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "domain-driven-design",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "distributed-transactions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "zero-downtime-migrations",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "multi-tenancy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

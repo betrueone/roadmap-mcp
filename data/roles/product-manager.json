@@ -1,0 +1,118 @@
+{
+  "id": "product-manager",
+  "name": "Product Manager",
+  "aliases": [
+    "product management",
+    "technical product manager"
+  ],
+  "requirements": [
+    {
+      "skill_id": "jira"
+    },
+    {
+      "skill_id": "linear"
+    },
+    {
+      "skill_id": "user-research"
+    },
+    {
+      "skill_id": "user-stories"
+    },
+    {
+      "skill_id": "product-discovery"
+    },
+    {
+      "skill_id": "product-requirements"
+    },
+    {
+      "skill_id": "backlog-management"
+    },
+    {
+      "skill_id": "market-analysis"
+    },
+    {
+      "skill_id": "product-metrics"
+    },
+    {
+      "skill_id": "active-listening"
+    },
+    {
+      "skill_id": "stakeholder-communication"
+    },
+    {
+      "skill_id": "cross-functional-collaboration"
+    },
+    {
+      "skill_id": "amplitude",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mixpanel",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "product-prioritization",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "product-roadmapping",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "experiment-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "cohort-analysis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "funnel-analysis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "launch-planning",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "metric-modeling",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "usability-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "product-strategy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "pricing-analysis",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "conflict-resolution",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "mentoring-coaching",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "portfolio-management",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-budgeting",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "delegation",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

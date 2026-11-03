@@ -1,0 +1,54 @@
+{
+  "data-cleaning": {
+    "name": "Data cleaning",
+    "description": "Correct missing values, duplicates, inconsistent types, and invalid observations."
+  },
+  "exploratory-analysis": {
+    "name": "Exploratory data analysis",
+    "description": "Investigate distributions, relationships, outliers, and data limitations before drawing conclusions."
+  },
+  "descriptive-statistics": {
+    "name": "Descriptive statistics",
+    "description": "Summarize distributions, central tendency, dispersion, and grouped comparisons."
+  },
+  "hypothesis-testing": {
+    "name": "Hypothesis testing",
+    "description": "Evaluate statistical hypotheses using suitable tests, uncertainty estimates, and stated assumptions."
+  },
+  "experiment-design": {
+    "name": "Experiment design",
+    "description": "Plan controlled comparisons with sampling, assignment, power, and measurement safeguards."
+  },
+  "data-visualization": {
+    "name": "Data visualization",
+    "description": "Build charts that communicate comparisons, trends, distributions, and uncertainty."
+  },
+  "dashboard-design": {
+    "name": "Dashboard design",
+    "description": "Build analytical views with clear metrics, useful filters, and consistent definitions."
+  },
+  "metric-modeling": {
+    "name": "Business metric modeling",
+    "description": "Define measures with explicit populations, aggregation rules, and calculation logic."
+  },
+  "cohort-analysis": {
+    "name": "Cohort analysis",
+    "description": "Compare customer or user groups over time to evaluate behavior and retention."
+  },
+  "funnel-analysis": {
+    "name": "Funnel analysis",
+    "description": "Measure progression through defined events and identify conversion drop-offs."
+  },
+  "time-series-analysis": {
+    "name": "Time series analysis",
+    "description": "Analyze trends, seasonality, dependencies, and forecast uncertainty in time-ordered observations."
+  },
+  "causal-inference": {
+    "name": "Causal inference",
+    "description": "Estimate effects using explicit causal assumptions, appropriate comparisons, and sensitivity checks."
+  },
+  "statistical-modeling": {
+    "name": "Statistical modeling",
+    "description": "Fit statistical models while checking assumptions, uncertainty, and interpretation."
+  }
+}

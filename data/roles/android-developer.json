@@ -1,0 +1,165 @@
+{
+  "id": "android-developer",
+  "name": "Android Developer",
+  "aliases": [
+    "android engineer",
+    "android app developer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "kotlin"
+    },
+    {
+      "skill_id": "java"
+    },
+    {
+      "skill_id": "android-studio"
+    },
+    {
+      "skill_id": "gradle"
+    },
+    {
+      "skill_id": "mobile-lifecycle"
+    },
+    {
+      "skill_id": "mobile-state"
+    },
+    {
+      "skill_id": "mobile-networking"
+    },
+    {
+      "skill_id": "mobile-persistence"
+    },
+    {
+      "skill_id": "automated-testing"
+    },
+    {
+      "skill_id": "git-version-control"
+    },
+    {
+      "skill_id": "debugging"
+    },
+    {
+      "skill_id": "code-quality"
+    },
+    {
+      "skill_id": "technical-documentation"
+    },
+    {
+      "skill_id": "jetpack-compose",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "room",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "workmanager",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "hilt",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "retrofit",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "okhttp",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "kotlin-coroutines",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "junit",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "firebase",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mobile-accessibility",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mobile-security",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "push-notifications",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mobile-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "offline-synchronization",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "continuous-integration",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "github-actions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "mobile-architecture",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "mobile-performance",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "mobile-release",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "fastlane",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "appium",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "observability",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "sentry",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "application-security",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "technical-leadership",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "design-systems",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "technical-strategy",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "engineering-standards",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "ux-designer",
+  "name": "UX Designer",
+  "aliases": [
+    "ux design",
+    "user experience designer",
+    "product designer"
+  ],
+  "requirements": [
+    {
+      "skill_id": "figma"
+    },
+    {
+      "skill_id": "sketch"
+    },
+    {
+      "skill_id": "balsamiq"
+    },
+    {
+      "skill_id": "user-research"
+    },
+    {
+      "skill_id": "usability-testing"
+    },
+    {
+      "skill_id": "information-architecture"
+    },
+    {
+      "skill_id": "interaction-design"
+    },
+    {
+      "skill_id": "wireframing"
+    },
+    {
+      "skill_id": "prototyping"
+    },
+    {
+      "skill_id": "visual-design"
+    },
+    {
+      "skill_id": "accessibility"
+    },
+    {
+      "skill_id": "active-listening"
+    },
+    {
+      "skill_id": "cross-functional-collaboration"
+    },
+    {
+      "skill_id": "research-synthesis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "journey-mapping",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "design-handoff",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "design-systems",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "design-tokens",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "experiment-design",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "product-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "stakeholder-communication",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "product-discovery",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "product-strategy",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "mentoring-coaching",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "portfolio-management",
+      "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "conflict-resolution",
+      "minimum_seniority": "staff"
+    }
+  ]
+}

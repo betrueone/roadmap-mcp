@@ -1,0 +1,90 @@
+{
+  "user-research": {
+    "name": "User research",
+    "description": "Study user needs and behavior through interviews, observation, and research synthesis."
+  },
+  "usability-testing": {
+    "name": "Usability testing",
+    "description": "Evaluate task completion and interface barriers through sessions with representative users."
+  },
+  "information-architecture": {
+    "name": "Information architecture",
+    "description": "Organize content and navigation around user tasks and clear structural relationships."
+  },
+  "interaction-design": {
+    "name": "Interaction design",
+    "description": "Define interface behavior, transitions, feedback, and recovery for user tasks."
+  },
+  "wireframing": {
+    "name": "Wireframing",
+    "description": "Sketch interface structure and task flows before committing to visual detail."
+  },
+  "prototyping": {
+    "name": "Prototyping",
+    "description": "Create interactive representations to test flows, behavior, and design assumptions."
+  },
+  "visual-design": {
+    "name": "Visual interface design",
+    "description": "Apply typography, hierarchy, color, spacing, and layout to usable interfaces."
+  },
+  "design-handoff": {
+    "name": "Design handoff",
+    "description": "Document interface behavior, component states, assets, and accessibility needs for implementation."
+  },
+  "research-synthesis": {
+    "name": "Research synthesis",
+    "description": "Translate research observations into supported themes, user needs, and design opportunities."
+  },
+  "journey-mapping": {
+    "name": "User journey mapping",
+    "description": "Map user goals, steps, touchpoints, and barriers across a service experience."
+  },
+  "product-discovery": {
+    "name": "Product discovery",
+    "description": "Investigate customer problems and validate opportunities before committing delivery effort."
+  },
+  "product-requirements": {
+    "name": "Product requirements",
+    "description": "Define behavior, acceptance criteria, constraints, and measurable outcomes."
+  },
+  "user-stories": {
+    "name": "User stories",
+    "description": "Describe user needs and acceptance criteria in small, testable product increments."
+  },
+  "backlog-management": {
+    "name": "Backlog management",
+    "description": "Maintain an ordered backlog with scope, dependencies, and readiness criteria."
+  },
+  "product-prioritization": {
+    "name": "Product prioritization",
+    "description": "Compare opportunities using customer value, evidence, effort, risk, and strategic fit."
+  },
+  "product-roadmapping": {
+    "name": "Product roadmapping",
+    "description": "Connect outcomes to sequenced initiatives, dependencies, and review points."
+  },
+  "market-analysis": {
+    "name": "Market analysis",
+    "description": "Assess customer segments, alternatives, market conditions, and unmet needs."
+  },
+  "product-metrics": {
+    "name": "Product metrics",
+    "description": "Define success through measurable activation, usage, retention, and business outcomes."
+  },
+  "launch-planning": {
+    "name": "Product launch planning",
+    "description": "Coordinate readiness, rollout stages, support needs, and outcome measurement."
+  },
+  "product-strategy": {
+    "name": "Product strategy",
+    "description": "Choose target problems, differentiated value, and priorities using market and customer evidence."
+  },
+  "pricing-analysis": {
+    "name": "Pricing analysis",
+    "description": "Evaluate pricing and packaging through customer value, costs, demand, and usage evidence."
+  },
+  "portfolio-management": {
+    "name": "Product portfolio management",
+    "description": "Allocate investment across products using strategic fit, dependencies, risk, and measured results."
+  }
+}
