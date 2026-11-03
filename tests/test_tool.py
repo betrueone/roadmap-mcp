@@ -12,7 +12,7 @@ async def main(include_descriptions: bool = True):
         "seniority_level": "Senior",
         "include_descriptions": include_descriptions,
     }
-    async with Client("http://localhost:8004/mcp") as client:
+    async with Client("http://192.168.6.128:8004/mcp") as client:
         result = await client.call_tool("get_roadmap", inputs)
         if result.is_error:
             raise RuntimeError(result.content)

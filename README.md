@@ -238,7 +238,20 @@ docker compose run --rm roadmap validate
 docker compose restart roadmap
 ```
 
-The image runs as a non-root user, and Compose uses a read-only root filesystem. The published port binds to `127.0.0.1` by default. To serve a remote hostname, put the service behind your HTTPS/authentication gateway and set `ROADMAP_ALLOWED_HOSTS` and, for browser clients, `ROADMAP_ALLOWED_ORIGINS`. These configure the SDK's [Host and Origin validation](https://py.sdk.modelcontextprotocol.io/run/deploy/); they do not implement authentication. Rate limiting and public access control belong at that gateway.
+The image runs as a non-root user, and Compose uses a read-only root filesystem. `ROADMAP_BIND_ADDRESS` controls the published interface and defaults to `127.0.0.1`. Copy `.env.example` to `.env` to save deployment settings across redeployments.
+
+For direct HTTP access through a public IPv4 address, configure `.env` with the actual public IP:
+
+```dotenv
+ROADMAP_BIND_ADDRESS=0.0.0.0
+ROADMAP_PORT=8004
+ROADMAP_ALLOWED_HOSTS=YOUR_PUBLIC_IP:8004
+ROADMAP_ALLOWED_ORIGINS=http://YOUR_PUBLIC_IP:8004
+```
+
+Run `./redeploy.sh`, then connect to `http://YOUR_PUBLIC_IP:8004/mcp`. Allow inbound TCP port 8004 in the network firewall. If the host has only private addresses, configure the router to forward public TCP port 8004 to the host's private IP on port 8004. An outbound public IP alone does not establish inbound reachability. Additional access addresses can be added to `ROADMAP_ALLOWED_HOSTS` as a comma-separated list of `IP:port` values. For browser clients, add the application's actual origin to `ROADMAP_ALLOWED_ORIGINS`. Direct HTTP access has no TLS or authentication.
+
+To serve a remote hostname over HTTPS, put the service behind your HTTPS/authentication gateway and set `ROADMAP_ALLOWED_HOSTS` and, for browser clients, `ROADMAP_ALLOWED_ORIGINS`. These configure the SDK's [Host and Origin validation](https://py.sdk.modelcontextprotocol.io/run/deploy/); they do not implement authentication. Rate limiting and public access control belong at that gateway.
 
 ```bash
 ROADMAP_ALLOWED_HOSTS=mcp.example.com ROADMAP_ALLOWED_ORIGINS=https://app.example.com \

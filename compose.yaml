@@ -3,7 +3,7 @@ services:
     build: .
     image: roadmap-mcp:local
     ports:
-      - "127.0.0.1:${ROADMAP_PORT:-8000}:8000"
+      - "${ROADMAP_BIND_ADDRESS:-127.0.0.1}:${ROADMAP_PORT:-8000}:8000"
     environment:
       ROADMAP_DATA_DIR: /app/data
       ROADMAP_ALLOWED_HOSTS: ${ROADMAP_ALLOWED_HOSTS:-}

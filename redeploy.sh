@@ -10,6 +10,8 @@ Build, validate, and redeploy the Roadmap MCP Docker Compose service.
 
 ROADMAP_PORT          Override the published port. Otherwise use .env,
                       the existing service's port, or 8000, in that order.
+ROADMAP_BIND_ADDRESS  Docker bind address (default: 127.0.0.1).
+                      Set 0.0.0.0 in .env to accept remote IPv4 connections.
 ROADMAP_WAIT_TIMEOUT  Seconds to wait for a healthy container (default: 120).
 HELP
         exit 0
