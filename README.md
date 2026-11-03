@@ -124,8 +124,7 @@ The response includes resolved `role`, `industry`, and `seniority_level` entries
 and aliases), `requested_count`, `returned_count`, `available_count`, and `bullets`. `industry`
 is `null` when no industry was requested; `seniority_level` identifies the minimum level. For this
 request the resolved IDs are `backend-engineer`, `fintech-payments`, and `senior`; the requested
-count is 5, available count is 60, and returned count is 5. The first three bullets match Fintech
-(two Senior and one Staff); the remaining two come from other industries for the same role
+count is 5, available count is 180, and returned count is 5. All five bullets match Fintech
 at Senior or above. One returned bullet is:
 
 ```json
@@ -143,8 +142,8 @@ at Senior or above. One returned bullet is:
 This is the complete bullet record format. The datasource and response contain only these seven
 fields: `id`, `role_id`, `industry_id`, `seniority`, `focus`, `bullet`, and `evidence_to_request`.
 
-The seed contains **2,040 original editorial examples: 17 roles × 20 industries × 6 bullets**.
-Each role/industry pair has one Junior, two Mid-level, two Senior, and one Staff example.
+The version 2.0.0 seed contains **6,120 editorial examples: 17 roles × 20 industries × 18 bullets**.
+Each role/industry pair has four Junior, five Mid-level, five Senior, and four Staff examples.
 `count` is an integer from 1 to 100, defaults to 5, and limits the number returned. Selection
 matches the role exactly, includes seniority at or above the minimum, and prioritizes a requested
 industry. If there are fewer
@@ -198,7 +197,7 @@ The runtime datasource lives in [`data/bullets/`](data/bullets/):
 - `bullets.jsonl`: baseline IDs, filtering dimensions, focus, text, and evidence prompts.
 - `manifest.json`: dataset name, version, dimension counts, seniority IDs, and bullet count.
 
-Rebuild it from the attached [`reference/`](reference/) files with:
+Rebuild it from [`reference/bullets.jsonl`](reference/bullets.jsonl) with:
 
 ```bash
 uv run python scripts/import_bullets.py
@@ -208,8 +207,9 @@ uv run roadmap-mcp validate
 The importer accepts `--reference-dir` and `--data-dir`, validates a complete staged import before
 replacing runtime files, and produces deterministic output. It projects only the seven bullet
 fields above into the runtime datasource and removes the obsolete runtime `sources.json` file.
-It uses `bullets.jsonl` as the
-authoritative seed; JSON and CSV are alternate exports. The server loads only `data/bullets/`,
+It uses `bullets.jsonl` as the authoritative seed. A JSONL-only update reuses the existing runtime
+taxonomy and manifest version and recalculates counts. Rich uploads can supply `dataset_version`;
+optional reference taxonomy and manifest files are also supported. The server loads only `data/bullets/`,
 so the attachments are not needed at runtime. Both `serve` and `validate` validate this datasource
 alongside the skills catalog. The existing Docker data copy and Compose mount include it;
 restart the server after updating data.

@@ -165,7 +165,7 @@ async def test_stdio_subprocess_serves_catalog(catalog):
             },
         )
         assert not bullets.is_error
-        assert bullets.structured_content["available_count"] == 60
+        assert bullets.structured_content["available_count"] == 180
         assert bullets.structured_content["returned_count"] == 5
         assert [bullet["industry_id"] for bullet in bullets.structured_content["bullets"][:3]] == [
             "fintech-payments",
@@ -173,8 +173,8 @@ async def test_stdio_subprocess_serves_catalog(catalog):
             "fintech-payments",
         ]
         assert all(
-            bullet["industry_id"] != "fintech-payments"
-            for bullet in bullets.structured_content["bullets"][3:]
+            bullet["industry_id"] == "fintech-payments"
+            for bullet in bullets.structured_content["bullets"]
         )
         assert all(
             bullet["evidence_to_request"] for bullet in bullets.structured_content["bullets"]
@@ -185,7 +185,7 @@ async def test_stdio_subprocess_serves_catalog(catalog):
         assert not defaults.is_error
         assert defaults.structured_content["industry"] is None
         assert defaults.structured_content["seniority_level"]["id"] == "junior"
-        assert defaults.structured_content["available_count"] == 120
+        assert defaults.structured_content["available_count"] == 360
         text = await client.call_tool(
             "get_bullets_text", {"role_name": "Backend Engineer", "count": 1}
         )

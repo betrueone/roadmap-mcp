@@ -42,8 +42,16 @@ def taxonomy_entries(
     dimension: str,
     existing: dict[str, NamedEntity],
     mappings: dict[str, str],
+    runtime_dir: Path,
 ) -> list[NamedEntity]:
     filename = "roles.json" if dimension == "role" else "industries.json"
+    if not (reference_dir / filename).exists():
+        taxonomy = BulletTaxonomy.model_validate(
+            json.loads(
+                (runtime_dir / "catalog.json").read_bytes(), object_pairs_hook=reject_duplicate_keys
+            )
+        )
+        return taxonomy.roles if dimension == "role" else taxonomy.industries
     rows = json.loads(
         (reference_dir / filename).read_bytes(),
         object_pairs_hook=reject_duplicate_keys,
@@ -68,9 +76,12 @@ def taxonomy_entries(
 
 def import_bullets(reference_dir: Path, data_dir: Path) -> BulletCatalog:
     skills = Catalog(data_dir)
+    destination = data_dir / "bullets"
     taxonomy = BulletTaxonomy(
-        roles=taxonomy_entries(reference_dir, "role", skills.roles, ROLE_ALIASES),
-        industries=taxonomy_entries(reference_dir, "industry", skills.industries, INDUSTRY_ALIASES),
+        roles=taxonomy_entries(reference_dir, "role", skills.roles, ROLE_ALIASES, destination),
+        industries=taxonomy_entries(
+            reference_dir, "industry", skills.industries, INDUSTRY_ALIASES, destination
+        ),
         seniority_levels=list(skills.levels.values()),
     )
     # Validate the entire import before replacing any runtime file.
@@ -79,16 +90,9 @@ def import_bullets(reference_dir: Path, data_dir: Path) -> BulletCatalog:
         (staging / "catalog.json").write_text(
             taxonomy.model_dump_json(indent=2) + "\n", encoding="utf-8"
         )
-        original_manifest = json.loads(
-            (reference_dir / "manifest.json").read_bytes(), object_pairs_hook=reject_duplicate_keys
-        )
-        manifest = BulletManifest.model_validate(
-            {field: original_manifest[field] for field in BulletManifest.model_fields}
-        )
-        (staging / "manifest.json").write_text(
-            manifest.model_dump_json(indent=2) + "\n", encoding="utf-8"
-        )
         _line_number = 0
+        bullet_count = 0
+        versions = set()
         try:
             with (
                 (reference_dir / "bullets.jsonl").open(encoding="utf-8") as source,
@@ -101,10 +105,35 @@ def import_bullets(reference_dir: Path, data_dir: Path) -> BulletCatalog:
                             {field: original[field] for field in BulletRecord.model_fields}
                         )
                         target.write(bullet.model_dump_json() + "\n")
+                        bullet_count += 1
+                        if "dataset_version" in original:
+                            versions.add(original["dataset_version"])
         except (ValueError, KeyError) as error:
             raise CatalogError(f"Invalid bullets/bullets.jsonl:{_line_number}: {error}") from error
+        if len(versions) > 1:
+            raise CatalogError("Bullet seed contains conflicting dataset versions")
+        manifest_path = reference_dir / "manifest.json"
+        has_reference_manifest = manifest_path.exists()
+        if not has_reference_manifest:
+            manifest_path = destination / "manifest.json"
+        original_manifest = json.loads(
+            manifest_path.read_bytes(), object_pairs_hook=reject_duplicate_keys
+        )
+        if not has_reference_manifest:
+            original_manifest.update(
+                bullet_count=bullet_count,
+                role_count=len(taxonomy.roles),
+                industry_count=len(taxonomy.industries),
+                seniority_levels=[level.id for level in taxonomy.seniority_levels],
+                version=next(iter(versions), original_manifest["version"]),
+            )
+        manifest = BulletManifest.model_validate(
+            {field: original_manifest[field] for field in BulletManifest.model_fields}
+        )
+        (staging / "manifest.json").write_text(
+            manifest.model_dump_json(indent=2) + "\n", encoding="utf-8"
+        )
         BulletCatalog(staging)
-        destination = data_dir / "bullets"
         destination.mkdir(parents=True, exist_ok=True)
         for file in sorted(staging.iterdir()):
             shutil.copyfile(file, destination / file.name)

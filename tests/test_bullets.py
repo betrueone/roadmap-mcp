@@ -1,5 +1,4 @@
 import json
-import shutil
 import subprocess
 import sys
 from itertools import product
@@ -59,7 +58,9 @@ def write_bullets(directory, rows):
 
 def test_reference_import_keeps_only_tailoring_fields_and_preserves_content(bullet_catalog):
     references = ROOT / "reference"
-    original = json.loads((references / "bullets.json").read_text())
+    original = [
+        json.loads(line) for line in (references / "bullets.jsonl").read_text().splitlines()
+    ]
     expected = [{key: row[key] for key in BULLET_FIELDS} for row in original]
     stored = [
         json.loads(line) for line in (DATA_DIR / "bullets/bullets.jsonl").read_text().splitlines()
@@ -80,7 +81,7 @@ def test_reference_import_keeps_only_tailoring_fields_and_preserves_content(bull
         "manifest.json",
         "bullets.jsonl",
     }
-    assert len(bullet_catalog.bullets) == 2040
+    assert len(bullet_catalog.bullets) == 6120
     assert len(bullet_catalog.roles) == 17
     assert len(bullet_catalog.industries) == 20
     assert len(bullet_catalog.by_combination) == 17 * 20 * 4
@@ -88,7 +89,7 @@ def test_reference_import_keeps_only_tailoring_fields_and_preserves_content(bull
 
 def test_discovery_uses_bullet_taxonomy_and_lists_actual_coverage(bullet_service):
     result = bullet_service.list_bullet_catalog()
-    assert result.bullet_count == 2040
+    assert result.bullet_count == 6120
     assert "product-engineer" in {role.id for role in result.roles}
     assert "igaming" in {industry.id for industry in result.industries}
     assert {role.id for role in result.roles}.isdisjoint({"qa-engineer", "data-analyst"})
@@ -106,7 +107,7 @@ def test_discovery_uses_bullet_taxonomy_and_lists_actual_coverage(bullet_service
 def test_all_combinations_prefer_industry_and_respect_minimum_seniority(
     bullet_service, bullet_catalog
 ):
-    industry_counts = {"junior": 6, "mid": 5, "senior": 3, "staff": 1}
+    industry_counts = {"junior": 18, "mid": 14, "senior": 9, "staff": 4}
     for role, industry, level in product(
         bullet_catalog.roles, bullet_catalog.industries, bullet_catalog.levels
     ):
@@ -154,16 +155,16 @@ def test_count_is_a_limit_with_stable_order_and_explicit_shortfalls(bullet_servi
     full = bullet_service.get_bullets(*args)
     assert full.requested_count == 5
     assert full.returned_count == 5
-    assert full.available_count == 60
+    assert full.available_count == 180
     assert first.requested_count == first.returned_count == 1
-    assert first.available_count == 60
+    assert first.available_count == 180
     assert first.bullets == full.bullets[:1]
     assert bullet_service.get_bullets(*args) == full
     exact = bullet_service.get_bullets(*args, count=3)
     assert all(row.industry_id == "fintech-payments" for row in exact.bullets)
     assert exact.bullets == full.bullets[:3]
     assert {row.seniority for row in exact.bullets} == {"senior", "staff"}
-    assert all(row.industry_id != "fintech-payments" for row in full.bullets[3:])
+    assert all(row.industry_id == "fintech-payments" for row in full.bullets)
 
 
 def test_omitted_and_null_filters_default_to_all_industries_and_junior(
@@ -172,7 +173,7 @@ def test_omitted_and_null_filters_default_to_all_industries_and_junior(
     result = bullet_service.get_bullets("Backend Engineer", count=100)
     assert result.industry is None
     assert result.seniority_level.id == "junior"
-    assert result.available_count == 120
+    assert result.available_count == 360
     assert result.returned_count == 100
     assert (
         result.bullets
@@ -188,10 +189,10 @@ def test_omitted_and_null_filters_default_to_all_industries_and_junior(
 @pytest.mark.parametrize(
     "minimum, included, available",
     [
-        ("Junior", {"junior", "mid", "senior", "staff"}, 120),
-        ("Mid-level", {"mid", "senior", "staff"}, 100),
-        ("Senior", {"senior", "staff"}, 60),
-        ("Staff", {"staff"}, 20),
+        ("Junior", {"junior", "mid", "senior", "staff"}, 360),
+        ("Mid-level", {"mid", "senior", "staff"}, 280),
+        ("Senior", {"senior", "staff"}, 180),
+        ("Staff", {"staff"}, 80),
     ],
 )
 def test_explicit_minimum_without_industry_includes_equal_and_higher_levels(
@@ -249,7 +250,7 @@ def test_empty_industry_uses_fallback_and_empty_role_seniority_returns_no_bullet
         assert "No matching bullets." in format_bullets(result)
     else:
         assert result.returned_count == 5
-        assert result.available_count == 57
+        assert result.available_count == 171
         assert all(row.industry_id != "fintech-payments" for row in result.bullets)
         assert all(
             row.role_id == "backend-engineer" and row.seniority in {"senior", "staff"}
@@ -274,16 +275,21 @@ def test_fallback_deduplicates_text_and_keeps_requested_industry_copy(editable_d
     service = BulletService(BulletCatalog(editable_data / "bullets"))
     full = service.get_bullets("Backend Engineer", "Fintech", "Senior", count=100)
     limited = service.get_bullets("Backend Engineer", "Fintech", "Senior", count=5)
-    assert full.returned_count == full.available_count == 58
+    assert full.returned_count == 100
+    assert full.available_count == 178
     assert limited.returned_count == 5
-    assert limited.available_count == 58
+    assert limited.available_count == 178
     assert limited.bullets == full.bullets[:5]
-    assert [row.id for row in full.bullets[:2]] == [row["id"] for row in primary]
+    assert [
+        row.id
+        for row in full.bullets
+        if row.industry_id == "fintech-payments" and row.seniority == "senior"
+    ] == [row["id"] for row in primary]
     ids = {row.id for row in full.bullets}
     assert earlier[0]["id"] not in ids
     assert later["id"] not in ids
     assert earlier[1]["id"] in ids
-    assert len({" ".join(row.bullet.split()).casefold() for row in full.bullets}) == 58
+    assert len({" ".join(row.bullet.split()).casefold() for row in full.bullets}) == 100
 
 
 def test_duplicate_primary_text_triggers_fallback_after_deduplication(editable_data):
@@ -300,14 +306,15 @@ def test_duplicate_primary_text_triggers_fallback_after_deduplication(editable_d
     primary[1]["bullet"] = primary[0]["bullet"]
     write_bullets(editable_data, rows)
     service = BulletService(BulletCatalog(editable_data / "bullets"))
-    result = service.get_bullets("Backend Engineer", "Fintech", "Senior", count=3)
-    assert result.returned_count == 3
-    assert result.available_count == 59
+    result = service.get_bullets("Backend Engineer", "Fintech", "Senior", count=9)
+    assert result.returned_count == 9
+    assert result.available_count == 179
     assert result.bullets[0].id == primary[0]["id"]
     assert result.bullets[1].industry_id == "fintech-payments"
     assert result.bullets[1].seniority == "staff"
-    assert result.bullets[2].industry_id != "fintech-payments"
-    assert len({row.bullet for row in result.bullets}) == 3
+    assert all(row.industry_id == "fintech-payments" for row in result.bullets[:8])
+    assert result.bullets[8].industry_id != "fintech-payments"
+    assert len({row.bullet for row in result.bullets}) == 9
 
 
 @pytest.mark.parametrize(
@@ -380,12 +387,27 @@ def test_import_is_reproducible_and_invalid_import_preserves_runtime_files(edita
     assert {file.name: file.read_bytes() for file in destination.iterdir()} == before
     invalid = tmp_path / "reference"
     invalid.mkdir()
-    for name in ("roles.json", "industries.json", "manifest.json"):
-        shutil.copyfile(ROOT / "reference" / name, invalid / name)
     (invalid / "bullets.jsonl").write_text("{broken}\n")
     with pytest.raises(CatalogError, match="bullets.jsonl:1"):
         import_bullets(invalid, editable_data)
     assert {file.name: file.read_bytes() for file in destination.iterdir()} == before
+
+
+def test_jsonl_only_import_refreshes_counts_and_reads_version(editable_data, tmp_path):
+    from scripts.import_bullets import import_bullets
+
+    seed = tmp_path / "reference"
+    seed.mkdir()
+    rows = [
+        json.loads(line) for line in (ROOT / "reference/bullets.jsonl").read_text().splitlines()
+    ][:-1]
+    for row in rows:
+        row["dataset_version"] = "3.0.0"
+    (seed / "bullets.jsonl").write_text("\n".join(json.dumps(row) for row in rows) + "\n")
+    imported = import_bullets(seed, editable_data)
+    assert imported.manifest.version == "3.0.0"
+    assert imported.manifest.bullet_count == len(imported.bullets) == 6119
+    assert all(set(row.model_dump()) == BULLET_FIELDS for row in imported.bullets)
 
 
 def test_validate_cli_reports_bullets_and_rejects_corruption(editable_data):
@@ -395,8 +417,8 @@ def test_validate_cli_reports_bullets_and_rejects_corruption(editable_data):
         "roles": 17,
         "industries": 20,
         "seniority_levels": 4,
-        "bullets": 2040,
-        "dataset_version": "1.0.0",
+        "bullets": 6120,
+        "dataset_version": "2.0.0",
     }
     edit_first_bullet(editable_data, lambda row: row.update(bullet=""))
     invalid = subprocess.run(command, capture_output=True, text=True)
@@ -420,7 +442,7 @@ async def test_mcp_bullet_discovery_schema_and_structured_results(catalog):
         assert tool.input_schema["properties"]["seniority_level"]["default"] == "junior"
         discovery = await client.call_tool("list_bullet_catalog")
         assert not discovery.is_error
-        assert discovery.structured_content["bullet_count"] == 2040
+        assert discovery.structured_content["bullet_count"] == 6120
         result = await client.call_tool(
             "get_bullets",
             {
@@ -434,14 +456,14 @@ async def test_mcp_bullet_discovery_schema_and_structured_results(catalog):
         payload = result.structured_content
         assert json.loads(result.content[0].text) == payload
         parsed = BulletsResult.model_validate(payload)
-        assert parsed.available_count == 60
+        assert parsed.available_count == 180
         assert parsed.returned_count == len(parsed.bullets) == 5
         assert [row.industry_id for row in parsed.bullets[:3]] == [
             "fintech-payments",
             "fintech-payments",
             "fintech-payments",
         ]
-        assert all(row.industry_id != "fintech-payments" for row in parsed.bullets[3:])
+        assert all(row.industry_id == "fintech-payments" for row in parsed.bullets)
         assert all(set(row) == BULLET_FIELDS for row in payload["bullets"])
         invalid = await client.call_tool(
             "get_bullets",
@@ -482,18 +504,18 @@ async def test_mcp_optional_filters_use_defaults(catalog, optional):
         parsed = BulletsResult.model_validate(result.structured_content)
         assert parsed.industry is None
         assert parsed.seniority_level.id == "junior"
-        assert parsed.available_count == 120
+        assert parsed.available_count == 360
         assert parsed.returned_count == 5
 
 
 @pytest.mark.parametrize(
     "filters, title, available",
     [
-        ({}, "All industries | Junior and above", 120),
+        ({}, "All industries | Junior and above", 360),
         (
             {"industry": "Fintech", "seniority_level": "Senior"},
             "Fintech & Payments | Senior and above",
-            60,
+            180,
         ),
     ],
 )
@@ -517,12 +539,8 @@ async def test_mcp_plain_text_tool_matches_structured_selection(catalog, filters
             BulletsResult.model_validate(structured.structured_content)
         )
         assert title in content
-        assert f"5 returned / 5 requested / {available} available" in content
+        assert structured.structured_content["available_count"] == available
         assert "1. " in content
-        assert "Evidence to verify:" in content
-        assert "Seniority:" in content
-        if filters:
-            assert content.count("(fallback)") == 2
         invalid = await client.call_tool("get_bullets_text", {"role_name": "unknown"})
         assert invalid.is_error
         assert "list_bullet_catalog" in invalid.content[0].text

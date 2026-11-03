@@ -1,6 +1,6 @@
 {
   "dataset": "role-industry-resume-bullet-baselines",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "role_count": 17,
   "industry_count": 20,
   "seniority_levels": [
@@ -9,5 +9,5 @@
     "senior",
     "staff"
   ],
-  "bullet_count": 2040
+  "bullet_count": 6120
 }
