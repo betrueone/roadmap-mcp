@@ -16,14 +16,6 @@
   "role_requirements": {
     "backend-engineer": [
       {
-        "skill_id": "php",
-        "minimum_seniority": "mid"
-      },
-      {
-        "skill_id": "ruby",
-        "minimum_seniority": "mid"
-      },
-      {
         "skill_id": "shopify-storefront-api",
         "minimum_seniority": "mid"
       },
@@ -132,14 +124,6 @@
       }
     ],
     "full-stack-engineer": [
-      {
-        "skill_id": "php",
-        "minimum_seniority": "mid"
-      },
-      {
-        "skill_id": "ruby",
-        "minimum_seniority": "mid"
-      },
       {
         "skill_id": "shopify-storefront-api",
         "minimum_seniority": "mid"

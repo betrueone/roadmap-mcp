@@ -114,5 +114,103 @@
       "skill_id": "delegation",
       "minimum_seniority": "staff"
     }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "jira",
+      "priority": 2
+    },
+    {
+      "skill_id": "linear",
+      "priority": 2
+    },
+    {
+      "skill_id": "user-research",
+      "priority": 1
+    },
+    {
+      "skill_id": "user-stories",
+      "priority": 1
+    },
+    {
+      "skill_id": "product-discovery",
+      "priority": 1
+    },
+    {
+      "skill_id": "product-requirements",
+      "priority": 1
+    },
+    {
+      "skill_id": "backlog-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "market-analysis",
+      "priority": 1
+    },
+    {
+      "skill_id": "product-metrics",
+      "priority": 1
+    },
+    {
+      "skill_id": "amplitude",
+      "priority": 2
+    },
+    {
+      "skill_id": "mixpanel",
+      "priority": 2
+    },
+    {
+      "skill_id": "product-prioritization",
+      "priority": 1
+    },
+    {
+      "skill_id": "product-roadmapping",
+      "priority": 1
+    },
+    {
+      "skill_id": "experiment-design",
+      "priority": 2
+    },
+    {
+      "skill_id": "cohort-analysis",
+      "priority": 2
+    },
+    {
+      "skill_id": "funnel-analysis",
+      "priority": 2
+    },
+    {
+      "skill_id": "launch-planning",
+      "priority": 2
+    },
+    {
+      "skill_id": "metric-modeling",
+      "priority": 2
+    },
+    {
+      "skill_id": "usability-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "product-strategy",
+      "priority": 3
+    },
+    {
+      "skill_id": "pricing-analysis",
+      "priority": 3
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "priority": 3
+    },
+    {
+      "skill_id": "portfolio-management",
+      "priority": 3
+    },
+    {
+      "skill_id": "engineering-budgeting",
+      "priority": 3
+    }
   ]
 }

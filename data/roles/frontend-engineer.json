@@ -35,24 +35,19 @@
       "skill_id": "prettier"
     },
     {
-      "skill_id": "typescript",
-      "minimum_seniority": "mid"
+      "skill_id": "typescript"
     },
     {
-      "skill_id": "react",
-      "minimum_seniority": "mid"
+      "skill_id": "react"
     },
     {
-      "skill_id": "vuejs",
-      "minimum_seniority": "mid"
+      "skill_id": "vuejs"
     },
     {
-      "skill_id": "angular",
-      "minimum_seniority": "mid"
+      "skill_id": "angular"
     },
     {
-      "skill_id": "svelte",
-      "minimum_seniority": "mid"
+      "skill_id": "svelte"
     },
     {
       "skill_id": "nextjs",
@@ -67,20 +62,17 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "vite",
-      "minimum_seniority": "mid"
+      "skill_id": "vite"
     },
     {
       "skill_id": "tailwind-css",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "jest",
-      "minimum_seniority": "mid"
+      "skill_id": "jest"
     },
     {
-      "skill_id": "vitest",
-      "minimum_seniority": "mid"
+      "skill_id": "vitest"
     },
     {
       "skill_id": "playwright",
@@ -115,39 +107,31 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "web-platform"
+      "skill_id": "unit-testing"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "accessibility"
     },
     {
-      "skill_id": "application-security"
-    },
-    {
-      "skill_id": "frontend-state",
-      "minimum_seniority": "mid"
+      "skill_id": "frontend-security"
     },
     {
       "skill_id": "web-performance",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "deployment",
+      "skill_id": "deployment-rollbacks",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "frontend-observability",
       "minimum_seniority": "senior"
     },
     {
       "skill_id": "design-systems",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "system-design",
       "minimum_seniority": "senior"
     },
     {
@@ -157,21 +141,6 @@
     {
       "skill_id": "technical-strategy",
       "minimum_seniority": "staff"
-    },
-    {
-      "skill_id": "http-networking"
-    },
-    {
-      "skill_id": "package-management"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "browser-devtools"
@@ -199,16 +168,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "frontend-routing",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "frontend-tooling",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "component-based-ui",
-      "minimum_seniority": "mid"
+      "skill_id": "frontend-routing"
     },
     {
       "skill_id": "browser-authentication",
@@ -227,10 +187,6 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "frontend-security",
-      "minimum_seniority": "mid"
-    },
-    {
       "skill_id": "contract-testing",
       "minimum_seniority": "mid"
     },
@@ -243,7 +199,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "reliability-objectives",
+      "skill_id": "service-level-engineering",
       "minimum_seniority": "senior"
     },
     {
@@ -252,10 +208,6 @@
     },
     {
       "skill_id": "design-tokens",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "frontend-observability",
       "minimum_seniority": "senior"
     },
     {
@@ -273,6 +225,164 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "javascript",
+      "priority": 1
+    },
+    {
+      "skill_id": "typescript",
+      "priority": 1
+    },
+    {
+      "skill_id": "html-semantics",
+      "priority": 1
+    },
+    {
+      "skill_id": "css-layout",
+      "priority": 1
+    },
+    {
+      "skill_id": "react",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "npm",
+      "priority": 2
+    },
+    {
+      "skill_id": "vite",
+      "priority": 2
+    },
+    {
+      "skill_id": "accessibility",
+      "priority": 1
+    },
+    {
+      "skill_id": "forms-validation",
+      "priority": 1
+    },
+    {
+      "skill_id": "frontend-routing",
+      "priority": 1
+    },
+    {
+      "skill_id": "client-data-caching",
+      "priority": 1
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "vuejs",
+      "priority": 2
+    },
+    {
+      "skill_id": "angular",
+      "priority": 2
+    },
+    {
+      "skill_id": "svelte",
+      "priority": 2
+    },
+    {
+      "skill_id": "nextjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "nuxtjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "tailwind-css",
+      "priority": 2
+    },
+    {
+      "skill_id": "eslint",
+      "priority": 2
+    },
+    {
+      "skill_id": "prettier",
+      "priority": 2
+    },
+    {
+      "skill_id": "jest",
+      "priority": 2
+    },
+    {
+      "skill_id": "vitest",
+      "priority": 2
+    },
+    {
+      "skill_id": "playwright",
+      "priority": 2
+    },
+    {
+      "skill_id": "graphql",
+      "priority": 2
+    },
+    {
+      "skill_id": "oauth",
+      "priority": 2
+    },
+    {
+      "skill_id": "browser-authentication",
+      "priority": 2
+    },
+    {
+      "skill_id": "frontend-security",
+      "priority": 2
+    },
+    {
+      "skill_id": "web-performance",
+      "priority": 2
+    },
+    {
+      "skill_id": "browser-compatibility",
+      "priority": 2
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "pnpm",
+      "priority": 3
+    },
+    {
+      "skill_id": "yarn",
+      "priority": 3
+    },
+    {
+      "skill_id": "cypress",
+      "priority": 3
+    },
+    {
+      "skill_id": "sentry",
+      "priority": 3
+    },
+    {
+      "skill_id": "server-rendering",
+      "priority": 3
+    },
+    {
+      "skill_id": "design-systems",
+      "priority": 3
+    },
+    {
+      "skill_id": "design-tokens",
+      "priority": 3
+    },
+    {
+      "skill_id": "frontend-observability",
+      "priority": 3
     }
   ]
 }

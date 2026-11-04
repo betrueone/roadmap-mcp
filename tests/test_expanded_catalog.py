@@ -14,7 +14,6 @@ def hard_names(roadmap):
 def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service):
     assert len(catalog.roles) >= 20
     assert len(catalog.industries) >= 15
-    assert len(catalog.skills) >= 600
     for industry in catalog.industries.values():
         assert set(industry.role_requirements) == set(catalog.roles)
         assert all(industry.role_requirements.values())
@@ -44,7 +43,12 @@ def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service)
         (
             "Site Reliability Engineer",
             "Gaming",
-            {"Prometheus", "Grafana", "Service level engineering", "Game session reliability"},
+            {
+                "Prometheus",
+                "Grafana",
+                "Service level indicators and error budgets",
+                "Game session reliability",
+            },
             {"Power BI", "SwiftUI"},
         ),
         (
@@ -56,7 +60,7 @@ def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service)
         (
             "Platform Engineer",
             "SaaS",
-            {"Kubernetes", "Helm", "ArgoCD", "SaaS workload isolation"},
+            {"Kubernetes", "Helm", "Argo CD", "SaaS workload isolation"},
             {"PyTorch", "Figma"},
         ),
         (
@@ -68,7 +72,7 @@ def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service)
         (
             "Android Developer",
             "Education",
-            {"Kotlin", "Jetpack Compose", "Room Database", "Learner and educator interfaces"},
+            {"Kotlin", "Jetpack Compose", "Room", "Learner and educator interfaces"},
             {"SwiftUI", "React"},
         ),
         (
@@ -92,7 +96,7 @@ def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service)
         (
             "Data Scientist",
             "Fintech",
-            {"PyTorch", "Scikit-learn", "Financial fraud modeling"},
+            {"PyTorch", "scikit-learn", "Financial fraud modeling"},
             {"React", "PostgreSQL"},
         ),
         (
@@ -104,13 +108,18 @@ def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service)
         (
             "AI Engineer",
             "Government",
-            {"LangChain", "Qdrant", "Retrieval-augmented generation", "Public guidance retrieval"},
+            {
+                "LangChain",
+                "Qdrant",
+                "Retrieval-Augmented Generation (RAG)",
+                "Public guidance retrieval",
+            },
             {"PyTorch", "Shopify Storefront API"},
         ),
         (
             "Cybersecurity Engineer",
             "Banking",
-            {"NMAP", "Wireshark", "Banking transaction authorization"},
+            {"Nmap", "Wireshark", "Banking transaction authorization"},
             {"Figma", "React"},
         ),
         (
@@ -176,8 +185,8 @@ def test_new_industries_distinguish_implementation_and_analytics(
 @pytest.mark.parametrize(
     "role, industry, advanced_skill, first_level",
     [
-        ("Android Developer", "Education", "Jetpack Compose", "mid"),
-        ("AI Engineer", "Government", "Retrieval-augmented generation", "mid"),
+        ("Android Developer", "Education", "Offline synchronization", "mid"),
+        ("AI Engineer", "Government", "Retrieval-Augmented Generation (RAG)", "mid"),
         ("Machine Learning Engineer", "Banking", "Credit risk modeling", "senior"),
         ("Data Scientist", "Energy", "Energy demand forecasting", "senior"),
         ("Product Manager", "SaaS", "Product portfolio management", "staff"),

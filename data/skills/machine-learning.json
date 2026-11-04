@@ -1,74 +1,82 @@
 {
-  "linear-algebra": {
-    "name": "Linear algebra",
-    "description": "Apply vectors, matrices, decompositions, and tensors to machine learning computations."
-  },
-  "probability": {
-    "name": "Probability",
-    "description": "Model uncertainty using distributions, conditional probability, and probabilistic reasoning."
-  },
   "feature-engineering": {
     "name": "Feature engineering",
-    "description": "Transform model inputs while preventing leakage and preserving training consistency."
+    "description": "Transform model inputs while preventing leakage and preserving training consistency.",
+    "type": "implementation_capability"
   },
   "supervised-learning": {
-    "name": "Supervised learning",
-    "description": "Train classification and regression models using labeled examples and suitable objectives."
+    "name": "Classification and regression pipelines",
+    "description": "Train classification and regression models with reproducible preprocessing, suitable objectives, and validation splits that prevent leakage.",
+    "type": "implementation_capability"
   },
   "unsupervised-learning": {
-    "name": "Unsupervised learning",
-    "description": "Discover structure in unlabeled data using clustering and dimensionality reduction."
+    "name": "Clustering and dimensionality reduction",
+    "description": "Fit clustering or dimensionality-reduction pipelines, scale features appropriately, and assess stability and usefulness of the resulting groups or representations.",
+    "type": "implementation_capability"
   },
   "model-evaluation": {
-    "name": "Model evaluation",
-    "description": "Choose validation splits and metrics that reflect deployment conditions and error costs."
+    "name": "Leakage-safe model validation",
+    "description": "Choose grouped, temporal, or held-out splits that reflect deployment conditions, and compare metrics against baselines and error costs.",
+    "type": "implementation_capability"
   },
   "hyperparameter-tuning": {
     "name": "Hyperparameter tuning",
-    "description": "Compare model configurations through reproducible searches and independent validation."
+    "description": "Compare model configurations through reproducible searches and independent validation.",
+    "type": "implementation_capability"
   },
   "deep-learning": {
-    "name": "Deep learning",
-    "description": "Train neural networks using suitable architectures, losses, optimization, and regularization."
+    "name": "Neural network training",
+    "description": "Implement training loops with explicit losses, optimizers, checkpointing, and validation, and diagnose overfitting or unstable optimization.",
+    "type": "implementation_capability"
   },
   "nlp": {
-    "name": "Natural language processing",
-    "description": "Prepare and model text for classification, language understanding, and information extraction."
+    "name": "Text classification and entity extraction",
+    "description": "Build text preprocessing and modeling pipelines for classification or entity extraction, and evaluate errors on representative labeled text.",
+    "type": "implementation_capability"
   },
   "computer-vision": {
-    "name": "Computer vision",
-    "description": "Build image models with suitable preprocessing, augmentation, and task metrics."
+    "name": "Image classification and object detection",
+    "description": "Prepare labeled image datasets, apply augmentation without contaminating validation data, and evaluate classification or detection errors.",
+    "type": "implementation_capability"
   },
   "recommendation-systems": {
     "name": "Recommendation systems",
-    "description": "Rank relevant items using user behavior, item features, and offline and online evaluation."
+    "description": "Rank relevant items using user behavior, item features, and offline and online evaluation.",
+    "type": "implementation_capability"
   },
   "model-explainability": {
     "name": "Model explainability",
-    "description": "Explain model behavior with interpretable methods and documented limitations."
+    "description": "Explain model behavior with interpretable methods and documented limitations.",
+    "type": "implementation_capability"
   },
   "responsible-ml": {
-    "name": "Responsible machine learning",
-    "description": "Evaluate model fairness, privacy, data suitability, and potential operational harms."
+    "name": "Model fairness and subgroup evaluation",
+    "description": "Compare model errors and calibration across relevant subgroups, document dataset limitations, and test the effect of mitigation choices.",
+    "type": "implementation_capability"
   },
   "ml-pipelines": {
     "name": "Machine learning pipelines",
-    "description": "Automate validated data preparation, training, evaluation, and promotion stages."
+    "description": "Automate validated data preparation, training, evaluation, and promotion stages.",
+    "type": "implementation_capability"
   },
   "model-serving": {
     "name": "Model serving",
-    "description": "Deploy inference interfaces with versioning, batching, latency controls, and failure handling."
+    "description": "Deploy inference interfaces with versioning, batching, latency controls, and failure handling.",
+    "type": "implementation_capability"
   },
   "model-monitoring": {
     "name": "Model monitoring",
-    "description": "Track prediction quality, feature drift, data changes, and inference performance."
+    "description": "Track prediction quality, feature drift, data changes, and inference performance.",
+    "type": "implementation_capability"
   },
   "ml-experiment-tracking": {
     "name": "Machine learning experiment tracking",
-    "description": "Record datasets, parameters, metrics, artifacts, and code versions for reproducible training."
+    "description": "Record datasets, parameters, metrics, artifacts, and code versions for reproducible training.",
+    "type": "implementation_capability"
   },
   "ml-system-design": {
-    "name": "Machine learning system design",
-    "description": "Design training and inference systems around scale, freshness, reliability, and evaluation needs."
+    "name": "Training-serving consistency and feature freshness",
+    "description": "Align feature transformations between training and inference, version model and feature dependencies, and handle stale or missing online features.",
+    "type": "implementation_capability"
   }
 }

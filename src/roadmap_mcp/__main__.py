@@ -20,7 +20,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     validate = commands.add_parser("validate", help="Validate all data files and cross-references")
-    serve = commands.add_parser("serve", help="Serve skill roadmaps and resume baselines over MCP")
+    serve = commands.add_parser("serve", help="Serve curated skills and resume baselines over MCP")
     for command in (validate, serve):
         command.add_argument(
             "--data-dir", type=Path, default=Path(os.environ.get("ROADMAP_DATA_DIR", "data"))

@@ -1,54 +1,67 @@
 {
   "data-cleaning": {
     "name": "Data cleaning",
-    "description": "Correct missing values, duplicates, inconsistent types, and invalid observations."
+    "description": "Correct missing values, duplicates, inconsistent types, and invalid observations.",
+    "type": "professional_method"
   },
   "exploratory-analysis": {
     "name": "Exploratory data analysis",
-    "description": "Investigate distributions, relationships, outliers, and data limitations before drawing conclusions."
+    "description": "Investigate distributions, relationships, outliers, and data limitations before drawing conclusions.",
+    "type": "professional_method"
   },
   "descriptive-statistics": {
     "name": "Descriptive statistics",
-    "description": "Summarize distributions, central tendency, dispersion, and grouped comparisons."
+    "description": "Summarize distributions, central tendency, dispersion, and grouped comparisons.",
+    "type": "professional_method"
   },
   "hypothesis-testing": {
     "name": "Hypothesis testing",
-    "description": "Evaluate statistical hypotheses using suitable tests, uncertainty estimates, and stated assumptions."
+    "description": "Evaluate statistical hypotheses using suitable tests, uncertainty estimates, and stated assumptions.",
+    "type": "professional_method"
   },
   "experiment-design": {
     "name": "Experiment design",
-    "description": "Plan controlled comparisons with sampling, assignment, power, and measurement safeguards."
+    "description": "Plan controlled comparisons with sampling, assignment, power, and measurement safeguards.",
+    "type": "professional_method"
   },
   "data-visualization": {
     "name": "Data visualization",
-    "description": "Build charts that communicate comparisons, trends, distributions, and uncertainty."
+    "description": "Build charts that communicate comparisons, trends, distributions, and uncertainty.",
+    "type": "professional_method"
   },
   "dashboard-design": {
     "name": "Dashboard design",
-    "description": "Build analytical views with clear metrics, useful filters, and consistent definitions."
+    "description": "Build analytical views with clear metrics, useful filters, and consistent definitions.",
+    "type": "professional_method"
   },
   "metric-modeling": {
     "name": "Business metric modeling",
-    "description": "Define measures with explicit populations, aggregation rules, and calculation logic."
+    "description": "Define measures with explicit populations, aggregation rules, and calculation logic.",
+    "type": "professional_method"
   },
   "cohort-analysis": {
     "name": "Cohort analysis",
-    "description": "Compare customer or user groups over time to evaluate behavior and retention."
+    "description": "Compare customer or user groups over time to evaluate behavior and retention.",
+    "type": "professional_method"
   },
   "funnel-analysis": {
     "name": "Funnel analysis",
-    "description": "Measure progression through defined events and identify conversion drop-offs."
+    "description": "Measure progression through defined events and identify conversion drop-offs.",
+    "type": "professional_method"
   },
   "time-series-analysis": {
     "name": "Time series analysis",
-    "description": "Analyze trends, seasonality, dependencies, and forecast uncertainty in time-ordered observations."
+    "description": "Analyze trends, seasonality, dependencies, and forecast uncertainty in time-ordered observations.",
+    "type": "professional_method"
   },
   "causal-inference": {
     "name": "Causal inference",
-    "description": "Estimate effects using explicit causal assumptions, appropriate comparisons, and sensitivity checks."
+    "description": "Estimate effects using explicit causal assumptions, appropriate comparisons, and sensitivity checks.",
+    "type": "professional_method"
   },
   "statistical-modeling": {
     "name": "Statistical modeling",
-    "description": "Fit statistical models while checking assumptions, uncertainty, and interpretation."
+    "description": "Fit statistical models while checking assumptions, uncertainty, and interpretation.",
+    "type": "professional_method"
   }
 }

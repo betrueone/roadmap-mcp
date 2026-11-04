@@ -17,9 +17,6 @@
       "skill_id": "linux-cli"
     },
     {
-      "skill_id": "security-fundamentals"
-    },
-    {
       "skill_id": "network-administration"
     },
     {
@@ -45,15 +42,6 @@
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "splunk",
@@ -166,6 +154,156 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "bash",
+      "priority": 2
+    },
+    {
+      "skill_id": "linux-cli",
+      "priority": 1
+    },
+    {
+      "skill_id": "wireshark",
+      "priority": 2
+    },
+    {
+      "skill_id": "nmap",
+      "priority": 2
+    },
+    {
+      "skill_id": "tcpdump",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "network-security",
+      "priority": 1
+    },
+    {
+      "skill_id": "vulnerability-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "security-monitoring",
+      "priority": 1
+    },
+    {
+      "skill_id": "identity-security",
+      "priority": 1
+    },
+    {
+      "skill_id": "security-incident-response",
+      "priority": 1
+    },
+    {
+      "skill_id": "splunk",
+      "priority": 2
+    },
+    {
+      "skill_id": "vault",
+      "priority": 2
+    },
+    {
+      "skill_id": "tls-cryptography",
+      "priority": 2
+    },
+    {
+      "skill_id": "authentication",
+      "priority": 2
+    },
+    {
+      "skill_id": "authorization",
+      "priority": 2
+    },
+    {
+      "skill_id": "penetration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "secure-development",
+      "priority": 2
+    },
+    {
+      "skill_id": "security-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "cloud-identity",
+      "priority": 2
+    },
+    {
+      "skill_id": "cloud-security-posture",
+      "priority": 2
+    },
+    {
+      "skill_id": "auditability",
+      "priority": 2
+    },
+    {
+      "skill_id": "dependency-security",
+      "priority": 2
+    },
+    {
+      "skill_id": "secrets-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "threat-modeling",
+      "priority": 2
+    },
+    {
+      "skill_id": "network-administration",
+      "priority": 3
+    },
+    {
+      "skill_id": "cryptography-engineering",
+      "priority": 3
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "priority": 3
+    },
+    {
+      "skill_id": "security-architecture",
+      "priority": 3
+    },
+    {
+      "skill_id": "digital-forensics",
+      "priority": 3
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 3
+    },
+    {
+      "skill_id": "container-security",
+      "priority": 3
+    },
+    {
+      "skill_id": "ai-security",
+      "priority": 3
+    },
+    {
+      "skill_id": "incident-management",
+      "priority": 3
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "priority": 3
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "priority": 3
     }
   ]
 }

@@ -1,58 +1,72 @@
 {
   "delivery-planning": {
     "name": "Engineering delivery planning",
-    "description": "Plan scope, dependencies, milestones, and resources with explicit assumptions."
+    "description": "Plan scope, dependencies, milestones, and resources with explicit assumptions.",
+    "type": "professional_method"
   },
   "engineering-metrics": {
     "name": "Engineering metrics",
-    "description": "Measure delivery flow, quality, reliability, and capacity using consistent definitions."
+    "description": "Measure delivery flow, quality, reliability, and capacity using consistent definitions.",
+    "type": "professional_method"
   },
   "technical-debt-management": {
     "name": "Technical debt management",
-    "description": "Prioritize technical debt by delivery impact, reliability risk, and maintenance cost."
+    "description": "Prioritize technical debt by delivery impact, reliability risk, and maintenance cost.",
+    "type": "professional_method"
   },
   "engineering-budgeting": {
     "name": "Engineering budget planning",
-    "description": "Forecast staffing, infrastructure, and vendor costs against delivery needs and budgets."
+    "description": "Forecast staffing, infrastructure, and vendor costs against delivery needs and budgets.",
+    "type": "professional_method"
   },
   "hiring-process-design": {
     "name": "Hiring process design",
-    "description": "Design structured interviews and evaluation criteria aligned with role requirements."
+    "description": "Design structured interviews and evaluation criteria aligned with role requirements.",
+    "type": "professional_method"
   },
   "performance-management": {
     "name": "Performance management",
-    "description": "Set role expectations and maintain consistent evaluation and development processes."
+    "description": "Set role expectations and maintain consistent evaluation and development processes.",
+    "type": "professional_method"
   },
   "engineering-risk-management": {
     "name": "Engineering risk management",
-    "description": "Track delivery and technical risks with owners, mitigations, and review checkpoints."
+    "description": "Track delivery and technical risks with owners, mitigations, and review checkpoints.",
+    "type": "professional_method"
   },
   "organizational-design": {
     "name": "Engineering organization design",
-    "description": "Define team boundaries, responsibilities, and collaboration structures for delivery needs."
+    "description": "Define team boundaries, responsibilities, and collaboration structures for delivery needs.",
+    "type": "professional_method"
   },
   "active-listening": {
     "name": "Active listening",
-    "description": "Clarify another person's needs through attentive listening and accurate reflection."
+    "description": "Clarify another person's needs through attentive listening and accurate reflection.",
+    "type": "soft_skill"
   },
   "stakeholder-communication": {
     "name": "Stakeholder communication",
-    "description": "Explain decisions, progress, and tradeoffs clearly to people with different responsibilities."
+    "description": "Explain decisions, progress, and tradeoffs clearly to people with different responsibilities.",
+    "type": "soft_skill"
   },
   "cross-functional-collaboration": {
     "name": "Cross-functional collaboration",
-    "description": "Coordinate work across disciplines through shared expectations and clear responsibilities."
+    "description": "Coordinate work across disciplines through shared expectations and clear responsibilities.",
+    "type": "soft_skill"
   },
   "conflict-resolution": {
     "name": "Conflict resolution",
-    "description": "Resolve disagreements through discussion of interests, evidence, and workable agreements."
+    "description": "Resolve disagreements through discussion of interests, evidence, and workable agreements.",
+    "type": "soft_skill"
   },
   "mentoring-coaching": {
     "name": "Mentoring and coaching",
-    "description": "Help colleagues develop skills through feedback, questions, and agreed development actions."
+    "description": "Help colleagues develop skills through feedback, questions, and agreed development actions.",
+    "type": "soft_skill"
   },
   "delegation": {
     "name": "Delegation",
-    "description": "Assign responsibility with clear outcomes, suitable autonomy, and agreed support."
+    "description": "Assign responsibility with clear outcomes, suitable autonomy, and agreed support.",
+    "type": "soft_skill"
   }
 }

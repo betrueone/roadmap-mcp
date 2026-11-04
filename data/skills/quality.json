@@ -1,46 +1,57 @@
 {
   "test-design": {
     "name": "Test case design",
-    "description": "Derive cases using boundaries, equivalence classes, state transitions, and business rules."
+    "description": "Derive cases using boundaries, equivalence classes, state transitions, and business rules.",
+    "type": "implementation_capability"
   },
   "exploratory-testing": {
     "name": "Exploratory testing",
-    "description": "Investigate application behavior through focused sessions and reproducible observations."
+    "description": "Investigate application behavior through focused sessions and reproducible observations.",
+    "type": "implementation_capability"
   },
   "defect-management": {
     "name": "Defect management",
-    "description": "Document reproducible defects with expected behavior, evidence, severity, and verification results."
+    "description": "Document reproducible defects with expected behavior, evidence, severity, and verification results.",
+    "type": "implementation_capability"
   },
   "api-testing": {
     "name": "API testing",
-    "description": "Verify endpoint contracts, authentication, validation, failure responses, and integration behavior."
+    "description": "Verify endpoint contracts, authentication, validation, failure responses, and integration behavior.",
+    "type": "implementation_capability"
   },
   "regression-testing": {
     "name": "Regression testing",
-    "description": "Maintain coverage that detects unintended changes to established application behavior."
+    "description": "Maintain coverage that detects unintended changes to established application behavior.",
+    "type": "implementation_capability"
   },
   "test-data-management": {
     "name": "Test data management",
-    "description": "Prepare repeatable test datasets while controlling privacy, isolation, and cleanup."
+    "description": "Prepare repeatable test datasets while controlling privacy, isolation, and cleanup.",
+    "type": "implementation_capability"
   },
   "accessibility-testing": {
     "name": "Accessibility testing",
-    "description": "Evaluate keyboard use, assistive technologies, semantics, and interface accessibility barriers."
+    "description": "Evaluate keyboard use, assistive technologies, semantics, and interface accessibility barriers.",
+    "type": "implementation_capability"
   },
   "security-testing": {
     "name": "Application security testing",
-    "description": "Test access boundaries, input handling, sessions, and known vulnerability classes."
+    "description": "Test access boundaries, input handling, sessions, and known vulnerability classes.",
+    "type": "implementation_capability"
   },
   "test-strategy": {
     "name": "Test strategy",
-    "description": "Choose coverage, environments, automation scope, and release criteria based on product risk."
+    "description": "Choose coverage, environments, automation scope, and release criteria based on product risk.",
+    "type": "implementation_capability"
   },
   "test-automation-architecture": {
     "name": "Test automation architecture",
-    "description": "Design maintainable automation with stable fixtures, reusable interfaces, and reliable execution."
+    "description": "Design maintainable automation with stable fixtures, reusable interfaces, and reliable execution.",
+    "type": "implementation_capability"
   },
   "quality-metrics": {
     "name": "Quality metrics",
-    "description": "Measure defect trends, test reliability, escaped issues, and release quality signals."
+    "description": "Measure defect trends, test reliability, escaped issues, and release quality signals.",
+    "type": "implementation_capability"
   }
 }

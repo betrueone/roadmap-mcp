@@ -1,110 +1,127 @@
 {
-  "data-pipelines": {
-    "name": "Data pipelines and orchestration",
-    "description": "Build ingestion and transformation workflows with orchestration, retries, and backfills."
-  },
   "data-quality": {
-    "name": "Data quality",
-    "description": "Validate data completeness, uniqueness, freshness, and business rules."
+    "name": "Data quality assertions",
+    "description": "Check completeness, uniqueness, freshness, and referential integrity, and quarantine or reject records that violate defined rules.",
+    "type": "implementation_capability"
   },
   "data-warehousing": {
-    "name": "Analytical data modeling",
-    "description": "Design analytical tables with clear grain, historical change handling, and efficient queries."
+    "name": "Dimensional modeling and slowly changing dimensions",
+    "description": "Define fact-table grain, conformed dimensions, and historical attribute changes with tests for joins and aggregate correctness.",
+    "type": "implementation_capability"
   },
   "stream-processing": {
-    "name": "Streaming data reliability",
-    "description": "Process event streams while handling late events, duplicates, ordering, and replay."
+    "name": "Event-time windows and late data handling",
+    "description": "Process streams using event-time windows, watermarks, deduplication, and policies for late events and replay.",
+    "type": "implementation_capability"
   },
   "data-lineage": {
-    "name": "Data lineage and ownership",
-    "description": "Trace data from sources to outputs and assess the impact of schema changes."
-  },
-  "python-data-processing": {
-    "name": "Python for data processing",
-    "description": "Read, validate, transform, and write structured data using maintainable Python code."
+    "name": "Dataset lineage and impact analysis",
+    "description": "Trace source-to-output dataset dependencies and use column or table lineage to assess the impact of schema and transformation changes.",
+    "type": "implementation_capability"
   },
   "advanced-sql": {
-    "name": "Advanced SQL",
-    "description": "Use joins, common table expressions, window functions, and query plans for complex transformations."
+    "name": "SQL window functions and CTEs",
+    "description": "Build transformations using window functions, common table expressions, and joins, then inspect query plans for correctness and cost.",
+    "type": "implementation_capability"
   },
   "batch-ingestion": {
     "name": "Batch data ingestion",
-    "description": "Import data from databases, files, and APIs with checkpoints and repeatable execution."
+    "description": "Import data from databases, files, and APIs with checkpoints and repeatable execution.",
+    "type": "implementation_capability"
   },
   "data-file-formats": {
-    "name": "Data file formats",
-    "description": "Choose and process tabular or columnar formats with appropriate schemas, compression, and partitioning."
+    "name": "Columnar file schemas and partitioning",
+    "description": "Read and write columnar datasets with explicit schemas, compression, and partition layouts, and validate compatibility across readers.",
+    "type": "implementation_capability"
   },
   "object-storage": {
     "name": "Object storage",
-    "description": "Organize and secure durable object storage for raw and processed datasets."
+    "description": "Organize and secure durable object storage for raw and processed datasets.",
+    "type": "implementation_capability"
   },
   "pipeline-idempotency": {
     "name": "Idempotent data processing",
-    "description": "Make pipeline retries and reprocessing safe without duplicating records or corrupting results."
+    "description": "Make pipeline retries and reprocessing safe without duplicating records or corrupting results.",
+    "type": "implementation_capability"
   },
   "workflow-scheduling": {
     "name": "Workflow scheduling",
-    "description": "Define dependency-aware schedules, retries, timeouts, and backfill policies for data jobs."
+    "description": "Define dependency-aware schedules, retries, timeouts, and backfill policies for data jobs.",
+    "type": "implementation_capability"
   },
   "data-transformations": {
     "name": "Data transformation workflows",
-    "description": "Build reusable transformations with tested business rules and documented inputs and outputs."
+    "description": "Build reusable transformations with tested business rules and documented inputs and outputs.",
+    "type": "implementation_capability"
   },
   "schema-evolution": {
     "name": "Schema evolution",
-    "description": "Introduce source and output schema changes without silently breaking downstream consumers."
+    "description": "Introduce source and output schema changes without silently breaking downstream consumers.",
+    "type": "implementation_capability"
   },
   "incremental-processing": {
     "name": "Incremental data processing",
-    "description": "Process changed records efficiently while handling watermarks, late updates, and deletes."
+    "description": "Process changed records efficiently while handling watermarks, late updates, and deletes.",
+    "type": "implementation_capability"
   },
   "change-data-capture": {
     "name": "Change data capture",
-    "description": "Capture database changes and propagate inserts, updates, and deletes to downstream systems."
+    "description": "Capture database changes and propagate inserts, updates, and deletes to downstream systems.",
+    "type": "implementation_capability"
   },
   "lakehouse-storage": {
     "name": "Data lake and lakehouse storage",
-    "description": "Organize analytical storage around partitioned tables, metadata, and reliable table updates."
+    "description": "Organize analytical storage around partitioned tables, metadata, and reliable table updates.",
+    "type": "implementation_capability"
   },
   "distributed-data-processing": {
     "name": "Distributed data processing",
-    "description": "Partition large computations and handle skew, shuffles, and failures across workers."
+    "description": "Partition large computations and handle skew, shuffles, and failures across workers.",
+    "type": "implementation_capability"
   },
   "data-catalogs": {
     "name": "Data catalogs and metadata",
-    "description": "Document dataset ownership, schemas, definitions, and discoverability in shared catalogs."
+    "description": "Document dataset ownership, schemas, definitions, and discoverability in shared catalogs.",
+    "type": "implementation_capability"
   },
   "data-contracts": {
     "name": "Data contracts",
-    "description": "Agree on schema, quality, freshness, and compatibility expectations between data producers and consumers."
+    "description": "Agree on schema, quality, freshness, and compatibility expectations between data producers and consumers.",
+    "type": "implementation_capability"
   },
   "data-access-governance": {
     "name": "Data access governance",
-    "description": "Control dataset access using ownership, classification, and least-privilege policies."
+    "description": "Control dataset access using ownership, classification, and least-privilege policies.",
+    "type": "implementation_capability"
   },
   "pipeline-observability": {
     "name": "Data pipeline observability",
-    "description": "Monitor freshness, volume, failures, and end-to-end pipeline health."
+    "description": "Monitor freshness, volume, failures, and end-to-end pipeline health.",
+    "type": "implementation_capability"
   },
   "data-platform-architecture": {
     "name": "Data platform architecture",
-    "description": "Design ingestion, storage, transformation, and serving layers around workload and ownership needs."
+    "description": "Design ingestion, storage, transformation, and serving layers around workload and ownership needs.",
+    "type": "implementation_capability"
   },
   "data-retention": {
     "name": "Data retention and deletion",
-    "description": "Apply retention and deletion workflows consistently across source, derived, and archived datasets."
+    "description": "Apply retention and deletion workflows consistently across source, derived, and archived datasets.",
+    "type": "implementation_capability"
   },
   "data-serving": {
     "name": "Analytical data serving",
-    "description": "Deliver trusted datasets through warehouse tables, extracts, or interfaces matched to consumer needs."
+    "description": "Deliver trusted datasets through warehouse tables, extracts, or interfaces matched to consumer needs.",
+    "type": "implementation_capability"
   },
   "data-recovery": {
     "name": "Data replay and recovery",
-    "description": "Restore trustworthy datasets through controlled replay, backfills, and reconciliation after failures."
+    "description": "Restore trustworthy datasets through controlled replay, backfills, and reconciliation after failures.",
+    "type": "implementation_capability"
   },
   "data-platform-governance": {
-    "name": "Data platform governance",
-    "description": "Set shared ownership, interoperability, and quality practices across data teams."
+    "name": "Dataset ownership and compatibility policies",
+    "description": "Define dataset owners, versioning rules, compatibility checks, and exception handling for shared data products.",
+    "type": "implementation_capability"
   }
 }

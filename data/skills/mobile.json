@@ -1,54 +1,72 @@
 {
   "mobile-lifecycle": {
-    "name": "Mobile application lifecycle",
-    "description": "Handle screen transitions, process recreation, foreground work, and background execution."
+    "name": "Process recreation and app lifecycle handling",
+    "description": "Restore screen and application state after process recreation, and handle transitions between foreground and background execution.",
+    "type": "implementation_capability"
   },
   "mobile-state": {
     "name": "Mobile state management",
-    "description": "Keep application state consistent across navigation, asynchronous work, and lifecycle changes."
+    "description": "Keep application state consistent across navigation, asynchronous work, and lifecycle changes.",
+    "type": "implementation_capability"
   },
   "mobile-networking": {
-    "name": "Mobile networking",
-    "description": "Integrate remote APIs with timeouts, retries, connectivity awareness, and response validation."
+    "name": "Connectivity-aware API clients",
+    "description": "Implement API clients with response validation, cancellation, timeouts, and retries that account for changing network connectivity.",
+    "type": "implementation_capability"
   },
   "mobile-persistence": {
     "name": "Mobile data persistence",
-    "description": "Store application data locally with migration, concurrency, and retention controls."
+    "description": "Store application data locally with migration, concurrency, and retention controls.",
+    "type": "implementation_capability"
   },
   "offline-synchronization": {
     "name": "Offline synchronization",
-    "description": "Resolve local and remote changes through queued writes, conflict handling, and synchronization policies."
+    "description": "Resolve local and remote changes through queued writes, conflict handling, and synchronization policies.",
+    "type": "implementation_capability"
   },
   "mobile-accessibility": {
     "name": "Mobile accessibility",
-    "description": "Support assistive technologies, scalable text, clear focus order, and accessible touch targets."
+    "description": "Support assistive technologies, scalable text, clear focus order, and accessible touch targets.",
+    "type": "implementation_capability"
   },
   "push-notifications": {
     "name": "Push notifications",
-    "description": "Manage device registration, notification permissions, delivery handling, and deep links."
+    "description": "Manage device registration, notification permissions, delivery handling, and deep links.",
+    "type": "implementation_capability"
   },
   "mobile-performance": {
     "name": "Mobile performance optimization",
-    "description": "Profile launch time, rendering, memory use, battery impact, and network activity."
+    "description": "Profile launch time, rendering, memory use, battery impact, and network activity.",
+    "type": "implementation_capability"
   },
   "native-integration": {
-    "name": "Native platform integration",
-    "description": "Bridge shared application code to platform-specific services and device capabilities."
+    "name": "Native modules and platform bridges",
+    "description": "Expose platform-specific services to shared application code through typed bridges, with lifecycle, threading, and error handling.",
+    "type": "implementation_capability"
   },
   "mobile-security": {
     "name": "Mobile application security",
-    "description": "Protect credentials, device storage, platform permissions, and application communication."
+    "description": "Protect credentials, device storage, platform permissions, and application communication.",
+    "type": "implementation_capability"
   },
   "mobile-testing": {
     "name": "Mobile application testing",
-    "description": "Verify device behavior, lifecycle changes, accessibility, and supported operating-system versions."
+    "description": "Verify device behavior, lifecycle changes, accessibility, and supported operating-system versions.",
+    "type": "implementation_capability"
   },
   "mobile-release": {
     "name": "Mobile release management",
-    "description": "Manage signing, store submissions, staged releases, and production crash monitoring."
+    "description": "Manage signing, store submissions, staged releases, and production crash monitoring.",
+    "type": "implementation_capability"
   },
   "mobile-architecture": {
     "name": "Mobile application architecture",
-    "description": "Separate interface, domain, and data responsibilities with testable dependency boundaries."
+    "description": "Separate interface, domain, and data responsibilities with testable dependency boundaries.",
+    "type": "implementation_capability"
+  },
+  "mobile-crash-diagnostics": {
+    "name": "Mobile crash diagnostics",
+    "description": "Symbolicate crash reports, group failures by release and device, and reproduce the failing lifecycle or interaction before verifying a fix.",
+    "type": "implementation_capability"
   }
 }

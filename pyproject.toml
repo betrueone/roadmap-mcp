@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "roadmap-mcp"
 version = "0.1.0"
-description = "File-backed career skill roadmaps exposed through MCP"
+description = "Curated technical skills and resume baselines exposed through MCP"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["mcp==2.3.0", "pydantic>=2.12,<3"]

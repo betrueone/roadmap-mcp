@@ -1,58 +1,67 @@
 {
-  "llm-fundamentals": {
-    "name": "Large language model fundamentals",
-    "description": "Understand tokenization, context limits, inference behavior, and language-model limitations."
-  },
   "prompt-engineering": {
     "name": "Prompt engineering",
-    "description": "Design and evaluate task instructions, examples, and output constraints for language models."
+    "description": "Design and evaluate task instructions, examples, and output constraints for language models.",
+    "type": "implementation_capability"
   },
   "embeddings": {
-    "name": "Embeddings",
-    "description": "Represent content as vectors and assess similarity for retrieval tasks."
+    "name": "Embedding generation and similarity evaluation",
+    "description": "Generate versioned content embeddings and compare retrieval relevance using representative queries and similarity measurements.",
+    "type": "implementation_capability"
   },
   "vector-search": {
     "name": "Vector search",
-    "description": "Design similarity retrieval with index choices, metadata filters, and relevance evaluation."
+    "description": "Design similarity retrieval with index choices, metadata filters, and relevance evaluation.",
+    "type": "implementation_capability"
   },
   "rag": {
-    "name": "Retrieval-augmented generation",
-    "description": "Ground generated answers in retrieved documents with traceable context and retrieval evaluation."
+    "name": "Retrieval-Augmented Generation (RAG)",
+    "description": "Ground generated answers in retrieved documents with traceable context and retrieval evaluation.",
+    "type": "implementation_capability"
   },
   "document-ingestion": {
     "name": "Document ingestion and chunking",
-    "description": "Parse and split documents while retaining structure, metadata, and access boundaries."
+    "description": "Parse and split documents while retaining structure, metadata, and access boundaries.",
+    "type": "implementation_capability"
   },
   "llm-evaluation": {
-    "name": "Language model evaluation",
-    "description": "Assess quality using representative datasets, reproducible checks, and human review."
+    "name": "LLM evaluation",
+    "description": "Assess language-model and RAG outputs using versioned datasets, retrieval relevance, answer correctness, grounding checks, and human review.",
+    "type": "implementation_capability"
   },
   "structured-generation": {
-    "name": "Structured output generation",
-    "description": "Validate generated data against schemas and handle malformed or incomplete responses."
+    "name": "Structured outputs",
+    "description": "Constrain generated records to a JSON Schema, validate required fields and types, and handle refusals, truncation, and invalid output.",
+    "type": "implementation_capability"
   },
   "tool-calling": {
-    "name": "Tool calling",
-    "description": "Connect model requests to validated tool inputs, scoped execution, and checked results."
+    "name": "Function calling",
+    "description": "Connect model requests to validated tool inputs, scoped execution, and checked results.",
+    "type": "implementation_capability"
   },
   "agent-workflows": {
-    "name": "AI agent workflows",
-    "description": "Coordinate model and tool steps with bounded execution, state, and recovery rules."
+    "name": "Agent workflows",
+    "description": "Persist model and tool execution state, bound the number of steps, validate tool arguments, and recover interrupted work without repeating side effects.",
+    "type": "implementation_capability"
   },
   "inference-optimization": {
-    "name": "Inference optimization",
-    "description": "Reduce inference latency and resource use through batching, caching, and model selection."
+    "name": "Inference batching and caching",
+    "description": "Measure inference latency and resource use, batch compatible requests, and cache reusable results without crossing data-access boundaries.",
+    "type": "implementation_capability"
   },
   "model-adaptation": {
-    "name": "Model adaptation",
-    "description": "Adapt pretrained models using suitable data, fine-tuning methods, and held-out evaluation."
+    "name": "Fine-tuning",
+    "description": "Prepare task-specific training examples, separate evaluation data, and compare fine-tuned models against the original model on held-out tasks.",
+    "type": "implementation_capability"
   },
   "ai-security": {
-    "name": "AI application security",
-    "description": "Protect retrieval and tool workflows against prompt injection, data exposure, and unauthorized actions."
+    "name": "Prompt injection defenses and tool authorization",
+    "description": "Treat retrieved content as untrusted, validate and authorize tool actions outside the model, and test attempts to expose data or exceed permissions.",
+    "type": "implementation_capability"
   },
   "llm-observability": {
-    "name": "Language model observability",
-    "description": "Trace model interactions and monitor latency, cost, failures, and output quality."
+    "name": "Language model tracing and token usage monitoring",
+    "description": "Trace model and tool steps, record token usage and latency, and diagnose failures while redacting sensitive prompt and response content.",
+    "type": "implementation_capability"
   }
 }

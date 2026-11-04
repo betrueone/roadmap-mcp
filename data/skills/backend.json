@@ -1,110 +1,122 @@
 {
-  "api-design": {
-    "name": "API design",
-    "description": "Design API contracts with validation, authorization, predictable errors, and versioning."
-  },
   "sql-modeling": {
-    "name": "SQL and relational data modeling",
-    "description": "Design relational schemas and write efficient SQL queries using indexes and query plans."
+    "name": "Relational schema design",
+    "description": "Define table relationships, keys, uniqueness constraints, and normalization choices that enforce application data invariants.",
+    "type": "implementation_capability"
   },
   "database-transactions": {
-    "name": "Transactions and concurrency",
-    "description": "Use transactions, isolation, and locking to preserve data correctness during concurrent updates."
-  },
-  "distributed-systems": {
-    "name": "Distributed service reliability",
-    "description": "Handle partial failures, retries, duplicate messages, and consistency across services."
-  },
-  "backend-frameworks": {
-    "name": "Backend framework development",
-    "description": "Build services using a primary backend framework and its routing, middleware, and configuration conventions."
+    "name": "Transaction isolation and locking",
+    "description": "Choose transaction boundaries, isolation levels, and locking strategies, and test concurrent updates for lost writes and serialization failures.",
+    "type": "implementation_capability"
   },
   "rest-apis": {
     "name": "RESTful APIs",
-    "description": "Model resources and implement HTTP endpoints with consistent methods, status codes, and responses."
+    "description": "Implement resource-oriented HTTP endpoints with validation, pagination, method and status-code semantics, and consistent error responses.",
+    "type": "implementation_capability"
   },
   "openapi-contracts": {
     "name": "OpenAPI specifications",
-    "description": "Describe API operations and schemas in OpenAPI for documentation and client integration."
+    "description": "Describe API operations and schemas in OpenAPI for documentation and client integration.",
+    "type": "implementation_capability"
   },
   "orm-data-access": {
-    "name": "ORMs and data access",
-    "description": "Map application models to persistence while controlling query behavior and transaction boundaries."
+    "name": "ORM query optimization",
+    "description": "Control eager and lazy loading, eliminate N+1 queries, and keep generated queries within explicit transaction boundaries.",
+    "type": "implementation_capability"
   },
   "database-indexing": {
     "name": "Database indexing and query tuning",
-    "description": "Use execution plans and workload measurements to improve indexes and database queries."
+    "description": "Use execution plans and workload measurements to improve indexes and database queries.",
+    "type": "implementation_capability"
   },
   "database-migrations": {
     "name": "Database schema migrations",
-    "description": "Version schema changes and apply them safely across application deployments."
+    "description": "Version schema changes and apply them safely across application deployments.",
+    "type": "implementation_capability"
   },
   "caching": {
-    "name": "Application caching",
-    "description": "Choose cache keys, expiration, and invalidation rules to reduce repeated work safely."
+    "name": "Cache invalidation and expiration",
+    "description": "Implement cache keys, TTLs, invalidation on writes, and stampede protection while testing stale-data behavior.",
+    "type": "implementation_capability"
   },
   "background-jobs": {
     "name": "Background job processing",
-    "description": "Run asynchronous work with retry policies, job state tracking, and failure recovery."
+    "description": "Run asynchronous work with retry policies, job state tracking, and failure recovery.",
+    "type": "implementation_capability"
   },
   "message-queues": {
-    "name": "Message queues and brokers",
-    "description": "Publish and consume queued messages with acknowledgments, retries, and dead-letter handling."
+    "name": "Message acknowledgments and dead-letter queues",
+    "description": "Acknowledge messages after successful processing, bound retries, route failed deliveries to dead-letter queues, and support controlled redelivery.",
+    "type": "implementation_capability"
   },
   "webhook-integrations": {
-    "name": "Webhook integrations",
-    "description": "Validate, authenticate, and reliably process callbacks from external services."
+    "name": "Webhook signature verification and deduplication",
+    "description": "Verify webhook signatures and timestamps, track event identifiers, and make duplicate deliveries safe to process.",
+    "type": "implementation_capability"
   },
   "rate-limiting": {
     "name": "Rate limiting and throttling",
-    "description": "Protect services by enforcing fair request limits and handling overload predictably."
+    "description": "Protect services by enforcing fair request limits and handling overload predictably.",
+    "type": "implementation_capability"
   },
   "nosql-modeling": {
     "name": "NoSQL data modeling",
-    "description": "Choose document or key-value structures around access patterns and consistency needs."
+    "description": "Choose document or key-value structures around access patterns and consistency needs.",
+    "type": "implementation_capability"
   },
   "search-indexing": {
     "name": "Search indexing",
-    "description": "Build searchable document indexes and keep them synchronized with source data."
+    "description": "Build searchable document indexes and keep them synchronized with source data.",
+    "type": "implementation_capability"
   },
   "real-time-apis": {
-    "name": "Real-time APIs",
-    "description": "Deliver live updates using WebSockets or server-sent events with connection recovery."
+    "name": "WebSocket and SSE connection management",
+    "description": "Manage live connections, heartbeats, reconnects, and subscription cleanup for WebSocket or server-sent event updates.",
+    "type": "implementation_capability"
   },
   "api-versioning": {
     "name": "API versioning and compatibility",
-    "description": "Evolve API contracts while preserving supported client behavior and migration paths."
+    "description": "Evolve API contracts while preserving supported client behavior and migration paths.",
+    "type": "implementation_capability"
   },
   "service-resilience": {
-    "name": "Service resilience patterns",
-    "description": "Use timeouts, retry limits, circuit breakers, and backpressure to contain dependency failures."
+    "name": "Timeouts, retries, and circuit breakers",
+    "description": "Set dependency timeouts, bound retries with backoff and jitter, and open circuit breakers to prevent cascading failures.",
+    "type": "implementation_capability"
   },
   "event-driven-architecture": {
-    "name": "Event-driven architecture",
-    "description": "Design event contracts and service interactions that tolerate asynchronous delivery and replay."
+    "name": "Event schema versioning and replay",
+    "description": "Version event payloads, preserve consumer compatibility, and replay retained events without duplicating side effects.",
+    "type": "implementation_capability"
   },
   "database-replication": {
     "name": "Database replication and availability",
-    "description": "Use replicas and failover strategies while accounting for replication lag and consistency."
+    "description": "Use replicas and failover strategies while accounting for replication lag and consistency.",
+    "type": "implementation_capability"
   },
   "partitioning-sharding": {
     "name": "Data partitioning and sharding",
-    "description": "Distribute data by workload while managing hot partitions and cross-partition operations."
+    "description": "Distribute data by workload while managing hot partitions and cross-partition operations.",
+    "type": "implementation_capability"
   },
   "domain-driven-design": {
-    "name": "Domain modeling and service boundaries",
-    "description": "Define domain concepts and service ownership around business capabilities."
+    "name": "Bounded contexts and service boundaries",
+    "description": "Separate domain models and service ownership around business capabilities, with explicit contracts for cross-boundary interactions.",
+    "type": "implementation_capability"
   },
   "distributed-transactions": {
-    "name": "Distributed transaction patterns",
-    "description": "Coordinate cross-service updates with transactional outboxes, sagas, and compensating operations."
+    "name": "Transactional outbox and sagas",
+    "description": "Publish committed changes through a transactional outbox and coordinate cross-service workflows with compensating operations.",
+    "type": "implementation_capability"
   },
   "zero-downtime-migrations": {
-    "name": "Zero-downtime migrations",
-    "description": "Sequence compatible schema and service changes while keeping live traffic available."
+    "name": "Expand-contract database migrations",
+    "description": "Introduce compatible schema changes, backfill data, migrate readers and writers, and remove obsolete structures after compatibility checks.",
+    "type": "implementation_capability"
   },
   "multi-tenancy": {
-    "name": "Multi-tenant service design",
-    "description": "Isolate tenant data and resources while managing shared infrastructure and noisy neighbors."
+    "name": "Tenant isolation and resource quotas",
+    "description": "Enforce tenant-scoped data access, partition shared resources, and apply quotas that contain noisy-neighbor workloads.",
+    "type": "implementation_capability"
   }
 }

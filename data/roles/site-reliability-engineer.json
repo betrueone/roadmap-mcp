@@ -26,25 +26,16 @@
       "skill_id": "containers"
     },
     {
-      "skill_id": "http-networking"
+      "skill_id": "unit-testing"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "performance-profiling"
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "aws",
@@ -79,7 +70,15 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "mid"
     },
     {
@@ -113,18 +112,6 @@
     {
       "skill_id": "release-engineering",
       "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "distributed-systems",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "system-design",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "reliability-objectives",
-      "minimum_seniority": "senior"
     },
     {
       "skill_id": "capacity-planning",
@@ -173,6 +160,160 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "go",
+      "priority": 2
+    },
+    {
+      "skill_id": "bash",
+      "priority": 1
+    },
+    {
+      "skill_id": "linux-cli",
+      "priority": 1
+    },
+    {
+      "skill_id": "containers",
+      "priority": 1
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 1
+    },
+    {
+      "skill_id": "prometheus",
+      "priority": 1
+    },
+    {
+      "skill_id": "grafana",
+      "priority": 1
+    },
+    {
+      "skill_id": "opentelemetry",
+      "priority": 1
+    },
+    {
+      "skill_id": "service-level-engineering",
+      "priority": 1
+    },
+    {
+      "skill_id": "alert-engineering",
+      "priority": 1
+    },
+    {
+      "skill_id": "incident-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "performance-profiling",
+      "priority": 1
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 2
+    },
+    {
+      "skill_id": "aws",
+      "priority": 2
+    },
+    {
+      "skill_id": "terraform",
+      "priority": 2
+    },
+    {
+      "skill_id": "jaeger",
+      "priority": 2
+    },
+    {
+      "skill_id": "loki",
+      "priority": 2
+    },
+    {
+      "skill_id": "k6",
+      "priority": 2
+    },
+    {
+      "skill_id": "structured-logging",
+      "priority": 2
+    },
+    {
+      "skill_id": "application-metrics",
+      "priority": 2
+    },
+    {
+      "skill_id": "distributed-tracing",
+      "priority": 2
+    },
+    {
+      "skill_id": "toil-reduction",
+      "priority": 1
+    },
+    {
+      "skill_id": "backup-restoration",
+      "priority": 2
+    },
+    {
+      "skill_id": "load-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "release-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "capacity-planning",
+      "priority": 2
+    },
+    {
+      "skill_id": "service-resilience",
+      "priority": 2
+    },
+    {
+      "skill_id": "network-administration",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "priority": 3
+    },
+    {
+      "skill_id": "chaos-engineering",
+      "priority": 3
+    },
+    {
+      "skill_id": "cloud-network-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "multi-region-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "cost-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "container-security",
+      "priority": 3
+    },
+    {
+      "skill_id": "platform-self-service",
+      "priority": 3
     }
   ]
 }

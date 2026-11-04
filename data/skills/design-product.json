@@ -1,90 +1,112 @@
 {
   "user-research": {
     "name": "User research",
-    "description": "Study user needs and behavior through interviews, observation, and research synthesis."
+    "description": "Study user needs and behavior through interviews, observation, and research synthesis.",
+    "type": "professional_method"
   },
   "usability-testing": {
     "name": "Usability testing",
-    "description": "Evaluate task completion and interface barriers through sessions with representative users."
+    "description": "Evaluate task completion and interface barriers through sessions with representative users.",
+    "type": "professional_method"
   },
   "information-architecture": {
     "name": "Information architecture",
-    "description": "Organize content and navigation around user tasks and clear structural relationships."
+    "description": "Organize content and navigation around user tasks and clear structural relationships.",
+    "type": "professional_method"
   },
   "interaction-design": {
     "name": "Interaction design",
-    "description": "Define interface behavior, transitions, feedback, and recovery for user tasks."
+    "description": "Define interface behavior, transitions, feedback, and recovery for user tasks.",
+    "type": "professional_method"
   },
   "wireframing": {
     "name": "Wireframing",
-    "description": "Sketch interface structure and task flows before committing to visual detail."
+    "description": "Sketch interface structure and task flows before committing to visual detail.",
+    "type": "professional_method"
   },
   "prototyping": {
     "name": "Prototyping",
-    "description": "Create interactive representations to test flows, behavior, and design assumptions."
+    "description": "Create interactive representations to test flows, behavior, and design assumptions.",
+    "type": "professional_method"
   },
   "visual-design": {
     "name": "Visual interface design",
-    "description": "Apply typography, hierarchy, color, spacing, and layout to usable interfaces."
+    "description": "Apply typography, hierarchy, color, spacing, and layout to usable interfaces.",
+    "type": "professional_method"
   },
   "design-handoff": {
     "name": "Design handoff",
-    "description": "Document interface behavior, component states, assets, and accessibility needs for implementation."
+    "description": "Document interface behavior, component states, assets, and accessibility needs for implementation.",
+    "type": "professional_method"
   },
   "research-synthesis": {
     "name": "Research synthesis",
-    "description": "Translate research observations into supported themes, user needs, and design opportunities."
+    "description": "Translate research observations into supported themes, user needs, and design opportunities.",
+    "type": "professional_method"
   },
   "journey-mapping": {
     "name": "User journey mapping",
-    "description": "Map user goals, steps, touchpoints, and barriers across a service experience."
+    "description": "Map user goals, steps, touchpoints, and barriers across a service experience.",
+    "type": "professional_method"
   },
   "product-discovery": {
     "name": "Product discovery",
-    "description": "Investigate customer problems and validate opportunities before committing delivery effort."
+    "description": "Investigate customer problems and validate opportunities before committing delivery effort.",
+    "type": "professional_method"
   },
   "product-requirements": {
     "name": "Product requirements",
-    "description": "Define behavior, acceptance criteria, constraints, and measurable outcomes."
+    "description": "Define behavior, acceptance criteria, constraints, and measurable outcomes.",
+    "type": "professional_method"
   },
   "user-stories": {
     "name": "User stories",
-    "description": "Describe user needs and acceptance criteria in small, testable product increments."
+    "description": "Describe user needs and acceptance criteria in small, testable product increments.",
+    "type": "professional_method"
   },
   "backlog-management": {
     "name": "Backlog management",
-    "description": "Maintain an ordered backlog with scope, dependencies, and readiness criteria."
+    "description": "Maintain an ordered backlog with scope, dependencies, and readiness criteria.",
+    "type": "professional_method"
   },
   "product-prioritization": {
     "name": "Product prioritization",
-    "description": "Compare opportunities using customer value, evidence, effort, risk, and strategic fit."
+    "description": "Compare opportunities using customer value, evidence, effort, risk, and strategic fit.",
+    "type": "professional_method"
   },
   "product-roadmapping": {
     "name": "Product roadmapping",
-    "description": "Connect outcomes to sequenced initiatives, dependencies, and review points."
+    "description": "Connect outcomes to sequenced initiatives, dependencies, and review points.",
+    "type": "professional_method"
   },
   "market-analysis": {
     "name": "Market analysis",
-    "description": "Assess customer segments, alternatives, market conditions, and unmet needs."
+    "description": "Assess customer segments, alternatives, market conditions, and unmet needs.",
+    "type": "professional_method"
   },
   "product-metrics": {
     "name": "Product metrics",
-    "description": "Define success through measurable activation, usage, retention, and business outcomes."
+    "description": "Define success through measurable activation, usage, retention, and business outcomes.",
+    "type": "professional_method"
   },
   "launch-planning": {
     "name": "Product launch planning",
-    "description": "Coordinate readiness, rollout stages, support needs, and outcome measurement."
+    "description": "Coordinate readiness, rollout stages, support needs, and outcome measurement.",
+    "type": "professional_method"
   },
   "product-strategy": {
     "name": "Product strategy",
-    "description": "Choose target problems, differentiated value, and priorities using market and customer evidence."
+    "description": "Choose target problems, differentiated value, and priorities using market and customer evidence.",
+    "type": "professional_method"
   },
   "pricing-analysis": {
     "name": "Pricing analysis",
-    "description": "Evaluate pricing and packaging through customer value, costs, demand, and usage evidence."
+    "description": "Evaluate pricing and packaging through customer value, costs, demand, and usage evidence.",
+    "type": "professional_method"
   },
   "portfolio-management": {
     "name": "Product portfolio management",
-    "description": "Allocate investment across products using strategic fit, dependencies, risk, and measured results."
+    "description": "Allocate investment across products using strategic fit, dependencies, risk, and measured results.",
+    "type": "professional_method"
   }
 }

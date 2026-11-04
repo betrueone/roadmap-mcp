@@ -17,16 +17,13 @@
       "skill_id": "typescript"
     },
     {
-      "skill_id": "http-networking"
-    },
-    {
       "skill_id": "rest-apis"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
     },
     {
-      "skill_id": "llm-fundamentals"
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "prompt-engineering"
@@ -36,15 +33,6 @@
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "hugging-face",
@@ -99,8 +87,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "fastapi",
-      "minimum_seniority": "mid"
+      "skill_id": "fastapi"
     },
     {
       "skill_id": "containers",
@@ -139,15 +126,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "system-design",
-      "minimum_seniority": "senior"
-    },
-    {
       "skill_id": "threat-modeling",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "observability",
       "minimum_seniority": "senior"
     },
     {
@@ -173,6 +152,205 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "openai-sdk"
+    },
+    {
+      "skill_id": "pydantic"
+    },
+    {
+      "skill_id": "pgvector",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "langgraph",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "postgresql",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "redis",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "pytest"
+    },
+    {
+      "skill_id": "opentelemetry",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "ragas",
+      "minimum_seniority": "mid"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 1
+    },
+    {
+      "skill_id": "openai-sdk",
+      "priority": 2
+    },
+    {
+      "skill_id": "pydantic",
+      "priority": 2
+    },
+    {
+      "skill_id": "fastapi",
+      "priority": 2
+    },
+    {
+      "skill_id": "pgvector",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "rag",
+      "priority": 1
+    },
+    {
+      "skill_id": "embeddings",
+      "priority": 2
+    },
+    {
+      "skill_id": "vector-search",
+      "priority": 2
+    },
+    {
+      "skill_id": "document-ingestion",
+      "priority": 2
+    },
+    {
+      "skill_id": "llm-evaluation",
+      "priority": 1
+    },
+    {
+      "skill_id": "tool-calling",
+      "priority": 1
+    },
+    {
+      "skill_id": "structured-generation",
+      "priority": 1
+    },
+    {
+      "skill_id": "prompt-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "typescript",
+      "priority": 2
+    },
+    {
+      "skill_id": "hugging-face",
+      "priority": 2
+    },
+    {
+      "skill_id": "langchain",
+      "priority": 2
+    },
+    {
+      "skill_id": "langgraph",
+      "priority": 2
+    },
+    {
+      "skill_id": "llama-index",
+      "priority": 2
+    },
+    {
+      "skill_id": "qdrant",
+      "priority": 2
+    },
+    {
+      "skill_id": "faiss",
+      "priority": 2
+    },
+    {
+      "skill_id": "postgresql",
+      "priority": 2
+    },
+    {
+      "skill_id": "redis",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 2
+    },
+    {
+      "skill_id": "pytest",
+      "priority": 2
+    },
+    {
+      "skill_id": "opentelemetry",
+      "priority": 2
+    },
+    {
+      "skill_id": "ragas",
+      "priority": 2
+    },
+    {
+      "skill_id": "agent-workflows",
+      "priority": 2
+    },
+    {
+      "skill_id": "llm-observability",
+      "priority": 2
+    },
+    {
+      "skill_id": "ai-security",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "javascript",
+      "priority": 3
+    },
+    {
+      "skill_id": "pinecone",
+      "priority": 3
+    },
+    {
+      "skill_id": "chroma",
+      "priority": 3
+    },
+    {
+      "skill_id": "model-adaptation",
+      "priority": 3
+    },
+    {
+      "skill_id": "inference-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "model-serving",
+      "priority": 3
+    },
+    {
+      "skill_id": "responsible-ml",
+      "priority": 3
+    },
+    {
+      "skill_id": "cost-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 3
     }
   ]
 }

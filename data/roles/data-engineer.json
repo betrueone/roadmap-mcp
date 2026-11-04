@@ -141,35 +141,39 @@
       "skill_id": "sql-modeling"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
     },
     {
-      "skill_id": "data-pipelines"
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "data-quality"
     },
     {
-      "skill_id": "application-security"
+      "skill_id": "schema-validation"
     },
     {
       "skill_id": "data-warehousing",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "deployment",
+      "skill_id": "deployment-rollbacks",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "mid"
     },
     {
       "skill_id": "stream-processing",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "system-design",
       "minimum_seniority": "senior"
     },
     {
@@ -181,21 +185,6 @@
       "minimum_seniority": "staff"
     },
     {
-      "skill_id": "package-management"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
-    },
-    {
-      "skill_id": "python-data-processing"
-    },
-    {
       "skill_id": "batch-ingestion"
     },
     {
@@ -205,19 +194,11 @@
       "skill_id": "data-transformations"
     },
     {
-      "skill_id": "http-networking",
-      "minimum_seniority": "mid"
-    },
-    {
       "skill_id": "secrets-management",
       "minimum_seniority": "mid"
     },
     {
       "skill_id": "continuous-integration",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "cloud-fundamentals",
       "minimum_seniority": "mid"
     },
     {
@@ -277,7 +258,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "reliability-objectives",
+      "skill_id": "service-level-engineering",
       "minimum_seniority": "senior"
     },
     {
@@ -335,6 +316,180 @@
     {
       "skill_id": "data-platform-governance",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "data-lineage",
+      "minimum_seniority": "mid"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 1
+    },
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "postgresql",
+      "priority": 2
+    },
+    {
+      "skill_id": "apache-airflow",
+      "priority": 2
+    },
+    {
+      "skill_id": "dbt",
+      "priority": 2
+    },
+    {
+      "skill_id": "apache-spark",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "batch-ingestion",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-transformations",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-quality",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-warehousing",
+      "priority": 1
+    },
+    {
+      "skill_id": "advanced-sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "pipeline-idempotency",
+      "priority": 1
+    },
+    {
+      "skill_id": "schema-evolution",
+      "priority": 1
+    },
+    {
+      "skill_id": "pandas",
+      "priority": 2
+    },
+    {
+      "skill_id": "numpy",
+      "priority": 2
+    },
+    {
+      "skill_id": "snowflake",
+      "priority": 2
+    },
+    {
+      "skill_id": "google-bigquery",
+      "priority": 2
+    },
+    {
+      "skill_id": "amazon-redshift",
+      "priority": 2
+    },
+    {
+      "skill_id": "s3",
+      "priority": 2
+    },
+    {
+      "skill_id": "azure-blob-storage",
+      "priority": 2
+    },
+    {
+      "skill_id": "azure-data-factory",
+      "priority": 2
+    },
+    {
+      "skill_id": "databricks-delta-lake",
+      "priority": 2
+    },
+    {
+      "skill_id": "apache-kafka",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "pytest",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-file-formats",
+      "priority": 2
+    },
+    {
+      "skill_id": "incremental-processing",
+      "priority": 2
+    },
+    {
+      "skill_id": "change-data-capture",
+      "priority": 2
+    },
+    {
+      "skill_id": "workflow-scheduling",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-lineage",
+      "priority": 2
+    },
+    {
+      "skill_id": "pipeline-observability",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "java",
+      "priority": 3
+    },
+    {
+      "skill_id": "cassandra",
+      "priority": 3
+    },
+    {
+      "skill_id": "hdfs",
+      "priority": 3
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 3
+    },
+    {
+      "skill_id": "terraform",
+      "priority": 3
+    },
+    {
+      "skill_id": "stream-processing",
+      "priority": 3
+    },
+    {
+      "skill_id": "lakehouse-storage",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-contracts",
+      "priority": 3
     }
   ]
 }

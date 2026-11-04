@@ -47,36 +47,29 @@
       "skill_id": "npm"
     },
     {
-      "skill_id": "typescript",
-      "minimum_seniority": "mid"
+      "skill_id": "typescript"
     },
     {
       "skill_id": "rust",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "django",
-      "minimum_seniority": "mid"
+      "skill_id": "django"
     },
     {
-      "skill_id": "flask",
-      "minimum_seniority": "mid"
+      "skill_id": "flask"
     },
     {
-      "skill_id": "fastapi",
-      "minimum_seniority": "mid"
+      "skill_id": "fastapi"
     },
     {
-      "skill_id": "spring-boot",
-      "minimum_seniority": "mid"
+      "skill_id": "spring-boot"
     },
     {
-      "skill_id": "expressjs",
-      "minimum_seniority": "mid"
+      "skill_id": "expressjs"
     },
     {
-      "skill_id": "nestjs",
-      "minimum_seniority": "mid"
+      "skill_id": "nestjs"
     },
     {
       "skill_id": "sqlalchemy",
@@ -147,16 +140,13 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "pytest",
-      "minimum_seniority": "mid"
+      "skill_id": "pytest"
     },
     {
-      "skill_id": "junit",
-      "minimum_seniority": "mid"
+      "skill_id": "junit"
     },
     {
-      "skill_id": "jest",
-      "minimum_seniority": "mid"
+      "skill_id": "jest"
     },
     {
       "skill_id": "rpc-contracts",
@@ -191,36 +181,36 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
     },
     {
-      "skill_id": "api-design"
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "sql-modeling"
     },
     {
-      "skill_id": "application-security"
+      "skill_id": "schema-validation"
     },
     {
-      "skill_id": "deployment",
+      "skill_id": "deployment-rollbacks",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "mid"
     },
     {
       "skill_id": "database-transactions",
       "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "distributed-systems",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "system-design",
-      "minimum_seniority": "senior"
     },
     {
       "skill_id": "technical-leadership",
@@ -231,28 +221,10 @@
       "minimum_seniority": "staff"
     },
     {
-      "skill_id": "http-networking"
-    },
-    {
-      "skill_id": "package-management"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
-    },
-    {
       "skill_id": "authentication"
     },
     {
       "skill_id": "authorization"
-    },
-    {
-      "skill_id": "backend-frameworks"
     },
     {
       "skill_id": "rest-apis"
@@ -269,10 +241,6 @@
     },
     {
       "skill_id": "continuous-integration",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "cloud-fundamentals",
       "minimum_seniority": "mid"
     },
     {
@@ -336,7 +304,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "reliability-objectives",
+      "skill_id": "service-level-engineering",
       "minimum_seniority": "senior"
     },
     {
@@ -390,6 +358,204 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "github-actions",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "php",
+      "minimum_seniority": "junior"
+    },
+    {
+      "skill_id": "ruby",
+      "minimum_seniority": "junior"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "java",
+      "priority": 2
+    },
+    {
+      "skill_id": "go",
+      "priority": 2
+    },
+    {
+      "skill_id": "javascript",
+      "priority": 2
+    },
+    {
+      "skill_id": "typescript",
+      "priority": 2
+    },
+    {
+      "skill_id": "nodejs",
+      "priority": 2
+    },
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "postgresql",
+      "priority": 2
+    },
+    {
+      "skill_id": "redis",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "rest-apis",
+      "priority": 1
+    },
+    {
+      "skill_id": "sql-modeling",
+      "priority": 1
+    },
+    {
+      "skill_id": "database-transactions",
+      "priority": 2
+    },
+    {
+      "skill_id": "authentication",
+      "priority": 1
+    },
+    {
+      "skill_id": "authorization",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "fastapi",
+      "priority": 2
+    },
+    {
+      "skill_id": "django",
+      "priority": 2
+    },
+    {
+      "skill_id": "spring-boot",
+      "priority": 2
+    },
+    {
+      "skill_id": "expressjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "nestjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "mysql",
+      "priority": 2
+    },
+    {
+      "skill_id": "mongodb",
+      "priority": 2
+    },
+    {
+      "skill_id": "apache-kafka",
+      "priority": 2
+    },
+    {
+      "skill_id": "rabbitmq",
+      "priority": 2
+    },
+    {
+      "skill_id": "pytest",
+      "priority": 2
+    },
+    {
+      "skill_id": "github-actions",
+      "priority": 2
+    },
+    {
+      "skill_id": "oauth",
+      "priority": 2
+    },
+    {
+      "skill_id": "openid",
+      "priority": 2
+    },
+    {
+      "skill_id": "openapi-contracts",
+      "priority": 2
+    },
+    {
+      "skill_id": "database-indexing",
+      "priority": 2
+    },
+    {
+      "skill_id": "database-migrations",
+      "priority": 2
+    },
+    {
+      "skill_id": "caching",
+      "priority": 2
+    },
+    {
+      "skill_id": "contract-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "service-resilience",
+      "priority": 2
+    },
+    {
+      "skill_id": "csharp",
+      "priority": 3
+    },
+    {
+      "skill_id": "rust",
+      "priority": 3
+    },
+    {
+      "skill_id": "graphql",
+      "priority": 3
+    },
+    {
+      "skill_id": "rpc-contracts",
+      "priority": 3
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 3
+    },
+    {
+      "skill_id": "distributed-transactions",
+      "priority": 3
+    },
+    {
+      "skill_id": "zero-downtime-migrations",
+      "priority": 3
+    },
+    {
+      "skill_id": "php",
+      "priority": 3
+    },
+    {
+      "skill_id": "ruby",
+      "priority": 3
     }
   ]
 }

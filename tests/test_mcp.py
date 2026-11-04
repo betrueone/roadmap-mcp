@@ -16,6 +16,8 @@ async def test_real_mcp_discovery_structured_output_and_lookup_errors(catalog):
         assert set(tools) == {
             "list_catalog",
             "get_roadmap",
+            "get_skills",
+            "get_skills_text",
             "list_bullet_catalog",
             "get_bullets",
             "get_bullets_text",
@@ -155,6 +157,20 @@ async def test_stdio_subprocess_serves_catalog(catalog):
         assert not compact.is_error
         assert compact.structured_content["hard_skills"][0]["skills"][0] == {"name": "Python"}
         assert compact.structured_content["soft_skills"] == []
+        skills = await client.call_tool("get_skills", {"role_name": "AI Engineer"})
+        assert not skills.is_error
+        assert skills.structured_content["role"] == "AI Engineer"
+        assert 30 <= skills.structured_content["returned_count"] <= 50
+        assert {s["layer"] for s in skills.structured_content["skills"]} == {
+            "core_technology",
+            "implementation_capability",
+        }
+        skills_text = await client.call_tool("get_skills_text", {"role_name": "AI Engineer"})
+        assert not skills_text.is_error
+        assert skills_text.structured_content is None
+        assert skills_text.content[0].text.startswith("AI Engineer\n41 of 41 eligible options\n")
+        assert "Core technologies (" in skills_text.content[0].text
+        assert "Implementation capabilities (" in skills_text.content[0].text
         bullets = await client.call_tool(
             "get_bullets",
             {

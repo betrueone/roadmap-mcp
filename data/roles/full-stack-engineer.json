@@ -29,13 +29,13 @@
       "skill_id": "postgresql"
     },
     {
-      "skill_id": "http-networking"
-    },
-    {
       "skill_id": "rest-apis"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
+    },
+    {
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "forms-validation"
@@ -44,45 +44,29 @@
       "skill_id": "git-version-control"
     },
     {
-      "skill_id": "debugging"
+      "skill_id": "typescript"
     },
     {
-      "skill_id": "code-quality"
+      "skill_id": "react"
     },
     {
-      "skill_id": "technical-documentation"
-    },
-    {
-      "skill_id": "typescript",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "react",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "vuejs",
-      "minimum_seniority": "mid"
+      "skill_id": "vuejs"
     },
     {
       "skill_id": "nextjs",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "expressjs",
-      "minimum_seniority": "mid"
+      "skill_id": "expressjs"
     },
     {
-      "skill_id": "nestjs",
-      "minimum_seniority": "mid"
+      "skill_id": "nestjs"
     },
     {
-      "skill_id": "python",
-      "minimum_seniority": "mid"
+      "skill_id": "python"
     },
     {
-      "skill_id": "fastapi",
-      "minimum_seniority": "mid"
+      "skill_id": "fastapi"
     },
     {
       "skill_id": "prisma",
@@ -93,16 +77,10 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "authentication",
-      "minimum_seniority": "mid"
+      "skill_id": "authentication"
     },
     {
-      "skill_id": "authorization",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "frontend-state",
-      "minimum_seniority": "mid"
+      "skill_id": "authorization"
     },
     {
       "skill_id": "frontend-routing",
@@ -113,12 +91,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "api-design",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "sql-modeling",
-      "minimum_seniority": "mid"
+      "skill_id": "sql-modeling"
     },
     {
       "skill_id": "database-transactions",
@@ -141,7 +114,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "deployment",
+      "skill_id": "deployment-rollbacks",
       "minimum_seniority": "mid"
     },
     {
@@ -153,8 +126,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "application-security",
-      "minimum_seniority": "mid"
+      "skill_id": "schema-validation"
     },
     {
       "skill_id": "dependency-security",
@@ -165,19 +137,19 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "system-design",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "distributed-systems",
-      "minimum_seniority": "senior"
-    },
-    {
       "skill_id": "architecture-decisions",
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "senior"
     },
     {
@@ -231,6 +203,188 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "php",
+      "minimum_seniority": "junior"
+    },
+    {
+      "skill_id": "ruby",
+      "minimum_seniority": "junior"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "javascript",
+      "priority": 1
+    },
+    {
+      "skill_id": "typescript",
+      "priority": 1
+    },
+    {
+      "skill_id": "nodejs",
+      "priority": 2
+    },
+    {
+      "skill_id": "react",
+      "priority": 2
+    },
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "postgresql",
+      "priority": 2
+    },
+    {
+      "skill_id": "rest-apis",
+      "priority": 1
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "authentication",
+      "priority": 1
+    },
+    {
+      "skill_id": "authorization",
+      "priority": 1
+    },
+    {
+      "skill_id": "forms-validation",
+      "priority": 1
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "html-semantics",
+      "priority": 1
+    },
+    {
+      "skill_id": "css-layout",
+      "priority": 1
+    },
+    {
+      "skill_id": "npm",
+      "priority": 2
+    },
+    {
+      "skill_id": "nextjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "expressjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "nestjs",
+      "priority": 2
+    },
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "fastapi",
+      "priority": 2
+    },
+    {
+      "skill_id": "prisma",
+      "priority": 2
+    },
+    {
+      "skill_id": "redis",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "docker-compose",
+      "priority": 2
+    },
+    {
+      "skill_id": "github-actions",
+      "priority": 2
+    },
+    {
+      "skill_id": "jest",
+      "priority": 2
+    },
+    {
+      "skill_id": "playwright",
+      "priority": 2
+    },
+    {
+      "skill_id": "sql-modeling",
+      "priority": 1
+    },
+    {
+      "skill_id": "database-transactions",
+      "priority": 2
+    },
+    {
+      "skill_id": "caching",
+      "priority": 2
+    },
+    {
+      "skill_id": "accessibility",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "schema-validation",
+      "priority": 2
+    },
+    {
+      "skill_id": "vuejs",
+      "priority": 3
+    },
+    {
+      "skill_id": "opentelemetry",
+      "priority": 3
+    },
+    {
+      "skill_id": "message-queues",
+      "priority": 3
+    },
+    {
+      "skill_id": "service-resilience",
+      "priority": 3
+    },
+    {
+      "skill_id": "server-rendering",
+      "priority": 3
+    },
+    {
+      "skill_id": "multi-tenancy",
+      "priority": 3
+    },
+    {
+      "skill_id": "contract-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "php",
+      "priority": 3
+    },
+    {
+      "skill_id": "ruby",
+      "priority": 3
     }
   ]
 }

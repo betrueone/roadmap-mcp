@@ -13,9 +13,6 @@
       "skill_id": "delivery-planning"
     },
     {
-      "skill_id": "technical-documentation"
-    },
-    {
       "skill_id": "technical-debt-management"
     },
     {
@@ -41,10 +38,6 @@
     },
     {
       "skill_id": "active-listening"
-    },
-    {
-      "skill_id": "system-design",
-      "minimum_seniority": "mid"
     },
     {
       "skill_id": "architecture-decisions",
@@ -91,7 +84,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "reliability-objectives",
+      "skill_id": "service-level-engineering",
       "minimum_seniority": "senior"
     },
     {
@@ -113,6 +106,84 @@
     {
       "skill_id": "disaster-recovery",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "jira",
+      "priority": 2
+    },
+    {
+      "skill_id": "delivery-planning",
+      "priority": 1
+    },
+    {
+      "skill_id": "technical-debt-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "engineering-metrics",
+      "priority": 1
+    },
+    {
+      "skill_id": "hiring-process-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "performance-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "priority": 2
+    },
+    {
+      "skill_id": "test-strategy",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "release-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "engineering-risk-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "incident-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "engineering-budgeting",
+      "priority": 2
+    },
+    {
+      "skill_id": "organizational-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "security-risk-assessment",
+      "priority": 3
+    },
+    {
+      "skill_id": "service-level-engineering",
+      "priority": 3
+    },
+    {
+      "skill_id": "cost-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "portfolio-management",
+      "priority": 3
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "priority": 3
     }
   ]
 }

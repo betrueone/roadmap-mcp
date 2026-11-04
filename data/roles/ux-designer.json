@@ -98,5 +98,91 @@
       "skill_id": "conflict-resolution",
       "minimum_seniority": "staff"
     }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "figma",
+      "priority": 2
+    },
+    {
+      "skill_id": "user-research",
+      "priority": 1
+    },
+    {
+      "skill_id": "usability-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "information-architecture",
+      "priority": 1
+    },
+    {
+      "skill_id": "interaction-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "wireframing",
+      "priority": 1
+    },
+    {
+      "skill_id": "prototyping",
+      "priority": 1
+    },
+    {
+      "skill_id": "visual-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "accessibility",
+      "priority": 1
+    },
+    {
+      "skill_id": "sketch",
+      "priority": 2
+    },
+    {
+      "skill_id": "balsamiq",
+      "priority": 2
+    },
+    {
+      "skill_id": "research-synthesis",
+      "priority": 2
+    },
+    {
+      "skill_id": "journey-mapping",
+      "priority": 2
+    },
+    {
+      "skill_id": "design-handoff",
+      "priority": 2
+    },
+    {
+      "skill_id": "design-systems",
+      "priority": 2
+    },
+    {
+      "skill_id": "design-tokens",
+      "priority": 2
+    },
+    {
+      "skill_id": "experiment-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "product-metrics",
+      "priority": 3
+    },
+    {
+      "skill_id": "product-discovery",
+      "priority": 3
+    },
+    {
+      "skill_id": "product-strategy",
+      "priority": 3
+    },
+    {
+      "skill_id": "portfolio-management",
+      "priority": 3
+    }
   ]
 }

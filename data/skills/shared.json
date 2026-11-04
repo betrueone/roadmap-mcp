@@ -1,122 +1,127 @@
 {
-  "automated-testing": {
-    "name": "Automated testing",
-    "description": "Verify application behavior with unit and integration tests."
-  },
-  "application-security": {
-    "name": "Application security",
-    "description": "Protect applications through input validation, authorization, and secure secret handling."
-  },
-  "deployment": {
-    "name": "Deployment and delivery",
-    "description": "Automate builds, delivery checks, deployments, and rollbacks."
-  },
-  "observability": {
-    "name": "Observability",
-    "description": "Monitor service health and investigate failures using logs, metrics, and traces."
-  },
-  "system-design": {
-    "name": "System design",
-    "description": "Design systems around performance, reliability, scalability, and cost requirements."
-  },
   "technical-leadership": {
     "name": "Technical leadership",
-    "description": "Lead technical reviews, mentor engineers, and coordinate delivery decisions."
+    "description": "Lead technical reviews, mentor engineers, and coordinate delivery decisions.",
+    "type": "soft_skill"
   },
   "technical-strategy": {
     "name": "Cross-team technical strategy",
-    "description": "Set technical direction and coordinate architecture changes across teams."
+    "description": "Set technical direction and coordinate architecture changes across teams.",
+    "type": "soft_skill"
   },
   "incident-management": {
-    "name": "Incident management",
-    "description": "Diagnose production incidents, coordinate recovery, and prevent repeat failures."
+    "name": "Incident triage and recovery",
+    "description": "Use telemetry and runbooks to isolate production failures, restore service, and verify corrective actions after recovery.",
+    "type": "implementation_capability"
   },
   "privacy-engineering": {
-    "name": "Privacy engineering",
-    "description": "Protect sensitive data through access controls, redaction, and retention rules."
+    "name": "PII redaction and data minimization",
+    "description": "Identify sensitive fields, limit their collection and exposure, and define redaction rules for logs, exports, and analytics.",
+    "type": "implementation_capability"
   },
   "auditability": {
-    "name": "Audit trails and traceability",
-    "description": "Track changes and access events to support reliable investigation."
-  },
-  "http-networking": {
-    "name": "HTTP and networking fundamentals",
-    "description": "Explain request lifecycles, HTTP methods, status codes, DNS, and connection behavior."
-  },
-  "package-management": {
-    "name": "Package and dependency management",
-    "description": "Install, pin, and update dependencies using package managers and lockfiles."
-  },
-  "debugging": {
-    "name": "Debugging and troubleshooting",
-    "description": "Reproduce failures, inspect runtime state, and isolate root causes."
-  },
-  "code-quality": {
-    "name": "Code quality and refactoring",
-    "description": "Improve maintainability through clear structure, static analysis, and behavior-preserving changes."
-  },
-  "technical-documentation": {
-    "name": "Technical documentation",
-    "description": "Document interfaces, implementation decisions, and operational procedures for other engineers."
+    "name": "Audit event logging",
+    "description": "Record actor, action, resource, timestamp, and outcome for sensitive operations with controlled access and retention.",
+    "type": "implementation_capability"
   },
   "authentication": {
-    "name": "Authentication",
-    "description": "Implement identity verification, session handling, and secure token validation."
+    "name": "Session and token authentication",
+    "description": "Implement session creation, expiration, revocation, and token verification, and test rejected, expired, and replayed credentials.",
+    "type": "implementation_capability"
   },
   "authorization": {
-    "name": "Authorization and access control",
-    "description": "Enforce permissions and resource ownership at application boundaries."
+    "name": "Role-based and resource-level authorization",
+    "description": "Enforce role permissions and resource ownership on the server, with tests for cross-user and cross-tenant access attempts.",
+    "type": "implementation_capability"
   },
   "secrets-management": {
     "name": "Secrets management",
-    "description": "Store, rotate, and restrict access to credentials without exposing them in code or logs."
+    "description": "Store, rotate, and restrict access to credentials without exposing them in code or logs.",
+    "type": "implementation_capability"
   },
   "continuous-integration": {
     "name": "Continuous integration",
-    "description": "Automate builds, static checks, and tests for changes before delivery."
-  },
-  "cloud-fundamentals": {
-    "name": "Cloud infrastructure fundamentals",
-    "description": "Use managed compute, storage, networking, and identity services to host applications."
+    "description": "Automate builds, static checks, and tests for changes before delivery.",
+    "type": "implementation_capability"
   },
   "contract-testing": {
     "name": "Contract testing",
-    "description": "Verify that API producers and consumers agree on request, response, and compatibility rules."
+    "description": "Verify that API producers and consumers agree on request, response, and compatibility rules.",
+    "type": "implementation_capability"
   },
   "load-testing": {
     "name": "Load and performance testing",
-    "description": "Measure throughput, latency, and failure behavior under realistic traffic."
+    "description": "Measure throughput, latency, and failure behavior under realistic traffic.",
+    "type": "implementation_capability"
   },
   "dependency-security": {
     "name": "Dependency security",
-    "description": "Identify vulnerable dependencies and apply verified updates without breaking application behavior."
+    "description": "Identify vulnerable dependencies and apply verified updates without breaking application behavior.",
+    "type": "implementation_capability"
   },
   "threat-modeling": {
     "name": "Threat modeling",
-    "description": "Identify attack paths and select controls based on system boundaries and sensitive assets."
-  },
-  "reliability-objectives": {
-    "name": "Service reliability objectives",
-    "description": "Define service indicators, reliability targets, error budgets, and actionable alerts."
+    "description": "Identify attack paths and select controls based on system boundaries and sensitive assets.",
+    "type": "implementation_capability"
   },
   "disaster-recovery": {
     "name": "Disaster recovery",
-    "description": "Design and test backup, restoration, and failover procedures against recovery objectives."
+    "description": "Design and test backup, restoration, and failover procedures against recovery objectives.",
+    "type": "implementation_capability"
   },
   "architecture-decisions": {
-    "name": "Architecture decision making",
-    "description": "Compare design alternatives and record decisions with their constraints and tradeoffs."
+    "name": "Architecture decision records (ADRs)",
+    "description": "Record a concrete design choice, alternatives, constraints, and operational tradeoffs so later changes can be evaluated against the original decision.",
+    "type": "implementation_capability"
   },
   "capacity-planning": {
-    "name": "Capacity planning",
-    "description": "Estimate workload growth and validate compute, storage, and network capacity requirements."
+    "name": "Workload capacity modeling",
+    "description": "Translate traffic and data-growth assumptions into concurrency, resource, and saturation estimates, then validate them with workload measurements.",
+    "type": "implementation_capability"
   },
   "cost-optimization": {
     "name": "Infrastructure cost optimization",
-    "description": "Identify resource waste and balance infrastructure spending against performance and reliability needs."
+    "description": "Identify resource waste and balance infrastructure spending against performance and reliability needs.",
+    "type": "implementation_capability"
   },
   "engineering-standards": {
     "name": "Engineering standards and governance",
-    "description": "Establish shared technical practices and guide their adoption across teams."
+    "description": "Establish shared technical practices and guide their adoption across teams.",
+    "type": "soft_skill"
+  },
+  "unit-testing": {
+    "name": "Unit testing",
+    "description": "Write isolated tests for business rules, boundary values, and failure paths using deterministic fixtures and assertions.",
+    "type": "implementation_capability"
+  },
+  "integration-testing": {
+    "name": "Integration testing",
+    "description": "Verify interactions with databases, APIs, and queues using controlled test data, cleanup, and dependency failure scenarios.",
+    "type": "implementation_capability"
+  },
+  "schema-validation": {
+    "name": "Schema validation",
+    "description": "Validate incoming records and requests against schemas, type constraints, size limits, and allowed values before processing.",
+    "type": "implementation_capability"
+  },
+  "deployment-rollbacks": {
+    "name": "Deployment health checks and rollbacks",
+    "description": "Gate application rollouts on readiness and health checks, detect failed releases, and restore a compatible application version.",
+    "type": "implementation_capability"
+  },
+  "structured-logging": {
+    "name": "Structured logging",
+    "description": "Emit machine-readable events with request identifiers and error context while redacting credentials and personal data.",
+    "type": "implementation_capability"
+  },
+  "application-metrics": {
+    "name": "Application metrics instrumentation",
+    "description": "Instrument request rates, error counts, and latency histograms with bounded label cardinality and actionable dashboards.",
+    "type": "implementation_capability"
+  },
+  "distributed-tracing": {
+    "name": "Distributed tracing",
+    "description": "Instrument spans and propagate trace context across service calls and asynchronous messages to locate failing or slow dependencies.",
+    "type": "implementation_capability"
   }
 }

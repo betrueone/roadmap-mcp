@@ -37,45 +37,26 @@
       "skill_id": "descriptive-statistics"
     },
     {
-      "skill_id": "probability"
-    },
-    {
-      "skill_id": "linear-algebra"
-    },
-    {
       "skill_id": "statistical-modeling"
     },
     {
       "skill_id": "git-version-control"
     },
     {
-      "skill_id": "debugging"
+      "skill_id": "scikit-learn"
     },
     {
-      "skill_id": "code-quality"
+      "skill_id": "feature-engineering"
     },
     {
-      "skill_id": "technical-documentation"
-    },
-    {
-      "skill_id": "scikit-learn",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "feature-engineering",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "supervised-learning",
-      "minimum_seniority": "mid"
+      "skill_id": "supervised-learning"
     },
     {
       "skill_id": "unsupervised-learning",
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "model-evaluation",
-      "minimum_seniority": "mid"
+      "skill_id": "model-evaluation"
     },
     {
       "skill_id": "hyperparameter-tuning",
@@ -114,8 +95,10 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "automated-testing",
-      "minimum_seniority": "mid"
+      "skill_id": "unit-testing"
+    },
+    {
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "causal-inference",
@@ -172,6 +155,164 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 1
+    },
+    {
+      "skill_id": "r",
+      "priority": 2
+    },
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "pandas",
+      "priority": 1
+    },
+    {
+      "skill_id": "numpy",
+      "priority": 1
+    },
+    {
+      "skill_id": "scikit-learn",
+      "priority": 1
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-cleaning",
+      "priority": 1
+    },
+    {
+      "skill_id": "exploratory-analysis",
+      "priority": 1
+    },
+    {
+      "skill_id": "statistical-modeling",
+      "priority": 1
+    },
+    {
+      "skill_id": "feature-engineering",
+      "priority": 1
+    },
+    {
+      "skill_id": "supervised-learning",
+      "priority": 1
+    },
+    {
+      "skill_id": "model-evaluation",
+      "priority": 1
+    },
+    {
+      "skill_id": "matplotlib",
+      "priority": 2
+    },
+    {
+      "skill_id": "seaborn",
+      "priority": 2
+    },
+    {
+      "skill_id": "pytorch",
+      "priority": 2
+    },
+    {
+      "skill_id": "tensorflow",
+      "priority": 2
+    },
+    {
+      "skill_id": "keras",
+      "priority": 2
+    },
+    {
+      "skill_id": "descriptive-statistics",
+      "priority": 2
+    },
+    {
+      "skill_id": "unsupervised-learning",
+      "priority": 2
+    },
+    {
+      "skill_id": "hyperparameter-tuning",
+      "priority": 2
+    },
+    {
+      "skill_id": "hypothesis-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "experiment-design",
+      "priority": 2
+    },
+    {
+      "skill_id": "time-series-analysis",
+      "priority": 2
+    },
+    {
+      "skill_id": "ml-experiment-tracking",
+      "priority": 2
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "causal-inference",
+      "priority": 3
+    },
+    {
+      "skill_id": "deep-learning",
+      "priority": 3
+    },
+    {
+      "skill_id": "nlp",
+      "priority": 3
+    },
+    {
+      "skill_id": "computer-vision",
+      "priority": 3
+    },
+    {
+      "skill_id": "recommendation-systems",
+      "priority": 3
+    },
+    {
+      "skill_id": "model-explainability",
+      "priority": 3
+    },
+    {
+      "skill_id": "responsible-ml",
+      "priority": 3
+    },
+    {
+      "skill_id": "ml-pipelines",
+      "priority": 3
+    },
+    {
+      "skill_id": "model-monitoring",
+      "priority": 3
+    },
+    {
+      "skill_id": "ml-system-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "priority": 3
     }
   ]
 }

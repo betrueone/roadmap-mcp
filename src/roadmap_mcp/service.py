@@ -5,10 +5,16 @@ from roadmap_mcp.models import (
     CatalogEntry,
     CatalogResult,
     Coverage,
+    DescribedRankedSkill,
     NamedEntity,
+    RankedSkill,
+    Requirement,
     Roadmap,
+    Skill,
     SkillCategory,
+    SkillLimit,
     SkillNameOnly,
+    SkillsResult,
 )
 
 
@@ -71,7 +77,9 @@ class RoadmapService:
         for skill_id, skill in selected.items():
             category_id = catalog.skill_categories[skill_id]
             grouped.setdefault(category_id, []).append(
-                skill if include_descriptions else SkillNameOnly(name=skill.name)
+                Skill(name=skill.name, description=skill.description)
+                if include_descriptions
+                else SkillNameOnly(name=skill.name)
             )
 
         by_type = {"hard": [], "soft": []}
@@ -82,3 +90,82 @@ class RoadmapService:
                 )
 
         return Roadmap(hard_skills=by_type["hard"], soft_skills=by_type["soft"])
+
+    def get_skills(
+        self,
+        role_name: str,
+        industry: str | None = None,
+        seniority_level: str | None = None,
+        limit: SkillLimit = 50,
+        include_descriptions: bool = False,
+    ) -> SkillsResult:
+        """Return curated role options with editorial priorities, never candidate claims."""
+        catalog = self.catalog
+        role = catalog.roles[catalog.resolve("role", role_name)]
+        sector = catalog.industries[catalog.resolve("industry", industry)] if industry else None
+        level = (
+            catalog.levels[catalog.resolve("seniority", seniority_level)]
+            if seniority_level
+            else None
+        )
+        if sector and role.id not in sector.role_requirements:
+            raise LookupError(
+                f"No skills for {role.name} in {sector.name}. "
+                "Call list_catalog for supported combinations."
+            )
+
+        def eligible(requirement: Requirement) -> bool:
+            return level is None or catalog.levels[requirement.minimum_seniority].rank <= level.rank
+
+        requirements = {r.skill_id: r for r in role.requirements}
+        selected = {
+            option.skill_id: option.priority
+            for option in role.skill_options
+            if eligible(requirements[option.skill_id])
+        }
+        if sector:
+            # Industry context supplies optional additions, never promotes role defaults.
+            # A role option filtered by seniority must not reappear via industry mappings.
+            for requirement in [*sector.role_requirements[role.id], *sector.requirements]:
+                skill_id = requirement.skill_id
+                if skill_id in requirements and not eligible(requirements[skill_id]):
+                    continue
+                if eligible(requirement) and catalog.skills[skill_id].type != "soft_skill":
+                    selected.setdefault(skill_id, 3)
+
+        model = DescribedRankedSkill if include_descriptions else RankedSkill
+        skills = []
+        for skill_id in sorted(selected, key=selected.get)[:limit]:
+            skill = catalog.skills[skill_id]
+            layer = (
+                skill.type
+                if skill.type in {"implementation_capability", "professional_method"}
+                else "core_technology"
+            )
+            fields = {"description": skill.description} if include_descriptions else {}
+            skills.append(
+                model(
+                    id=skill_id,
+                    name=skill.name,
+                    type=skill.type,
+                    layer=layer,
+                    category=catalog.categories[catalog.skill_categories[skill_id]].name,
+                    priority=selected[skill_id],
+                    technology_ecosystems=skill.technology_ecosystems,
+                    technology_family=skill.technology_family,
+                    selection_group=skill.selection_group,
+                    related_capabilities=[
+                        catalog.skills[capability_id].name
+                        for capability_id in skill.related_capabilities
+                    ],
+                    **fields,
+                )
+            )
+        return SkillsResult(
+            role=role.name,
+            industry=sector.name if sector else None,
+            seniority_level=level.name if level else None,
+            available_count=len(selected),
+            returned_count=len(skills),
+            skills=skills,
+        )

@@ -32,19 +32,13 @@
       "skill_id": "mobile-persistence"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
+    },
+    {
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "uikit",
@@ -59,8 +53,7 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "xctest",
-      "minimum_seniority": "mid"
+      "skill_id": "xctest"
     },
     {
       "skill_id": "firebase",
@@ -115,15 +108,11 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "mobile-crash-diagnostics",
       "minimum_seniority": "senior"
     },
     {
       "skill_id": "sentry",
-      "minimum_seniority": "senior"
-    },
-    {
-      "skill_id": "application-security",
       "minimum_seniority": "senior"
     },
     {
@@ -145,6 +134,136 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "swift",
+      "priority": 1
+    },
+    {
+      "skill_id": "swiftui",
+      "priority": 1
+    },
+    {
+      "skill_id": "xcode",
+      "priority": 1
+    },
+    {
+      "skill_id": "swift-package-manager",
+      "priority": 1
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "mobile-lifecycle",
+      "priority": 1
+    },
+    {
+      "skill_id": "mobile-state",
+      "priority": 1
+    },
+    {
+      "skill_id": "mobile-networking",
+      "priority": 1
+    },
+    {
+      "skill_id": "mobile-persistence",
+      "priority": 1
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "uikit",
+      "priority": 2
+    },
+    {
+      "skill_id": "core-data",
+      "priority": 2
+    },
+    {
+      "skill_id": "combine",
+      "priority": 2
+    },
+    {
+      "skill_id": "xctest",
+      "priority": 2
+    },
+    {
+      "skill_id": "firebase",
+      "priority": 2
+    },
+    {
+      "skill_id": "github-actions",
+      "priority": 2
+    },
+    {
+      "skill_id": "mobile-accessibility",
+      "priority": 2
+    },
+    {
+      "skill_id": "mobile-security",
+      "priority": 2
+    },
+    {
+      "skill_id": "push-notifications",
+      "priority": 2
+    },
+    {
+      "skill_id": "mobile-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "offline-synchronization",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "fastlane",
+      "priority": 3
+    },
+    {
+      "skill_id": "appium",
+      "priority": 3
+    },
+    {
+      "skill_id": "sentry",
+      "priority": 3
+    },
+    {
+      "skill_id": "mobile-architecture",
+      "priority": 3
+    },
+    {
+      "skill_id": "mobile-performance",
+      "priority": 3
+    },
+    {
+      "skill_id": "mobile-release",
+      "priority": 3
+    },
+    {
+      "skill_id": "mobile-crash-diagnostics",
+      "priority": 3
+    },
+    {
+      "skill_id": "architecture-decisions",
+      "priority": 3
+    },
+    {
+      "skill_id": "design-systems",
+      "priority": 3
     }
   ]
 }

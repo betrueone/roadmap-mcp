@@ -1,90 +1,92 @@
 {
-  "web-platform": {
-    "name": "Web platform fundamentals",
-    "description": "Build semantic, responsive interfaces with HTML, CSS, JavaScript, and browser APIs."
-  },
   "accessibility": {
     "name": "Web accessibility",
-    "description": "Build and test interfaces for keyboard navigation and assistive technologies."
-  },
-  "frontend-state": {
-    "name": "Frontend state and API integration",
-    "description": "Manage interface and server state, including loading, validation, retries, and failed requests."
+    "description": "Build and test interfaces for keyboard navigation and assistive technologies.",
+    "type": "implementation_capability"
   },
   "web-performance": {
     "name": "Web performance",
-    "description": "Measure and improve page loading, rendering, and interaction performance."
+    "description": "Measure and improve page loading, rendering, and interaction performance.",
+    "type": "implementation_capability"
   },
   "design-systems": {
-    "name": "Design systems and UI architecture",
-    "description": "Build reusable, accessible UI components with consistent behavior and documented interfaces."
+    "name": "Accessible component libraries",
+    "description": "Build reusable UI components with documented states, platform accessibility semantics, input behavior, and shared visual tokens for web or native applications.",
+    "type": "implementation_capability"
   },
   "browser-devtools": {
-    "name": "Browser developer tools",
-    "description": "Inspect page structure, network requests, runtime errors, and performance profiles."
+    "name": "Browser network and rendering diagnostics",
+    "description": "Inspect request waterfalls, runtime exceptions, layout shifts, and rendering profiles to reproduce and diagnose interface failures.",
+    "type": "implementation_capability"
   },
   "forms-validation": {
     "name": "Form handling and validation",
-    "description": "Validate user input and present accessible errors without losing form state."
+    "description": "Validate user input and present accessible errors without losing form state.",
+    "type": "implementation_capability"
   },
   "browser-compatibility": {
-    "name": "Browser compatibility",
-    "description": "Test interfaces across supported browsers, devices, and input methods."
+    "name": "Cross-browser compatibility testing",
+    "description": "Verify critical interactions and layouts across supported browsers, devices, and input methods, and reproduce browser-specific regressions.",
+    "type": "implementation_capability"
   },
   "frontend-routing": {
     "name": "Client-side routing",
-    "description": "Manage navigation, route parameters, deep links, and protected application views."
-  },
-  "frontend-tooling": {
-    "name": "Frontend build tooling",
-    "description": "Configure module bundling, development servers, linting, and production builds."
-  },
-  "component-based-ui": {
-    "name": "Component-based UI development",
-    "description": "Build reusable interfaces using a primary component framework and clear component contracts."
+    "description": "Manage navigation, route parameters, deep links, and protected application views.",
+    "type": "implementation_capability"
   },
   "browser-authentication": {
     "name": "Browser authentication flows",
-    "description": "Integrate sign-in and session renewal without exposing tokens or relying on client-only authorization."
+    "description": "Integrate sign-in and session renewal without exposing tokens or relying on client-only authorization.",
+    "type": "implementation_capability"
   },
   "frontend-test-automation": {
     "name": "Frontend test automation",
-    "description": "Test components and complete user journeys with appropriate browser and interaction checks."
+    "description": "Test components and complete user journeys with appropriate browser and interaction checks.",
+    "type": "implementation_capability"
   },
   "internationalization": {
     "name": "Internationalization and localization",
-    "description": "Support translated content, locale-specific formatting, and adaptable interface layouts."
+    "description": "Support translated content, locale-specific formatting, and adaptable interface layouts.",
+    "type": "implementation_capability"
   },
   "client-data-caching": {
     "name": "Client-side data caching",
-    "description": "Manage request deduplication, cache invalidation, stale data, and optimistic updates."
+    "description": "Manage request deduplication, cache invalidation, stale data, and optimistic updates.",
+    "type": "implementation_capability"
   },
   "frontend-security": {
     "name": "Frontend security",
-    "description": "Prevent script injection and unsafe cross-origin behavior through safe rendering and browser security controls."
+    "description": "Prevent script injection and unsafe cross-origin behavior through safe rendering and browser security controls.",
+    "type": "implementation_capability"
   },
   "server-rendering": {
     "name": "Server rendering and hydration",
-    "description": "Choose rendering strategies and handle hydration, caching, and client-server boundaries."
+    "description": "Choose rendering strategies and handle hydration, caching, and client-server boundaries.",
+    "type": "implementation_capability"
   },
   "design-tokens": {
     "name": "Design tokens and theming",
-    "description": "Represent shared visual decisions as reusable tokens for consistent themes and components."
+    "description": "Represent shared visual decisions as reusable tokens for consistent themes and components.",
+    "type": "implementation_capability"
   },
   "frontend-observability": {
-    "name": "Frontend observability",
-    "description": "Track browser errors and user-facing performance with actionable telemetry."
+    "name": "Browser error and performance telemetry",
+    "description": "Capture browser exceptions, release identifiers, and user-facing timing measurements with privacy controls and actionable diagnostic context.",
+    "type": "implementation_capability"
   },
   "frontend-architecture": {
-    "name": "Frontend application architecture",
-    "description": "Organize application boundaries, shared components, and dependencies for maintainable delivery."
+    "name": "Frontend module and dependency boundaries",
+    "description": "Separate route, feature, and shared-component modules with explicit interfaces and checks against circular or unintended dependencies.",
+    "type": "implementation_capability"
   },
   "visual-regression-testing": {
     "name": "Visual regression testing",
-    "description": "Detect unintended interface changes using stable visual baselines and focused review."
+    "description": "Detect unintended interface changes using stable visual baselines and focused review.",
+    "type": "implementation_capability"
   },
   "frontend-release-strategies": {
     "name": "Frontend release strategies",
-    "description": "Roll out interface changes safely using feature flags, versioned assets, and rollback plans."
+    "description": "Roll out interface changes safely using feature flags, versioned assets, and rollback plans.",
+    "type": "implementation_capability"
   }
 }

@@ -19,28 +19,19 @@
       "skill_id": "network-administration"
     },
     {
-      "skill_id": "cloud-fundamentals"
-    },
-    {
       "skill_id": "containers"
     },
     {
-      "skill_id": "deployment"
+      "skill_id": "deployment-rollbacks"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
+    },
+    {
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "aws",
@@ -119,7 +110,15 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "mid"
     },
     {
@@ -201,6 +200,172 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "bash",
+      "priority": 1
+    },
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "linux-cli",
+      "priority": 1
+    },
+    {
+      "skill_id": "containers",
+      "priority": 1
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 1
+    },
+    {
+      "skill_id": "terraform",
+      "priority": 1
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "github-actions",
+      "priority": 2
+    },
+    {
+      "skill_id": "prometheus",
+      "priority": 1
+    },
+    {
+      "skill_id": "grafana",
+      "priority": 1
+    },
+    {
+      "skill_id": "infrastructure-as-code",
+      "priority": 1
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 1
+    },
+    {
+      "skill_id": "deployment-rollbacks",
+      "priority": 1
+    },
+    {
+      "skill_id": "secrets-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "aws",
+      "priority": 2
+    },
+    {
+      "skill_id": "azure",
+      "priority": 2
+    },
+    {
+      "skill_id": "google-cloud",
+      "priority": 2
+    },
+    {
+      "skill_id": "ansible",
+      "priority": 2
+    },
+    {
+      "skill_id": "gitlab-ci",
+      "priority": 2
+    },
+    {
+      "skill_id": "jenkins",
+      "priority": 2
+    },
+    {
+      "skill_id": "docker-compose",
+      "priority": 2
+    },
+    {
+      "skill_id": "helm",
+      "priority": 2
+    },
+    {
+      "skill_id": "nginx",
+      "priority": 2
+    },
+    {
+      "skill_id": "vault",
+      "priority": 2
+    },
+    {
+      "skill_id": "opentelemetry",
+      "priority": 2
+    },
+    {
+      "skill_id": "configuration-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "structured-logging",
+      "priority": 2
+    },
+    {
+      "skill_id": "application-metrics",
+      "priority": 2
+    },
+    {
+      "skill_id": "distributed-tracing",
+      "priority": 2
+    },
+    {
+      "skill_id": "backup-restoration",
+      "priority": 2
+    },
+    {
+      "skill_id": "release-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "gitops",
+      "priority": 2
+    },
+    {
+      "skill_id": "kubernetes-operations",
+      "priority": 2
+    },
+    {
+      "skill_id": "argocd",
+      "priority": 3
+    },
+    {
+      "skill_id": "pulumi",
+      "priority": 3
+    },
+    {
+      "skill_id": "container-security",
+      "priority": 3
+    },
+    {
+      "skill_id": "infrastructure-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "priority": 3
+    },
+    {
+      "skill_id": "capacity-planning",
+      "priority": 3
+    },
+    {
+      "skill_id": "cost-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "incident-management",
+      "priority": 3
     }
   ]
 }

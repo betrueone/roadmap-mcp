@@ -14,8 +14,8 @@ from roadmap_mcp.models import (
     Role,
     Seniority,
     SeniorityFile,
-    Skill,
     SkillFile,
+    StoredSkill,
 )
 
 
@@ -68,7 +68,7 @@ class Catalog:
         self.levels: dict[str, Seniority] = unique_index(
             self._read(self.directory / "seniority.json", SeniorityFile).levels, "seniority"
         )
-        self.skills: dict[str, Skill] = {}
+        self.skills: dict[str, StoredSkill] = {}
         for file in self._files("skills"):
             for skill_id, skill in self._read(file, SkillFile).root.items():
                 if skill_id in self.skills:
@@ -113,6 +113,51 @@ class Catalog:
                 raise CatalogError(f"{origin}: duplicate requirement {requirement.skill_id}")
             seen.add(requirement.skill_id)
 
+    def _validate_skill_metadata(self) -> None:
+        names = {}
+        for skill_id, skill in self.skills.items():
+            name = normalize(skill.name)
+            if name in names:
+                raise CatalogError(
+                    f"Duplicate skill name: {skill.name} ({names[name]} and {skill_id})"
+                )
+            names[name] = skill_id
+            is_technology = skill.type not in {
+                "implementation_capability",
+                "professional_method",
+                "soft_skill",
+            }
+            if is_technology and skill.technology_family is None:
+                raise CatalogError(f"skill:{skill_id}: technology requires technology_family")
+            if not is_technology and skill.technology_family is not None:
+                raise CatalogError(f"skill:{skill_id}: technology_family requires a technology")
+            if not is_technology and skill.selection_group is not None:
+                raise CatalogError(f"skill:{skill_id}: selection_group requires a technology")
+            if not is_technology and skill.technology_ecosystems:
+                raise CatalogError(f"skill:{skill_id}: technology_ecosystems requires a technology")
+            ecosystems = [normalize(name) for name in skill.technology_ecosystems]
+            if len(set(ecosystems)) != len(ecosystems):
+                raise CatalogError(f"skill:{skill_id}: duplicate technology ecosystem")
+            seen = set()
+            for capability_id in skill.related_capabilities:
+                if capability_id in seen:
+                    raise CatalogError(
+                        f"skill:{skill_id}: duplicate related capability {capability_id}"
+                    )
+                if capability_id == skill_id:
+                    raise CatalogError(f"skill:{skill_id}: self-related capability")
+                capability = self.skills.get(capability_id)
+                if capability is None:
+                    raise CatalogError(
+                        f"skill:{skill_id}: unknown related capability {capability_id}"
+                    )
+                if capability.type != "implementation_capability":
+                    raise CatalogError(
+                        f"skill:{skill_id}: related capability {capability_id} "
+                        "must be an implementation_capability"
+                    )
+                seen.add(capability_id)
+
     def _validate_references(self) -> None:
         category_names = set()
         categorized = {}
@@ -129,15 +174,34 @@ class Catalog:
                         f"Skill {skill_id} must belong to exactly one category; "
                         f"listed in {categorized[skill_id]} and {category_id}"
                     )
+                is_soft = self.skills[skill_id].type == "soft_skill"
+                if is_soft != (category.type == "soft"):
+                    raise CatalogError(
+                        f"category:{category_id}: incompatible skill type {skill_id}"
+                    )
                 categorized[skill_id] = category_id
         missing = self.skills.keys() - categorized.keys()
         if missing:
             raise CatalogError(f"Skills without a category: {', '.join(sorted(missing))}")
         self.skill_categories = categorized
+        self._validate_skill_metadata()
         if len({level.rank for level in self.levels.values()}) != len(self.levels):
             raise CatalogError("Seniority ranks must be unique")
         for role in self.roles.values():
             self._validate_requirements(role.requirements, f"role:{role.id}")
+            requirements = {requirement.skill_id for requirement in role.requirements}
+            seen = set()
+            for option in role.skill_options:
+                if option.skill_id not in requirements:
+                    raise CatalogError(
+                        f"role:{role.id}: skill option {option.skill_id} "
+                        "must reference a role requirement"
+                    )
+                if option.skill_id in seen:
+                    raise CatalogError(f"role:{role.id}: duplicate skill option {option.skill_id}")
+                if self.skills[option.skill_id].type == "soft_skill":
+                    raise CatalogError(f"role:{role.id}: soft skill option {option.skill_id}")
+                seen.add(option.skill_id)
         for industry in self.industries.values():
             self._validate_requirements(industry.requirements, f"industry:{industry.id}")
             for role_id, requirements in industry.role_requirements.items():

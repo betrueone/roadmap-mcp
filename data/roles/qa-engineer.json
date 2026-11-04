@@ -31,50 +31,31 @@
       "skill_id": "testrail"
     },
     {
-      "skill_id": "http-networking"
-    },
-    {
       "skill_id": "sql"
     },
     {
       "skill_id": "git-version-control"
     },
     {
-      "skill_id": "debugging"
+      "skill_id": "python"
     },
     {
-      "skill_id": "code-quality"
+      "skill_id": "javascript"
     },
     {
-      "skill_id": "technical-documentation"
+      "skill_id": "typescript"
     },
     {
-      "skill_id": "python",
-      "minimum_seniority": "mid"
+      "skill_id": "pytest"
     },
     {
-      "skill_id": "javascript",
-      "minimum_seniority": "mid"
+      "skill_id": "playwright"
     },
     {
-      "skill_id": "typescript",
-      "minimum_seniority": "mid"
+      "skill_id": "cypress"
     },
     {
-      "skill_id": "pytest",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "playwright",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "cypress",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "selenium",
-      "minimum_seniority": "mid"
+      "skill_id": "selenium"
     },
     {
       "skill_id": "appium",
@@ -93,7 +74,11 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "automated-testing",
+      "skill_id": "unit-testing",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "integration-testing",
       "minimum_seniority": "mid"
     },
     {
@@ -137,10 +122,6 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "application-security",
-      "minimum_seniority": "senior"
-    },
-    {
       "skill_id": "threat-modeling",
       "minimum_seniority": "senior"
     },
@@ -163,6 +144,148 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "javascript",
+      "priority": 2
+    },
+    {
+      "skill_id": "typescript",
+      "priority": 2
+    },
+    {
+      "skill_id": "sql",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "postman",
+      "priority": 2
+    },
+    {
+      "skill_id": "playwright",
+      "priority": 2
+    },
+    {
+      "skill_id": "pytest",
+      "priority": 2
+    },
+    {
+      "skill_id": "test-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "exploratory-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "regression-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "api-testing",
+      "priority": 1
+    },
+    {
+      "skill_id": "defect-management",
+      "priority": 1
+    },
+    {
+      "skill_id": "cypress",
+      "priority": 2
+    },
+    {
+      "skill_id": "selenium",
+      "priority": 2
+    },
+    {
+      "skill_id": "appium",
+      "priority": 2
+    },
+    {
+      "skill_id": "jmeter",
+      "priority": 2
+    },
+    {
+      "skill_id": "k6",
+      "priority": 2
+    },
+    {
+      "skill_id": "locust",
+      "priority": 2
+    },
+    {
+      "skill_id": "testrail",
+      "priority": 2
+    },
+    {
+      "skill_id": "github-actions",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "test-data-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "accessibility-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "contract-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "load-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "security-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "test-strategy",
+      "priority": 3
+    },
+    {
+      "skill_id": "test-automation-architecture",
+      "priority": 3
+    },
+    {
+      "skill_id": "quality-metrics",
+      "priority": 3
+    },
+    {
+      "skill_id": "threat-modeling",
+      "priority": 3
+    },
+    {
+      "skill_id": "performance-profiling",
+      "priority": 3
+    },
+    {
+      "skill_id": "engineering-risk-management",
+      "priority": 3
     }
   ]
 }

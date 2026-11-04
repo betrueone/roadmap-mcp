@@ -17,7 +17,9 @@ def mutate(directory, filename, edit):
     [
         (
             "skills/backend.json",
-            lambda d: d.update(python={"name": "Python", "description": "Write code."}),
+            lambda d: d.update(
+                python={"name": "Python", "description": "Write code.", "type": "language"}
+            ),
             "Duplicate skill ID",
         ),
         (
@@ -144,11 +146,19 @@ def test_empty_and_malformed_catalogs_rejected(tmp_path, editable_data):
         Catalog(editable_data)
 
 
-def test_stored_skills_contain_only_names_and_descriptions(editable_data):
+def test_stored_skills_have_explicit_classification(editable_data):
     for path in (editable_data / "skills").glob("*.json"):
         skills = json.loads(path.read_text())
         assert skills
-        assert all(set(skill) == {"name", "description"} for skill in skills.values())
+        for skill in skills.values():
+            expected = {"name", "description", "type"}
+            if skill["type"] not in {
+                "implementation_capability",
+                "professional_method",
+                "soft_skill",
+            }:
+                expected |= {"technology_family", "related_capabilities"}
+            assert expected <= set(skill) <= expected | {"selection_group", "technology_ecosystems"}
 
 
 def test_all_catalog_skills_are_used_by_selection_rules(catalog):
@@ -175,4 +185,142 @@ def test_source_data_stores_literal_technology_names(editable_data):
         "apache-airflow": "Apache Airflow",
     }.items():
         assert skills[skill_id]["name"] == name
-        assert set(skills[skill_id]) == {"name", "description"}
+        expected = {
+            "name",
+            "description",
+            "type",
+            "technology_family",
+            "related_capabilities",
+        }
+        assert (
+            expected
+            <= set(skills[skill_id])
+            <= expected | {"selection_group", "technology_ecosystems"}
+        )
+
+
+@pytest.mark.parametrize(
+    "filename, edit, expected",
+    [
+        ("skills/technologies.json", lambda d: d["python"].pop("type"), "type"),
+        ("skills/technologies.json", lambda d: d["python"].update(type="concept"), "type"),
+        *[
+            (
+                "skills/technologies.json",
+                lambda d, value=value: d["python"].update(technology_ecosystems=value),
+                "technology_ecosystems",
+            )
+            for value in [None, "Python", [""], ["   "], [42]]
+        ],
+        (
+            "skills/technologies.json",
+            lambda d: d["python"].update(technology_ecosystems=["Python", " python "]),
+            "duplicate technology ecosystem",
+        ),
+        *[
+            (
+                filename,
+                lambda d, key=key: d[key].update(technology_ecosystems=["Python"]),
+                "technology_ecosystems requires a technology",
+            )
+            for filename, key in [
+                ("skills/ai.json", "rag"),
+                ("skills/shared.json", "technical-leadership"),
+                ("skills/analytics.json", "data-visualization"),
+            ]
+        ],
+        *[
+            (
+                "skills/technologies.json",
+                lambda d, value=value: d["pgvector"].update(selection_group=value),
+                "selection_group",
+            )
+            for value in ["", "   ", 42, ["Vector Storage"]]
+        ],
+        (
+            "skills/ai.json",
+            lambda d: d["rag"].update(selection_group="Vector Storage"),
+            "selection_group requires a technology",
+        ),
+        (
+            "skills/technologies.json",
+            lambda d: d["pgvector"].pop("technology_family"),
+            "technology requires technology_family",
+        ),
+        *[
+            (
+                "skills/technologies.json",
+                lambda d, value=value: d["pgvector"].update(technology_family=value),
+                "technology_family",
+            )
+            for value in [None, "", "   ", 42]
+        ],
+        (
+            "skills/ai.json",
+            lambda d: d["rag"].update(technology_family="Vector Retrieval"),
+            "technology_family requires a technology",
+        ),
+        (
+            "skills/technologies.json",
+            lambda d: d["pgvector"].update(related_capabilities=["nonexistent-capability"]),
+            "unknown related capability",
+        ),
+        *[
+            (
+                "skills/technologies.json",
+                lambda d, value=value: d["pgvector"].update(related_capabilities=[value]),
+                "must be an implementation_capability",
+            )
+            for value in ["python", "technical-leadership", "data-visualization"]
+        ],
+        (
+            "skills/technologies.json",
+            lambda d: d["pgvector"].update(related_capabilities=["rag", "rag"]),
+            "duplicate related capability",
+        ),
+        (
+            "skills/ai.json",
+            lambda d: d["rag"].update(related_capabilities=["rag"]),
+            "self-related capability",
+        ),
+        (
+            "skills/technologies.json",
+            lambda d: d["python"].update(type="soft_skill"),
+            "incompatible skill type",
+        ),
+        ("roles/ai-engineer.json", lambda d: d.pop("skill_options"), "skill_options"),
+        ("roles/ai-engineer.json", lambda d: d.update(skill_options=[]), "skill_options"),
+        (
+            "roles/ai-engineer.json",
+            lambda d: d["skill_options"][0].pop("priority"),
+            "priority",
+        ),
+        (
+            "roles/ai-engineer.json",
+            lambda d: d["skill_options"][0].update(skill_id="unknown"),
+            "must reference a role requirement",
+        ),
+        (
+            "roles/ai-engineer.json",
+            lambda d: d["skill_options"].append(d["skill_options"][0]),
+            "duplicate skill option",
+        ),
+        (
+            "roles/ai-engineer.json",
+            lambda d: d["skill_options"][0].update(skill_id="technical-leadership"),
+            "soft skill option",
+        ),
+        *[
+            (
+                "roles/ai-engineer.json",
+                lambda d, value=value: d["skill_options"][0].update(priority=value),
+                "priority",
+            )
+            for value in [0, 4, True, "1", None]
+        ],
+    ],
+)
+def test_invalid_skill_metadata_rejected(editable_data, filename, edit, expected):
+    mutate(editable_data, filename, edit)
+    with pytest.raises(CatalogError, match=expected):
+        Catalog(editable_data)

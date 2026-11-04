@@ -73,10 +73,6 @@
     ],
     "frontend-engineer": [
       {
-        "skill_id": "stripe-api",
-        "minimum_seniority": "mid"
-      },
-      {
         "skill_id": "three-d-secure",
         "minimum_seniority": "mid"
       },
@@ -267,10 +263,6 @@
     ],
     "android-developer": [
       {
-        "skill_id": "stripe-api",
-        "minimum_seniority": "mid"
-      },
-      {
         "skill_id": "three-d-secure",
         "minimum_seniority": "mid"
       },
@@ -296,10 +288,6 @@
     ],
     "ios-developer": [
       {
-        "skill_id": "stripe-api",
-        "minimum_seniority": "mid"
-      },
-      {
         "skill_id": "three-d-secure",
         "minimum_seniority": "mid"
       },
@@ -324,10 +312,6 @@
       }
     ],
     "mobile-engineer": [
-      {
-        "skill_id": "stripe-api",
-        "minimum_seniority": "mid"
-      },
       {
         "skill_id": "three-d-secure",
         "minimum_seniority": "mid"

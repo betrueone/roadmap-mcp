@@ -25,7 +25,6 @@
     "skill_ids": [
       "html-semantics",
       "css-layout",
-      "web-platform",
       "accessibility",
       "browser-compatibility",
       "internationalization",
@@ -42,8 +41,7 @@
       "fastapi",
       "spring-boot",
       "expressjs",
-      "nestjs",
-      "backend-frameworks"
+      "nestjs"
     ]
   },
   "frontend-frameworks": {
@@ -57,14 +55,10 @@
       "nextjs",
       "nuxtjs",
       "tailwind-css",
-      "frontend-state",
-      "design-systems",
       "forms-validation",
       "frontend-routing",
-      "component-based-ui",
       "client-data-caching",
-      "server-rendering",
-      "design-tokens"
+      "server-rendering"
     ]
   },
   "apis-integration": {
@@ -74,14 +68,12 @@
       "graphql",
       "websockets",
       "rpc-contracts",
-      "api-design",
       "rest-apis",
       "openapi-contracts",
       "webhook-integrations",
       "rate-limiting",
       "real-time-apis",
       "api-versioning",
-      "http-networking",
       "platform-api-design"
     ]
   },
@@ -113,7 +105,8 @@
       "partitioning-sharding",
       "zero-downtime-migrations",
       "advanced-sql",
-      "aws-rds"
+      "aws-rds",
+      "azure-sql-database"
     ]
   },
   "messaging-streaming": {
@@ -139,16 +132,13 @@
       "snowflake",
       "google-bigquery",
       "amazon-redshift",
-      "azure-sql-database",
       "azure-data-factory",
       "databricks-delta-lake",
       "pandas",
       "numpy",
-      "data-pipelines",
       "data-quality",
       "data-warehousing",
       "data-lineage",
-      "python-data-processing",
       "batch-ingestion",
       "data-file-formats",
       "pipeline-idempotency",
@@ -179,7 +169,6 @@
       "azure-blob-storage",
       "hdfs",
       "object-storage",
-      "cloud-fundamentals",
       "aws",
       "azure",
       "google-cloud",
@@ -204,7 +193,7 @@
       "containers",
       "docker-compose",
       "kubernetes",
-      "deployment",
+      "deployment-rollbacks",
       "continuous-integration",
       "frontend-release-strategies",
       "github-actions",
@@ -230,12 +219,7 @@
       "eslint",
       "prettier",
       "vite",
-      "package-management",
-      "debugging",
-      "code-quality",
-      "technical-documentation",
       "browser-devtools",
-      "frontend-tooling",
       "gradle",
       "swift-package-manager"
     ]
@@ -250,7 +234,8 @@
       "vitest",
       "playwright",
       "cypress",
-      "automated-testing",
+      "unit-testing",
+      "integration-testing",
       "contract-testing",
       "load-testing",
       "frontend-test-automation",
@@ -286,7 +271,7 @@
       "openid",
       "jwt",
       "tls-cryptography",
-      "application-security",
+      "schema-validation",
       "privacy-engineering",
       "auditability",
       "authentication",
@@ -306,7 +291,6 @@
       "cloud-security-posture",
       "mobile-security",
       "ai-security",
-      "security-fundamentals",
       "network-security",
       "vulnerability-management",
       "identity-security",
@@ -327,9 +311,11 @@
       "prometheus",
       "datadog",
       "sentry",
-      "observability",
+      "structured-logging",
+      "application-metrics",
+      "distributed-tracing",
       "incident-management",
-      "reliability-objectives",
+      "service-level-engineering",
       "disaster-recovery",
       "frontend-observability",
       "pipeline-observability",
@@ -338,21 +324,19 @@
       "jaeger",
       "loki",
       "splunk",
-      "service-level-engineering",
       "alert-engineering",
       "toil-reduction",
       "performance-profiling",
       "chaos-engineering",
       "backup-restoration",
-      "llm-observability"
+      "llm-observability",
+      "mobile-crash-diagnostics"
     ]
   },
   "system-design": {
     "name": "System Design & Architecture",
     "type": "hard",
     "skill_ids": [
-      "system-design",
-      "distributed-systems",
       "service-resilience",
       "domain-driven-design",
       "distributed-transactions",
@@ -528,8 +512,6 @@
       "pytorch",
       "tensorflow",
       "keras",
-      "linear-algebra",
-      "probability",
       "feature-engineering",
       "supervised-learning",
       "unsupervised-learning",
@@ -551,14 +533,6 @@
     "name": "AI Engineering",
     "type": "hard",
     "skill_ids": [
-      "hugging-face",
-      "langchain",
-      "llama-index",
-      "pinecone",
-      "qdrant",
-      "chroma",
-      "faiss",
-      "llm-fundamentals",
       "prompt-engineering",
       "embeddings",
       "vector-search",
@@ -588,7 +562,9 @@
       "visual-design",
       "design-handoff",
       "research-synthesis",
-      "journey-mapping"
+      "journey-mapping",
+      "design-systems",
+      "design-tokens"
     ]
   },
   "product-management": {
@@ -848,6 +824,42 @@
       "public-service-reliability",
       "public-information-controls",
       "public-eligibility-testing"
+    ]
+  },
+  "model-integration": {
+    "name": "Model Integration & Validation",
+    "type": "hard",
+    "skill_ids": [
+      "openai-sdk",
+      "pydantic",
+      "hugging-face"
+    ]
+  },
+  "llm-frameworks": {
+    "name": "LLM Frameworks & Orchestration",
+    "type": "hard",
+    "skill_ids": [
+      "langchain",
+      "langgraph",
+      "llama-index"
+    ]
+  },
+  "vector-retrieval": {
+    "name": "Vector Retrieval",
+    "type": "hard",
+    "skill_ids": [
+      "pgvector",
+      "pinecone",
+      "qdrant",
+      "chroma",
+      "faiss"
+    ]
+  },
+  "llm-evaluation-tools": {
+    "name": "LLM Evaluation Tools",
+    "type": "hard",
+    "skill_ids": [
+      "ragas"
     ]
   }
 }

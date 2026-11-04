@@ -13,41 +13,100 @@ def test_senior_backend_fintech(service):
     roadmap = service.get_roadmap("Backend Engineer", "Fintech", "Senior")
     skills = {skill.name for skill in all_skills(roadmap)}
     assert {
-        "Automated testing",
-        "API design",
-        "SQL and relational data modeling",
-        "Application security",
-        "Deployment and delivery",
-        "Observability",
-        "Transactions and concurrency",
-        "Distributed service reliability",
-        "System design",
+        "Unit testing",
+        "Integration testing",
+        "RESTful APIs",
+        "Relational schema design",
+        "Schema validation",
+        "Deployment health checks and rollbacks",
+        "Structured logging",
+        "Application metrics instrumentation",
+        "Distributed tracing",
+        "Transaction isolation and locking",
+        "Timeouts, retries, and circuit breakers",
+        "Transactional outbox and sagas",
         "Technical leadership",
         "Financial data correctness",
-        "Privacy engineering",
-        "Audit trails and traceability",
+        "PII redaction and data minimization",
+        "Audit event logging",
         "Idempotent payment workflows",
         "Financial reconciliation",
-        "Incident management",
+        "Incident triage and recovery",
         "Git",
-        "Authentication",
-        "Authorization and access control",
+        "Session and token authentication",
+        "Role-based and resource-level authorization",
         "Database indexing and query tuning",
-        "Application caching",
-        "Message queues and brokers",
+        "Cache invalidation and expiration",
+        "Message acknowledgments and dead-letter queues",
         "Docker",
-        "Event-driven architecture",
-        "Service resilience patterns",
+        "Event schema versioning and replay",
         "Financial ledger modeling",
         "Payment event handling",
         "Settlement and payout processing",
     } <= skills
     assert {
         "Cross-team technical strategy",
+        "API design",
+        "System design",
+        "HTTP and networking fundamentals",
+        "Backend framework development",
         "React",
         "HL7 FHIR",
         "Commerce analytics models",
     }.isdisjoint(skills)
+
+
+@pytest.mark.parametrize("include_descriptions", [True, False])
+def test_specific_protocols_remain_useful_in_both_response_modes(service, include_descriptions):
+    roadmap = service.get_roadmap(
+        "Backend Engineer", "Fintech", "Mid-level", include_descriptions=include_descriptions
+    )
+    names = {skill.name for skill in all_skills(roadmap)}
+    assert {"RESTful APIs", "OpenAPI specifications", "OAuth 2.0", "OpenID Connect"} <= names
+    assert {"OAuth", "OpenID", "API design", "HTTP and networking fundamentals"}.isdisjoint(names)
+
+
+@pytest.mark.parametrize(
+    "role, included, excluded",
+    [
+        (
+            "Frontend Engineer",
+            {"Cross-browser compatibility testing", "Browser error and performance telemetry"},
+            {"Web platform fundamentals", "Frontend build tooling", "Distributed tracing"},
+        ),
+        (
+            "Data Engineer",
+            {"Data quality assertions", "Event-time windows and late data handling"},
+            {"Data pipelines and orchestration", "Python for data processing"},
+        ),
+        (
+            "Android Developer",
+            {"Process recreation and app lifecycle handling", "Mobile crash diagnostics"},
+            {"Observability", "Distributed tracing"},
+        ),
+        (
+            "AI Engineer",
+            {"Structured outputs", "Agent workflows"},
+            {"Large language model fundamentals", "Observability"},
+        ),
+        (
+            "Machine Learning Engineer",
+            {"Classification and regression pipelines", "Leakage-safe model validation"},
+            {"Linear algebra", "Probability", "System design"},
+        ),
+        (
+            "Cybersecurity Engineer",
+            {"DNS and routing diagnostics", "Penetration testing"},
+            {"Security fundamentals", "Debugging and troubleshooting"},
+        ),
+    ],
+)
+def test_curated_profiles_distinguish_implementation_from_broad_foundations(
+    service, role, included, excluded
+):
+    names = {skill.name for skill in all_skills(service.get_roadmap(role, "SaaS", "Senior"))}
+    assert included <= names
+    assert excluded.isdisjoint(names)
 
 
 def test_aliases_resolve_to_identical_roadmap(service):
@@ -92,7 +151,7 @@ def test_seniority_is_cumulative_and_staff_adds_strategy(service):
         skills = {skill.name for skill in all_skills(roadmap)}
         assert previous <= skills
         if level == "junior":
-            assert "Distributed service reliability" not in skills
+            assert "Timeouts, retries, and circuit breakers" not in skills
             assert "Financial reconciliation" not in skills
         if level != "staff":
             assert "Cross-team technical strategy" not in skills
@@ -106,7 +165,7 @@ def test_industry_and_role_change_requirements(service):
     assert "HL7 FHIR" in {skill.name for skill in all_skills(health)}
     assert "Idempotent payment workflows" not in {skill.name for skill in all_skills(health)}
     assert "Reliable payment interfaces" in {skill.name for skill in all_skills(frontend)}
-    assert "Transactions and concurrency" not in {skill.name for skill in all_skills(frontend)}
+    assert "Transaction isolation and locking" not in {skill.name for skill in all_skills(frontend)}
 
 
 def test_overlapping_role_and_industry_skills_appear_once(service):
@@ -139,10 +198,10 @@ def test_backend_fintech_separates_technical_and_domain_skills_from_leadership(s
         "Python",
         "PostgreSQL",
         "Docker",
-        "API design",
-        "System design",
-        "Technical documentation",
-        "Incident management",
+        "RESTful APIs",
+        "Transactional outbox and sagas",
+        "Architecture decision records (ADRs)",
+        "Incident triage and recovery",
         "Financial reconciliation",
     } <= hard
     assert soft == {
@@ -167,6 +226,12 @@ def test_category_type_is_read_from_source_data(editable_data):
     categories = json.loads(path.read_text())
     categories["technical-leadership"]["type"] = "hard"
     path.write_text(json.dumps(categories))
+    for skill_path in (editable_data / "skills").glob("*.json"):
+        skills = json.loads(skill_path.read_text())
+        for skill_id in categories["technical-leadership"]["skill_ids"]:
+            if skill_id in skills:
+                skills[skill_id]["type"] = "professional_method"
+        skill_path.write_text(json.dumps(skills))
     roadmap = RoadmapService(Catalog(editable_data)).get_roadmap(
         "backend-engineer", "fintech", "senior"
     )
@@ -200,7 +265,7 @@ def test_category_assignments_and_order_come_from_source_files(editable_data):
     [
         (
             "backend-engineer",
-            {"API design", "Payment lifecycle modeling"},
+            {"RESTful APIs", "Payment lifecycle modeling"},
             {
                 "Financial ledger modeling",
                 "Settlement and payout processing",
@@ -209,16 +274,16 @@ def test_category_assignments_and_order_come_from_source_files(editable_data):
         ),
         (
             "frontend-engineer",
-            {"JavaScript", "HTML", "Financial interface formatting"},
+            {"JavaScript", "TypeScript", "HTML", "Financial interface formatting"},
             {
-                "TypeScript",
+                "Server rendering and hydration",
                 "Payment authentication interfaces",
-                "Frontend application architecture",
+                "Frontend module and dependency boundaries",
             },
         ),
         (
             "data-engineer",
-            {"Python for data processing", "Batch data ingestion"},
+            {"Columnar file schemas and partitioning", "Batch data ingestion"},
             {"Change data capture", "Financial reporting datasets", "Data platform architecture"},
         ),
     ],
@@ -253,14 +318,14 @@ def test_junior_profiles_filter_advanced_role_and_industry_skills(
             "data-engineer",
             "healthcare",
             {
-                "Advanced SQL",
+                "SQL window functions and CTEs",
                 "Change data capture",
                 "Clinical data validation",
                 "Healthcare data de-identification",
             },
             {
                 "Financial reporting datasets",
-                "Frontend application architecture",
+                "Frontend module and dependency boundaries",
                 "Order processing workflows",
             },
         ),
@@ -326,14 +391,14 @@ def test_enriched_profiles_keep_role_and_industry_specific_skills(
             "Python",
             {
                 "SQL",
-                "Pandas",
+                "pandas",
                 "NumPy",
                 "Apache Airflow",
                 "dbt",
                 "Apache Spark",
                 "Snowflake",
                 "Google BigQuery",
-                "Databricks Delta Lake",
+                "Delta Lake",
                 "HL7 FHIR",
             },
             {"React", "Spring Boot", "Stripe API", "Shopify GraphQL Admin API"},

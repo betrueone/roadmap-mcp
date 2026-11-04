@@ -19,9 +19,6 @@
       "skill_id": "network-administration"
     },
     {
-      "skill_id": "cloud-fundamentals"
-    },
-    {
       "skill_id": "aws"
     },
     {
@@ -35,15 +32,6 @@
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "terraform",
@@ -114,7 +102,15 @@
       "minimum_seniority": "mid"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "mid"
     },
     {
@@ -136,10 +132,6 @@
     {
       "skill_id": "continuous-integration",
       "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "system-design",
-      "minimum_seniority": "senior"
     },
     {
       "skill_id": "serverless-architecture",
@@ -170,7 +162,7 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "reliability-objectives",
+      "skill_id": "service-level-engineering",
       "minimum_seniority": "senior"
     },
     {
@@ -192,6 +184,168 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "bash",
+      "priority": 1
+    },
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "linux-cli",
+      "priority": 1
+    },
+    {
+      "skill_id": "aws",
+      "priority": 2
+    },
+    {
+      "skill_id": "azure",
+      "priority": 2
+    },
+    {
+      "skill_id": "google-cloud",
+      "priority": 2
+    },
+    {
+      "skill_id": "terraform",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "infrastructure-as-code",
+      "priority": 1
+    },
+    {
+      "skill_id": "cloud-network-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "cloud-identity",
+      "priority": 1
+    },
+    {
+      "skill_id": "cloud-storage-design",
+      "priority": 1
+    },
+    {
+      "skill_id": "ansible",
+      "priority": 2
+    },
+    {
+      "skill_id": "ec2",
+      "priority": 2
+    },
+    {
+      "skill_id": "aws-vpc",
+      "priority": 2
+    },
+    {
+      "skill_id": "aws-iam",
+      "priority": 2
+    },
+    {
+      "skill_id": "aws-rds",
+      "priority": 2
+    },
+    {
+      "skill_id": "s3",
+      "priority": 2
+    },
+    {
+      "skill_id": "aws-lambda",
+      "priority": 2
+    },
+    {
+      "skill_id": "cloudfront",
+      "priority": 2
+    },
+    {
+      "skill_id": "route53",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 2
+    },
+    {
+      "skill_id": "prometheus",
+      "priority": 2
+    },
+    {
+      "skill_id": "grafana",
+      "priority": 2
+    },
+    {
+      "skill_id": "configuration-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "secrets-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "backup-restoration",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "cloud-security-posture",
+      "priority": 2
+    },
+    {
+      "skill_id": "pulumi",
+      "priority": 3
+    },
+    {
+      "skill_id": "structured-logging",
+      "priority": 3
+    },
+    {
+      "skill_id": "application-metrics",
+      "priority": 3
+    },
+    {
+      "skill_id": "distributed-tracing",
+      "priority": 3
+    },
+    {
+      "skill_id": "serverless-architecture",
+      "priority": 3
+    },
+    {
+      "skill_id": "multi-region-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "disaster-recovery",
+      "priority": 3
+    },
+    {
+      "skill_id": "infrastructure-testing",
+      "priority": 3
+    },
+    {
+      "skill_id": "capacity-planning",
+      "priority": 3
+    },
+    {
+      "skill_id": "cost-optimization",
+      "priority": 3
     }
   ]
 }

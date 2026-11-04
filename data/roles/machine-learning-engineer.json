@@ -22,12 +22,6 @@
       "skill_id": "scikit-learn"
     },
     {
-      "skill_id": "probability"
-    },
-    {
-      "skill_id": "linear-algebra"
-    },
-    {
       "skill_id": "feature-engineering"
     },
     {
@@ -37,19 +31,13 @@
       "skill_id": "model-evaluation"
     },
     {
-      "skill_id": "automated-testing"
+      "skill_id": "unit-testing"
+    },
+    {
+      "skill_id": "integration-testing"
     },
     {
       "skill_id": "git-version-control"
-    },
-    {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
     },
     {
       "skill_id": "pytorch",
@@ -97,10 +85,6 @@
     },
     {
       "skill_id": "continuous-integration",
-      "minimum_seniority": "mid"
-    },
-    {
-      "skill_id": "data-pipelines",
       "minimum_seniority": "mid"
     },
     {
@@ -152,7 +136,15 @@
       "minimum_seniority": "senior"
     },
     {
-      "skill_id": "observability",
+      "skill_id": "structured-logging",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "application-metrics",
+      "minimum_seniority": "senior"
+    },
+    {
+      "skill_id": "distributed-tracing",
       "minimum_seniority": "senior"
     },
     {
@@ -174,6 +166,168 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "python",
+      "priority": 1
+    },
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "pandas",
+      "priority": 1
+    },
+    {
+      "skill_id": "numpy",
+      "priority": 1
+    },
+    {
+      "skill_id": "scikit-learn",
+      "priority": 1
+    },
+    {
+      "skill_id": "pytorch",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 1
+    },
+    {
+      "skill_id": "feature-engineering",
+      "priority": 1
+    },
+    {
+      "skill_id": "supervised-learning",
+      "priority": 1
+    },
+    {
+      "skill_id": "model-evaluation",
+      "priority": 1
+    },
+    {
+      "skill_id": "ml-pipelines",
+      "priority": 1
+    },
+    {
+      "skill_id": "model-serving",
+      "priority": 1
+    },
+    {
+      "skill_id": "tensorflow",
+      "priority": 2
+    },
+    {
+      "skill_id": "keras",
+      "priority": 2
+    },
+    {
+      "skill_id": "containers",
+      "priority": 2
+    },
+    {
+      "skill_id": "fastapi",
+      "priority": 2
+    },
+    {
+      "skill_id": "kubernetes",
+      "priority": 2
+    },
+    {
+      "skill_id": "apache-spark",
+      "priority": 2
+    },
+    {
+      "skill_id": "hyperparameter-tuning",
+      "priority": 2
+    },
+    {
+      "skill_id": "ml-experiment-tracking",
+      "priority": 2
+    },
+    {
+      "skill_id": "model-monitoring",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-quality",
+      "priority": 2
+    },
+    {
+      "skill_id": "continuous-integration",
+      "priority": 2
+    },
+    {
+      "skill_id": "unit-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "integration-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "deep-learning",
+      "priority": 2
+    },
+    {
+      "skill_id": "unsupervised-learning",
+      "priority": 3
+    },
+    {
+      "skill_id": "model-explainability",
+      "priority": 3
+    },
+    {
+      "skill_id": "responsible-ml",
+      "priority": 3
+    },
+    {
+      "skill_id": "ml-system-design",
+      "priority": 3
+    },
+    {
+      "skill_id": "distributed-data-processing",
+      "priority": 3
+    },
+    {
+      "skill_id": "nlp",
+      "priority": 3
+    },
+    {
+      "skill_id": "computer-vision",
+      "priority": 3
+    },
+    {
+      "skill_id": "recommendation-systems",
+      "priority": 3
+    },
+    {
+      "skill_id": "capacity-planning",
+      "priority": 3
+    },
+    {
+      "skill_id": "structured-logging",
+      "priority": 3
+    },
+    {
+      "skill_id": "application-metrics",
+      "priority": 3
+    },
+    {
+      "skill_id": "distributed-tracing",
+      "priority": 3
+    },
+    {
+      "skill_id": "inference-optimization",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "priority": 3
     }
   ]
 }

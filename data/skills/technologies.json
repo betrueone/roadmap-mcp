@@ -1,686 +1,1899 @@
 {
   "python": {
     "name": "Python",
-    "description": "Write applications and automation using Python modules, collections, exceptions, and asynchronous code."
+    "description": "Write applications and automation using Python modules, collections, exceptions, and asynchronous code.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "java": {
     "name": "Java",
-    "description": "Build typed applications using Java classes, collections, concurrency, and runtime tooling."
+    "description": "Build typed applications using Java classes, collections, concurrency, and runtime tooling.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Java / JVM"
+    ]
   },
   "go": {
     "name": "Go",
-    "description": "Build services using Go interfaces, error handling, goroutines, and channels."
+    "description": "Build services using Go interfaces, error handling, goroutines, and channels.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Go"
+    ]
   },
   "csharp": {
     "name": "C#",
-    "description": "Develop applications using C# types, LINQ, asynchronous operations, and .NET libraries."
+    "description": "Develop applications using C# types, LINQ, asynchronous operations, and .NET libraries.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      ".NET"
+    ]
   },
   "php": {
     "name": "PHP",
-    "description": "Build server-side applications using PHP types, request handling, and package dependencies."
+    "description": "Build server-side applications using PHP types, request handling, and package dependencies.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "PHP"
+    ]
   },
   "ruby": {
     "name": "Ruby",
-    "description": "Write server-side applications using Ruby objects, modules, collections, and libraries."
+    "description": "Write server-side applications using Ruby objects, modules, collections, and libraries.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Ruby"
+    ]
   },
   "rust": {
     "name": "Rust",
-    "description": "Build memory-safe applications using Rust ownership, borrowing, traits, and error handling."
+    "description": "Build memory-safe applications using Rust ownership, borrowing, traits, and error handling.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Rust"
+    ]
   },
   "django": {
     "name": "Django",
-    "description": "Build Python web applications using Django models, views, authentication, and migrations."
+    "description": "Build Python web applications using Django models, views, authentication, and migrations.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "flask": {
     "name": "Flask",
-    "description": "Build Python web services using Flask routes, request handling, and extensions."
+    "description": "Build Python web services using Flask routes, request handling, and extensions.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "fastapi": {
     "name": "FastAPI",
-    "description": "Build typed Python APIs using FastAPI validation, dependency injection, and asynchronous endpoints."
+    "description": "Build typed Python APIs using FastAPI validation, dependency injection, and asynchronous endpoints.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis",
+      "schema-validation",
+      "openapi-contracts"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "spring-boot": {
     "name": "Spring Boot",
-    "description": "Build Java services using Spring Boot configuration, dependency injection, and production integrations."
+    "description": "Build Java services using Spring Boot configuration, dependency injection, and production integrations.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "Java / JVM"
+    ]
   },
   "expressjs": {
     "name": "Express.js",
-    "description": "Build Node.js APIs using Express.js routes, middleware, and error handlers."
+    "description": "Build Node.js APIs using Express.js routes, middleware, and error handlers.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "nestjs": {
     "name": "NestJS",
-    "description": "Build TypeScript services using NestJS modules, controllers, providers, and dependency injection."
+    "description": "Build TypeScript services using NestJS modules, controllers, providers, and dependency injection.",
+    "type": "framework",
+    "technology_family": "Backend Frameworks",
+    "related_capabilities": [
+      "rest-apis"
+    ],
+    "selection_group": "Backend API Framework",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "sqlalchemy": {
     "name": "SQLAlchemy",
-    "description": "Map Python models to databases and manage SQL queries and transactions with SQLAlchemy."
+    "description": "Map Python models to databases and manage SQL queries and transactions with SQLAlchemy.",
+    "type": "library",
+    "technology_family": "ORM Libraries",
+    "related_capabilities": [
+      "orm-data-access",
+      "database-migrations"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "hibernate": {
     "name": "Hibernate",
-    "description": "Persist Java entities and control mappings, fetching, and transactions with Hibernate."
+    "description": "Persist Java entities and control mappings, fetching, and transactions with Hibernate.",
+    "type": "library",
+    "technology_family": "ORM Libraries",
+    "related_capabilities": [
+      "orm-data-access",
+      "database-migrations"
+    ],
+    "technology_ecosystems": [
+      "Java / JVM"
+    ]
   },
   "prisma": {
     "name": "Prisma",
-    "description": "Define database schemas and use type-safe queries and migrations with Prisma."
+    "description": "Define database schemas and use type-safe queries and migrations with Prisma.",
+    "type": "library",
+    "technology_family": "ORM Libraries",
+    "related_capabilities": [
+      "orm-data-access",
+      "database-migrations"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "postgresql": {
     "name": "PostgreSQL",
-    "description": "Build relational applications using PostgreSQL schemas, constraints, indexes, and transactions."
+    "description": "Build relational applications using PostgreSQL schemas, constraints, indexes, and transactions.",
+    "type": "database",
+    "technology_family": "Relational Databases",
+    "related_capabilities": [
+      "sql-modeling",
+      "database-transactions",
+      "database-indexing"
+    ],
+    "selection_group": "Relational Storage"
   },
   "mysql": {
     "name": "MySQL",
-    "description": "Model relational data and operate MySQL queries, indexes, transactions, and access controls."
+    "description": "Model relational data and operate MySQL queries, indexes, transactions, and access controls.",
+    "type": "database",
+    "technology_family": "Relational Databases",
+    "related_capabilities": [
+      "sql-modeling",
+      "database-transactions",
+      "database-indexing"
+    ],
+    "selection_group": "Relational Storage"
   },
   "sqlite": {
     "name": "SQLite",
-    "description": "Store application data using SQLite schemas, SQL queries, transactions, and migrations."
+    "description": "Store application data using SQLite schemas, SQL queries, transactions, and migrations.",
+    "type": "database",
+    "technology_family": "Relational Databases",
+    "related_capabilities": [
+      "sql-modeling",
+      "database-transactions",
+      "database-indexing"
+    ],
+    "selection_group": "Relational Storage"
   },
   "mongodb": {
     "name": "MongoDB",
-    "description": "Model document data using MongoDB collections, indexes, aggregation, and consistency controls."
+    "description": "Model document data using MongoDB collections, indexes, aggregation, and consistency controls.",
+    "type": "database",
+    "technology_family": "Document Databases",
+    "related_capabilities": [
+      "nosql-modeling"
+    ]
   },
   "redis": {
     "name": "Redis",
-    "description": "Use Redis data structures for caching, counters, expiration, and atomic operations."
+    "description": "Use Redis data structures and expiration for caches and session storage, and Streams consumer groups for acknowledged message processing and controlled retries.",
+    "type": "database",
+    "technology_family": "Key-Value Databases",
+    "related_capabilities": [
+      "caching",
+      "authentication",
+      "message-queues"
+    ]
   },
   "dynamodb": {
     "name": "DynamoDB",
-    "description": "Model DynamoDB tables around access patterns, partition keys, indexes, and conditional writes."
+    "description": "Model DynamoDB tables around access patterns, partition keys, indexes, and conditional writes.",
+    "type": "database",
+    "technology_family": "Key-Value Databases",
+    "related_capabilities": [
+      "nosql-modeling"
+    ]
   },
   "cassandra": {
     "name": "Cassandra",
-    "description": "Design Cassandra tables using partitioning, clustering, replication, and consistency settings."
+    "description": "Design Cassandra tables using partitioning, clustering, replication, and consistency settings.",
+    "type": "database",
+    "technology_family": "Wide Column Databases",
+    "related_capabilities": [
+      "nosql-modeling",
+      "partitioning-sharding"
+    ]
   },
   "apache-kafka": {
     "name": "Apache Kafka",
-    "description": "Build event streams using Apache Kafka topics, partitions, producers, and consumer groups."
+    "description": "Build event streams using Apache Kafka topics, partitions, producers, and consumer groups.",
+    "type": "event_streaming_platform",
+    "technology_family": "Event Streaming",
+    "related_capabilities": [
+      "stream-processing",
+      "event-driven-architecture"
+    ]
   },
   "rabbitmq": {
     "name": "RabbitMQ",
-    "description": "Implement asynchronous messaging using RabbitMQ exchanges, queues, acknowledgments, and routing."
+    "description": "Implement asynchronous messaging using RabbitMQ exchanges, queues, acknowledgments, and routing.",
+    "type": "message_broker",
+    "technology_family": "Message Brokers",
+    "related_capabilities": [
+      "message-queues",
+      "background-jobs"
+    ]
   },
   "nginx": {
     "name": "Nginx",
-    "description": "Configure Nginx reverse proxies, request routing, TLS termination, and connection limits."
+    "description": "Configure Nginx reverse proxies, request routing, TLS termination, and connection limits.",
+    "type": "infrastructure",
+    "technology_family": "Reverse Proxies",
+    "related_capabilities": [
+      "rate-limiting"
+    ]
   },
   "elasticsearch": {
     "name": "Elasticsearch",
-    "description": "Implement searchable document indexes using Elasticsearch mappings, queries, and aggregations."
+    "description": "Implement searchable document indexes using Elasticsearch mappings, queries, and aggregations.",
+    "type": "database",
+    "technology_family": "Search Engines",
+    "related_capabilities": [
+      "search-indexing"
+    ]
   },
   "graphql": {
     "name": "GraphQL",
-    "description": "Define GraphQL schemas, resolvers, queries, mutations, and controlled data access."
+    "description": "Define GraphQL schemas, resolvers, queries, mutations, and controlled data access.",
+    "type": "api_query_language",
+    "technology_family": "API Query Languages",
+    "related_capabilities": [
+      "api-versioning"
+    ]
   },
   "websockets": {
     "name": "WebSockets",
-    "description": "Implement persistent bidirectional communication using WebSocket connections and message handling."
+    "description": "Implement persistent bidirectional communication using WebSocket connections and message handling.",
+    "type": "protocol",
+    "technology_family": "Real-Time Protocols",
+    "related_capabilities": [
+      "real-time-apis"
+    ]
   },
   "oauth": {
-    "name": "OAuth",
-    "description": "Integrate delegated authorization using OAuth flows, scopes, token validation, and lifecycle controls."
+    "name": "OAuth 2.0",
+    "description": "Implement delegated authorization with authorization code and PKCE flows, scoped access tokens, and refresh-token lifecycle controls.",
+    "type": "protocol",
+    "technology_family": "Authorization Protocols",
+    "related_capabilities": [
+      "authorization"
+    ]
   },
   "openid": {
-    "name": "OpenID",
-    "description": "Integrate OpenID-based sign-in and validate identity claims and provider metadata."
+    "name": "OpenID Connect",
+    "description": "Integrate provider sign-in and validate ID token signatures, issuer, audience, expiration, and request nonce where applicable.",
+    "type": "protocol",
+    "technology_family": "Identity Protocols",
+    "related_capabilities": [
+      "authentication"
+    ]
   },
   "jwt": {
     "name": "JWT",
-    "description": "Validate JWT signatures, issuers, audiences, and expiration when using token-based authentication."
+    "description": "Validate JWT signatures, issuers, audiences, and expiration when using token-based authentication.",
+    "type": "standard",
+    "technology_family": "Token Standards",
+    "related_capabilities": [
+      "authentication",
+      "authorization"
+    ]
   },
   "docker-compose": {
     "name": "Docker Compose",
-    "description": "Define and run local multi-container services with Docker Compose networks, volumes, and environment configuration."
+    "description": "Define and run local multi-container services with Docker Compose networks, volumes, and environment configuration.",
+    "type": "tool",
+    "technology_family": "Local Container Orchestration",
+    "related_capabilities": [
+      "integration-testing"
+    ]
   },
   "kubernetes": {
     "name": "Kubernetes",
-    "description": "Operate containerized workloads using Kubernetes deployments, services, configuration, and resource controls."
+    "description": "Operate containerized workloads using Kubernetes deployments, services, configuration, and resource controls.",
+    "type": "infrastructure",
+    "technology_family": "Container Orchestration",
+    "related_capabilities": [
+      "kubernetes-operations"
+    ]
   },
   "terraform": {
     "name": "Terraform",
-    "description": "Provision infrastructure with Terraform configuration, state management, plans, and reusable modules."
+    "description": "Provision infrastructure with Terraform configuration, state management, plans, and reusable modules.",
+    "type": "tool",
+    "technology_family": "Infrastructure Provisioning",
+    "related_capabilities": [
+      "infrastructure-as-code"
+    ],
+    "selection_group": "Infrastructure Provisioning"
   },
   "prometheus": {
     "name": "Prometheus",
-    "description": "Collect service metrics and define Prometheus queries, recording rules, and alerts."
+    "description": "Collect service metrics and define Prometheus queries, recording rules, and alerts.",
+    "type": "tool",
+    "technology_family": "Metrics Monitoring",
+    "related_capabilities": [
+      "application-metrics",
+      "alert-engineering"
+    ]
   },
   "datadog": {
     "name": "Datadog",
-    "description": "Investigate application health using Datadog metrics, logs, traces, and monitors."
+    "description": "Investigate application health using Datadog metrics, logs, traces, and monitors.",
+    "type": "tool",
+    "technology_family": "Observability Platforms",
+    "related_capabilities": [
+      "application-metrics",
+      "distributed-tracing",
+      "alert-engineering"
+    ]
   },
   "sentry": {
     "name": "Sentry",
-    "description": "Capture and investigate application errors and performance issues with Sentry."
+    "description": "Capture and investigate application errors and performance issues with Sentry.",
+    "type": "tool",
+    "technology_family": "Error Monitoring",
+    "related_capabilities": [
+      "frontend-observability",
+      "mobile-crash-diagnostics"
+    ]
   },
   "pytest": {
     "name": "pytest",
-    "description": "Write Python tests with pytest fixtures, parametrization, assertions, and test isolation."
+    "description": "Write Python tests with pytest fixtures, parametrization, assertions, and test isolation.",
+    "type": "test_framework",
+    "technology_family": "Test Frameworks",
+    "related_capabilities": [
+      "unit-testing",
+      "integration-testing"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "junit": {
     "name": "JUnit",
-    "description": "Write and organize Java tests using JUnit assertions, lifecycle hooks, and parameterized cases."
+    "description": "Write and organize Java tests using JUnit assertions, lifecycle hooks, and parameterized cases.",
+    "type": "test_framework",
+    "technology_family": "Test Frameworks",
+    "related_capabilities": [
+      "unit-testing",
+      "integration-testing"
+    ],
+    "technology_ecosystems": [
+      "Java / JVM"
+    ]
   },
   "react": {
     "name": "React",
-    "description": "Build React interfaces using components, hooks, state, and reusable rendering patterns."
+    "description": "Build React interfaces using components, hooks, state, and reusable rendering patterns.",
+    "type": "library",
+    "technology_family": "Web UI Libraries & Frameworks",
+    "related_capabilities": [
+      "forms-validation",
+      "frontend-routing"
+    ],
+    "selection_group": "Web UI Implementation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "vuejs": {
     "name": "Vue.js",
-    "description": "Build Vue.js interfaces using reactive state, components, templates, and composables."
+    "description": "Build Vue.js interfaces using reactive state, components, templates, and composables.",
+    "type": "framework",
+    "technology_family": "Web UI Libraries & Frameworks",
+    "related_capabilities": [
+      "forms-validation",
+      "frontend-routing"
+    ],
+    "selection_group": "Web UI Implementation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "angular": {
     "name": "Angular",
-    "description": "Build Angular applications using components, services, dependency injection, and reactive forms."
+    "description": "Build Angular applications using components, services, dependency injection, and reactive forms.",
+    "type": "framework",
+    "technology_family": "Web UI Libraries & Frameworks",
+    "related_capabilities": [
+      "forms-validation",
+      "frontend-routing"
+    ],
+    "selection_group": "Web UI Implementation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "svelte": {
     "name": "Svelte",
-    "description": "Build Svelte interfaces using reactive state, components, and compiled rendering."
+    "description": "Build Svelte interfaces using reactive state, components, and compiled rendering.",
+    "type": "framework",
+    "technology_family": "Web UI Libraries & Frameworks",
+    "related_capabilities": [
+      "forms-validation",
+      "frontend-routing"
+    ],
+    "selection_group": "Web UI Implementation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "nextjs": {
     "name": "Next.js",
-    "description": "Build React applications with Next.js routing, server rendering, and static generation."
+    "description": "Build React applications with Next.js routing, server rendering, and static generation.",
+    "type": "framework",
+    "technology_family": "Web Application Frameworks",
+    "related_capabilities": [
+      "server-rendering",
+      "frontend-routing"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "nuxtjs": {
     "name": "Nuxt.js",
-    "description": "Build Vue.js applications with Nuxt.js routing, server rendering, and data fetching."
+    "description": "Build Vue.js applications with Nuxt.js routing, server rendering, and data fetching.",
+    "type": "framework",
+    "technology_family": "Web Application Frameworks",
+    "related_capabilities": [
+      "server-rendering",
+      "frontend-routing"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "vite": {
     "name": "Vite",
-    "description": "Configure Vite development servers, module transformations, and production builds."
+    "description": "Configure Vite development servers, module transformations, and production builds.",
+    "type": "tool",
+    "technology_family": "Frontend Build Tools",
+    "related_capabilities": [
+      "frontend-release-strategies"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "tailwind-css": {
     "name": "Tailwind CSS",
-    "description": "Build responsive interfaces using Tailwind CSS utility classes and theme configuration."
+    "description": "Build responsive interfaces using Tailwind CSS utility classes and theme configuration.",
+    "type": "framework",
+    "technology_family": "CSS Frameworks",
+    "related_capabilities": [
+      "design-systems"
+    ]
   },
   "npm": {
     "name": "npm",
-    "description": "Manage JavaScript dependencies, scripts, and package publishing with npm."
+    "description": "Manage JavaScript dependencies, scripts, and package publishing with npm.",
+    "type": "tool",
+    "technology_family": "JavaScript Package Managers",
+    "related_capabilities": [
+      "dependency-security"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "pnpm": {
     "name": "pnpm",
-    "description": "Manage JavaScript dependencies and workspaces using pnpm and its lockfile."
+    "description": "Manage JavaScript dependencies and workspaces using pnpm and its lockfile.",
+    "type": "tool",
+    "technology_family": "JavaScript Package Managers",
+    "related_capabilities": [
+      "dependency-security"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "yarn": {
     "name": "Yarn",
-    "description": "Manage JavaScript packages, dependency versions, and workspaces with Yarn."
+    "description": "Manage JavaScript packages, dependency versions, and workspaces with Yarn.",
+    "type": "tool",
+    "technology_family": "JavaScript Package Managers",
+    "related_capabilities": [
+      "dependency-security"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "eslint": {
     "name": "ESLint",
-    "description": "Configure ESLint rules to detect JavaScript and TypeScript code issues."
+    "description": "Configure ESLint rules to detect JavaScript and TypeScript code issues.",
+    "type": "tool",
+    "technology_family": "Code Linters",
+    "related_capabilities": [
+      "secure-development"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "prettier": {
     "name": "Prettier",
-    "description": "Apply consistent source formatting with Prettier across supported project files."
+    "description": "Apply consistent source formatting with Prettier across supported project files.",
+    "type": "tool",
+    "technology_family": "Code Formatters",
+    "related_capabilities": []
   },
   "jest": {
     "name": "Jest",
-    "description": "Test JavaScript and TypeScript behavior using Jest assertions, mocks, and test environments."
+    "description": "Test JavaScript and TypeScript behavior using Jest assertions, mocks, and test environments.",
+    "type": "test_framework",
+    "technology_family": "Test Frameworks",
+    "related_capabilities": [
+      "unit-testing",
+      "integration-testing"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "vitest": {
     "name": "Vitest",
-    "description": "Run JavaScript and TypeScript tests with Vitest fixtures, mocks, and Vite integration."
+    "description": "Run JavaScript and TypeScript tests with Vitest fixtures, mocks, and Vite integration.",
+    "type": "test_framework",
+    "technology_family": "Test Frameworks",
+    "related_capabilities": [
+      "unit-testing",
+      "integration-testing"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "playwright": {
     "name": "Playwright",
-    "description": "Automate browser journeys and assertions across browser engines using Playwright."
+    "description": "Automate browser journeys and assertions across browser engines using Playwright.",
+    "type": "tool",
+    "technology_family": "Browser Test Automation",
+    "related_capabilities": [
+      "frontend-test-automation",
+      "regression-testing"
+    ],
+    "selection_group": "Browser Automation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript",
+      "Python",
+      "Java / JVM",
+      ".NET"
+    ]
   },
   "cypress": {
     "name": "Cypress",
-    "description": "Test browser interactions and application journeys with Cypress."
+    "description": "Test browser interactions and application journeys with Cypress.",
+    "type": "test_framework",
+    "technology_family": "Browser Test Automation",
+    "related_capabilities": [
+      "frontend-test-automation",
+      "regression-testing"
+    ],
+    "selection_group": "Browser Automation",
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "apache-airflow": {
     "name": "Apache Airflow",
-    "description": "Schedule and monitor Airflow DAGs with task dependencies, retries, and backfills."
+    "description": "Schedule and monitor Airflow DAGs with task dependencies, retries, and backfills.",
+    "type": "tool",
+    "technology_family": "Workflow Orchestration",
+    "related_capabilities": [
+      "workflow-scheduling",
+      "pipeline-idempotency"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "dbt": {
     "name": "dbt",
-    "description": "Build versioned SQL transformations with dbt models, tests, documentation, and dependency graphs."
+    "description": "Build versioned SQL transformations with dbt models, tests, documentation, and dependency graphs.",
+    "type": "tool",
+    "technology_family": "Data Transformation Tools",
+    "related_capabilities": [
+      "data-transformations",
+      "data-quality"
+    ]
   },
   "apache-spark": {
     "name": "Apache Spark",
-    "description": "Process distributed datasets with Spark transformations, joins, partitioning, and execution tuning."
+    "description": "Process distributed datasets with Spark transformations, joins, partitioning, and execution tuning.",
+    "type": "framework",
+    "technology_family": "Distributed Data Processing",
+    "related_capabilities": [
+      "distributed-data-processing",
+      "stream-processing"
+    ]
   },
   "apache-hadoop-yarn": {
     "name": "Apache Hadoop YARN",
-    "description": "Manage distributed data-processing resources and application scheduling with Hadoop YARN."
+    "description": "Manage distributed data-processing resources and application scheduling with Hadoop YARN.",
+    "type": "infrastructure",
+    "technology_family": "Cluster Resource Management",
+    "related_capabilities": [
+      "distributed-data-processing"
+    ]
   },
   "snowflake": {
     "name": "Snowflake",
-    "description": "Load, transform, and query analytical data using Snowflake tables, warehouses, and access controls."
+    "description": "Load, transform, and query analytical data using Snowflake tables, warehouses, and access controls.",
+    "type": "database",
+    "technology_family": "Analytical Warehouses",
+    "related_capabilities": [
+      "data-warehousing",
+      "advanced-sql"
+    ],
+    "selection_group": "Analytical Warehouse"
   },
   "google-bigquery": {
     "name": "Google BigQuery",
-    "description": "Build analytical datasets and optimize partitioned SQL workloads in Google BigQuery."
+    "description": "Build analytical datasets and optimize partitioned SQL workloads in Google BigQuery.",
+    "type": "database",
+    "technology_family": "Analytical Warehouses",
+    "related_capabilities": [
+      "data-warehousing",
+      "advanced-sql"
+    ],
+    "selection_group": "Analytical Warehouse"
   },
   "amazon-redshift": {
     "name": "Amazon Redshift",
-    "description": "Load and query warehouse data using Amazon Redshift distribution, sort, and workload controls."
+    "description": "Load and query warehouse data using Amazon Redshift distribution, sort, and workload controls.",
+    "type": "database",
+    "technology_family": "Analytical Warehouses",
+    "related_capabilities": [
+      "data-warehousing",
+      "advanced-sql"
+    ],
+    "selection_group": "Analytical Warehouse"
   },
   "s3": {
-    "name": "S3",
-    "description": "Store and organize datasets in S3 using object keys, access policies, and lifecycle rules."
+    "name": "Amazon S3",
+    "description": "Store and organize datasets in Amazon S3 using object keys, access policies, and lifecycle rules.",
+    "type": "cloud_service",
+    "technology_family": "Object Storage",
+    "related_capabilities": [
+      "object-storage",
+      "cloud-storage-design"
+    ]
   },
   "azure-blob-storage": {
     "name": "Azure Blob Storage",
-    "description": "Store datasets in Azure Blob Storage with containers, access controls, and lifecycle management."
+    "description": "Store datasets in Azure Blob Storage with containers, access controls, and lifecycle management.",
+    "type": "cloud_service",
+    "technology_family": "Object Storage",
+    "related_capabilities": [
+      "object-storage",
+      "cloud-storage-design"
+    ]
   },
   "azure-sql-database": {
     "name": "Azure SQL Database",
-    "description": "Build managed relational datasets and SQL workloads with Azure SQL Database."
+    "description": "Build managed relational datasets and SQL workloads with Azure SQL Database.",
+    "type": "database",
+    "technology_family": "Relational Databases",
+    "related_capabilities": [
+      "sql-modeling",
+      "database-transactions",
+      "database-indexing"
+    ],
+    "selection_group": "Relational Storage"
   },
   "azure-data-factory": {
-    "name": "Data Factory (ETL)",
-    "description": "Build Azure Data Factory ingestion and transformation pipelines with triggers and monitored activities."
+    "name": "Azure Data Factory",
+    "description": "Build Azure Data Factory ingestion and transformation pipelines with triggers and monitored activities.",
+    "type": "cloud_service",
+    "technology_family": "Data Integration Services",
+    "related_capabilities": [
+      "batch-ingestion",
+      "workflow-scheduling"
+    ]
   },
   "databricks-delta-lake": {
-    "name": "Databricks Delta Lake",
-    "description": "Build Delta Lake tables and data-processing jobs with reliable updates and schema management."
+    "name": "Delta Lake",
+    "description": "Build Delta Lake tables and data-processing jobs with reliable updates and schema management.",
+    "type": "framework",
+    "technology_family": "Lakehouse Storage",
+    "related_capabilities": [
+      "lakehouse-storage",
+      "schema-evolution"
+    ]
   },
   "hdfs": {
     "name": "HDFS",
-    "description": "Store distributed datasets in HDFS and manage file placement, replication, and access."
+    "description": "Store distributed datasets in HDFS and manage file placement, replication, and access.",
+    "type": "infrastructure",
+    "technology_family": "Distributed Filesystems",
+    "related_capabilities": [
+      "distributed-data-processing"
+    ]
   },
   "pandas": {
-    "name": "Pandas",
-    "description": "Clean, join, aggregate, and reshape tabular data using Pandas DataFrames."
+    "name": "pandas",
+    "description": "Clean, join, aggregate, and reshape tabular data using pandas DataFrames.",
+    "type": "library",
+    "technology_family": "Dataframe Libraries",
+    "related_capabilities": [
+      "data-transformations",
+      "data-quality"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "numpy": {
     "name": "NumPy",
-    "description": "Process numerical arrays using NumPy vectorized operations, indexing, and broadcasting."
+    "description": "Process numerical arrays using NumPy vectorized operations, indexing, and broadcasting.",
+    "type": "library",
+    "technology_family": "Numerical Computing",
+    "related_capabilities": [
+      "feature-engineering"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "nodejs": {
     "name": "Node.js",
-    "description": "Build server-side JavaScript applications using Node.js modules, asynchronous I/O, and runtime APIs."
+    "description": "Build server-side JavaScript applications using Node.js modules, asynchronous I/O, and runtime APIs.",
+    "type": "runtime",
+    "technology_family": "JavaScript Runtimes",
+    "related_capabilities": [
+      "background-jobs"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "sql": {
     "name": "SQL",
-    "description": "Query and modify relational data using joins, aggregation, constraints, and transactions."
+    "description": "Query and modify relational data using joins, aggregation, constraints, and transactions.",
+    "type": "language",
+    "technology_family": "Query Languages",
+    "related_capabilities": [
+      "advanced-sql",
+      "sql-modeling"
+    ]
   },
   "stripe-api": {
     "name": "Stripe API",
-    "description": "Integrate Stripe payments and financial records using authenticated requests, idempotency, and verified webhooks."
+    "description": "Integrate Stripe payments and financial records using authenticated requests, idempotency, and verified webhooks.",
+    "type": "api",
+    "technology_family": "Payment APIs",
+    "related_capabilities": [
+      "payment-gateway-integration",
+      "payment-webhooks"
+    ]
   },
   "three-d-secure": {
     "name": "3D Secure",
-    "description": "Integrate cardholder authentication challenges and preserve payment context across the authentication flow."
+    "description": "Integrate cardholder authentication challenges and preserve payment context across the authentication flow.",
+    "type": "protocol",
+    "technology_family": "Payment Authentication Protocols",
+    "related_capabilities": [
+      "payment-authentication"
+    ]
   },
   "smart-on-fhir": {
     "name": "SMART on FHIR",
-    "description": "Authorize healthcare applications and backend clients using SMART scopes, launch context, and FHIR access tokens."
+    "description": "Authorize healthcare applications and backend clients using SMART scopes, launch context, and FHIR access tokens.",
+    "type": "protocol",
+    "technology_family": "Healthcare Authorization",
+    "related_capabilities": [
+      "healthcare-access-controls"
+    ]
   },
   "shopify-storefront-api": {
     "name": "Shopify Storefront API",
-    "description": "Query Shopify products and collections and manage carts using the GraphQL Storefront API."
+    "description": "Query Shopify products and collections and manage carts using the GraphQL Storefront API.",
+    "type": "api",
+    "technology_family": "Commerce APIs",
+    "related_capabilities": [
+      "commerce-domain",
+      "cart-state"
+    ]
   },
   "shopify-admin-api": {
     "name": "Shopify GraphQL Admin API",
-    "description": "Integrate Shopify product, order, fulfillment, and inventory data using the GraphQL Admin API."
+    "description": "Integrate Shopify product, order, fulfillment, and inventory data using the GraphQL Admin API.",
+    "type": "api",
+    "technology_family": "Commerce APIs",
+    "related_capabilities": [
+      "commerce-domain",
+      "inventory-consistency"
+    ]
   },
   "git-version-control": {
     "name": "Git",
-    "description": "Manage branches, commits, merges, and pull requests with Git."
+    "description": "Manage commits, branches, merges, rebases, and repository history with Git.",
+    "type": "tool",
+    "technology_family": "Version Control",
+    "related_capabilities": []
   },
   "linux-cli": {
     "name": "Linux",
-    "description": "Navigate files, inspect processes, manage permissions, and automate routine shell tasks."
+    "description": "Navigate files, inspect processes, manage permissions, and automate routine shell tasks.",
+    "type": "operating_system",
+    "technology_family": "Operating Systems",
+    "related_capabilities": [
+      "network-administration"
+    ]
   },
   "containers": {
     "name": "Docker",
-    "description": "Build reproducible container images and configure runtime networking, storage, and resource limits."
+    "description": "Build reproducible container images and configure runtime networking, storage, and resource limits.",
+    "type": "infrastructure",
+    "technology_family": "Container Runtimes",
+    "related_capabilities": [
+      "release-engineering"
+    ]
   },
   "tls-cryptography": {
-    "name": "SSL/TLS",
-    "description": "Protect data in transit and choose appropriate hashing and encryption primitives."
+    "name": "TLS",
+    "description": "Configure TLS certificates and certificate validation for encrypted connections, and diagnose trust-chain, hostname, and certificate-expiration failures.",
+    "type": "protocol",
+    "technology_family": "Transport Security",
+    "related_capabilities": [
+      "cryptography-engineering",
+      "network-security"
+    ]
   },
   "html-semantics": {
     "name": "HTML",
-    "description": "Structure pages with meaningful elements, accessible forms, and appropriate document landmarks."
+    "description": "Structure pages with meaningful elements, accessible forms, and appropriate document landmarks.",
+    "type": "language",
+    "technology_family": "Web Markup",
+    "related_capabilities": [
+      "accessibility"
+    ]
   },
   "css-layout": {
     "name": "CSS",
-    "description": "Build adaptable layouts using the box model, Flexbox, Grid, and responsive styling."
+    "description": "Build adaptable layouts using the box model, Flexbox, Grid, and responsive styling.",
+    "type": "language",
+    "technology_family": "Web Styling",
+    "related_capabilities": [
+      "browser-compatibility"
+    ]
   },
   "javascript": {
     "name": "JavaScript",
-    "description": "Implement browser behavior using functions, modules, events, promises, and asynchronous control flow."
+    "description": "Implement browser and server-side behavior using JavaScript functions, modules, events, promises, and asynchronous control flow.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "typescript": {
     "name": "TypeScript",
-    "description": "Use static types and type narrowing to make frontend contracts and state changes explicit."
+    "description": "Use TypeScript types, narrowing, generics, and module contracts for browser, server, and application code.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "rpc-contracts": {
     "name": "gRPC",
-    "description": "Define typed service calls and handle serialization, deadlines, and compatible contract changes."
+    "description": "Define typed service calls and handle serialization, deadlines, and compatible contract changes.",
+    "type": "framework",
+    "technology_family": "RPC Frameworks",
+    "related_capabilities": [
+      "contract-testing"
+    ]
   },
   "fhir-integration": {
     "name": "HL7 FHIR",
-    "description": "Map and validate healthcare data using FHIR resources and profiles."
+    "description": "Map and validate healthcare data using FHIR resources and profiles.",
+    "type": "standard",
+    "technology_family": "Healthcare Interoperability",
+    "related_capabilities": [
+      "healthcare-data",
+      "clinical-data-validation"
+    ]
   },
   "bash": {
     "name": "Bash",
-    "description": "Automate command-line workflows using shell scripts, pipes, variables, and exit codes."
+    "description": "Automate command-line workflows using shell scripts, pipes, variables, and exit codes.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": []
   },
   "kotlin": {
     "name": "Kotlin",
-    "description": "Build typed applications using Kotlin collections, null safety, classes, and functions."
+    "description": "Build typed applications using Kotlin collections, null safety, classes, and functions.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Java / JVM",
+      "Kotlin"
+    ]
   },
   "swift": {
     "name": "Swift",
-    "description": "Develop applications using Swift types, protocols, optionals, and structured concurrency."
+    "description": "Develop applications using Swift types, protocols, optionals, and structured concurrency.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "dart": {
     "name": "Dart",
-    "description": "Write typed applications using Dart collections, futures, streams, and classes."
+    "description": "Write typed applications using Dart collections, futures, streams, and classes.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Dart"
+    ]
   },
   "r": {
     "name": "R",
-    "description": "Analyze datasets using R data structures, statistical functions, and reproducible scripts."
+    "description": "Analyze datasets using R data structures, statistical functions, and reproducible scripts.",
+    "type": "language",
+    "technology_family": "Programming Languages",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "R"
+    ]
   },
   "aws": {
     "name": "AWS",
-    "description": "Provision and operate compute, networking, storage, and identity services on AWS."
+    "description": "Provision and operate compute, networking, storage, and identity services on AWS.",
+    "type": "cloud_platform",
+    "technology_family": "Cloud Platforms",
+    "related_capabilities": [
+      "cloud-network-design",
+      "cloud-storage-design",
+      "cloud-identity"
+    ],
+    "selection_group": "Cloud Platform"
   },
   "azure": {
     "name": "Azure",
-    "description": "Configure workloads using Azure compute, storage, networking, and identity services."
+    "description": "Configure workloads using Azure compute, storage, networking, and identity services.",
+    "type": "cloud_platform",
+    "technology_family": "Cloud Platforms",
+    "related_capabilities": [
+      "cloud-network-design",
+      "cloud-storage-design",
+      "cloud-identity"
+    ],
+    "selection_group": "Cloud Platform"
   },
   "google-cloud": {
     "name": "Google Cloud",
-    "description": "Deploy workloads using Google Cloud compute, networking, storage, and access controls."
+    "description": "Deploy workloads using Google Cloud compute, networking, storage, and access controls.",
+    "type": "cloud_platform",
+    "technology_family": "Cloud Platforms",
+    "related_capabilities": [
+      "cloud-network-design",
+      "cloud-storage-design",
+      "cloud-identity"
+    ],
+    "selection_group": "Cloud Platform"
   },
   "ec2": {
-    "name": "EC2",
-    "description": "Operate virtual machines using EC2 images, instance types, security groups, and storage."
+    "name": "Amazon EC2",
+    "description": "Operate virtual machines using Amazon EC2 images, instance types, security groups, and storage.",
+    "type": "cloud_service",
+    "technology_family": "Virtual Compute",
+    "related_capabilities": [
+      "capacity-planning"
+    ]
   },
   "aws-lambda": {
-    "name": "Lambda",
-    "description": "Deploy event-driven functions using Lambda triggers, execution roles, and runtime configuration."
+    "name": "AWS Lambda",
+    "description": "Deploy event-driven functions using AWS Lambda triggers, execution roles, and runtime configuration.",
+    "type": "cloud_service",
+    "technology_family": "Serverless Compute",
+    "related_capabilities": [
+      "serverless-architecture"
+    ]
   },
   "aws-vpc": {
-    "name": "VPC",
-    "description": "Design AWS networks using subnets, route tables, gateways, and security groups."
+    "name": "Amazon VPC",
+    "description": "Design AWS networks using subnets, route tables, gateways, and security groups.",
+    "type": "cloud_service",
+    "technology_family": "Cloud Networking",
+    "related_capabilities": [
+      "cloud-network-design"
+    ]
   },
   "cloudfront": {
-    "name": "CloudFront",
-    "description": "Deliver cached content through CloudFront distributions, origins, and cache policies."
+    "name": "Amazon CloudFront",
+    "description": "Deliver cached content through Amazon CloudFront distributions, origins, and cache policies.",
+    "type": "cloud_service",
+    "technology_family": "Content Delivery",
+    "related_capabilities": [
+      "web-performance"
+    ]
   },
   "route53": {
     "name": "Amazon Route 53",
-    "description": "Configure DNS records, routing policies, and health checks using Amazon Route 53."
+    "description": "Configure DNS records, routing policies, and health checks using Amazon Route 53.",
+    "type": "cloud_service",
+    "technology_family": "DNS Services",
+    "related_capabilities": [
+      "network-administration"
+    ]
   },
   "ansible": {
     "name": "Ansible",
-    "description": "Manage repeatable server configuration using Ansible inventories, roles, and playbooks."
+    "description": "Manage repeatable server configuration using Ansible inventories, roles, and playbooks.",
+    "type": "tool",
+    "technology_family": "Configuration Automation",
+    "related_capabilities": [
+      "configuration-management"
+    ]
   },
   "pulumi": {
     "name": "Pulumi",
-    "description": "Define and deploy cloud infrastructure using Pulumi programs and state management."
+    "description": "Define and deploy cloud infrastructure using Pulumi programs and state management.",
+    "type": "tool",
+    "technology_family": "Infrastructure Provisioning",
+    "related_capabilities": [
+      "infrastructure-as-code"
+    ],
+    "selection_group": "Infrastructure Provisioning"
   },
   "aws-rds": {
-    "name": "RDS",
-    "description": "Operate managed relational databases using RDS backups, replicas, and availability settings."
+    "name": "Amazon RDS",
+    "description": "Operate managed relational databases using Amazon RDS backups, replicas, and availability settings.",
+    "type": "cloud_service",
+    "technology_family": "Managed Relational Databases",
+    "related_capabilities": [
+      "backup-restoration",
+      "database-replication"
+    ]
   },
   "aws-iam": {
-    "name": "IAM",
-    "description": "Configure AWS identities, roles, and policies with narrowly scoped permissions."
+    "name": "AWS IAM",
+    "description": "Configure AWS identities, roles, and policies with narrowly scoped permissions.",
+    "type": "cloud_service",
+    "technology_family": "Cloud Access Management",
+    "related_capabilities": [
+      "cloud-identity",
+      "authorization"
+    ]
   },
   "vault": {
     "name": "Vault",
-    "description": "Manage application secrets, access policies, and credential lifecycles using Vault."
+    "description": "Manage application secrets, access policies, and credential lifecycles using Vault.",
+    "type": "tool",
+    "technology_family": "Secret Management",
+    "related_capabilities": [
+      "secrets-management"
+    ]
   },
   "wireshark": {
     "name": "Wireshark",
-    "description": "Inspect network packets and investigate protocols using Wireshark captures and filters."
+    "description": "Inspect network packets and investigate protocols using Wireshark captures and filters.",
+    "type": "tool",
+    "technology_family": "Packet Analysis",
+    "related_capabilities": [
+      "network-security",
+      "network-administration"
+    ]
   },
   "nmap": {
-    "name": "NMAP",
-    "description": "Inventory authorized network hosts, exposed ports, and service versions using NMAP."
+    "name": "Nmap",
+    "description": "Inventory authorized network hosts, exposed ports, and service versions using Nmap.",
+    "type": "tool",
+    "technology_family": "Network Scanning",
+    "related_capabilities": [
+      "vulnerability-management",
+      "penetration-testing"
+    ]
   },
   "tcpdump": {
-    "name": "Tcpdump",
-    "description": "Capture and filter network traffic from the command line using Tcpdump."
+    "name": "tcpdump",
+    "description": "Capture and filter network traffic from the command line using tcpdump.",
+    "type": "tool",
+    "technology_family": "Packet Analysis",
+    "related_capabilities": [
+      "network-security",
+      "network-administration"
+    ]
   },
   "github-actions": {
     "name": "GitHub Actions",
-    "description": "Automate builds, tests, and deployments using GitHub Actions workflows and runners."
+    "description": "Automate builds, tests, and deployments using GitHub Actions workflows and runners.",
+    "type": "ci_cd_platform",
+    "technology_family": "CI/CD Platforms",
+    "related_capabilities": [
+      "continuous-integration"
+    ]
   },
   "gitlab-ci": {
-    "name": "GitLab CI",
-    "description": "Build delivery pipelines using GitLab CI jobs, stages, artifacts, and protected variables."
+    "name": "GitLab CI/CD",
+    "description": "Build delivery pipelines using GitLab CI/CD jobs, stages, artifacts, and protected variables.",
+    "type": "ci_cd_platform",
+    "technology_family": "CI/CD Platforms",
+    "related_capabilities": [
+      "continuous-integration"
+    ]
   },
   "jenkins": {
     "name": "Jenkins",
-    "description": "Maintain automated delivery pipelines using Jenkins agents, stages, and credentials."
+    "description": "Maintain automated delivery pipelines using Jenkins agents, stages, and credentials.",
+    "type": "ci_cd_platform",
+    "technology_family": "CI/CD Platforms",
+    "related_capabilities": [
+      "continuous-integration"
+    ]
   },
   "helm": {
     "name": "Helm",
-    "description": "Package and configure Kubernetes applications using Helm charts, values, and releases."
+    "description": "Package and configure Kubernetes applications using Helm charts, values, and releases.",
+    "type": "tool",
+    "technology_family": "Kubernetes Packaging",
+    "related_capabilities": [
+      "kubernetes-operations",
+      "deployment-rollbacks"
+    ]
   },
   "argocd": {
-    "name": "ArgoCD",
-    "description": "Reconcile Kubernetes deployments from version-controlled manifests using ArgoCD."
+    "name": "Argo CD",
+    "description": "Reconcile Kubernetes deployments from version-controlled manifests using Argo CD.",
+    "type": "tool",
+    "technology_family": "GitOps Delivery",
+    "related_capabilities": [
+      "gitops",
+      "deployment-rollbacks"
+    ]
   },
   "fastlane": {
-    "name": "Fastlane",
-    "description": "Automate mobile signing, testing, screenshots, and release workflows using Fastlane."
+    "name": "fastlane",
+    "description": "Automate mobile signing, testing, screenshots, and release workflows using fastlane.",
+    "type": "tool",
+    "technology_family": "Mobile Delivery Automation",
+    "related_capabilities": [
+      "mobile-release"
+    ]
   },
   "grafana": {
     "name": "Grafana",
-    "description": "Build dashboards and alerts from infrastructure and application telemetry using Grafana."
+    "description": "Build dashboards and alerts from infrastructure and application telemetry using Grafana.",
+    "type": "tool",
+    "technology_family": "Monitoring Dashboards",
+    "related_capabilities": [
+      "application-metrics",
+      "alert-engineering"
+    ]
   },
   "opentelemetry": {
     "name": "OpenTelemetry",
-    "description": "Instrument services with OpenTelemetry traces, metrics, logs, and context propagation."
+    "description": "Instrument services with OpenTelemetry traces, metrics, logs, and context propagation.",
+    "type": "framework",
+    "technology_family": "Telemetry Instrumentation",
+    "related_capabilities": [
+      "distributed-tracing",
+      "application-metrics"
+    ]
   },
   "jaeger": {
     "name": "Jaeger",
-    "description": "Investigate distributed request paths and service latency using Jaeger traces."
+    "description": "Investigate distributed request paths and service latency using Jaeger traces.",
+    "type": "tool",
+    "technology_family": "Distributed Tracing",
+    "related_capabilities": [
+      "distributed-tracing"
+    ]
   },
   "loki": {
     "name": "Loki",
-    "description": "Collect and query application logs using Loki labels and LogQL expressions."
+    "description": "Collect and query application logs using Loki labels and LogQL expressions.",
+    "type": "tool",
+    "technology_family": "Log Platforms",
+    "related_capabilities": [
+      "structured-logging"
+    ]
   },
   "splunk": {
     "name": "Splunk",
-    "description": "Search operational and security events using Splunk queries, dashboards, and alerts."
+    "description": "Search operational and security events using Splunk queries, dashboards, and alerts.",
+    "type": "tool",
+    "technology_family": "Log Platforms",
+    "related_capabilities": [
+      "structured-logging"
+    ]
   },
   "gradle": {
     "name": "Gradle",
-    "description": "Configure builds, dependencies, variants, and build tasks using Gradle."
+    "description": "Configure builds, dependencies, variants, and build tasks using Gradle.",
+    "type": "tool",
+    "technology_family": "Build Automation",
+    "related_capabilities": [
+      "continuous-integration",
+      "mobile-release"
+    ]
   },
   "swift-package-manager": {
     "name": "Swift Package Manager",
-    "description": "Organize Swift modules and resolve dependencies with Swift Package Manager."
+    "description": "Organize Swift modules and resolve dependencies with Swift Package Manager.",
+    "type": "tool",
+    "technology_family": "Swift Package Management",
+    "related_capabilities": [
+      "dependency-security"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "jetpack-compose": {
     "name": "Jetpack Compose",
-    "description": "Create Android interfaces using composable functions, state, layouts, and recomposition."
+    "description": "Create Android interfaces using composable functions, state, layouts, and recomposition.",
+    "type": "framework",
+    "technology_family": "Android UI Frameworks",
+    "related_capabilities": [
+      "mobile-state",
+      "mobile-accessibility"
+    ],
+    "technology_ecosystems": [
+      "Kotlin"
+    ]
   },
   "android-studio": {
     "name": "Android Studio",
-    "description": "Build, debug, profile, and package Android applications using Android Studio."
+    "description": "Build, debug, profile, and package Android applications using Android Studio.",
+    "type": "tool",
+    "technology_family": "Mobile IDEs",
+    "related_capabilities": [
+      "mobile-testing",
+      "mobile-release"
+    ]
   },
   "room": {
-    "name": "Room Database",
-    "description": "Implement Android persistence using Room entities, queries, migrations, and transactions."
+    "name": "Room",
+    "description": "Implement Android persistence using Room entities, queries, migrations, and transactions.",
+    "type": "library",
+    "technology_family": "Mobile Persistence",
+    "related_capabilities": [
+      "mobile-persistence",
+      "offline-synchronization"
+    ],
+    "technology_ecosystems": [
+      "Kotlin",
+      "Java / JVM"
+    ]
   },
   "workmanager": {
     "name": "WorkManager",
-    "description": "Schedule persistent Android background work with constraints, retries, and unique jobs."
+    "description": "Schedule persistent Android background work with constraints, retries, and unique jobs.",
+    "type": "library",
+    "technology_family": "Android Background Work",
+    "related_capabilities": [
+      "offline-synchronization",
+      "mobile-lifecycle"
+    ],
+    "technology_ecosystems": [
+      "Kotlin",
+      "Java / JVM"
+    ]
   },
   "hilt": {
     "name": "Hilt",
-    "description": "Configure Android dependency injection using Hilt components, modules, and scopes."
+    "description": "Configure Android dependency injection using Hilt components, modules, and scopes.",
+    "type": "library",
+    "technology_family": "Dependency Injection",
+    "related_capabilities": [
+      "mobile-architecture"
+    ],
+    "technology_ecosystems": [
+      "Kotlin",
+      "Java / JVM"
+    ]
   },
   "retrofit": {
     "name": "Retrofit",
-    "description": "Define typed Android HTTP clients using Retrofit service interfaces and converters."
+    "description": "Define typed Android HTTP clients using Retrofit service interfaces and converters.",
+    "type": "library",
+    "technology_family": "Mobile HTTP Clients",
+    "related_capabilities": [
+      "mobile-networking"
+    ],
+    "technology_ecosystems": [
+      "Kotlin",
+      "Java / JVM"
+    ]
   },
   "okhttp": {
     "name": "OkHttp",
-    "description": "Configure HTTP connections, interceptors, timeouts, and caching with OkHttp."
+    "description": "Configure HTTP connections, interceptors, timeouts, and caching with OkHttp.",
+    "type": "library",
+    "technology_family": "Mobile HTTP Clients",
+    "related_capabilities": [
+      "mobile-networking"
+    ],
+    "technology_ecosystems": [
+      "Kotlin",
+      "Java / JVM"
+    ]
   },
   "kotlin-coroutines": {
-    "name": "Coroutines",
-    "description": "Coordinate asynchronous Kotlin work using structured concurrency and cancellation."
+    "name": "Kotlin Coroutines",
+    "description": "Coordinate asynchronous Kotlin work with the kotlinx.coroutines library using structured concurrency, flows, and cancellation.",
+    "type": "library",
+    "technology_family": "Asynchronous Programming",
+    "related_capabilities": [
+      "mobile-state",
+      "mobile-lifecycle"
+    ],
+    "technology_ecosystems": [
+      "Kotlin"
+    ]
   },
   "swiftui": {
     "name": "SwiftUI",
-    "description": "Create Apple platform interfaces using SwiftUI views, state, bindings, and navigation."
+    "description": "Create Apple platform interfaces using SwiftUI views, state, bindings, and navigation.",
+    "type": "framework",
+    "technology_family": "iOS UI Frameworks",
+    "related_capabilities": [
+      "mobile-state",
+      "mobile-accessibility"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "uikit": {
     "name": "UIKit",
-    "description": "Implement iOS interfaces using UIKit view controllers, layouts, and event handling."
+    "description": "Implement iOS interfaces using UIKit view controllers, layouts, and event handling.",
+    "type": "framework",
+    "technology_family": "iOS UI Frameworks",
+    "related_capabilities": [
+      "mobile-state",
+      "mobile-accessibility"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "xcode": {
     "name": "Xcode",
-    "description": "Build, debug, profile, and distribute Apple platform applications using Xcode."
+    "description": "Build, debug, profile, and distribute Apple platform applications using Xcode.",
+    "type": "tool",
+    "technology_family": "Mobile IDEs",
+    "related_capabilities": [
+      "mobile-testing",
+      "mobile-release"
+    ]
   },
   "core-data": {
     "name": "Core Data",
-    "description": "Manage local object persistence using Core Data models, contexts, and migrations."
+    "description": "Manage local object persistence using Core Data models, contexts, and migrations.",
+    "type": "framework",
+    "technology_family": "Mobile Persistence",
+    "related_capabilities": [
+      "mobile-persistence",
+      "offline-synchronization"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "combine": {
     "name": "Combine",
-    "description": "Compose asynchronous event streams using Combine publishers, subscribers, and operators."
+    "description": "Compose asynchronous event streams using Combine publishers, subscribers, and operators.",
+    "type": "framework",
+    "technology_family": "Asynchronous Programming",
+    "related_capabilities": [
+      "mobile-state",
+      "mobile-lifecycle"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "react-native": {
     "name": "React Native",
-    "description": "Build native mobile interfaces using React Native components and platform APIs."
+    "description": "Build native mobile interfaces using React Native components and platform APIs.",
+    "type": "framework",
+    "technology_family": "Cross-Platform Mobile",
+    "related_capabilities": [
+      "native-integration",
+      "mobile-lifecycle"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "flutter": {
     "name": "Flutter",
-    "description": "Develop mobile interfaces using Flutter widgets, layouts, navigation, and rendering tools."
+    "description": "Develop mobile interfaces using Flutter widgets, layouts, navigation, and rendering tools.",
+    "type": "framework",
+    "technology_family": "Cross-Platform Mobile",
+    "related_capabilities": [
+      "native-integration",
+      "mobile-lifecycle"
+    ],
+    "technology_ecosystems": [
+      "Dart"
+    ]
   },
   "expo": {
     "name": "Expo",
-    "description": "Build and distribute React Native applications using Expo modules and development tools."
+    "description": "Build and distribute React Native applications using Expo modules and development tools.",
+    "type": "framework",
+    "technology_family": "Mobile App Platforms",
+    "related_capabilities": [
+      "native-integration",
+      "mobile-release"
+    ],
+    "technology_ecosystems": [
+      "JavaScript / TypeScript"
+    ]
   },
   "firebase": {
     "name": "Firebase",
-    "description": "Integrate Firebase authentication, messaging, application data, and crash diagnostics."
+    "description": "Integrate Firebase authentication, messaging, application data, and crash diagnostics.",
+    "type": "cloud_platform",
+    "technology_family": "Mobile Backend Services",
+    "related_capabilities": [
+      "push-notifications",
+      "authentication"
+    ]
   },
   "xctest": {
     "name": "XCTest",
-    "description": "Write automated unit and interface tests using XCTest assertions and test fixtures."
+    "description": "Write automated unit and interface tests using XCTest assertions and test fixtures.",
+    "type": "test_framework",
+    "technology_family": "Test Frameworks",
+    "related_capabilities": [
+      "unit-testing",
+      "integration-testing"
+    ],
+    "technology_ecosystems": [
+      "Swift"
+    ]
   },
   "appium": {
     "name": "Appium",
-    "description": "Automate mobile tests using Appium drivers, locators, and device sessions."
+    "description": "Automate mobile tests using Appium drivers, locators, and device sessions.",
+    "type": "tool",
+    "technology_family": "Mobile Test Automation",
+    "related_capabilities": [
+      "mobile-testing",
+      "regression-testing"
+    ]
   },
   "selenium": {
     "name": "Selenium",
-    "description": "Automate browser interactions using Selenium WebDriver sessions, selectors, and waits."
+    "description": "Automate browser interactions using Selenium WebDriver sessions, selectors, and waits.",
+    "type": "tool",
+    "technology_family": "Browser Test Automation",
+    "related_capabilities": [
+      "frontend-test-automation",
+      "regression-testing"
+    ],
+    "selection_group": "Browser Automation"
   },
   "postman": {
     "name": "Postman",
-    "description": "Build repeatable API tests using Postman requests, assertions, environments, and collections."
+    "description": "Build repeatable API tests using Postman requests, assertions, environments, and collections.",
+    "type": "tool",
+    "technology_family": "API Test Tools",
+    "related_capabilities": [
+      "api-testing",
+      "contract-testing"
+    ]
   },
   "jmeter": {
     "name": "JMeter",
-    "description": "Model concurrent users and evaluate performance using JMeter test plans."
+    "description": "Model concurrent users and evaluate performance using JMeter test plans.",
+    "type": "tool",
+    "technology_family": "Load Test Tools",
+    "related_capabilities": [
+      "load-testing"
+    ]
   },
   "k6": {
     "name": "k6",
-    "description": "Run scripted load tests with k6 scenarios, thresholds, and performance measurements."
+    "description": "Run scripted load tests with k6 scenarios, thresholds, and performance measurements.",
+    "type": "tool",
+    "technology_family": "Load Test Tools",
+    "related_capabilities": [
+      "load-testing"
+    ]
   },
   "locust": {
     "name": "Locust",
-    "description": "Simulate concurrent user behavior using Python-based Locust load tests."
+    "description": "Simulate concurrent user behavior using Python-based Locust load tests.",
+    "type": "test_framework",
+    "technology_family": "Load Test Tools",
+    "related_capabilities": [
+      "load-testing"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "testrail": {
     "name": "TestRail",
-    "description": "Organize test cases, test runs, traceability, and execution results using TestRail."
+    "description": "Organize test cases, test runs, traceability, and execution results using TestRail.",
+    "type": "tool",
+    "technology_family": "Test Management",
+    "related_capabilities": [
+      "test-design",
+      "defect-management"
+    ]
   },
   "excel": {
     "name": "Excel",
-    "description": "Analyze tabular data using Excel formulas, pivot tables, charts, and validation."
+    "description": "Analyze tabular data using Excel formulas, pivot tables, charts, and validation.",
+    "type": "tool",
+    "technology_family": "Spreadsheets",
+    "related_capabilities": []
   },
   "power-bi": {
     "name": "Power BI",
-    "description": "Build data models, measures, and interactive reports using Power BI."
+    "description": "Build data models, measures, and interactive reports using Power BI.",
+    "type": "tool",
+    "technology_family": "Business Intelligence",
+    "related_capabilities": []
   },
   "tableau": {
     "name": "Tableau",
-    "description": "Create analytical dashboards using Tableau dimensions, measures, and filters."
+    "description": "Create analytical dashboards using Tableau dimensions, measures, and filters.",
+    "type": "tool",
+    "technology_family": "Business Intelligence",
+    "related_capabilities": []
   },
   "matplotlib": {
     "name": "Matplotlib",
-    "description": "Create reproducible charts and statistical figures from Python datasets using Matplotlib."
+    "description": "Create reproducible charts and statistical figures from Python datasets using Matplotlib.",
+    "type": "library",
+    "technology_family": "Data Visualization",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "seaborn": {
     "name": "Seaborn",
-    "description": "Explore distributions and relationships using Seaborn statistical visualizations."
+    "description": "Explore distributions and relationships using Seaborn statistical visualizations.",
+    "type": "library",
+    "technology_family": "Data Visualization",
+    "related_capabilities": [],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "amplitude": {
     "name": "Amplitude",
-    "description": "Analyze product events, funnels, retention, and user cohorts using Amplitude."
+    "description": "Analyze product events, funnels, retention, and user cohorts using Amplitude.",
+    "type": "tool",
+    "technology_family": "Product Analytics",
+    "related_capabilities": []
   },
   "mixpanel": {
     "name": "Mixpanel",
-    "description": "Measure product usage, conversion, and retention using Mixpanel event analysis."
+    "description": "Measure product usage, conversion, and retention using Mixpanel event analysis.",
+    "type": "tool",
+    "technology_family": "Product Analytics",
+    "related_capabilities": []
   },
   "scikit-learn": {
-    "name": "Scikit-learn",
-    "description": "Build preprocessing pipelines and evaluate supervised and unsupervised models with Scikit-learn."
+    "name": "scikit-learn",
+    "description": "Build preprocessing pipelines and evaluate supervised and unsupervised models with scikit-learn.",
+    "type": "library",
+    "technology_family": "Machine Learning Libraries",
+    "related_capabilities": [
+      "supervised-learning",
+      "unsupervised-learning",
+      "model-evaluation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "pytorch": {
     "name": "PyTorch",
-    "description": "Train and serve neural networks using PyTorch tensors, autograd, and modules."
+    "description": "Train and serve neural networks using PyTorch tensors, autograd, and modules.",
+    "type": "framework",
+    "technology_family": "Deep Learning Frameworks",
+    "related_capabilities": [
+      "deep-learning",
+      "model-adaptation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "tensorflow": {
     "name": "TensorFlow",
-    "description": "Build and deploy machine learning models using TensorFlow computation and training tools."
+    "description": "Build and deploy machine learning models using TensorFlow computation and training tools.",
+    "type": "framework",
+    "technology_family": "Deep Learning Frameworks",
+    "related_capabilities": [
+      "deep-learning",
+      "model-adaptation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "keras": {
     "name": "Keras",
-    "description": "Define and train neural networks using Keras layers, models, and callbacks."
+    "description": "Define and train neural networks using Keras layers, models, and callbacks.",
+    "type": "framework",
+    "technology_family": "Deep Learning Frameworks",
+    "related_capabilities": [
+      "deep-learning",
+      "model-adaptation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "hugging-face": {
-    "name": "Hugging Face",
-    "description": "Evaluate and integrate pretrained models and tokenizers from the Hugging Face ecosystem."
+    "name": "Hugging Face Transformers",
+    "description": "Load pretrained models and tokenizers with Hugging Face Transformers and implement task-specific inference and training pipelines.",
+    "type": "library",
+    "technology_family": "Transformer Libraries",
+    "related_capabilities": [
+      "nlp",
+      "embeddings",
+      "model-adaptation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "langchain": {
     "name": "LangChain",
-    "description": "Compose language-model applications using LangChain model, retrieval, and tool integrations."
+    "description": "Compose language-model applications using LangChain model, retrieval, and tool integrations.",
+    "type": "framework",
+    "technology_family": "LLM Application Frameworks",
+    "related_capabilities": [
+      "rag",
+      "tool-calling",
+      "structured-generation"
+    ],
+    "technology_ecosystems": [
+      "Python",
+      "JavaScript / TypeScript"
+    ]
   },
   "llama-index": {
-    "name": "Llama Index",
-    "description": "Build document ingestion, indexing, and retrieval workflows using Llama Index."
+    "name": "LlamaIndex",
+    "description": "Build document ingestion, indexing, and retrieval workflows using LlamaIndex.",
+    "type": "framework",
+    "technology_family": "Retrieval Frameworks",
+    "related_capabilities": [
+      "document-ingestion",
+      "rag",
+      "vector-search"
+    ],
+    "technology_ecosystems": [
+      "Python",
+      "JavaScript / TypeScript"
+    ]
   },
   "pinecone": {
     "name": "Pinecone",
-    "description": "Store and query vector embeddings using Pinecone indexes and metadata filters."
+    "description": "Store and query vector embeddings using Pinecone indexes and metadata filters.",
+    "type": "database",
+    "technology_family": "Vector Retrieval",
+    "related_capabilities": [
+      "rag",
+      "vector-search"
+    ],
+    "selection_group": "Vector Storage"
   },
   "qdrant": {
     "name": "Qdrant",
-    "description": "Implement vector search using Qdrant collections, payload filters, and similarity queries."
+    "description": "Implement vector search using Qdrant collections, payload filters, and similarity queries.",
+    "type": "database",
+    "technology_family": "Vector Retrieval",
+    "related_capabilities": [
+      "rag",
+      "vector-search"
+    ],
+    "selection_group": "Vector Storage"
   },
   "chroma": {
     "name": "Chroma",
-    "description": "Index and retrieve embedded documents using Chroma collections and metadata."
+    "description": "Index and retrieve embedded documents using Chroma collections and metadata.",
+    "type": "database",
+    "technology_family": "Vector Retrieval",
+    "related_capabilities": [
+      "rag",
+      "vector-search"
+    ],
+    "selection_group": "Vector Storage"
   },
   "faiss": {
     "name": "FAISS",
-    "description": "Build efficient nearest-neighbor searches using FAISS vector indexes."
+    "description": "Build efficient nearest-neighbor searches using FAISS vector indexes.",
+    "type": "library",
+    "technology_family": "Vector Retrieval",
+    "related_capabilities": [
+      "rag",
+      "vector-search"
+    ],
+    "selection_group": "Vector Index",
+    "technology_ecosystems": [
+      "Python"
+    ]
   },
   "figma": {
     "name": "Figma",
-    "description": "Create interface layouts, interactive prototypes, and shared design components using Figma."
+    "description": "Create interface layouts, interactive prototypes, and shared design components using Figma.",
+    "type": "tool",
+    "technology_family": "Interface Design Tools",
+    "related_capabilities": []
   },
   "sketch": {
     "name": "Sketch",
-    "description": "Design interface assets and reusable component libraries using Sketch."
+    "description": "Design interface assets and reusable component libraries using Sketch.",
+    "type": "tool",
+    "technology_family": "Interface Design Tools",
+    "related_capabilities": []
   },
   "balsamiq": {
     "name": "Balsamiq",
-    "description": "Explore interface structures and user flows through low-fidelity Balsamiq wireframes."
+    "description": "Explore interface structures and user flows through low-fidelity Balsamiq wireframes.",
+    "type": "tool",
+    "technology_family": "Interface Design Tools",
+    "related_capabilities": []
   },
   "jira": {
     "name": "Jira",
-    "description": "Manage work items, delivery boards, backlog refinement, and release tracking using Jira."
+    "description": "Manage work items, delivery boards, backlog refinement, and release tracking using Jira.",
+    "type": "tool",
+    "technology_family": "Issue Tracking",
+    "related_capabilities": []
   },
   "linear": {
     "name": "Linear",
-    "description": "Organize product issues, projects, cycles, and delivery priorities using Linear."
+    "description": "Organize product issues, projects, cycles, and delivery priorities using Linear.",
+    "type": "tool",
+    "technology_family": "Issue Tracking",
+    "related_capabilities": []
+  },
+  "openai-sdk": {
+    "name": "OpenAI SDK",
+    "description": "Integrate model requests using the OpenAI SDK with streaming, tool arguments, error handling, and request configuration.",
+    "type": "sdk",
+    "technology_family": "LLM Provider SDKs",
+    "related_capabilities": [
+      "tool-calling",
+      "structured-generation",
+      "embeddings"
+    ]
+  },
+  "pydantic": {
+    "name": "Pydantic",
+    "description": "Validate typed Python request, configuration, and generated-output models with explicit constraints and validation errors.",
+    "type": "library",
+    "technology_family": "Data Validation Libraries",
+    "related_capabilities": [
+      "schema-validation",
+      "structured-generation"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
+  },
+  "langgraph": {
+    "name": "LangGraph",
+    "description": "Implement stateful graph workflows with checkpoints, conditional routing, interrupts, and recovery of model and tool steps.",
+    "type": "framework",
+    "technology_family": "Agent Orchestration",
+    "related_capabilities": [
+      "agent-workflows",
+      "tool-calling"
+    ],
+    "technology_ecosystems": [
+      "Python",
+      "JavaScript / TypeScript"
+    ]
+  },
+  "pgvector": {
+    "name": "pgvector",
+    "description": "Store embeddings in PostgreSQL and implement nearest-neighbor queries with vector indexes and metadata filters.",
+    "type": "database_extension",
+    "technology_family": "Vector Retrieval",
+    "related_capabilities": [
+      "rag",
+      "vector-search"
+    ],
+    "selection_group": "Vector Storage"
+  },
+  "ragas": {
+    "name": "Ragas",
+    "description": "Evaluate retrieval relevance, answer correctness, and faithfulness using repeatable Ragas metrics and representative datasets; inspect failing retrieval and generation examples.",
+    "type": "tool",
+    "technology_family": "LLM Evaluation Tools",
+    "related_capabilities": [
+      "llm-evaluation",
+      "rag"
+    ],
+    "technology_ecosystems": [
+      "Python"
+    ]
   }
 }

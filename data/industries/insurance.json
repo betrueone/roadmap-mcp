@@ -99,7 +99,7 @@
       },
       {
         "skill_id": "claims-access-controls",
-        "minimum_seniority": "senior"
+        "minimum_seniority": "mid"
       }
     ],
     "android-developer": [

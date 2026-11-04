@@ -40,15 +40,6 @@
       "skill_id": "git-version-control"
     },
     {
-      "skill_id": "debugging"
-    },
-    {
-      "skill_id": "code-quality"
-    },
-    {
-      "skill_id": "technical-documentation"
-    },
-    {
       "skill_id": "power-bi",
       "minimum_seniority": "mid"
     },
@@ -139,6 +130,132 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    }
+  ],
+  "skill_options": [
+    {
+      "skill_id": "sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "excel",
+      "priority": 2
+    },
+    {
+      "skill_id": "python",
+      "priority": 2
+    },
+    {
+      "skill_id": "pandas",
+      "priority": 2
+    },
+    {
+      "skill_id": "git-version-control",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-cleaning",
+      "priority": 1
+    },
+    {
+      "skill_id": "exploratory-analysis",
+      "priority": 1
+    },
+    {
+      "skill_id": "descriptive-statistics",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-visualization",
+      "priority": 1
+    },
+    {
+      "skill_id": "metric-modeling",
+      "priority": 1
+    },
+    {
+      "skill_id": "data-quality",
+      "priority": 1
+    },
+    {
+      "skill_id": "advanced-sql",
+      "priority": 1
+    },
+    {
+      "skill_id": "power-bi",
+      "priority": 2
+    },
+    {
+      "skill_id": "tableau",
+      "priority": 2
+    },
+    {
+      "skill_id": "matplotlib",
+      "priority": 2
+    },
+    {
+      "skill_id": "seaborn",
+      "priority": 2
+    },
+    {
+      "skill_id": "dashboard-design",
+      "priority": 2
+    },
+    {
+      "skill_id": "hypothesis-testing",
+      "priority": 2
+    },
+    {
+      "skill_id": "experiment-design",
+      "priority": 2
+    },
+    {
+      "skill_id": "cohort-analysis",
+      "priority": 2
+    },
+    {
+      "skill_id": "funnel-analysis",
+      "priority": 2
+    },
+    {
+      "skill_id": "statistical-modeling",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-lineage",
+      "priority": 2
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 2
+    },
+    {
+      "skill_id": "time-series-analysis",
+      "priority": 3
+    },
+    {
+      "skill_id": "causal-inference",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-access-governance",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-contracts",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-warehousing",
+      "priority": 3
+    },
+    {
+      "skill_id": "product-metrics",
+      "priority": 3
+    },
+    {
+      "skill_id": "data-platform-governance",
+      "priority": 3
     }
   ]
 }

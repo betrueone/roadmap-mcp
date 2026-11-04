@@ -1,90 +1,112 @@
 {
   "network-administration": {
-    "name": "Network administration",
-    "description": "Configure and troubleshoot IP addressing, DNS, routing, firewalls, and connectivity."
+    "name": "DNS and routing diagnostics",
+    "description": "Trace DNS resolution, route selection, and firewall decisions to diagnose failed or misdirected connections.",
+    "type": "implementation_capability"
   },
   "infrastructure-as-code": {
     "name": "Infrastructure as code",
-    "description": "Define repeatable infrastructure changes with version control, review, and state management."
+    "description": "Define repeatable infrastructure changes with version control, review, and state management.",
+    "type": "implementation_capability"
   },
   "configuration-management": {
     "name": "Configuration management",
-    "description": "Keep server and application configuration consistent through automated desired-state changes."
+    "description": "Keep server and application configuration consistent through automated desired-state changes.",
+    "type": "implementation_capability"
   },
   "cloud-network-design": {
-    "name": "Cloud network design",
-    "description": "Design private networks, ingress, egress, and connectivity boundaries for cloud workloads."
+    "name": "VPC routing and network segmentation",
+    "description": "Configure private subnets, route tables, ingress and egress controls, and connectivity between isolated workloads.",
+    "type": "implementation_capability"
   },
   "cloud-storage-design": {
-    "name": "Cloud storage design",
-    "description": "Choose object, block, and file storage based on durability, access, and lifecycle needs."
+    "name": "Storage lifecycle and durability policies",
+    "description": "Configure storage tiers, redundancy, retention, and lifecycle transitions based on workload access and recovery requirements.",
+    "type": "implementation_capability"
   },
   "cloud-identity": {
     "name": "Cloud identity and access management",
-    "description": "Apply service identities, role-based permissions, and least-privilege access to cloud resources."
+    "description": "Apply service identities, role-based permissions, and least-privilege access to cloud resources.",
+    "type": "implementation_capability"
   },
   "container-security": {
     "name": "Container security",
-    "description": "Harden container images and runtime access using scanning, isolation, and permission controls."
+    "description": "Harden container images and runtime access using scanning, isolation, and permission controls.",
+    "type": "implementation_capability"
   },
   "cloud-security-posture": {
     "name": "Cloud security posture management",
-    "description": "Identify and remediate risky cloud configuration, identity exposure, and policy drift."
+    "description": "Identify and remediate risky cloud configuration, identity exposure, and policy drift.",
+    "type": "implementation_capability"
   },
   "gitops": {
     "name": "GitOps",
-    "description": "Manage deployment state through version-controlled configuration and automated reconciliation."
+    "description": "Manage deployment state through version-controlled configuration and automated reconciliation.",
+    "type": "implementation_capability"
   },
   "release-engineering": {
-    "name": "Release engineering",
-    "description": "Build reproducible artifacts and control rollout, rollback, and release verification."
+    "name": "Reproducible builds and artifact promotion",
+    "description": "Produce versioned build artifacts from pinned inputs and promote the same verified artifact through deployment environments.",
+    "type": "implementation_capability"
   },
   "kubernetes-operations": {
-    "name": "Kubernetes operations",
-    "description": "Operate cluster workloads, scheduling, networking, storage, and resource limits."
+    "name": "Kubernetes workload scheduling and recovery",
+    "description": "Configure workload resource requests, probes, scheduling constraints, and disruption controls, then diagnose failed scheduling and restarts.",
+    "type": "implementation_capability"
   },
   "service-level-engineering": {
-    "name": "Service level engineering",
-    "description": "Define service indicators, objectives, and error budgets from user-visible reliability needs."
+    "name": "Service level indicators and error budgets",
+    "description": "Define user-visible success and latency indicators, set service objectives, and use error-budget consumption to guide alerts and release decisions.",
+    "type": "implementation_capability"
   },
   "alert-engineering": {
     "name": "Alert engineering",
-    "description": "Create actionable alerts with clear thresholds, ownership, routing, and diagnostic context."
+    "description": "Create actionable alerts with clear thresholds, ownership, routing, and diagnostic context.",
+    "type": "implementation_capability"
   },
   "toil-reduction": {
-    "name": "Operational automation",
-    "description": "Automate repetitive operational tasks with safe execution, verification, and recovery procedures."
+    "name": "Operational runbook automation",
+    "description": "Turn repeated operational procedures into scripts or workflows with preconditions, safe retries, verification, and recovery steps.",
+    "type": "implementation_capability"
   },
   "performance-profiling": {
     "name": "Performance profiling",
-    "description": "Measure resource use and identify CPU, memory, network, and storage bottlenecks."
+    "description": "Measure resource use and identify CPU, memory, network, and storage bottlenecks.",
+    "type": "implementation_capability"
   },
   "chaos-engineering": {
     "name": "Chaos engineering",
-    "description": "Run bounded failure experiments to verify resilience assumptions and recovery behavior."
+    "description": "Run bounded failure experiments to verify resilience assumptions and recovery behavior.",
+    "type": "implementation_capability"
   },
   "backup-restoration": {
-    "name": "Backup and restoration",
-    "description": "Configure backups and verify recoverability through documented restoration exercises."
+    "name": "Backup restoration testing",
+    "description": "Restore backups into an isolated environment and verify data integrity, recovery time, and the age of recovered data.",
+    "type": "implementation_capability"
   },
   "infrastructure-testing": {
     "name": "Infrastructure testing",
-    "description": "Validate infrastructure definitions and deployed resources with automated policy and integration checks."
+    "description": "Validate infrastructure definitions and deployed resources with automated policy and integration checks.",
+    "type": "implementation_capability"
   },
   "serverless-architecture": {
-    "name": "Serverless architecture",
-    "description": "Design event-driven functions around execution limits, failure handling, and managed integrations."
+    "name": "Serverless event processing",
+    "description": "Implement event-triggered functions with bounded execution, idempotent handlers, retry controls, and failed-event recovery.",
+    "type": "implementation_capability"
   },
   "platform-self-service": {
-    "name": "Self-service developer platforms",
-    "description": "Provide reusable deployment and infrastructure workflows with clear interfaces and access controls."
+    "name": "Self-service environment provisioning",
+    "description": "Provide reusable environment templates and provisioning workflows with policy checks, access controls, and cleanup of expired resources.",
+    "type": "implementation_capability"
   },
   "multi-region-design": {
-    "name": "Multi-region architecture",
-    "description": "Design regional failover, data replication, and traffic routing for distributed workloads."
+    "name": "Regional failover and traffic routing",
+    "description": "Implement regional traffic routing and failover while verifying replicated-data freshness and recovery behavior during regional failures.",
+    "type": "implementation_capability"
   },
   "platform-api-design": {
-    "name": "Platform API design",
-    "description": "Design provisioning interfaces with safe defaults, discoverability, and lifecycle management."
+    "name": "Provisioning APIs and resource lifecycles",
+    "description": "Implement provisioning interfaces with idempotent requests, asynchronous operation status, permission checks, and resource cleanup.",
+    "type": "implementation_capability"
   }
 }

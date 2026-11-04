@@ -20,8 +20,65 @@ class Skill(SkillNameOnly):
     description: Text
 
 
-class SkillFile(RootModel[dict[Identifier, Skill]]):
-    root: dict[Identifier, Skill] = Field(min_length=1)
+SkillType = Literal[
+    "language",
+    "framework",
+    "sdk",
+    "library",
+    "database",
+    "database_extension",
+    "runtime",
+    "event_streaming_platform",
+    "message_broker",
+    "test_framework",
+    "ci_cd_platform",
+    "api_query_language",
+    "api",
+    "operating_system",
+    "cloud_platform",
+    "cloud_service",
+    "infrastructure",
+    "tool",
+    "protocol",
+    "standard",
+    "implementation_capability",
+    "professional_method",
+    "soft_skill",
+]
+Priority = Annotated[int, Field(strict=True, ge=1, le=3)]
+SkillLimit = Annotated[int, Field(strict=True, ge=1, le=50)]
+
+
+class TechnologyMetadata(Model):
+    technology_ecosystems: list[Text] = Field(
+        default_factory=list,
+        description=(
+            "Curated language/runtime ecosystem names for coherent stack selection. "
+            "Nonexhaustive hints, not dependencies or a single-stack restriction; "
+            "empty means no curated ecosystem association."
+        ),
+    )
+    technology_family: Text | None = Field(
+        default=None, description="Readable name for a technology's engineering purpose."
+    )
+    selection_group: Text | None = Field(
+        default=None,
+        description=(
+            "Optional readable group name for technologies filling similar "
+            "architectural positions. "
+            "Not a one-per-group rule or proof of interchangeability."
+        ),
+    )
+
+
+class StoredSkill(Skill, TechnologyMetadata):
+    type: SkillType
+    # Canonical references remain internal; responses resolve them to catalog names.
+    related_capabilities: list[Identifier] = Field(default_factory=list)
+
+
+class SkillFile(RootModel[dict[Identifier, StoredSkill]]):
+    root: dict[Identifier, StoredSkill] = Field(min_length=1)
 
 
 class Category(Model):
@@ -45,8 +102,15 @@ class NamedEntity(Model):
     aliases: list[Text] = Field(default_factory=list)
 
 
+class SkillOption(Model):
+    skill_id: Identifier
+    priority: Priority
+
+
 class Role(NamedEntity):
     requirements: list[Requirement] = Field(min_length=1)
+    # A deliberately curated subset, separate from the cumulative roadmap inventory.
+    skill_options: list[SkillOption] = Field(min_length=1, max_length=50)
 
 
 class Industry(NamedEntity):
@@ -89,3 +153,29 @@ class SkillCategory(Model):
 class Roadmap(Model):
     hard_skills: list[SkillCategory]
     soft_skills: list[SkillCategory]
+
+
+class RankedSkill(TechnologyMetadata):
+    id: Identifier
+    name: Text
+    type: SkillType
+    layer: Literal["core_technology", "implementation_capability", "professional_method"]
+    category: Text
+    priority: Priority
+    related_capabilities: list[Text] = Field(
+        default_factory=list,
+        description="Canonical implementation-capability names from the full catalog, not IDs.",
+    )
+
+
+class DescribedRankedSkill(RankedSkill):
+    description: Text
+
+
+class SkillsResult(Model):
+    role: Text
+    industry: Text | None
+    seniority_level: Text | None
+    available_count: int = Field(ge=0)
+    returned_count: int = Field(ge=0, le=50)
+    skills: list[DescribedRankedSkill | RankedSkill] = Field(max_length=50)
