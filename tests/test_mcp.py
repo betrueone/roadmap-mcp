@@ -168,9 +168,14 @@ async def test_stdio_subprocess_serves_catalog(catalog):
         skills_text = await client.call_tool("get_skills_text", {"role_name": "AI Engineer"})
         assert not skills_text.is_error
         assert skills_text.structured_content is None
-        assert skills_text.content[0].text.startswith("AI Engineer\n41 of 41 eligible options\n")
-        assert "Core technologies (" in skills_text.content[0].text
-        assert "Implementation capabilities (" in skills_text.content[0].text
+        assert skills_text.content[0].text.startswith("AI Engineer\n\nP1 technologies:\n")
+        assert "P1 capabilities:" in skills_text.content[0].text
+        detailed_text = await client.call_tool(
+            "get_skills_text", {"role_name": "AI Engineer", "output_format": "detailed"}
+        )
+        assert not detailed_text.is_error
+        assert "Core technologies (" in detailed_text.content[0].text
+        assert "Implementation capabilities (" in detailed_text.content[0].text
         bullets = await client.call_tool(
             "get_bullets",
             {

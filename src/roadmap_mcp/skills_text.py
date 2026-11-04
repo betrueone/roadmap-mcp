@@ -1,21 +1,73 @@
 """Shared readable skills output for the plain-text MCP tool and local client."""
 
 from textwrap import fill
+from typing import Literal
 
-from roadmap_mcp.models import SkillsResult
+from roadmap_mcp.models import RankedSkill, SkillsResult
+
+SkillsTextFormat = Literal["compact", "detailed"]
 
 
-def format_skills(result: SkillsResult) -> str:
-    title = " | ".join(
+def format_skills(result: SkillsResult, output_format: SkillsTextFormat = "compact") -> str:
+    if output_format == "compact":
+        return _format_compact(result)
+    if output_format == "detailed":
+        return _format_detailed(result)
+    raise ValueError(f"Unknown skills text format: {output_format}")
+
+
+def _title(result: SkillsResult) -> str:
+    return " | ".join(
         value for value in [result.role, result.industry, result.seniority_level] if value
     )
-    lines = [
-        title,
-        f"{result.returned_count} of {result.available_count} eligible options",
-        "Baseline role relevance; select skills using the JD and candidate experience.",
-    ]
-    if result.industry is None and result.seniority_level is None:
-        lines.append("Role catalog across all seniorities; no JD or candidate filtering applied.")
+
+
+def _format_compact(result: SkillsResult) -> str:
+    lines = [_title(result)]
+    for priority in (1, 2, 3):
+        for layer, label in [
+            ("core_technology", "technologies"),
+            ("implementation_capability", "capabilities"),
+            ("professional_method", "methods"),
+        ]:
+            skills = [
+                skill
+                for skill in result.skills
+                if skill.priority == priority and skill.layer == layer
+            ]
+            if not skills:
+                continue
+            heading = f"\nP{priority} {label}:"
+            if layer == "core_technology":
+                lines.append(heading)
+                groups: dict[tuple[str, ...], list[RankedSkill]] = {}
+                for skill in skills:
+                    key = (
+                        ("ecosystem", *skill.technology_ecosystems)
+                        if skill.technology_ecosystems
+                        else ("category", skill.category)
+                    )
+                    groups.setdefault(key, []).append(skill)
+                for key, entries in groups.items():
+                    group = " + ".join(key[1:])
+                    lines.append(f"  {group}: {'; '.join(skill.name for skill in entries)}")
+            else:
+                lines.append(f"{heading} {'; '.join(skill.name for skill in skills)}")
+            for skill in skills:
+                if description := getattr(skill, "description", None):
+                    lines.append(
+                        fill(
+                            f"{skill.name}: {description}",
+                            width=100,
+                            initial_indent="    ",
+                            subsequent_indent="    ",
+                        )
+                    )
+    return "\n".join(lines)
+
+
+def _format_detailed(result: SkillsResult) -> str:
+    lines = [_title(result)]
     for layer, label in [
         ("core_technology", "Core technologies"),
         ("implementation_capability", "Implementation capabilities"),

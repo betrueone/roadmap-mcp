@@ -426,7 +426,7 @@ Connect an MCP client to `http://localhost:8000/mcp`. `/mcp` speaks MCP, not a c
 | --- | --- | --- |
 | `list_catalog` | None | Names, IDs, aliases, seniority levels, and role/industry coverage |
 | `get_skills` | `role_name`; optional `industry`, `seniority_level`, `limit` (50), `include_descriptions` (false) | Curated typed options with layers, categories, baseline priorities, technology families, optional selection hints, capability links, and counts |
-| `get_skills_text` | Same as `get_skills` | The same selection as readable MCP text content, matching `tests/test_tool.py` |
+| `get_skills_text` | Same as `get_skills`; optional `output_format` (`compact` or `detailed`, default `compact`) | The same selected skill names and priorities as compact model input, or detailed readable text |
 | `get_roadmap` | `role_name`, `industry`, `seniority_level`; optional `include_descriptions` (default `true`) | Separate `hard_skills` and `soft_skills` lists containing named categories |
 | `list_bullet_catalog` | None | Bullet taxonomy, aliases, role/industry coverage, and total count |
 | `get_bullets` | `role_name`; optional `industry` (all), `seniority_level` (minimum `junior`), `count` (`5`, range `1`–`100`) | Matching baselines with evidence prompts and available/returned counts |
@@ -525,12 +525,21 @@ asyncio.run(main())
 ```
 
 The readable skills client calls `get_skills`. It defaults to Backend Engineer at
-`http://localhost:8004/mcp`, role options only, with descriptions omitted. It displays
-technology families, ecosystems, selection hints, and related capability names alongside each
-option. Use `--text` to call `get_skills_text` directly, or `--json` for the complete structured
+`http://localhost:8004/mcp`, role options only, with descriptions omitted. Its default compact
+format groups full skill names by baseline priority and layer. Technology rows group exact
+ecosystem associations, or use the source category when no ecosystems are curated. A `+`
+joins multiple ecosystem associations; these hints permit multiple stacks and do not imply
+that every technology in a group is required. Each selected skill appears once.
+
+Use `--text` to call `get_skills_text` directly, or `--json` for the complete structured
 response. These flags are mutually exclusive; all modes accept the same filters and limits.
-The text tool returns MCP text content without a JSON wrapper, using the same readable format
-as the client's default output:
+Both readable modes default to `--output-format compact`. Use `--output-format detailed` to
+include each skill's category, technology type, family, ecosystems, selection hints, and related
+capability names. Compact output omits that per-skill metadata and counts; selection and
+filtering are identical. The title retains supplied industry and seniority context. Selection
+guidance is supplied through the MCP tool instructions, with no repeated explanatory header.
+`--descriptions` includes descriptions in either format; compact descriptions identify their
+skill by name. JSON output includes all metadata and counts regardless of `--output-format`.
 
 ```bash
 uv run python tests/test_tool.py
@@ -538,9 +547,31 @@ uv run python tests/test_tool.py --descriptions
 uv run python tests/test_tool.py --role "Backend Engineer" --industry "Fintech" --seniority "Senior"
 uv run python tests/test_tool.py --json --limit 10
 uv run python tests/test_tool.py --text
+uv run python tests/test_tool.py --text --output-format detailed
 uv run python tests/test_tool.py --text --descriptions --industry "Fintech" --seniority "Senior"
 uv run python tests/test_tool.py --url http://localhost:8004/mcp
 ```
+
+Compact output excerpt:
+
+```text
+Backend Engineer
+
+P1 technologies:
+  Databases & Caching: SQL
+  Developer Tools & Code Quality: Git
+
+P1 capabilities: RESTful APIs; Relational schema design; Session and token authentication; Unit testing; Integration testing
+
+P2 technologies:
+  Python: Python; FastAPI; Django; pytest
+  Java / JVM: Java; Spring Boot
+  Go: Go
+  JavaScript / TypeScript: JavaScript; TypeScript; Node.js; Express.js; NestJS
+```
+
+For model input, call `get_skills_text` with `{"role_name": "Backend Engineer"}`. Retrieve
+metadata on demand using `output_format="detailed"` or the structured `get_skills` tool.
 
 Test bullet retrieval with the matching readable client script:
 

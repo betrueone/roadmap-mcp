@@ -16,7 +16,7 @@ from roadmap_mcp.bullets import BulletCatalog, BulletService
 from roadmap_mcp.catalog import Catalog, LookupError
 from roadmap_mcp.models import CatalogResult, Roadmap, SkillLimit, SkillsResult
 from roadmap_mcp.service import RoadmapService
-from roadmap_mcp.skills_text import format_skills
+from roadmap_mcp.skills_text import SkillsTextFormat, format_skills
 
 Query = Annotated[str, Field(min_length=1, max_length=120)]
 IncludeDescriptions = Annotated[
@@ -48,8 +48,10 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
             "options with stable IDs, types, layers, categories, role-level priorities, "
             "technology_family, selection_group, technology_ecosystems, and related_capabilities "
             "as readable names. "
-            "Use get_skills_text for the same selection formatted as readable plain text, "
-            "with grouped layers, baseline priorities, counts, and technology metadata. "
+            "Prefer get_skills_text for compact model input: full skill names grouped by "
+            "baseline priority and layer, with technologies grouped by ecosystems or categories. "
+            "Joined ecosystem labels retain all curated associations, not required stacks. "
+            "Use output_format='detailed' or get_skills for full technology metadata. "
             "Families group tools by purpose; optional selection groups hint at similar "
             "architectural positions. Neither imposes a one-per-group rule or proves "
             "interchangeability. Ecosystem hints connect language/runtime stacks and their "
@@ -158,24 +160,31 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         seniority_level: Query | None = None,
         limit: SkillLimit = 50,
         include_descriptions: IncludeDescriptions = False,
+        output_format: SkillsTextFormat = "compact",
     ) -> str:
         """Return the same selection as get_skills, formatted as readable plain text.
 
         Only role_name is required. Accepts the same names, IDs, aliases, optional filters,
         limit (1-50, default 50), and include_descriptions (default false) as get_skills.
         Omitted industry selects role options only; omitted seniority includes all levels.
-        A supplied seniority includes that level and below. Output matches tests/test_tool.py:
-        title, eligibility counts, baseline relevance guidance, and skills grouped into core
-        technologies, implementation capabilities, and professional methods when present.
-        Each option includes priority and category; technologies also show their type.
-        Curated families, ecosystems, selection groups, and readable capability names are
-        included when present. Descriptions, when requested, wrap at 100 columns.
+        A supplied seniority includes that level and below. output_format defaults to compact:
+        full skill names grouped by baseline priority (P1/P2/P3) and layer (technologies,
+        capabilities, methods). Technology rows group exact ecosystem associations, or use
+        their category when none are curated. A '+' joins multiple ecosystem associations;
+        associations are nonexhaustive hints, never mandatory stacks or exclusion rules.
+        Each selected skill appears once; order within each group follows the catalog selection.
+        Compact output omits types, families, selection groups, capability links, and counts.
+        Set output_format='detailed' for categories, technology types, families, ecosystems,
+        selection groups, and readable capability links. Use get_skills for structured data
+        and eligibility counts. Both text formats match tests/test_tool.py and preserve selection.
+        Descriptions, when requested, wrap at 100 columns; compact descriptions name their skill.
         Returns MCP text content without a JSON wrapper or structured output schema.
         Priorities are role defaults; the caller must match the JD and candidate experience.
         Unknown inputs and unsupported combinations return the same errors as get_skills.
         """
         return format_skills(
-            get_skills(role_name, industry, seniority_level, limit, include_descriptions)
+            get_skills(role_name, industry, seniority_level, limit, include_descriptions),
+            output_format,
         )
 
     @server.tool(annotations=READ_ONLY)

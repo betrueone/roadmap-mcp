@@ -18,6 +18,8 @@ async def main(args):
         "limit": args.limit,
         "include_descriptions": args.descriptions,
     }
+    if args.text:
+        inputs["output_format"] = args.output_format
     async with Client(args.url) as client:
         response = await client.call_tool("get_skills_text" if args.text else "get_skills", inputs)
         if response.is_error:
@@ -29,7 +31,7 @@ async def main(args):
         if args.json:
             print(json.dumps(result, indent=2))
             return
-        print(format_skills(SkillsResult.model_validate(result)))
+        print(format_skills(SkillsResult.model_validate(result), args.output_format))
 
 
 if __name__ == "__main__":
@@ -40,6 +42,12 @@ if __name__ == "__main__":
     parser.add_argument("--seniority")
     parser.add_argument("--limit", type=int, default=50)
     parser.add_argument("--descriptions", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument(
+        "--output-format",
+        choices=["compact", "detailed"],
+        default="compact",
+        help="Readable output format (default: compact); also applies to --text.",
+    )
     output = parser.add_mutually_exclusive_group()
     output.add_argument("--json", action="store_true", help="Print the full JSON response.")
     output.add_argument(
