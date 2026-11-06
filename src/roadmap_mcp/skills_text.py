@@ -3,7 +3,8 @@
 from textwrap import fill
 from typing import Literal
 
-from roadmap_mcp.models import RankedSkill, SkillsResult
+from roadmap_mcp.models import SkillsResponse, SkillsResult
+from roadmap_mcp.skill_categories import response_category
 
 SkillsTextFormat = Literal["compact", "detailed"]
 
@@ -23,47 +24,17 @@ def _title(result: SkillsResult) -> str:
 
 
 def _format_compact(result: SkillsResult) -> str:
-    lines = [_title(result)]
-    for priority in (1, 2, 3):
-        for layer, label in [
-            ("core_technology", "technologies"),
-            ("implementation_capability", "capabilities"),
-            ("professional_method", "methods"),
-        ]:
-            skills = [
-                skill
-                for skill in result.skills
-                if skill.priority == priority and skill.layer == layer
-            ]
-            if not skills:
-                continue
-            heading = f"\nP{priority} {label}:"
-            if layer == "core_technology":
-                lines.append(heading)
-                groups: dict[tuple[str, ...], list[RankedSkill]] = {}
-                for skill in skills:
-                    key = (
-                        ("ecosystem", *skill.technology_ecosystems)
-                        if skill.technology_ecosystems
-                        else ("category", skill.category)
-                    )
-                    groups.setdefault(key, []).append(skill)
-                for key, entries in groups.items():
-                    group = " + ".join(key[1:])
-                    lines.append(f"  {group}: {'; '.join(skill.name for skill in entries)}")
-            else:
-                lines.append(f"{heading} {'; '.join(skill.name for skill in skills)}")
-            for skill in skills:
-                if description := getattr(skill, "description", None):
-                    lines.append(
-                        fill(
-                            f"{skill.name}: {description}",
-                            width=100,
-                            initial_indent="    ",
-                            subsequent_indent="    ",
-                        )
-                    )
-    return "\n".join(lines)
+    return format_skills_summary(SkillsResponse.from_result(result))
+
+
+def format_skills_summary(response: SkillsResponse) -> str:
+    categories = ", ".join(response.categories)
+    skills = ", ".join(
+        f"({name}:{priority})"
+        for priority, names in response.skills.model_dump().items()
+        for name in names
+    )
+    return f"categories: {categories}\nskills: {skills}"
 
 
 def _format_detailed(result: SkillsResult) -> str:
@@ -78,7 +49,7 @@ def _format_detailed(result: SkillsResult) -> str:
             continue
         lines.append(f"\n{label} ({len(skills)})")
         for skill in skills:
-            details = [f"P{skill.priority}", skill.category]
+            details = [f"P{skill.priority - 1}", response_category(skill.id, skill.category)]
             if layer == "core_technology":
                 details.insert(0, skill.type)
             lines.append(f"  - {skill.name} [{'; '.join(details)}]")

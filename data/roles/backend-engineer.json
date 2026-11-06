@@ -6,6 +6,34 @@
     "back-end engineer",
     "server-side engineer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "Backend Frameworks & Runtimes",
+    "APIs & Service Integration",
+    "Databases & ORMs",
+    "Data Modeling & Transformation",
+    "Distributed Systems & Messaging",
+    "Streaming & Change Data Capture",
+    "Security & Authentication",
+    "Testing & Quality Engineering",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Observability & Reliability",
+    "Third-Party Integrations",
+    "Data Quality & Governance"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "Backend Frameworks & Runtimes",
+    "APIs & Service Integration",
+    "Databases & ORMs",
+    "Data Modeling & Transformation",
+    "Security & Authentication",
+    "Testing & Quality Engineering",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Observability & Reliability"
+  ],
   "requirements": [
     {
       "skill_id": "python"
@@ -556,6 +584,10 @@
     {
       "skill_id": "ruby",
       "priority": 3
+    },
+    {
+      "skill_id": "structured-logging",
+      "priority": 2
     }
   ]
 }

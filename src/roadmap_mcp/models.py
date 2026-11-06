@@ -4,6 +4,8 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel, StringConstraints
 
+from roadmap_mcp.skill_categories import response_category
+
 Text = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=2000)]
 Identifier = Annotated[str, StringConstraints(pattern=r"^[a-z][a-z0-9-]{0,79}$")]
 
@@ -108,6 +110,17 @@ class SkillOption(Model):
 
 
 class Role(NamedEntity):
+    response_categories: list[Text] = Field(
+        min_length=1,
+        description="Ordered response categories for this role and its industry options.",
+    )
+    required_categories: list[Text] = Field(
+        min_length=1,
+        description=(
+            "Categories requiring curated baseline coverage across the full seniority inventory; "
+            "filtered responses and candidate skill selections need not include every category."
+        ),
+    )
     requirements: list[Requirement] = Field(min_length=1)
     # A deliberately curated subset, separate from the cumulative roadmap inventory.
     skill_options: list[SkillOption] = Field(min_length=1, max_length=50)
@@ -179,3 +192,38 @@ class SkillsResult(Model):
     available_count: int = Field(ge=0)
     returned_count: int = Field(ge=0, le=50)
     skills: list[DescribedRankedSkill | RankedSkill] = Field(max_length=50)
+    category_order: list[Text] = Field(default_factory=list)
+
+
+class SkillPriorities(Model):
+    P0: list[Text]
+    P1: list[Text]
+    P2: list[Text]
+
+
+class SkillsResponse(Model):
+    role: Text
+    industry: Text | None
+    seniority: Text | None
+    categories: list[Text]
+    skills: SkillPriorities
+
+    @classmethod
+    def from_result(cls, result: SkillsResult) -> "SkillsResponse":
+        selected_categories: dict[str, None] = {}
+        priorities: dict[str, list[str]] = {"P0": [], "P1": [], "P2": []}
+        for skill in result.skills:
+            category = response_category(skill.id, skill.category)
+            selected_categories[category] = None
+            priorities[f"P{skill.priority - 1}"].append(skill.name)
+        return cls(
+            role=result.role,
+            industry=result.industry,
+            seniority=result.seniority_level,
+            categories=[
+                name
+                for name in (result.category_order or selected_categories)
+                if name in selected_categories
+            ],
+            skills=SkillPriorities(**priorities),
+        )

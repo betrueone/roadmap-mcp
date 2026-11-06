@@ -4,7 +4,7 @@ This catalog supplies skills a candidate can support with concrete work. Role, i
 and seniority determine relevance; they cannot establish that a person implemented a skill.
 Technology stacks remain alternatives to select from using the candidate's experience.
 
-`get_skills` is the primary discovery endpoint. Role files explicitly curate 31-46 options for
+`get_skills` is the primary discovery endpoint. Role files explicitly curate 31-47 options for
 technical roles in `skill_options`, each with a role-level priority. The response identifies
 named technologies and implementation capabilities separately through `layer` and `type`.
 Nonengineering methods remain available as `professional_method`; soft skills are excluded.
@@ -76,6 +76,35 @@ These types are shared across roles. Existing generic types remain valid for oth
 The public `get_skills` type enum includes these specific values; clients with a copied enum
 must accept them. The compatible `get_roadmap` response remains unchanged.
 
+Each role must define an ordered `response_categories` list in its JSON file. This map controls
+category order in `get_skills` and compact `get_skills_text` output. Technical roles use only
+relevant names from the 23-category response taxonomy in `src/roadmap_mcp/skill_categories.py`.
+UX Designer, Product Manager, and Engineering Manager may also use their applicable design,
+product, and management categories. Data Analyst may include Product Management; QA Engineer
+may include Engineering Management for their curated methods. Legacy industry labels are not
+allowed in role maps. Include categories covering every curated option and direct role/industry
+assignment within the permitted taxonomy. All role and
+industry options must belong to the role's map to be selected; apply this check before the
+skill limit. Return category names without skill counts and omit categories with no selected
+skills. Catalog validation rejects missing, empty, duplicate, unknown, or incomplete maps.
+Shared industry defaults can still be excluded by role relevance. Technologies and applied
+capabilities require a permitted projection, so retained domain modeling and financial disclosure
+skills cannot silently fall back to forbidden industry category names.
+
+Every role also authors a nonempty `required_categories` list. These categories must belong to
+its response map and have curated role-only coverage across the full seniority inventory.
+Startup rejects duplicates and uncovered required categories. Seniority and result-limit filters
+can omit them; they are catalog coverage requirements, not a candidate proficiency checklist.
+Third-Party Integrations and other contextual categories can remain optional.
+
+The response taxonomy now separates Web Platform and Mobile Development, broadens the shared
+UI label to Frontend & UI Engineering, and identifies Backend Frameworks & Runtimes accurately.
+Component libraries and design tokens use the shared UI category; Hilt uses Architecture & System
+Design. Monetary and healthcare record modeling use Data Modeling & Transformation, client event
+instrumentation uses BI & Analytics, and financial reconciliation uses Data Quality & Governance.
+Fraud signal integration uses Security & Authentication; model training keeps its AI/ML category.
+Source category ownership and stable skill IDs are unchanged.
+
 Each role has an independently curated `skill_options` list referencing a subset of its
 `requirements`. Priority 1 marks core options, 2 supporting options, and 3 specialized or
 optional options. These are editorial defaults for that role. They do not measure market share,
@@ -98,7 +127,8 @@ illustrative; it is not imported as a fixed stack or as the complete catalog for
 Names such as RAG, function calling, structured outputs, agent workflows, and fine-tuning identify
 the capability; descriptions retain implementation detail and failure handling.
 
-The AI Engineer profile retains all 41 options. Its named provider, API, validation, vector
+The AI Engineer profile retains its original 41 options and adds RESTful APIs and data access
+governance for 43 options. Its named provider, API, validation, vector
 storage, and container implementation choices use P2 after the complete review. Its priority-1 capabilities are RAG, function
 calling, structured outputs, and LLM evaluation. Embeddings, vector search, document ingestion,
 prompt engineering, and agent workflows use priority 2. General unit and integration testing
@@ -110,8 +140,9 @@ The resume generator should retain `priority` and compute its own separate `jd_p
 the JD and verified candidate evidence. No JD ranking is computed or returned by this server.
 The review's comparison table remains illustrative; it is not imported into role mappings.
 
-The Backend Engineer baseline has 46 options: 31 named technologies and 15 implementation
-capabilities. The complete review moved the existing PHP and Ruby options from e-commerce
+The Backend Engineer baseline has 47 options: 31 named technologies and 16 implementation
+capabilities, including structured logging for baseline observability. The complete review moved
+the existing PHP and Ruby options from e-commerce
 mappings into the generic backend and full-stack profiles at P3. Python, Java, Go, JavaScript, TypeScript, and Node.js use P2 to represent relevant
 stack alternatives pending JD and candidate selection. C# and Rust retain their specialized P3
 defaults. Transaction isolation and locking and role-based/resource-level authorization move
@@ -191,7 +222,7 @@ identifies cache/session storage and acknowledged stream processing. FastAPI lin
 `rest-apis`, `schema-validation`, and `openapi-contracts`. Pydantic, OpenTelemetry, LangGraph,
 and Ragas retain their existing valid links. The `llm-evaluation` capability and Ragas descriptions
 explicitly include retrieval and generation assessment, so a duplicate "RAG Evaluation" entry
-is unnecessary. The catalog still contains 605 skills, and the AI profile still returns 41 options.
+is unnecessary. The catalog still contains 605 skills, and the AI profile returns 43 options.
 
 The consuming resume LLM compares families, checks the JD and candidate evidence, and usually
 selects approximately 15-25 skills as appropriate. It should demonstrate general practices in

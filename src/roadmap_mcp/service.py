@@ -16,6 +16,7 @@ from roadmap_mcp.models import (
     SkillNameOnly,
     SkillsResult,
 )
+from roadmap_mcp.skill_categories import response_category
 
 
 def entry(entity: NamedEntity) -> CatalogEntry:
@@ -117,17 +118,25 @@ class RoadmapService:
         def eligible(requirement: Requirement) -> bool:
             return level is None or catalog.levels[requirement.minimum_seniority].rank <= level.rank
 
+        def in_role_categories(skill_id: str) -> bool:
+            category = response_category(
+                skill_id, catalog.categories[catalog.skill_categories[skill_id]].name
+            )
+            return category in role.response_categories
+
         requirements = {r.skill_id: r for r in role.requirements}
         selected = {
             option.skill_id: option.priority
             for option in role.skill_options
-            if eligible(requirements[option.skill_id])
+            if eligible(requirements[option.skill_id]) and in_role_categories(option.skill_id)
         }
         if sector:
             # Industry context supplies optional additions, never promotes role defaults.
             # A role option filtered by seniority must not reappear via industry mappings.
             for requirement in [*sector.role_requirements[role.id], *sector.requirements]:
                 skill_id = requirement.skill_id
+                if not in_role_categories(skill_id):
+                    continue
                 if skill_id in requirements and not eligible(requirements[skill_id]):
                     continue
                 if eligible(requirement) and catalog.skills[skill_id].type != "soft_skill":
@@ -168,4 +177,5 @@ class RoadmapService:
             available_count=len(selected),
             returned_count=len(skills),
             skills=skills,
+            category_order=role.response_categories,
         )

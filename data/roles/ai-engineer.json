@@ -6,6 +6,31 @@
     "generative ai engineer",
     "llm engineer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "Backend Frameworks & Runtimes",
+    "Databases & ORMs",
+    "Data Processing & ETL/ELT",
+    "APIs & Service Integration",
+    "Testing & Quality Engineering",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Data Quality & Governance",
+    "Data Modeling & Transformation"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "APIs & Service Integration",
+    "Data Quality & Governance",
+    "Testing & Quality Engineering",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "CI/CD & DevOps"
+  ],
   "requirements": [
     {
       "skill_id": "python"
@@ -350,6 +375,14 @@
     },
     {
       "skill_id": "privacy-engineering",
+      "priority": 3
+    },
+    {
+      "skill_id": "rest-apis",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-access-governance",
       "priority": 3
     }
   ]

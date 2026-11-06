@@ -6,6 +6,30 @@
     "front-end engineer",
     "ui engineer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "Web Platform",
+    "Frontend & UI Engineering",
+    "APIs & Service Integration",
+    "Testing & Quality Engineering",
+    "Security & Authentication",
+    "Observability & Reliability",
+    "CI/CD & DevOps",
+    "Third-Party Integrations",
+    "Architecture & System Design",
+    "BI & Analytics"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "Web Platform",
+    "Frontend & UI Engineering",
+    "APIs & Service Integration",
+    "Testing & Quality Engineering",
+    "Security & Authentication",
+    "Observability & Reliability",
+    "CI/CD & DevOps",
+    "Architecture & System Design"
+  ],
   "requirements": [
     {
       "skill_id": "html-semantics"
@@ -383,6 +407,10 @@
     {
       "skill_id": "frontend-observability",
       "priority": 3
+    },
+    {
+      "skill_id": "frontend-architecture",
+      "priority": 2
     }
   ]
 }

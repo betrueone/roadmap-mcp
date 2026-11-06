@@ -5,6 +5,22 @@
     "product management",
     "technical product manager"
   ],
+  "response_categories": [
+    "Product Management",
+    "User Experience & Design",
+    "BI & Analytics",
+    "Data Modeling & Transformation",
+    "Engineering Management",
+    "Security & Authentication",
+    "APIs & Service Integration",
+    "Frontend & UI Engineering"
+  ],
+  "required_categories": [
+    "Product Management",
+    "User Experience & Design",
+    "BI & Analytics",
+    "Data Modeling & Transformation"
+  ],
   "requirements": [
     {
       "skill_id": "jira"

@@ -6,6 +6,26 @@
     "reliability engineer",
     "site reliability engineering"
   ],
+  "response_categories": [
+    "Observability & Reliability",
+    "Cloud & Infrastructure",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Programming Languages",
+    "Testing & Quality Engineering",
+    "Third-Party Integrations",
+    "APIs & Service Integration"
+  ],
+  "required_categories": [
+    "Observability & Reliability",
+    "Cloud & Infrastructure",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Programming Languages",
+    "Testing & Quality Engineering"
+  ],
   "requirements": [
     {
       "skill_id": "python"

@@ -6,6 +6,21 @@
     "user experience designer",
     "product designer"
   ],
+  "response_categories": [
+    "User Experience & Design",
+    "Web Platform",
+    "Frontend & UI Engineering",
+    "Product Management",
+    "BI & Analytics",
+    "Security & Authentication"
+  ],
+  "required_categories": [
+    "User Experience & Design",
+    "Web Platform",
+    "Frontend & UI Engineering",
+    "BI & Analytics",
+    "Security & Authentication"
+  ],
   "requirements": [
     {
       "skill_id": "figma"
@@ -97,6 +112,10 @@
     {
       "skill_id": "conflict-resolution",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "mid"
     }
   ],
   "skill_options": [
@@ -183,6 +202,10 @@
     {
       "skill_id": "portfolio-management",
       "priority": 3
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 2
     }
   ]
 }

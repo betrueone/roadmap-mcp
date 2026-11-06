@@ -13,157 +13,141 @@ Only the role is required:
 {"role_name": "AI Engineer"}
 ```
 
-The response includes two technical layers: `core_technology` for named languages, frameworks,
-SDKs, libraries, runtimes, databases, streaming platforms, message brokers, test frameworks,
-CI/CD platforms, API query languages, APIs, operating systems, cloud platforms and services,
-infrastructure, tools, protocols, and standards; and
-`implementation_capability` for identifiable engineering work. Each option has a stable ID,
-industry-standard name, explicit type, source category, editorial role-level priority,
-`technology_family`, optional `selection_group`, `technology_ecosystems`, and
-`related_capabilities`, all using readable names rather than metadata IDs.
-Design, analytics, and management profiles can also include `professional_method` entries.
-Soft skills are excluded from this discovery response.
-
-Example response excerpt from the curated catalog:
+`get_skills` returns a compact structured response. For example, calling it with
+`{"role_name": "Data Engineer", "seniority_level": "Senior", "limit": 4}` returns:
 
 ```json
 {
-  "role": "AI Engineer",
+  "role": "Data Engineer",
   "industry": null,
-  "seniority_level": null,
-  "available_count": 41,
-  "returned_count": 41,
-  "skills": [
-    {
-      "id": "pgvector",
-      "name": "pgvector",
-      "type": "database_extension",
-      "layer": "core_technology",
-      "category": "Vector Retrieval",
-      "priority": 2,
-      "technology_family": "Vector Retrieval",
-      "selection_group": "Vector Storage",
-      "technology_ecosystems": [],
-      "related_capabilities": ["Retrieval-Augmented Generation (RAG)", "Vector search"]
-    },
-    {
-      "id": "rag",
-      "name": "Retrieval-Augmented Generation (RAG)",
-      "type": "implementation_capability",
-      "layer": "implementation_capability",
-      "category": "AI Engineering",
-      "priority": 1,
-      "technology_family": null,
-      "selection_group": null,
-      "technology_ecosystems": [],
-      "related_capabilities": []
-    }
-  ]
+  "seniority": "Senior",
+  "categories": [
+    "Programming Languages",
+    "Data Processing & ETL/ELT",
+    "CI/CD & DevOps"
+  ],
+  "skills": {
+    "P0": ["Python", "SQL", "Git", "Batch data ingestion"],
+    "P1": [],
+    "P2": []
+  }
 }
 ```
 
-Counts describe the full response; the excerpt shows two of its 41 options. The AI profile,
-like every other role, is curated from this project's inventory. It is not a required stack.
-The review's sample technology list guides the design without being imported wholesale.
-Five additions fill specific gaps in the existing catalog: provider SDK integration, typed
-validation, stateful orchestration, PostgreSQL vector retrieval, and executable LLM evaluation.
+Categories follow the explicit `response_categories` order in the requested role's data file.
+Categories are plain names without skill counts. Categories with no returned skills after
+industry/seniority filtering and the response limit are omitted; all three priority groups
+are always present. Categories
+are available options, not mandatory requirements. Each skill appears once, and names within
+each priority retain curated source order.
 
-| Priority | Editorial role-level meaning |
-| --- | --- |
-| 1 | Core technology or implementation capability |
-| 2 | Supporting technology or capability |
-| 3 | Specialized or optional technology or capability |
+| Response priority | Source priority | Editorial role-level meaning |
+| --- | --- | --- |
+| P0 | 1 | Core technology, implementation capability, or professional method |
+| P1 | 2 | Supporting option |
+| P2 | 3 | Specialized or optional option |
 
-Priorities are stored per role. They are not job-description rankings, measured hiring frequency,
-or evidence that a candidate has used a skill. Technology alternatives can appear together.
-The caller determines the final selection and JD-specific order. For the AI Engineer baseline,
-the four priority-1 capabilities are RAG, function calling, structured outputs, and LLM evaluation.
-Embeddings, vector search, document ingestion, prompt engineering, and agent workflows are
-priority 2. General unit/integration testing and specialized fairness, privacy, and infrastructure
-cost capabilities remain available at priority 3. Named testing tools retain their own priorities.
-All 41 AI options remain available. Provider SDKs, FastAPI, Pydantic, pgvector, and Docker
-use P2 as implementation choices; these defaults do not define every AI specialization.
-During resume generation, compute a separate `jd_priority` from the job description and verified
-candidate evidence. Preserve the MCP's `priority` as the role baseline. This server accepts no
-JD or candidate profile and does not compute or return `jd_priority`.
+Priorities are stored per role and remain unchanged in the source catalog. They are not
+job-description rankings, measured hiring frequency, or evidence of candidate experience.
+Industry additions use P2; seniority filters eligibility without reranking role priorities.
+The caller matches the JD and verified candidate experience before selecting final resume skills.
+Soft skills are excluded from skills discovery.
 
-The Backend Engineer baseline now has 46 options (31 technologies and 15 capabilities).
-The full review moved the existing PHP and Ruby entries from e-commerce-only additions into
-general backend and full-stack alternatives at P3, without adding any skills to the registry.
-Python, Java, Go, JavaScript, TypeScript, and Node.js use P2 as stack alternatives; the caller
-can promote a matching ecosystem for a specific JD. Transaction isolation and locking and
-role-based/resource-level authorization also use P2. RESTful APIs, relational schema design,
-authentication, unit testing, and integration testing remain P1. Indexing and query tuning
-remain P2 in this generic baseline. PostgreSQL, Redis, and Docker also use P2 as supporting
-implementation choices. These defaults do not determine a vacancy's requirements.
+The technical response taxonomy is:
 
-`technology_family` is an authored, readable name for an engineering purpose. For example,
-pgvector, Qdrant, Pinecone, Chroma, and FAISS share `Vector Retrieval`, while their types preserve
-the distinction between database extensions, databases, and libraries. A family is a comparison
-hint, not a statement that its members are interchangeable or that only one may be retained.
-LangChain, LangGraph, and LlamaIndex have distinct families reflecting their application,
-orchestration, and retrieval focus. Every technology has a family; capabilities and methods
-return `null`.
+- Programming Languages
+- Web Platform
+- Frontend & UI Engineering
+- Backend Frameworks & Runtimes
+- Mobile Development
+- APIs & Service Integration
+- Databases & ORMs
+- Data Warehouses & Lakehouses
+- Data Modeling & Transformation
+- Data Processing & ETL/ELT
+- Workflow Orchestration
+- Streaming & Change Data Capture
+- Data Quality & Governance
+- BI & Analytics
+- Distributed Systems & Messaging
+- Cloud & Infrastructure
+- CI/CD & DevOps
+- Observability & Reliability
+- Security & Authentication
+- Testing & Quality Engineering
+- Architecture & System Design
+- Third-Party Integrations
+- AI/ML & LLM Engineering
 
-`selection_group` is a narrower, optional hint for technologies filling similar architectural
-positions. pgvector, Qdrant, Pinecone, and Chroma use `Vector Storage`; FAISS uses `Vector Index`,
-while PostgreSQL uses `Relational Storage`. This helps distinguish a database and its extension
-from alternatives for a similar implementation slot. It does not assert feature parity, a
-dependency, or a rule to retain only one technology. Retain multiple implementations when the
-JD and experience warrant them. `null` means no curated hint. The server does not remove options
-based on either grouping. Selection hints are currently curated for 30 technologies across roles.
+Broad source categories are split where needed: SQL is a programming language; Airflow is
+workflow orchestration; dbt is data modeling and transformation; Spark is data processing;
+Snowflake is a warehouse; Kafka is streaming; data lineage is governance. Technical role maps
+contain relevant categories from the 23-category taxonomy above. UX Designer, Product
+Manager, and Engineering Manager also retain their applicable User Experience & Design,
+Product Management, and Engineering Management categories. Data Analyst may include Product
+Management, and QA Engineer may include Engineering Management for their curated methods.
+Industry labels such as Banking,
+Healthcare, and E-commerce are not response categories.
 
-`technology_ecosystems` is a nonexhaustive list of authored language/runtime ecosystem names.
-For example, Python, FastAPI, Django, and pytest share `Python`; Java and Spring Boot share
-`Java / JVM`; JavaScript, TypeScript, Node.js, Express.js, and NestJS share
-`JavaScript / TypeScript`. Go has its own ecosystem without adding framework placeholders.
-These hints help the caller select coherent stacks. They allow multiple ecosystems, do not
-prove compatibility or proficiency, and never filter or deduplicate options. An empty list means
-no curated association, including for shared infrastructure and implementation capabilities.
-Clients receive this field in both description modes. Source files may omit it.
+Each role in `data/roles/*.json` defines its own ordered category map. All skill selection,
+including role options and industry additions, respects that map before the skill limit is
+applied. Skills outside the map are omitted instead of introducing legacy or unrelated
+categories. Validation requires maps to cover every curated option and direct role/industry
+assignment, including professional methods. Applied skills and technologies require a permitted
+response-category projection; legacy industry labels cannot silently hide them.
+Source category ownership and the compatible `get_roadmap` response shape are unchanged.
 
-`related_capabilities` is a nonexhaustive list of canonical implementation-capability names from
-the full catalog. Stored references use stable skill IDs internally; the MCP resolves them to
-names before returning results. Links can point outside the current role, seniority, or limited
-response. Empty lists mean no curated links. The server validates the references but does not
-expand them into results, change priorities, or infer proficiency.
-All metadata fields are present with or without descriptions; absent selection hints return `null`.
-Every capability reference must resolve to an existing `implementation_capability` in the full
-catalog. Schema validation, RESTful APIs, Reproducible builds and artifact promotion, Relational
-schema design, and Distributed tracing are valid global entries outside the AI-only subset.
+Each role also defines `required_categories`: mandatory coverage in its full curated baseline,
+independent of industry and across all seniority levels. Startup rejects missing, empty,
+duplicate, disallowed, or uncovered required categories. A required category must be in the
+role's response map and contain at least one curated option. Seniority filters and smaller
+result limits can omit categories; this rule does not assert a candidate must know every
+option. Optional contextual categories such as Third-Party Integrations need not be required.
 
-Mappings return the existing canonical names: Redis lists Cache invalidation and expiration,
-Session and token authentication, and Message acknowledgments and dead-letter queues. FastAPI
-lists RESTful APIs, Schema validation, and OpenAPI specifications. Pydantic links to schema
-validation and structured outputs, OpenTelemetry to tracing and metrics, and LangGraph to
-workflows and function calling. Ragas links to LLM evaluation and RAG; the evaluation capability
-explicitly covers retrieval and generation assessment. No extra synonym capabilities are
-introduced for these relationships.
+Web fundamentals retain Web Platform, native libraries retain Mobile Development, and shared
+component libraries and tokens use Frontend & UI Engineering. Domain modeling uses Data Modeling
+& Transformation, client event instrumentation uses BI & Analytics, and financial reconciliation
+uses Data Quality & Governance. Stable skill IDs, existing role priorities, and public response
+shapes are preserved; clients displaying category names will see the corrected labels.
 
-The resume-generation LLM uses this context to match the JD, verify candidate experience,
-and select approximately 15-25 skills when appropriate for the role. It should avoid accumulating
-unevidenced alternatives. General practices usually fit experience bullets unless directly
-relevant to the JD. The MCP returns discovery options rather than a finished resume section.
+For example, [Data Engineer](data/roles/data-engineer.json) starts with:
+
+```json
+"response_categories": [
+  "Programming Languages",
+  "Data Processing & ETL/ELT",
+  "Data Warehouses & Lakehouses",
+  "Data Modeling & Transformation",
+  "Workflow Orchestration"
+]
+```
+
+This excerpt shows the first five entries. Supporting categories follow them in the role file.
+Only categories with selected skills appear in a response; seniority, industry, and limit affect
+which categories appear without changing their configured order. Reordering the role's map changes category order without
+changing skill priorities. Catalog validation rejects missing, empty, duplicate, unknown, or
+incomplete maps.
 
 `get_skills` accepts these optional arguments:
 
 | Argument | Default | Behavior |
 | --- | --- | --- |
-| `industry` | `null` | Add role-specific and shared industry options at priority 3; preserve existing role priorities. |
+| `industry` | `null` | Add role-specific and shared industry options at P2; preserve existing role priorities. |
 | `seniority_level` | `null` | Omitted means all levels; a supplied level includes that level and below. |
 | `limit` | `50` | Return at most 1-50 options, sorted by priority and then curated source order. |
-| `include_descriptions` | `false` | Set true to add an implementation description; false omits the field. |
+| `include_descriptions` | `false` | Accepted for compatibility; the summary always omits descriptions. |
 
 Role options win priority ties over industry additions; role-specific industry additions precede
-shared industry additions. Duplicate IDs appear once. `available_count` reports the eligible
-pool before the limit and `returned_count` reports the actual list size. Filtering can produce
-fewer than 30 options; the server does not pad results. Without filters, technical roles contain
-31-46 curated options. Nonengineering profiles have smaller inventories where appropriate.
-Thus `46 of 46 eligible options` for Backend Engineer means the full role catalog was returned;
-it does not indicate JD or candidate filtering. The readable client explicitly labels this scope
-and omits redundant type labels under implementation capabilities and professional methods.
-Categories are catalog data and vary by role. No category is required in every response.
-Unknown inputs and unsupported combinations return errors without substituting another role.
+shared industry additions. Duplicate IDs appear once. Filtering can produce fewer than 30
+options; the server does not pad results. Unknown inputs and unsupported combinations return
+errors without substituting another role.
+
+For a two-line text response, use `get_skills_text` (default `output_format="compact"`). For
+technology types, families, ecosystems, selection groups, and capability links, use
+`get_skills_text` with `output_format="detailed"`. Add `include_descriptions=true` for descriptions
+in detailed output. Compact text always contains only category names and skill priorities.
+Metadata provides selection hints, not mandatory stacks, interchangeable tools, or evidence of
+proficiency. Links never add skills or alter priorities.
 
 The source inventory contains **605 reusable skills** in **43 categories**, including
 **176 named technologies** in [technologies.json](data/skills/technologies.json) and
@@ -180,7 +164,8 @@ are Junior, Mid-level, Senior, and Staff; these are editorial thresholds within 
 It requires role, industry, and seniority and returns `hard_skills` and `soft_skills`, each a list
 of named categories. Its skills contain `name` and, by default, `description`;
 `include_descriptions=false` returns name only. This legacy response shape is unchanged.
-Use `get_skills` for curated options, types, layers, baseline priorities, families, and capability links.
+Use `get_skills` for curated options, category names, and baseline priorities; use
+`get_skills_text` with `output_format="detailed"` for technology metadata.
 
 ## Resume bullet baselines
 
@@ -384,7 +369,7 @@ flowchart LR
 
 This avoids maintaining a separate complete roadmap for every role × industry × level. Exact names and explicit aliases resolve to canonical IDs. Unknown inputs and uncovered combinations return actionable errors. There is no fuzzy substitution or generic fallback.
 
-Streamable HTTP at `/mcp` is the Docker transport; stdio is available for local clients. This follows the [official SDK transport guidance](https://py.sdk.modelcontextprotocol.io/run/). JSON tools expose typed structured content and an output schema; `get_skills_text` and `get_bullets_text` return plain text content.
+Streamable HTTP at `/mcp` is the Docker transport; stdio is available for local clients. This follows the [official SDK transport guidance](https://py.sdk.modelcontextprotocol.io/run/). `get_skills` exposes its compact typed summary and an output schema; other JSON tools expose typed structured content; `get_skills_text` and `get_bullets_text` return plain text content.
 
 ```text
 data/
@@ -392,7 +377,7 @@ data/
   categories.json                 # Category names, hard/soft types, order, and skill IDs
   skills/technologies.json         # Literal technologies with descriptions and explicit types
   skills/*.json                   # Additional technical and industry skills
-  roles/*.json                    # Curated skill options/priorities and roadmap requirements
+  roles/*.json                    # Role category maps, skill options/priorities, and requirements
   industries/*.json               # Shared and role-specific industry requirements
   bullets/                        # Baselines, taxonomy, and manifest
 src/roadmap_mcp/
@@ -400,6 +385,7 @@ src/roadmap_mcp/
   catalog.py                      # File loading, indexing, reference validation
   service.py                      # Deterministic composition
   skills_text.py                  # Shared readable skills formatting for the tool and client
+  skill_categories.py             # Technical response taxonomy and skill assignments
   bullet_models.py                # Baseline data and response schemas
   bullets.py                      # Bullet validation, industry priority, fallback, deduplication
   bullet_text.py                  # Shared readable formatting for the MCP tool and local client
@@ -425,8 +411,8 @@ Connect an MCP client to `http://localhost:8000/mcp`. `/mcp` speaks MCP, not a c
 | Tool | Arguments | Result |
 | --- | --- | --- |
 | `list_catalog` | None | Names, IDs, aliases, seniority levels, and role/industry coverage |
-| `get_skills` | `role_name`; optional `industry`, `seniority_level`, `limit` (50), `include_descriptions` (false) | Curated typed options with layers, categories, baseline priorities, technology families, optional selection hints, capability links, and counts |
-| `get_skills_text` | Same as `get_skills`; optional `output_format` (`compact` or `detailed`, default `compact`) | The same selected skill names and priorities as compact model input, or detailed readable text |
+| `get_skills` | `role_name`; optional `industry`, `seniority_level`, `limit` (50), compatibility `include_descriptions` (false) | Role, industry, seniority, category names, and names grouped under P0/P1/P2 |
+| `get_skills_text` | Same filters as `get_skills`; optional `include_descriptions` and `output_format` (`compact` or `detailed`, default `compact`) | Two lines of category names and skill priorities, or detailed readable metadata |
 | `get_roadmap` | `role_name`, `industry`, `seniority_level`; optional `include_descriptions` (default `true`) | Separate `hard_skills` and `soft_skills` lists containing named categories |
 | `list_bullet_catalog` | None | Bullet taxonomy, aliases, role/industry coverage, and total count |
 | `get_bullets` | `role_name`; optional `industry` (all), `seniority_level` (minimum `junior`), `count` (`5`, range `1`–`100`) | Matching baselines with evidence prompts and available/returned counts |
@@ -525,53 +511,34 @@ asyncio.run(main())
 ```
 
 The readable skills client calls `get_skills`. It defaults to Backend Engineer at
-`http://localhost:8004/mcp`, role options only, with descriptions omitted. Its default compact
-format groups full skill names by baseline priority and layer. Technology rows group exact
-ecosystem associations, or use the source category when no ecosystems are curated. A `+`
-joins multiple ecosystem associations; these hints permit multiple stacks and do not imply
-that every technology in a group is required. Each selected skill appears once.
+`http://localhost:8004/mcp`, role options only, with descriptions omitted. Compact output has
+exactly two lines: ordered category names, then skill names with P0/P1/P2 priorities.
 
-Use `--text` to call `get_skills_text` directly, or `--json` for the complete structured
-response. These flags are mutually exclusive; all modes accept the same filters and limits.
-Both readable modes default to `--output-format compact`. Use `--output-format detailed` to
-include each skill's category, technology type, family, ecosystems, selection hints, and related
-capability names. Compact output omits that per-skill metadata and counts; selection and
-filtering are identical. The title retains supplied industry and seniority context. Selection
-guidance is supplied through the MCP tool instructions, with no repeated explanatory header.
-`--descriptions` includes descriptions in either format; compact descriptions identify their
-skill by name. JSON output includes all metadata and counts regardless of `--output-format`.
+Use `--json` for the compact structured summary or `--text` to call `get_skills_text` directly.
+The flags are mutually exclusive. All modes accept the same role, industry, seniority, and limit
+filters. Use `--output-format detailed` to call `get_skills_text` for each skill's type, category,
+family, ecosystems, selection hints, and related capability names. `--descriptions` adds
+implementation descriptions only in detailed output. JSON and compact summaries omit descriptions.
 
 ```bash
 uv run python tests/test_tool.py
-uv run python tests/test_tool.py --descriptions
 uv run python tests/test_tool.py --role "Backend Engineer" --industry "Fintech" --seniority "Senior"
 uv run python tests/test_tool.py --json --limit 10
 uv run python tests/test_tool.py --text
-uv run python tests/test_tool.py --text --output-format detailed
-uv run python tests/test_tool.py --text --descriptions --industry "Fintech" --seniority "Senior"
+uv run python tests/test_tool.py --output-format detailed --descriptions
 uv run python tests/test_tool.py --url http://localhost:8004/mcp
 ```
 
-Compact output excerpt:
+Compact output for Data Engineer, Senior, `--limit 4`:
 
 ```text
-Backend Engineer
-
-P1 technologies:
-  Databases & Caching: SQL
-  Developer Tools & Code Quality: Git
-
-P1 capabilities: RESTful APIs; Relational schema design; Session and token authentication; Unit testing; Integration testing
-
-P2 technologies:
-  Python: Python; FastAPI; Django; pytest
-  Java / JVM: Java; Spring Boot
-  Go: Go
-  JavaScript / TypeScript: JavaScript; TypeScript; Node.js; Express.js; NestJS
+categories: Programming Languages, Data Processing & ETL/ELT, CI/CD & DevOps
+skills: (Python:P0), (SQL:P0), (Git:P0), (Batch data ingestion:P0)
 ```
 
-For model input, call `get_skills_text` with `{"role_name": "Backend Engineer"}`. Retrieve
-metadata on demand using `output_format="detailed"` or the structured `get_skills` tool.
+For model input, call `get_skills` with `{"role_name": "Backend Engineer"}`, or use
+`get_skills_text` for the two-line equivalent. Retrieve metadata on demand through
+`get_skills_text` with `output_format="detailed"`.
 
 Test bullet retrieval with the matching readable client script:
 
@@ -667,8 +634,14 @@ The broader `requirements` list can contain additional skills excluded from disc
    where applicable; curate capability links from existing implementation-capability IDs and
    add a selection-group hint only where useful.
 2. Assign its ID to exactly one appropriately typed category.
+   Update `src/roadmap_mcp/skill_categories.py` if its response category differs from that source.
 3. Reference the skill in role or industry requirements; `minimum_seniority` defaults to Junior.
 4. For role discovery, add it to that role's `skill_options` with an editorial priority.
+   Ensure the role's `response_categories` includes its response category in the desired order.
+   Define `required_categories` for the role's baseline and cover each with curated options.
+   Include an industry's response category in the associated role map when that category is
+   relevant to the role. Direct role/industry assignments must fit the map; shared industry
+   defaults outside the map remain excluded.
 5. To support a role/industry combination, add the role ID to the industry's `role_requirements`.
    An empty list supports a combination without extra contextual skills; a missing key is unsupported.
 6. Validate the files and recreate the server when changing code and data together.

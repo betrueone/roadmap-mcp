@@ -4,7 +4,7 @@ import pytest
 from mcp import Client
 
 from roadmap_mcp.catalog import Catalog, LookupError
-from roadmap_mcp.models import SkillsResult
+from roadmap_mcp.models import SkillsResponse
 from roadmap_mcp.server import create_server
 from roadmap_mcp.service import RoadmapService
 
@@ -57,9 +57,10 @@ def test_role_options_are_curated_independently_from_full_roadmap(service):
 def test_backend_catalog_keeps_alternatives_and_scoped_capability_priorities(service):
     result = service.get_skills("Backend Engineer")
     skills = indexed(result)
-    assert result.available_count == result.returned_count == 46
+    assert result.available_count == result.returned_count == 47
     assert sum(s.layer == "core_technology" for s in result.skills) == 31
-    assert sum(s.layer == "implementation_capability" for s in result.skills) == 15
+    assert sum(s.layer == "implementation_capability" for s in result.skills) == 16
+    assert skills["structured-logging"].priority == 2
     assert all(
         skills[key].priority == 2
         for key in [
@@ -155,7 +156,7 @@ def test_ecosystems_are_optional_nonexclusive_hints(editable_data):
 def test_ai_capability_priorities_keep_specific_core_and_broad_supporting_options(service):
     result = service.get_skills("AI Engineer")
     skills = indexed(result)
-    assert len(skills) == 41
+    assert len(skills) == 43
     assert {
         s.id for s in result.skills if s.layer == "implementation_capability" and s.priority == 1
     } == {"rag", "tool-calling", "structured-generation", "llm-evaluation"}
@@ -211,7 +212,7 @@ def test_selection_groups_distinguish_architecture_positions_without_deduplicati
     assert skills["faiss"].selection_group == "Vector Index"
     assert skills["postgresql"].selection_group == "Relational Storage"
     # Complementary storage and extension remain together; comparison hints never drop options.
-    assert len(skills) == 41
+    assert len(skills) == 43
     assert skills["python"].selection_group is None
     assert skills["rag"].selection_group is None
     assert skills["langchain"].selection_group is None
@@ -239,7 +240,6 @@ def test_capability_links_resolve_beyond_the_filtered_ai_catalog(service, catalo
     }
     assert {
         "Schema validation",
-        "RESTful APIs",
         "Reproducible builds and artifact promotion",
         "Relational schema design",
         "Distributed tracing",
@@ -419,39 +419,46 @@ def test_unsupported_industry_combination_errors(editable_data):
         service.get_skills("AI Engineer", "SaaS")
 
 
-async def test_mcp_skills_discovery_and_description_modes(catalog):
+@pytest.mark.parametrize(
+    "args",
+    [
+        {"role_name": "AI Engineer"},
+        {"role_name": "Data Engineer", "seniority_level": "Senior"},
+        {"role_name": "Backend Engineer", "industry": "Fintech", "seniority_level": "Junior"},
+        {"role_name": "UX Designer", "limit": 3},
+        {"role_name": "Data Engineer", "industry": "Manufacturing", "limit": 1},
+    ],
+)
+async def test_mcp_skills_discovery_summary(catalog, service, args):
     async with Client(create_server(catalog)) as client:
         tools = {t.name: t for t in (await client.list_tools()).tools}
         tool = tools["get_skills"]
         assert tool.annotations.read_only_hint
         assert tool.input_schema["required"] == ["role_name"]
         assert tool.input_schema["properties"]["include_descriptions"]["default"] is False
-        assert tool.output_schema["properties"]["skills"]
+        assert set(tool.output_schema["properties"]) == {
+            "role",
+            "industry",
+            "seniority",
+            "categories",
+            "skills",
+        }
+        assert tool.output_schema["properties"]["categories"]["items"]["type"] == "string"
         for descriptions in [False, True]:
             response = await client.call_tool(
-                "get_skills", {"role_name": "AI Engineer", "include_descriptions": descriptions}
+                "get_skills", {**args, "include_descriptions": descriptions}
             )
             assert not response.is_error
-            result = SkillsResult.model_validate(response.structured_content)
-            assert result.role == "AI Engineer"
-            assert 30 <= result.returned_count <= 50
+            result = SkillsResponse.model_validate(response.structured_content)
+            selection = service.get_skills(**args)
+            assert result == SkillsResponse.from_result(selection)
+            assert result.categories
             assert all(
-                ("description" in s) == descriptions for s in response.structured_content["skills"]
+                isinstance(category, str) for category in response.structured_content["categories"]
             )
-            skills = {s["id"]: s for s in response.structured_content["skills"]}
-            assert skills["pgvector"]["technology_family"] == "Vector Retrieval"
-            assert skills["pgvector"]["selection_group"] == "Vector Storage"
-            assert skills["pgvector"]["related_capabilities"] == [
-                "Retrieval-Augmented Generation (RAG)",
-                "Vector search",
-            ]
-            assert skills["rag"]["technology_family"] is None
-            assert skills["rag"]["selection_group"] is None
-            assert skills["python"]["selection_group"] is None
-            assert skills["python"]["technology_ecosystems"] == ["Python"]
-            assert skills["fastapi"]["technology_ecosystems"] == ["Python"]
-            assert skills["rag"]["technology_ecosystems"] == []
-            assert skills["rag"]["related_capabilities"] == []
+            assert sum(len(names) for names in result.skills.model_dump().values()) == (
+                selection.returned_count
+            )
             assert json.loads(response.content[0].text) == response.structured_content
 
 

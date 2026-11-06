@@ -1,5 +1,16 @@
 # Complete roadmap datasource review
 
+Follow-up correction on 2026-11-06: restored seven curated options previously filtered by role
+category maps and technical projections for 14 industry capabilities. Every direct role/industry
+assignment now has category coverage. Web Platform and Mobile Development are distinct response
+categories; shared UI and backend runtime labels now match their scope. The source still has
+605 skills in 43 categories, with 23 technical response categories. All 20 roles define explicit
+`required_categories`, validated against their complete curated baseline. Added baseline options
+cover backend observability, AI API integration and data governance, data-engineering security
+and architecture, frontend architecture, ML authentication/privacy, and UX privacy. Existing skill
+IDs and priorities are preserved. AI now has 43 options, Backend 47, Data Engineer 45, Frontend 40,
+ML Engineer 42, and UX Designer 22. The review record below describes the earlier revision.
+
 Reviewed on 2026-11-04. `data/bullets/`, the reference bullet dataset, and bullet behavior are excluded.
 
 ## Coverage and approach

@@ -6,6 +6,24 @@
     "cyber security engineer",
     "information security engineer"
   ],
+  "response_categories": [
+    "Security & Authentication",
+    "Cloud & Infrastructure",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "Architecture & System Design",
+    "Programming Languages",
+    "CI/CD & DevOps",
+    "Data Quality & Governance"
+  ],
+  "required_categories": [
+    "Security & Authentication",
+    "Cloud & Infrastructure",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "Programming Languages",
+    "CI/CD & DevOps"
+  ],
   "requirements": [
     {
       "skill_id": "python"

@@ -5,6 +5,33 @@
     "android engineer",
     "android app developer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "Mobile Development",
+    "Frontend & UI Engineering",
+    "APIs & Service Integration",
+    "Databases & ORMs",
+    "Workflow Orchestration",
+    "Third-Party Integrations",
+    "Testing & Quality Engineering",
+    "Security & Authentication",
+    "Observability & Reliability",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Distributed Systems & Messaging",
+    "BI & Analytics"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "Mobile Development",
+    "APIs & Service Integration",
+    "Databases & ORMs",
+    "Testing & Quality Engineering",
+    "Security & Authentication",
+    "Observability & Reliability",
+    "Architecture & System Design",
+    "CI/CD & DevOps"
+  ],
   "requirements": [
     {
       "skill_id": "kotlin"

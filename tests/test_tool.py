@@ -6,8 +6,8 @@ import json
 
 from mcp import Client
 
-from roadmap_mcp.models import SkillsResult
-from roadmap_mcp.skills_text import format_skills
+from roadmap_mcp.models import SkillsResponse
+from roadmap_mcp.skills_text import format_skills_summary
 
 
 async def main(args):
@@ -18,20 +18,21 @@ async def main(args):
         "limit": args.limit,
         "include_descriptions": args.descriptions,
     }
-    if args.text:
+    use_text = args.text or (not args.json and args.output_format == "detailed")
+    if use_text:
         inputs["output_format"] = args.output_format
     async with Client(args.url) as client:
-        response = await client.call_tool("get_skills_text" if args.text else "get_skills", inputs)
+        response = await client.call_tool("get_skills_text" if use_text else "get_skills", inputs)
         if response.is_error:
             raise RuntimeError(response.content)
-        if args.text:
+        if use_text:
             print("\n".join(block.text for block in response.content if block.type == "text"))
             return
         result = response.structured_content
         if args.json:
             print(json.dumps(result, indent=2))
             return
-        print(format_skills(SkillsResult.model_validate(result), args.output_format))
+        print(format_skills_summary(SkillsResponse.model_validate(result)))
 
 
 if __name__ == "__main__":
@@ -41,7 +42,12 @@ if __name__ == "__main__":
     parser.add_argument("--industry")
     parser.add_argument("--seniority")
     parser.add_argument("--limit", type=int, default=50)
-    parser.add_argument("--descriptions", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument(
+        "--descriptions",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Include descriptions in detailed output; compact and JSON summaries omit them.",
+    )
     parser.add_argument(
         "--output-format",
         choices=["compact", "detailed"],
@@ -49,7 +55,7 @@ if __name__ == "__main__":
         help="Readable output format (default: compact); also applies to --text.",
     )
     output = parser.add_mutually_exclusive_group()
-    output.add_argument("--json", action="store_true", help="Print the full JSON response.")
+    output.add_argument("--json", action="store_true", help="Print the compact JSON summary.")
     output.add_argument(
         "--text", action="store_true", help="Call the plain-text get_skills_text tool."
     )

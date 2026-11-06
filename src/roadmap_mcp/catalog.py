@@ -17,6 +17,11 @@ from roadmap_mcp.models import (
     SkillFile,
     StoredSkill,
 )
+from roadmap_mcp.skill_categories import (
+    NONTECHNICAL_ROLE_CATEGORIES,
+    TECHNICAL_CATEGORIES,
+    response_category,
+)
 
 
 class CatalogError(ValueError):
@@ -213,6 +218,68 @@ class Catalog:
                 role_id in industry.role_requirements for industry in self.industries.values()
             ):
                 raise CatalogError(f"Role {role_id} has no industry coverage")
+        self._validate_response_categories()
+
+    def _validate_response_categories(self) -> None:
+        permitted = set(TECHNICAL_CATEGORIES) | {
+            name for names in NONTECHNICAL_ROLE_CATEGORIES.values() for name in names
+        }
+        projected = {
+            skill_id: response_category(
+                skill_id, self.categories[self.skill_categories[skill_id]].name
+            )
+            for skill_id, skill in self.skills.items()
+            if skill.type != "soft_skill"
+        }
+        for skill_id, name in projected.items():
+            # Compatibility-only professional methods may retain their source taxonomy.
+            # Curated methods are still checked against the role map below.
+            if name not in permitted and self.skills[skill_id].type != "professional_method":
+                raise CatalogError(f"skill:{skill_id}: unknown response category: {name}")
+        for role in self.roles.values():
+            known = set(TECHNICAL_CATEGORIES) | set(NONTECHNICAL_ROLE_CATEGORIES.get(role.id, ()))
+            names = role.response_categories
+            if len({normalize(name) for name in names}) != len(names):
+                raise CatalogError(f"role:{role.id}: duplicate response category")
+            unknown = set(names) - known
+            if unknown:
+                raise CatalogError(
+                    f"role:{role.id}: unknown response categories: {', '.join(sorted(unknown))}"
+                )
+            skill_ids = {option.skill_id for option in role.skill_options}
+            selected_categories = {projected[skill_id] for skill_id in skill_ids}
+            missing = selected_categories - set(names)
+            if missing:
+                raise CatalogError(
+                    f"role:{role.id}: missing response categories: {', '.join(sorted(missing))}"
+                )
+            required = role.required_categories
+            if len({normalize(name) for name in required}) != len(required):
+                raise CatalogError(f"role:{role.id}: duplicate required category")
+            outside = set(required) - set(names)
+            if outside:
+                raise CatalogError(
+                    f"role:{role.id}: required categories outside response map: "
+                    f"{', '.join(sorted(outside))}"
+                )
+            uncovered = set(required) - selected_categories
+            if uncovered:
+                raise CatalogError(
+                    f"role:{role.id}: required categories without curated skills: "
+                    f"{', '.join(sorted(uncovered))}"
+                )
+            for industry in self.industries.values():
+                contextual = {
+                    projected[requirement.skill_id]
+                    for requirement in industry.role_requirements.get(role.id, ())
+                    if self.skills[requirement.skill_id].type != "soft_skill"
+                }
+                missing = contextual - set(names)
+                if missing:
+                    raise CatalogError(
+                        f"industry:{industry.id}/role:{role.id}: missing response categories: "
+                        f"{', '.join(sorted(missing))}"
+                    )
 
     def resolve(self, dimension: str, value: str) -> str:
         resolved = self._aliases[dimension].get(normalize(value))

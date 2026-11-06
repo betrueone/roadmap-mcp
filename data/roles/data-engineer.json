@@ -5,6 +5,41 @@
     "data pipeline engineer",
     "etl developer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "Data Processing & ETL/ELT",
+    "Data Warehouses & Lakehouses",
+    "Data Modeling & Transformation",
+    "Workflow Orchestration",
+    "Streaming & Change Data Capture",
+    "Data Quality & Governance",
+    "Databases & ORMs",
+    "Cloud & Infrastructure",
+    "CI/CD & DevOps",
+    "Testing & Quality Engineering",
+    "Observability & Reliability",
+    "Architecture & System Design",
+    "Security & Authentication",
+    "BI & Analytics",
+    "APIs & Service Integration",
+    "Third-Party Integrations"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "Data Processing & ETL/ELT",
+    "Data Warehouses & Lakehouses",
+    "Data Modeling & Transformation",
+    "Workflow Orchestration",
+    "Streaming & Change Data Capture",
+    "Data Quality & Governance",
+    "Databases & ORMs",
+    "Cloud & Infrastructure",
+    "CI/CD & DevOps",
+    "Testing & Quality Engineering",
+    "Observability & Reliability",
+    "Architecture & System Design",
+    "Security & Authentication"
+  ],
   "requirements": [
     {
       "skill_id": "python"
@@ -490,6 +525,18 @@
     {
       "skill_id": "data-contracts",
       "priority": 3
+    },
+    {
+      "skill_id": "secrets-management",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-access-governance",
+      "priority": 2
+    },
+    {
+      "skill_id": "data-platform-architecture",
+      "priority": 2
     }
   ]
 }

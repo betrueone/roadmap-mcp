@@ -5,6 +5,23 @@
     "analytics analyst",
     "business data analyst"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "BI & Analytics",
+    "Data Modeling & Transformation",
+    "Data Quality & Governance",
+    "Data Warehouses & Lakehouses",
+    "Data Processing & ETL/ELT",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Product Management"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "BI & Analytics",
+    "Data Modeling & Transformation",
+    "Data Quality & Governance"
+  ],
   "requirements": [
     {
       "skill_id": "sql"

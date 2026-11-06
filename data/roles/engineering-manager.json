@@ -5,6 +5,23 @@
     "software engineering manager",
     "development manager"
   ],
+  "response_categories": [
+    "Engineering Management",
+    "Product Management",
+    "Architecture & System Design",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "BI & Analytics"
+  ],
+  "required_categories": [
+    "Engineering Management",
+    "Architecture & System Design",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "CI/CD & DevOps"
+  ],
   "requirements": [
     {
       "skill_id": "jira"

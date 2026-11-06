@@ -5,6 +5,27 @@
     "developer platform engineer",
     "internal platform engineer"
   ],
+  "response_categories": [
+    "Cloud & Infrastructure",
+    "CI/CD & DevOps",
+    "Architecture & System Design",
+    "APIs & Service Integration",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "Programming Languages",
+    "Testing & Quality Engineering",
+    "Third-Party Integrations"
+  ],
+  "required_categories": [
+    "Cloud & Infrastructure",
+    "CI/CD & DevOps",
+    "Architecture & System Design",
+    "APIs & Service Integration",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "Programming Languages",
+    "Testing & Quality Engineering"
+  ],
   "requirements": [
     {
       "skill_id": "python"

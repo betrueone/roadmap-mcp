@@ -5,6 +5,26 @@
     "cloud infrastructure engineer",
     "cloud specialist"
   ],
+  "response_categories": [
+    "Cloud & Infrastructure",
+    "Architecture & System Design",
+    "Security & Authentication",
+    "CI/CD & DevOps",
+    "Observability & Reliability",
+    "Programming Languages",
+    "Databases & ORMs",
+    "Testing & Quality Engineering",
+    "Third-Party Integrations",
+    "APIs & Service Integration"
+  ],
+  "required_categories": [
+    "Cloud & Infrastructure",
+    "Architecture & System Design",
+    "Security & Authentication",
+    "CI/CD & DevOps",
+    "Observability & Reliability",
+    "Programming Languages"
+  ],
   "requirements": [
     {
       "skill_id": "bash"

@@ -5,6 +5,25 @@
     "devops",
     "devops specialist"
   ],
+  "response_categories": [
+    "CI/CD & DevOps",
+    "Cloud & Infrastructure",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "Architecture & System Design",
+    "Programming Languages",
+    "Testing & Quality Engineering",
+    "Third-Party Integrations",
+    "APIs & Service Integration"
+  ],
+  "required_categories": [
+    "CI/CD & DevOps",
+    "Cloud & Infrastructure",
+    "Observability & Reliability",
+    "Security & Authentication",
+    "Programming Languages",
+    "Testing & Quality Engineering"
+  ],
   "requirements": [
     {
       "skill_id": "bash"

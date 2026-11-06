@@ -5,6 +5,27 @@
     "ai and data scientist",
     "applied data scientist"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "BI & Analytics",
+    "Data Processing & ETL/ELT",
+    "Data Quality & Governance",
+    "Architecture & System Design",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Testing & Quality Engineering",
+    "Data Modeling & Transformation"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "BI & Analytics",
+    "Data Processing & ETL/ELT",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Testing & Quality Engineering"
+  ],
   "requirements": [
     {
       "skill_id": "python"

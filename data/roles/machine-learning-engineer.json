@@ -5,6 +5,32 @@
     "ml engineer",
     "machine learning developer"
   ],
+  "response_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "Data Processing & ETL/ELT",
+    "Data Quality & Governance",
+    "Backend Frameworks & Runtimes",
+    "Architecture & System Design",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Data Modeling & Transformation",
+    "BI & Analytics"
+  ],
+  "required_categories": [
+    "Programming Languages",
+    "AI/ML & LLM Engineering",
+    "Data Processing & ETL/ELT",
+    "Data Quality & Governance",
+    "Backend Frameworks & Runtimes",
+    "Architecture & System Design",
+    "Observability & Reliability",
+    "Testing & Quality Engineering",
+    "CI/CD & DevOps",
+    "Security & Authentication"
+  ],
   "requirements": [
     {
       "skill_id": "python"
@@ -166,6 +192,14 @@
     {
       "skill_id": "engineering-standards",
       "minimum_seniority": "staff"
+    },
+    {
+      "skill_id": "authentication",
+      "minimum_seniority": "mid"
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "minimum_seniority": "mid"
     }
   ],
   "skill_options": [
@@ -328,6 +362,14 @@
     {
       "skill_id": "data-platform-governance",
       "priority": 3
+    },
+    {
+      "skill_id": "authentication",
+      "priority": 2
+    },
+    {
+      "skill_id": "privacy-engineering",
+      "priority": 2
     }
   ]
 }

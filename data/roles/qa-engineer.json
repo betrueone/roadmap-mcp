@@ -8,6 +8,23 @@
     "sdet",
     "test automation engineer"
   ],
+  "response_categories": [
+    "Testing & Quality Engineering",
+    "Programming Languages",
+    "CI/CD & DevOps",
+    "Security & Authentication",
+    "Observability & Reliability",
+    "Data Quality & Governance",
+    "Third-Party Integrations",
+    "Engineering Management",
+    "APIs & Service Integration"
+  ],
+  "required_categories": [
+    "Testing & Quality Engineering",
+    "Programming Languages",
+    "CI/CD & DevOps",
+    "Security & Authentication"
+  ],
   "requirements": [
     {
       "skill_id": "test-design"

@@ -14,7 +14,7 @@ from roadmap_mcp.bullet_models import BulletCatalogResult, BulletCount, BulletsR
 from roadmap_mcp.bullet_text import format_bullets
 from roadmap_mcp.bullets import BulletCatalog, BulletService
 from roadmap_mcp.catalog import Catalog, LookupError
-from roadmap_mcp.models import CatalogResult, Roadmap, SkillLimit, SkillsResult
+from roadmap_mcp.models import CatalogResult, Roadmap, SkillLimit, SkillsResponse
 from roadmap_mcp.service import RoadmapService
 from roadmap_mcp.skills_text import SkillsTextFormat, format_skills
 
@@ -44,26 +44,23 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         instructions=(
             "Discover supported roles, industries, seniority levels, and combinations with "
             "list_catalog. For resume skills discovery, use get_skills with a role and optional "
-            "industry and seniority. It returns a curated set of technology and implementation "
-            "options with stable IDs, types, layers, categories, role-level priorities, "
-            "technology_family, selection_group, technology_ecosystems, and related_capabilities "
-            "as readable names. "
-            "Prefer get_skills_text for compact model input: full skill names grouped by "
-            "baseline priority and layer, with technologies grouped by ecosystems or categories. "
-            "Joined ecosystem labels retain all curated associations, not required stacks. "
-            "Use output_format='detailed' or get_skills for full technology metadata. "
-            "Families group tools by purpose; optional selection groups hint at similar "
-            "architectural positions. Neither imposes a one-per-group rule or proves "
-            "interchangeability. Ecosystem hints connect language/runtime stacks and their "
-            "frameworks or tools. Use them for coherent choices without restricting experienced "
-            "candidates to one ecosystem; an empty list means no curated association. "
-            "Keep complementary technologies when supported by experience. Capability links "
-            "are canonical catalog names, not prerequisites or claims of candidate experience. "
-            "Priority 1 means core, 2 supporting, and 3 specialized or optional. Priorities are "
-            "editorial role defaults, not job-specific rankings or measured hiring frequency. "
+            "industry and seniority. It returns role, industry, seniority, ordered categories "
+            "as names, and skill names grouped under P0, P1, and P2. "
+            "Categories cover only returned skills after filters and limit and follow each "
+            "role's explicit response_categories order, omitting empty categories. P0 means core, "
+            "P1 supporting, and P2 specialized or optional. "
+            "These map to source priorities 1, 2, and 3. "
+            "Priorities are editorial role defaults, not job-specific rankings or measured hiring "
+            "frequency. Industry additions use P2; seniority filters eligibility without changing "
+            "role priorities. Technical roles use only the 21 technical categories; UX, product, "
+            "and engineering management roles retain their applicable nontechnical categories. "
+            "Legacy industry labels are excluded. Categories are available options. "
+            "get_skills_text defaults to two linear lines: category names, then skills "
+            "with priorities. Use output_format='detailed' for technology metadata and optional "
+            "descriptions. Families and selection groups provide selection hints, not exclusion "
+            "rules; ecosystems and capability links never prove candidate experience. "
             "The resume generator computes a separate jd_priority from the job description "
             "and candidate evidence while preserving the MCP baseline priority. "
-            "Industry additions have priority 3. Alternatives are not a mandatory stack. "
             "Match these options to the job description, verify the candidate's actual experience, "
             "remove irrelevant options, and then select roughly 15-25 evidenced skills as "
             "appropriate for the role. Put general practices in experience bullets unless "
@@ -105,50 +102,30 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         seniority_level: Query | None = None,
         limit: SkillLimit = 50,
         include_descriptions: IncludeDescriptions = False,
-    ) -> SkillsResult:
-        """Discover curated technologies and implementation capabilities for resume selection.
+    ) -> SkillsResponse:
+        """Return category names and skill names grouped by priority for a role.
 
-        Only role_name is required. Accepts names, IDs, and aliases from list_catalog.
-        Return role options (normally 30-50 for technical roles) with id, name, type, layer,
-        category, priority, technology_family, selection_group, technology_ecosystems,
-        and related_capabilities. Metadata uses readable names rather than identifiers.
-        Core technologies include languages, runtimes, frameworks, SDKs, libraries,
-        databases, extensions, streaming platforms, message brokers, test frameworks,
-        CI/CD platforms, API query languages, APIs, operating systems, cloud platforms,
-        cloud services, infrastructure, tools, protocols, and standards.
-        Implementation capabilities identify applied work such as RAG, function calling,
-        or transaction isolation.
-        Nonengineering roles can also return professional_method entries. Excludes soft skills.
-        Categories are supplied by the catalog and differ by role; there is no fixed category list.
-        Priority is a role-level editorial default: 1 core, 2 supporting, 3 specialized or optional.
-        The caller computes a separate jd_priority from the JD and verified candidate evidence;
-        jd_priority is not part of this catalog response and does not overwrite its baseline.
-        These are alternatives, not a required stack or verified candidate experience.
-        technology_family groups technologies by purpose, without implying interchangeability
-        or limiting results to one per family. Capabilities and methods have a null family.
-        Optional selection_group hints at technologies filling similar architectural positions;
-        it is not a hard exclusion rule. Null means no curated selection hint. Complementary
-        tools can be retained together. Metadata never deduplicates tools automatically.
-        technology_ecosystems lists curated language/runtime associations for coherent stack
-        selection. It is nonexhaustive, permits multiple ecosystems, and never filters results
-        or requires one stack. Empty means no curated association, not incompatibility.
-        related_capabilities contains nonexhaustive canonical implementation-capability names
-        from the full catalog, which may be outside this filtered response. Empty means no
-        curated links. Links never add skills, change priorities, or prove proficiency.
-        Omitted industry means role options only; an industry adds contextual options at priority 3.
-        Omitted seniority means all levels; a supplied level includes that level and below.
-        Counts describe catalog eligibility and the response limit, never JD or candidate fit.
-        Preserve role priorities when an industry also references a role option. Sort by priority,
-        then curated source order. Role options win ties over industry additions. limit is 1-50
-        (default 50); available_count reports the eligible pool before this cap.
-        include_descriptions defaults to false; true adds a short implementation description.
-        The caller matches the JD, verifies candidate experience, and selects roughly 15-25
-        final skills where appropriate; generic practices can be shown in experience bullets.
-        Unknown inputs or unsupported combinations return an error without substitution.
+        Only role_name is required. Accept names, IDs, and aliases from list_catalog.
+        Return role, industry, seniority, categories [names], and skills
+        {P0: [names], P1: [names], P2: [names]}. P0 is core, P1 supporting, P2 optional.
+        All three priority groups are present, even when empty. Categories follow the role's
+        explicit response_categories order, omitting categories with no selected skills.
+        Technical roles use only the 21-category taxonomy. Design, product, and management
+        categories are allowed for their corresponding nontechnical roles. No industry categories.
+        Categories are available options, not mandatory requirements. Excludes soft skills.
+        Preserve curated order within each priority; role options precede industry additions.
+        Industry adds contextual options at P2 without changing existing role priorities.
+        All role and industry options must belong to a category configured for the requested role.
+        Omitted industry selects role options only. Omitted seniority includes all levels;
+        a supplied level includes that level and below. limit is 1-50 (default 50).
+        include_descriptions is accepted for compatibility; this summary always omits them.
+        Use get_skills_text with output_format='detailed' for metadata and descriptions.
+        Priorities are editorial baselines, not JD rankings or verified candidate experience.
+        Unknown inputs and unsupported combinations return an error without substitution.
         """
         try:
-            return service.get_skills(
-                role_name, industry, seniority_level, limit, include_descriptions
+            return SkillsResponse.from_result(
+                service.get_skills(role_name, industry, seniority_level, limit)
             )
         except LookupError as error:
             raise ToolError(str(error)) from error
@@ -162,30 +139,26 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         include_descriptions: IncludeDescriptions = False,
         output_format: SkillsTextFormat = "compact",
     ) -> str:
-        """Return the same selection as get_skills, formatted as readable plain text.
+        """Return the get_skills selection as compact or detailed plain text.
 
-        Only role_name is required. Accepts the same names, IDs, aliases, optional filters,
-        limit (1-50, default 50), and include_descriptions (default false) as get_skills.
-        Omitted industry selects role options only; omitted seniority includes all levels.
-        A supplied seniority includes that level and below. output_format defaults to compact:
-        full skill names grouped by baseline priority (P1/P2/P3) and layer (technologies,
-        capabilities, methods). Technology rows group exact ecosystem associations, or use
-        their category when none are curated. A '+' joins multiple ecosystem associations;
-        associations are nonexhaustive hints, never mandatory stacks or exclusion rules.
-        Each selected skill appears once; order within each group follows the catalog selection.
-        Compact output omits types, families, selection groups, capability links, and counts.
-        Set output_format='detailed' for categories, technology types, families, ecosystems,
-        selection groups, and readable capability links. Use get_skills for structured data
-        and eligibility counts. Both text formats match tests/test_tool.py and preserve selection.
-        Descriptions, when requested, wrap at 100 columns; compact descriptions name their skill.
+        Accept the same role, industry, seniority, and limit filters as get_skills.
+        Compact output contains exactly two lines: categories: name, name, ...
+        and skills: (name:P0), (name:P1), ... . Categories follow the role's configured order,
+        omitting categories with no returned skills after filters and limit.
+        Skills preserve selection order. P0 is core, P1 supporting, P2 specialized or optional.
+        output_format='detailed' includes types, categories, families, ecosystems, selection
+        groups, and capability links. include_descriptions=true adds descriptions only in
+        detailed output. Compact output always contains only category names and skill priorities.
         Returns MCP text content without a JSON wrapper or structured output schema.
-        Priorities are role defaults; the caller must match the JD and candidate experience.
         Unknown inputs and unsupported combinations return the same errors as get_skills.
         """
-        return format_skills(
-            get_skills(role_name, industry, seniority_level, limit, include_descriptions),
-            output_format,
-        )
+        try:
+            result = service.get_skills(
+                role_name, industry, seniority_level, limit, include_descriptions
+            )
+        except LookupError as error:
+            raise ToolError(str(error)) from error
+        return format_skills(result, output_format)
 
     @server.tool(annotations=READ_ONLY)
     def get_roadmap(
@@ -196,7 +169,7 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
     ) -> Roadmap:
         """Compatibility endpoint for the complete cumulative hard and soft skill inventory.
 
-        Prefer get_skills for curated resume discovery, skill types, and baseline priorities.
+        Prefer get_skills for curated resume discovery, category names, and baseline priorities.
         Accepts canonical names, IDs, or listed aliases, case-insensitively.
         Example: role_name='Backend Engineer', industry='Fintech', seniority_level='Senior'.
         Includes literal technology names such as Python, PostgreSQL, Redis, and Apache Kafka.

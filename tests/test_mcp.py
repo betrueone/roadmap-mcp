@@ -160,16 +160,16 @@ async def test_stdio_subprocess_serves_catalog(catalog):
         skills = await client.call_tool("get_skills", {"role_name": "AI Engineer"})
         assert not skills.is_error
         assert skills.structured_content["role"] == "AI Engineer"
-        assert 30 <= skills.structured_content["returned_count"] <= 50
-        assert {s["layer"] for s in skills.structured_content["skills"]} == {
-            "core_technology",
-            "implementation_capability",
-        }
+        groups = skills.structured_content["skills"]
+        assert set(groups) == {"P0", "P1", "P2"}
+        assert 30 <= sum(map(len, groups.values())) <= 50
+        assert skills.structured_content["categories"]
+        assert all(isinstance(name, str) for name in skills.structured_content["categories"])
         skills_text = await client.call_tool("get_skills_text", {"role_name": "AI Engineer"})
         assert not skills_text.is_error
         assert skills_text.structured_content is None
-        assert skills_text.content[0].text.startswith("AI Engineer\n\nP1 technologies:\n")
-        assert "P1 capabilities:" in skills_text.content[0].text
+        assert skills_text.content[0].text.startswith("categories: ")
+        assert "\nskills: " in skills_text.content[0].text
         detailed_text = await client.call_tool(
             "get_skills_text", {"role_name": "AI Engineer", "output_format": "detailed"}
         )

@@ -1,13 +1,13 @@
 import json
 import re
-from collections import Counter
 from types import SimpleNamespace
 
 import pytest
 from mcp import Client
 
-from roadmap_mcp.models import SkillsResult
+from roadmap_mcp.models import SkillsResponse, SkillsResult
 from roadmap_mcp.server import create_server
+from roadmap_mcp.skill_categories import response_category
 from roadmap_mcp.skills_text import format_skills
 
 from .test_tool import main as run_client
@@ -61,63 +61,57 @@ def test_detailed_format_preserves_metadata_and_minimal_header(example_skills):
     assert format_skills(example_skills, "detailed") == (
         "Backend Engineer\n"
         "\nCore technologies (1)\n"
-        "  - FastAPI [framework; P2; Backend Frameworks & Runtimes]\n"
+        "  - FastAPI [framework; P1; Backend Frameworks & Runtimes]\n"
         "    Family: Backend Frameworks\n"
         "    Ecosystems: Python\n"
         "    Selection group: Backend API Framework\n"
         "    Related capabilities: RESTful APIs, Schema validation\n"
         "    Build typed APIs.\n"
         "\nImplementation capabilities (1)\n"
-        "  - RESTful APIs [P1; APIs & Integration]\n"
+        "  - RESTful APIs [P0; APIs & Service Integration]\n"
         "\nProfessional methods (1)\n"
-        "  - Product roadmapping [P3; Product Management]"
+        "  - Product roadmapping [P2; Product Management]"
     )
 
 
-def test_compact_format_groups_priorities_and_layers(example_skills):
+def test_compact_format_lists_category_names_and_skill_priorities(example_skills):
     assert format_skills(example_skills) == (
-        "Backend Engineer\n"
-        "\nP1 capabilities: RESTful APIs\n"
-        "\nP2 technologies:\n"
-        "  Python: FastAPI\n"
-        "    FastAPI: Build typed APIs.\n"
-        "\nP3 methods: Product roadmapping"
+        "categories: APIs & Service Integration, Backend Frameworks & Runtimes, "
+        "Product Management\n"
+        "skills: (RESTful APIs:P0), (FastAPI:P1), (Product roadmapping:P2)"
     )
 
 
-def test_compact_keeps_all_ecosystem_associations_without_duplicate_skills(example_skills):
-    skill = example_skills.skills[1].model_copy(
-        update={"technology_ecosystems": ["Python", "JavaScript / TypeScript"]}
-    )
-    result = example_skills.model_copy(update={"skills": [skill]})
-    text = format_skills(result)
-    assert "  Python + JavaScript / TypeScript: FastAPI\n" in text
-
-
-def test_compact_preserves_every_skill_priority_and_layer_across_roles(service):
-    layer_labels = {
-        "technologies": "core_technology",
-        "capabilities": "implementation_capability",
-        "methods": "professional_method",
-    }
+def test_compact_preserves_category_order_and_skill_priorities_across_roles(service):
     for role in service.catalog.roles:
         result = service.get_skills(role)
-        entries = []
-        for line in format_skills(result).splitlines()[1:]:
-            if not line:
-                continue
-            if heading := re.fullmatch(r"P([123]) (technologies|capabilities|methods):(.*)", line):
-                priority = int(heading[1])
-                layer = layer_labels[heading[2]]
-                names = heading[3].strip()
-            else:
-                assert line.startswith("  ") and layer == "core_technology"
-                names = line.split(": ", 1)[1]
-            if names:
-                entries.extend((priority, layer, name) for name in names.split("; "))
-        assert Counter(entries) == Counter(
-            (skill.priority, skill.layer, skill.name) for skill in result.skills
+        categories, skills = format_skills(result).splitlines()
+        expected_categories = {response_category(s.id, s.category) for s in result.skills}
+        assert categories == "categories: " + ", ".join(
+            name
+            for name in service.catalog.roles[role].response_categories
+            if name in expected_categories
         ), role
+        entries = re.findall(r"\((.*?):P([012])\)(?:, |$)", skills.removeprefix("skills: "))
+        assert entries == [(s.name, str(s.priority - 1)) for s in result.skills], role
+
+
+def test_empty_selection_has_two_empty_lines(example_skills):
+    result = example_skills.model_copy(update={"skills": [], "returned_count": 0})
+    assert format_skills(result) == "categories: \nskills: "
+    response = SkillsResponse.from_result(result)
+    assert response.categories == []
+    assert response.skills.model_dump() == {"P0": [], "P1": [], "P2": []}
+
+
+def test_categories_merge_source_categories_and_ignore_available_pool(example_skills):
+    skill = example_skills.skills[1].model_copy(
+        update={"id": "django", "name": "Django", "category": "Backend Frameworks & Runtimes"}
+    )
+    result = example_skills.model_copy(update={"skills": [example_skills.skills[1], skill]})
+    response = SkillsResponse.from_result(result)
+    assert response.categories == ["Backend Frameworks & Runtimes"]
+    assert response.skills.model_dump() == {"P0": [], "P1": ["FastAPI", "Django"], "P2": []}
 
 
 @pytest.mark.parametrize(
@@ -137,7 +131,9 @@ def test_compact_preserves_every_skill_priority_and_layer_across_roles(service):
     ],
 )
 @pytest.mark.parametrize("output_format", ["compact", "detailed"])
-async def test_text_tool_preserves_structured_selection_and_contract(catalog, args, output_format):
+async def test_text_tool_preserves_structured_selection_and_contract(
+    catalog, service, args, output_format
+):
     async with Client(create_server(catalog)) as client:
         tools = {tool.name: tool for tool in (await client.list_tools()).tools}
         tool = tools["get_skills_text"]
@@ -158,12 +154,17 @@ async def test_text_tool_preserves_structured_selection_and_contract(catalog, ar
     assert response.structured_content is None
     assert len(response.content) == 1 and response.content[0].type == "text"
     text = response.content[0].text
-    result = SkillsResult.model_validate(structured.structured_content)
+    result = service.get_skills(**args)
+    assert structured.structured_content == SkillsResponse.from_result(result).model_dump()
     assert text == format_skills(result, output_format)
     title = " | ".join(
         value for value in [result.role, result.industry, result.seniority_level] if value
     )
-    assert text.splitlines()[0] == title
+    if output_format == "detailed":
+        assert text.splitlines()[0] == title
+    else:
+        assert text.startswith("categories: ")
+        assert len(text.splitlines()) == 2
     assert "eligible options" not in text
     assert "Role catalog across all seniorities" not in text
     if output_format == "detailed":
@@ -171,7 +172,7 @@ async def test_text_tool_preserves_structured_selection_and_contract(catalog, ar
     assert "[implementation_capability;" not in text
     assert "[professional_method;" not in text
     for skill in result.skills:
-        if hasattr(skill, "description"):
+        if output_format == "detailed" and hasattr(skill, "description"):
             assert skill.description in " ".join(line.strip() for line in text.splitlines())
 
 
@@ -193,7 +194,7 @@ async def test_readable_client_output_modes(catalog, service, capsys, mode, outp
     output = capsys.readouterr().out
     expected = service.get_skills("Backend Engineer", limit=2, include_descriptions=True)
     if mode == "json":
-        assert json.loads(output) == expected.model_dump()
+        assert json.loads(output) == SkillsResponse.from_result(expected).model_dump()
     else:
         assert output == format_skills(expected, output_format) + "\n"
 
