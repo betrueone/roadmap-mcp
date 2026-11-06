@@ -10,6 +10,24 @@ named technologies and implementation capabilities separately through `layer` an
 Nonengineering methods remain available as `professional_method`; soft skills are excluded.
 The larger `requirements` inventory remains available through the compatible `get_roadmap` tool.
 
+All 194 entries in `skills/industries.json` have `resume_section: "experience"`. These are domain
+concepts for writing evidenced experience bullets, not Skills-section entries. Both `get_skills`
+and `get_roadmap` return matched concepts separately in `industry_context`, filtered by role,
+industry, and seniority. The field is outside skill priorities, counts, limits, and category maps.
+It is empty in role-only discovery. Structured `get_skills` context always includes names and
+descriptions; `get_roadmap` respects `include_descriptions` for context as well as skills.
+Compact text has a third `industry_context` line; detailed text has a separate context section.
+
+The seven named industry standards/protocols (LTI, ISO 20022, TM Forum Open APIs, HLS, OPC UA,
+RESO Web API, and DCAT) now live in `skills/technologies.json`, which contains all 183 named
+technologies. Their IDs, categories, and industry mappings are preserved. Concrete APIs such as
+Stripe API also remain eligible Skills entries. Context never proves candidate experience.
+
+Other definitions default to `resume_section: "skills"`. Catalog validation rejects
+experience-only concepts in curated role `skill_options`; they remain valid requirements.
+Capability links retain their canonical IDs in source data but omit experience-only targets
+from Skills output. This prevents concept names from leaking back through technology metadata.
+
 ## Inclusion rules
 
 - Keep named languages, frameworks, tools, protocols, and standards when relevant to the role.
@@ -39,7 +57,7 @@ The larger `requirements` inventory remains available through the compatible `ge
 | HTTP fundamentals, generic debugging, linear algebra | Remove prerequisite topics from the candidate skill inventory. |
 | Transactions and concurrency | Specify transaction isolation and locking, including concurrent-update failures. |
 | Application caching | Specify cache invalidation, expiration, and stampede protection. |
-| Commerce domain concepts | Specify product catalog and order data modeling. |
+| Commerce domain concepts | Retain product catalog and order modeling as experience context. |
 
 The initial curation pass retired 25 broad or overlapping entries, introduced 8 scoped implementation
 entries, and refined 68 existing names or descriptions. It retained all 20 roles, 15 industries,
@@ -74,7 +92,7 @@ cloud platforms (`cloud_platform`), and hosted services (`cloud_service`), and c
 React, gRPC, Delta Lake, OpenTelemetry, Apple frameworks, Cypress, Locust, and HLS.
 These types are shared across roles. Existing generic types remain valid for other technologies.
 The public `get_skills` type enum includes these specific values; clients with a copied enum
-must accept them. The compatible `get_roadmap` response remains unchanged.
+must accept them. `get_roadmap` now returns domain concepts separately in `industry_context`.
 
 Each role must define an ordered `response_categories` list in its JSON file. This map controls
 category order in `get_skills` and compact `get_skills_text` output. Technical roles use only
@@ -82,14 +100,15 @@ relevant names from the 23-category response taxonomy in `src/roadmap_mcp/skill_
 UX Designer, Product Manager, and Engineering Manager may also use their applicable design,
 product, and management categories. Data Analyst may include Product Management; QA Engineer
 may include Engineering Management for their curated methods. Legacy industry labels are not
-allowed in role maps. Include categories covering every curated option and direct role/industry
-assignment within the permitted taxonomy. All role and
+allowed in role maps. Include categories covering every curated option and every Skills-eligible
+direct role/industry assignment within the permitted taxonomy. All role and
 industry options must belong to the role's map to be selected; apply this check before the
 skill limit. Return category names without skill counts and omit categories with no selected
 skills. Catalog validation rejects missing, empty, duplicate, unknown, or incomplete maps.
-Shared industry defaults can still be excluded by role relevance. Technologies and applied
-capabilities require a permitted projection, so retained domain modeling and financial disclosure
-skills cannot silently fall back to forbidden industry category names.
+Shared industry defaults can still be excluded by role relevance. Skills-eligible technologies
+and applied capabilities require a permitted projection. Experience-only domain concepts,
+including modeling and disclosure concepts, bypass Skills category maps and appear only in
+`industry_context`.
 
 Every role also authors a nonempty `required_categories` list. These categories must belong to
 its response map and have curated role-only coverage across the full seniority inventory.
@@ -209,12 +228,13 @@ Startup rejects duplicate canonical skill names after normalization, validates f
 applicability and nonempty names, and rejects unknown, duplicate,
 self-referencing, or mistyped capability references. Every link must target an existing skill of type
 `implementation_capability`. References may point outside a response filtered by role,
-seniority, or limit. They do not add selections, alter counts/priorities, or override filters.
+seniority, or limit. Experience-only targets remain in source but are omitted from returned
+capability links. Links do not add selections, alter counts/priorities, or override filters.
 The five IDs noted in the review (`schema-validation`, `rest-apis`, `release-engineering`,
 `sql-modeling`, and `distributed-tracing`) all exist in this full registry. They are deliberately
 not forced into every role's returned subset. Selection groups also require nonempty names;
-neither grouping deduplicates or changes eligible results. The compatibility `get_roadmap`
-schema remains unchanged.
+neither grouping deduplicates or changes eligible results. `get_roadmap` returns domain concepts
+in its separate `industry_context` field.
 
 Mappings are refined using existing IDs rather than adding generic synonyms. Redis now links to
 `caching`, `authentication` (including session lifecycle), and `message-queues`; its description

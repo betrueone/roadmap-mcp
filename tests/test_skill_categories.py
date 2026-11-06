@@ -42,7 +42,7 @@ def test_industry_options_and_nontechnical_categories(service):
     result = service.get_skills("Backend Engineer", "Fintech", "Senior")
     by_id = {skill.id: response_category(skill.id, skill.category) for skill in result.skills}
     assert by_id["stripe-api"] == "Third-Party Integrations"
-    assert by_id["payment-idempotency"] == "APIs & Service Integration"
+    assert "payment-idempotency" not in by_id
     for role, category in [
         ("UX Designer", "User Experience & Design"),
         ("Product Manager", "Product Management"),
@@ -179,7 +179,7 @@ def test_all_curated_options_and_required_categories_survive_role_only_discovery
 
 
 @pytest.mark.parametrize(
-    "role, industry, seniority, restored",
+    "role, industry, seniority, context_ids",
     [
         ("machine-learning-engineer", "banking", "mid", {"credit-portfolio-analytics"}),
         ("qa-engineer", "fintech", "senior", {"financial-reconciliation"}),
@@ -189,12 +189,15 @@ def test_all_curated_options_and_required_categories_survive_role_only_discovery
         ("ux-designer", "fintech", "mid", {"financial-disclosure-design"}),
     ],
 )
-def test_authored_industry_skills_survive_category_selection(
-    service, role, industry, seniority, restored
+def test_industry_concepts_are_experience_context_instead_of_skills(
+    service, role, industry, seniority, context_ids
 ):
     result = service.get_skills(role, industry, seniority)
     assert result.available_count <= 50
-    assert restored <= {skill.id for skill in result.skills}
+    assert context_ids.isdisjoint(skill.id for skill in result.skills)
+    roadmap = service.get_roadmap(role, industry, seniority)
+    names = {concept.name for concept in roadmap.industry_context}
+    assert {service.catalog.skills[key].name for key in context_ids} <= names
 
 
 @pytest.mark.parametrize(
@@ -215,21 +218,15 @@ def test_authored_industry_skills_survive_category_selection(
         ("government", "government-domain"),
     ],
 )
-def test_applied_domain_modeling_is_discoverable(service, industry, skill_id):
+def test_domain_modeling_does_not_become_a_technical_skill(service, industry, skill_id):
     result = service.get_skills("backend-engineer", industry, "junior")
-    assert skill_id in {skill.id for skill in result.skills}
-    assert "Data Modeling & Transformation" in SkillsResponse.from_result(result).categories
+    assert skill_id not in {skill.id for skill in result.skills}
+    assert service.catalog.skills[skill_id].resume_section == "experience"
 
 
 @pytest.mark.parametrize(
     "skill_id, expected",
     [
-        ("financial-data", "Data Modeling & Transformation"),
-        ("healthcare-data", "Data Modeling & Transformation"),
-        ("commerce-event-tracking", "BI & Analytics"),
-        ("financial-reconciliation", "Data Quality & Governance"),
-        ("fraud-signals", "Security & Authentication"),
-        ("financial-disclosure-design", "User Experience & Design"),
         ("hilt", "Architecture & System Design"),
         ("kotlin-coroutines", "Mobile Development"),
         ("combine", "Mobile Development"),

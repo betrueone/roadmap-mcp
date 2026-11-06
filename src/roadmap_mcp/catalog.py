@@ -206,6 +206,10 @@ class Catalog:
                     raise CatalogError(f"role:{role.id}: duplicate skill option {option.skill_id}")
                 if self.skills[option.skill_id].type == "soft_skill":
                     raise CatalogError(f"role:{role.id}: soft skill option {option.skill_id}")
+                if self.skills[option.skill_id].resume_section != "skills":
+                    raise CatalogError(
+                        f"role:{role.id}: experience-only skill option {option.skill_id}"
+                    )
                 seen.add(option.skill_id)
         for industry in self.industries.values():
             self._validate_requirements(industry.requirements, f"industry:{industry.id}")
@@ -229,7 +233,7 @@ class Catalog:
                 skill_id, self.categories[self.skill_categories[skill_id]].name
             )
             for skill_id, skill in self.skills.items()
-            if skill.type != "soft_skill"
+            if skill.type != "soft_skill" and skill.resume_section == "skills"
         }
         for skill_id, name in projected.items():
             # Compatibility-only professional methods may retain their source taxonomy.
@@ -272,7 +276,7 @@ class Catalog:
                 contextual = {
                     projected[requirement.skill_id]
                     for requirement in industry.role_requirements.get(role.id, ())
-                    if self.skills[requirement.skill_id].type != "soft_skill"
+                    if requirement.skill_id in projected
                 }
                 missing = contextual - set(names)
                 if missing:

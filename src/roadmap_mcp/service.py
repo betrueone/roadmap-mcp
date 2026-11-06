@@ -75,13 +75,18 @@ class RoadmapService:
                     selected[requirement.skill_id] = catalog.skills[requirement.skill_id]
 
         grouped = {}
+        industry_context = []
         for skill_id, skill in selected.items():
-            category_id = catalog.skill_categories[skill_id]
-            grouped.setdefault(category_id, []).append(
+            item = (
                 Skill(name=skill.name, description=skill.description)
                 if include_descriptions
                 else SkillNameOnly(name=skill.name)
             )
+            if skill.resume_section == "experience":
+                industry_context.append(item)
+                continue
+            category_id = catalog.skill_categories[skill_id]
+            grouped.setdefault(category_id, []).append(item)
 
         by_type = {"hard": [], "soft": []}
         for category_id, category in catalog.categories.items():
@@ -90,7 +95,11 @@ class RoadmapService:
                     SkillCategory(name=category.name, skills=grouped[category_id])
                 )
 
-        return Roadmap(hard_skills=by_type["hard"], soft_skills=by_type["soft"])
+        return Roadmap(
+            hard_skills=by_type["hard"],
+            soft_skills=by_type["soft"],
+            industry_context=industry_context,
+        )
 
     def get_skills(
         self,
@@ -100,7 +109,7 @@ class RoadmapService:
         limit: SkillLimit = 50,
         include_descriptions: bool = False,
     ) -> SkillsResult:
-        """Return curated role options with editorial priorities, never candidate claims."""
+        """Return curated skill options and separate industry context, never candidate claims."""
         catalog = self.catalog
         role = catalog.roles[catalog.resolve("role", role_name)]
         sector = catalog.industries[catalog.resolve("industry", industry)] if industry else None
@@ -119,6 +128,9 @@ class RoadmapService:
             return level is None or catalog.levels[requirement.minimum_seniority].rank <= level.rank
 
         def in_role_categories(skill_id: str) -> bool:
+            skill = catalog.skills[skill_id]
+            if skill.type == "soft_skill" or skill.resume_section != "skills":
+                return False
             category = response_category(
                 skill_id, catalog.categories[catalog.skill_categories[skill_id]].name
             )
@@ -130,8 +142,20 @@ class RoadmapService:
             for option in role.skill_options
             if eligible(requirements[option.skill_id]) and in_role_categories(option.skill_id)
         }
+        industry_context = {}
         if sector:
-            # Industry context supplies optional additions, never promotes role defaults.
+            for requirement in [
+                *role.requirements,
+                *sector.requirements,
+                *sector.role_requirements[role.id],
+            ]:
+                skill = catalog.skills[requirement.skill_id]
+                if eligible(requirement) and skill.resume_section == "experience":
+                    industry_context.setdefault(
+                        requirement.skill_id,
+                        Skill(name=skill.name, description=skill.description),
+                    )
+            # Eligible industry skills supply additions, never promote role defaults.
             # A role option filtered by seniority must not reappear via industry mappings.
             for requirement in [*sector.role_requirements[role.id], *sector.requirements]:
                 skill_id = requirement.skill_id
@@ -139,7 +163,7 @@ class RoadmapService:
                     continue
                 if skill_id in requirements and not eligible(requirements[skill_id]):
                     continue
-                if eligible(requirement) and catalog.skills[skill_id].type != "soft_skill":
+                if eligible(requirement):
                     selected.setdefault(skill_id, 3)
 
         model = DescribedRankedSkill if include_descriptions else RankedSkill
@@ -166,6 +190,7 @@ class RoadmapService:
                     related_capabilities=[
                         catalog.skills[capability_id].name
                         for capability_id in skill.related_capabilities
+                        if catalog.skills[capability_id].resume_section == "skills"
                     ],
                     **fields,
                 )
@@ -178,4 +203,5 @@ class RoadmapService:
             returned_count=len(skills),
             skills=skills,
             category_order=role.response_categories,
+            industry_context=list(industry_context.values()),
         )

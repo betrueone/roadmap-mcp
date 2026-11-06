@@ -1,5 +1,15 @@
 # Complete roadmap datasource review
 
+Resume-placement correction on 2026-11-06: the 194 domain concepts in `skills/industries.json`
+now carry `resume_section: "experience"`. They are excluded from resume skill groups, category
+coverage, limits, and returned capability links. Both `get_skills` and `get_roadmap` return them
+separately in `industry_context`, filtered by role, industry, and seniority, for evidenced
+experience bullets. The roadmap no longer puts them in `hard_skills`. Compact text has a third
+context line; detailed text has a separate context section. Seven named standards/protocols
+moved to `skills/technologies.json`, bringing it to 183 entries; their IDs and mappings remain.
+The total inventory remains 605 definitions in 43 source categories. Curated role baselines
+and their mandatory category coverage are unchanged. The records below describe earlier revisions.
+
 Follow-up correction on 2026-11-06: restored seven curated options previously filtered by role
 category maps and technical projections for 14 industry capabilities. Every direct role/industry
 assignment now has category coverage. Web Platform and Mobile Development are distinct response

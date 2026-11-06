@@ -34,7 +34,8 @@ def format_skills_summary(response: SkillsResponse) -> str:
         for priority, names in response.skills.model_dump().items()
         for name in names
     )
-    return f"categories: {categories}\nskills: {skills}"
+    context = ", ".join(concept.name for concept in response.industry_context)
+    return f"categories: {categories}\nskills: {skills}\nindustry_context: {context}"
 
 
 def _format_detailed(result: SkillsResult) -> str:
@@ -65,4 +66,16 @@ def _format_detailed(result: SkillsResult) -> str:
                 lines.append(
                     fill(description, width=100, initial_indent="    ", subsequent_indent="    ")
                 )
+    if result.industry_context:
+        lines.append(f"\nIndustry context for experience bullets ({len(result.industry_context)})")
+        for concept in result.industry_context:
+            lines.append(f"  - {concept.name}")
+            lines.append(
+                fill(
+                    concept.description,
+                    width=100,
+                    initial_indent="    ",
+                    subsequent_indent="    ",
+                )
+            )
     return "\n".join(lines)

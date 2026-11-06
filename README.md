@@ -30,7 +30,8 @@ Only the role is required:
     "P0": ["Python", "SQL", "Git", "Batch data ingestion"],
     "P1": [],
     "P2": []
-  }
+  },
+  "industry_context": []
 }
 ```
 
@@ -52,6 +53,29 @@ job-description rankings, measured hiring frequency, or evidence of candidate ex
 Industry additions use P2; seniority filters eligibility without reranking role priorities.
 The caller matches the JD and verified candidate experience before selecting final resume skills.
 Soft skills are excluded from skills discovery.
+
+Industry concepts belong in experience bullets. Both `get_skills` and `get_roadmap` return
+them in a separate `industry_context` field, outside skill groups and categories. For example,
+Backend Engineer in Fintech can return:
+
+```json
+{
+  "industry_context": [
+    {
+      "name": "Financial ledger modeling",
+      "description": "Model balanced ledger entries and preserve traceability between financial operations and balances."
+    }
+  ]
+}
+```
+
+This excerpt shows one matching concept. Context follows the requested role, industry, and
+seniority, preserves source order, and deduplicates repeated references. It does not count
+toward the skills limit, priorities, or category coverage. Omitted industry returns `[]` in
+`get_skills`. Context always includes names and descriptions in structured skills discovery;
+the roadmap's `include_descriptions=false` also removes context descriptions. Use context
+only to develop bullets supported by the candidate's work. Named industry APIs, protocols,
+and standards remain eligible skills.
 
 The technical response taxonomy is:
 
@@ -92,10 +116,12 @@ Healthcare, and E-commerce are not response categories.
 Each role in `data/roles/*.json` defines its own ordered category map. All skill selection,
 including role options and industry additions, respects that map before the skill limit is
 applied. Skills outside the map are omitted instead of introducing legacy or unrelated
-categories. Validation requires maps to cover every curated option and direct role/industry
-assignment, including professional methods. Applied skills and technologies require a permitted
-response-category projection; legacy industry labels cannot silently hide them.
-Source category ownership and the compatible `get_roadmap` response shape are unchanged.
+categories. Validation requires maps to cover every curated option and every Skills-eligible
+direct role/industry assignment, including professional methods. Eligible applied skills and
+technologies require a permitted response-category projection. Experience-only concepts
+retain their source categories and bypass role category maps in the separate context field.
+Source category ownership is unchanged. Both response schemas now include `industry_context`;
+domain concepts no longer appear in the roadmap's `hard_skills`.
 
 Each role also defines `required_categories`: mandatory coverage in its full curated baseline,
 independent of industry and across all seniority levels. Startup rejects missing, empty,
@@ -132,27 +158,30 @@ incomplete maps.
 
 | Argument | Default | Behavior |
 | --- | --- | --- |
-| `industry` | `null` | Add role-specific and shared industry options at P2; preserve existing role priorities. |
+| `industry` | `null` | Add eligible role-specific/shared skills at P2 and return concepts separately in `industry_context`. |
 | `seniority_level` | `null` | Omitted means all levels; a supplied level includes that level and below. |
 | `limit` | `50` | Return at most 1-50 options, sorted by priority and then curated source order. |
-| `include_descriptions` | `false` | Accepted for compatibility; the summary always omits descriptions. |
+| `include_descriptions` | `false` | Accepted for compatibility; skill groups contain names only, and context always includes descriptions. |
 
 Role options win priority ties over industry additions; role-specific industry additions precede
 shared industry additions. Duplicate IDs appear once. Filtering can produce fewer than 30
 options; the server does not pad results. Unknown inputs and unsupported combinations return
 errors without substituting another role.
 
-For a two-line text response, use `get_skills_text` (default `output_format="compact"`). For
+For a three-line text response, use `get_skills_text` (default `output_format="compact"`):
+`categories`, `skills`, and `industry_context`. For
 technology types, families, ecosystems, selection groups, and capability links, use
 `get_skills_text` with `output_format="detailed"`. Add `include_descriptions=true` for descriptions
-in detailed output. Compact text always contains only category names and skill priorities.
+in detailed output. Detailed output places industry concepts and their descriptions in a
+separate experience-context section. Compact output includes context names on its third line.
 Metadata provides selection hints, not mandatory stacks, interchangeable tools, or evidence of
 proficiency. Links never add skills or alter priorities.
 
 The source inventory contains **605 reusable skills** in **43 categories**, including
-**176 named technologies** in [technologies.json](data/skills/technologies.json) and
-**201 industry skills** in [industries.json](data/skills/industries.json). There are 596 hard
-skills and 9 soft skills. Each role stores an explicit curated subset in `skill_options`,
+**183 named technologies** in [technologies.json](data/skills/technologies.json) and
+**194 experience-only industry concepts** in [industries.json](data/skills/industries.json).
+There are 596 definitions in hard source categories (including those concepts) and 9 soft
+skills. Each role stores an explicit curated subset in `skill_options`,
 alongside the larger cumulative inventory used by the compatibility endpoint. See the
 [catalog curation guide](data/README.md) for inclusion rules and source references.
 
@@ -162,8 +191,8 @@ are Junior, Mid-level, Senior, and Staff; these are editorial thresholds within 
 
 `get_roadmap` remains available for existing clients that need the full cumulative inventory.
 It requires role, industry, and seniority and returns `hard_skills` and `soft_skills`, each a list
-of named categories. Its skills contain `name` and, by default, `description`;
-`include_descriptions=false` returns name only. This legacy response shape is unchanged.
+of named categories, plus a separate `industry_context` list. Every entry contains `name` and,
+by default, `description`; `include_descriptions=false` returns names only in all three fields.
 Use `get_skills` for curated options, category names, and baseline priorities; use
 `get_skills_text` with `output_format="detailed"` for technology metadata.
 
@@ -333,7 +362,7 @@ Industry mappings live in [`data/industries/`](data/industries/). Shared require
 | Real Estate | RESO Web API, geospatial search, listings, leases, valuation, and property data pipelines |
 | Government and Public Sector | DCAT, case management, public data publication, accessible services, eligibility testing, and service analytics |
 
-For example, the compatibility `get_roadmap` response for Senior Backend Engineer in Fintech selects 110 hard skills across 13 categories and one soft skill in Technical Leadership. Other profiles have distinct content: UX Designer in Healthcare includes Figma and accessible healthcare workflows; Data Analyst in Insurance includes Power BI and loss analytics; QA Engineer in Banking includes Postman and balance invariant testing. Native mobile commerce profiles omit browser-specific performance and SEO skills. Roadmap categories preserve source order and skills preserve selection order within each category. `get_skills` uses the smaller curated role subset and priority order described above.
+For example, the compatibility `get_roadmap` response for Senior Backend Engineer in Fintech selects 101 hard skills across 13 categories, one soft skill in Technical Leadership, and 11 concepts in `industry_context`. Other profiles have distinct content: UX Designer in Healthcare includes Figma and accessible healthcare workflows; Data Analyst in Insurance includes Power BI and loss analytics; QA Engineer in Banking includes Postman and balance invariant testing. Native mobile commerce profiles omit browser-specific performance and SEO skills. Domain workflows, analysis, and modeling appear in `industry_context`. Roadmap categories preserve source order and skills preserve selection order within each category. `get_skills` uses the smaller curated role subset and priority order described above.
 
 These are candidate skills for resume selection. Languages, frameworks, and cloud products can represent alternative technology stacks; select the ones supported by actual experience. The role, industry, and seniority inputs determine relevance and level eligibility.
 
@@ -365,7 +394,7 @@ flowchart LR
     Snapshot --> Level[Seniority thresholds]
 ```
 
-`get_skills` starts from each role's curated `skill_options` and explicit priorities. Optional industry context adds priority-3 options. Filtering and deterministic ordering run against the validated snapshot. The compatibility roadmap combines role skills, shared industry skills, and role-specific industry skills. Seniority filters skills by their minimum level. Requirements are cumulative: Senior includes skills listed for Junior, Mid-level, and Senior. Duplicate skills appear once. The catalog's category type determines the hard or soft section; category order follows the source file within each section, and skills preserve their selection order within each category.
+`get_skills` starts from each role's curated `skill_options` and explicit priorities. Optional industry input adds eligible priority-3 skills and separate experience context. Filtering and deterministic ordering run against the validated snapshot. The compatibility roadmap combines role skills, shared industry skills, and role-specific industry skills. Seniority filters skills by their minimum level. Requirements are cumulative: Senior includes skills listed for Junior, Mid-level, and Senior. Duplicate skills appear once. Definitions marked `resume_section: experience` go into `industry_context`; the catalog's category type determines the hard or soft section for remaining definitions; category order follows the source file within each section, and skills preserve their selection order within each category.
 
 This avoids maintaining a separate complete roadmap for every role × industry × level. Exact names and explicit aliases resolve to canonical IDs. Unknown inputs and uncovered combinations return actionable errors. There is no fuzzy substitution or generic fallback.
 
@@ -411,9 +440,9 @@ Connect an MCP client to `http://localhost:8000/mcp`. `/mcp` speaks MCP, not a c
 | Tool | Arguments | Result |
 | --- | --- | --- |
 | `list_catalog` | None | Names, IDs, aliases, seniority levels, and role/industry coverage |
-| `get_skills` | `role_name`; optional `industry`, `seniority_level`, `limit` (50), compatibility `include_descriptions` (false) | Role, industry, seniority, category names, and names grouped under P0/P1/P2 |
-| `get_skills_text` | Same filters as `get_skills`; optional `include_descriptions` and `output_format` (`compact` or `detailed`, default `compact`) | Two lines of category names and skill priorities, or detailed readable metadata |
-| `get_roadmap` | `role_name`, `industry`, `seniority_level`; optional `include_descriptions` (default `true`) | Separate `hard_skills` and `soft_skills` lists containing named categories |
+| `get_skills` | `role_name`; optional `industry`, `seniority_level`, `limit` (50), compatibility `include_descriptions` (false) | Role, industry, seniority, category names, names grouped under P0/P1/P2, and separate `industry_context` |
+| `get_skills_text` | Same filters as `get_skills`; optional `include_descriptions` and `output_format` (`compact` or `detailed`, default `compact`) | Three lines of category names, skill priorities, and industry context, or detailed readable sections |
+| `get_roadmap` | `role_name`, `industry`, `seniority_level`; optional `include_descriptions` (default `true`) | Categorized `hard_skills`/`soft_skills` and a separate `industry_context` list |
 | `list_bullet_catalog` | None | Bullet taxonomy, aliases, role/industry coverage, and total count |
 | `get_bullets` | `role_name`; optional `industry` (all), `seniority_level` (minimum `junior`), `count` (`5`, range `1`–`100`) | Matching baselines with evidence prompts and available/returned counts |
 | `get_bullets_text` | Same as `get_bullets` | The same selection as readable MCP text content |
@@ -512,13 +541,13 @@ asyncio.run(main())
 
 The readable skills client calls `get_skills`. It defaults to Backend Engineer at
 `http://localhost:8004/mcp`, role options only, with descriptions omitted. Compact output has
-exactly two lines: ordered category names, then skill names with P0/P1/P2 priorities.
+exactly three lines: ordered category names, skill names with P0/P1/P2 priorities, and industry context names.
 
 Use `--json` for the compact structured summary or `--text` to call `get_skills_text` directly.
 The flags are mutually exclusive. All modes accept the same role, industry, seniority, and limit
 filters. Use `--output-format detailed` to call `get_skills_text` for each skill's type, category,
 family, ecosystems, selection hints, and related capability names. `--descriptions` adds
-implementation descriptions only in detailed output. JSON and compact summaries omit descriptions.
+skill descriptions in detailed output. JSON context and detailed context always include descriptions.
 
 ```bash
 uv run python tests/test_tool.py
@@ -534,10 +563,11 @@ Compact output for Data Engineer, Senior, `--limit 4`:
 ```text
 categories: Programming Languages, Data Processing & ETL/ELT, CI/CD & DevOps
 skills: (Python:P0), (SQL:P0), (Git:P0), (Batch data ingestion:P0)
+industry_context:
 ```
 
 For model input, call `get_skills` with `{"role_name": "Backend Engineer"}`, or use
-`get_skills_text` for the two-line equivalent. Retrieve metadata on demand through
+`get_skills_text` for the three-line equivalent. Retrieve metadata on demand through
 `get_skills_text` with `output_format="detailed"`.
 
 Test bullet retrieval with the matching readable client script:
@@ -592,7 +622,8 @@ Every technology requires an explicit `technology_family`, a readable name for i
 purpose. Reuse an existing family name where appropriate. Capabilities, methods,
 and soft skills omit it or use `null`. The optional `related_capabilities` list defaults to `[]`;
 each stored entry must reference a distinct existing skill of type `implementation_capability`
-by its stable ID. The response resolves these references to canonical skill names.
+by its stable ID. The response resolves Skills-eligible references to canonical skill names;
+experience-only links remain in source and are omitted from returned skill metadata.
 Avoid self-references. These links are nonexhaustive context, not prerequisites or automatic
 selection rules. Source entries can omit empty metadata; discovery responses always include it.
 The optional `selection_group` uses a readable name like `technology_family` and defaults
@@ -639,9 +670,9 @@ The broader `requirements` list can contain additional skills excluded from disc
 4. For role discovery, add it to that role's `skill_options` with an editorial priority.
    Ensure the role's `response_categories` includes its response category in the desired order.
    Define `required_categories` for the role's baseline and cover each with curated options.
-   Include an industry's response category in the associated role map when that category is
-   relevant to the role. Direct role/industry assignments must fit the map; shared industry
-   defaults outside the map remain excluded.
+   Only Skills-eligible direct role/industry assignments must fit the role category map; shared
+   Skills defaults outside the map remain excluded. Set `resume_section: "experience"` for domain
+   concepts and keep them out of `skill_options`; they appear in `industry_context` instead.
 5. To support a role/industry combination, add the role ID to the industry's `role_requirements`.
    An empty list supports a combination without extra contextual skills; a missing key is unsupported.
 6. Validate the files and recreate the server when changing code and data together.
@@ -650,7 +681,7 @@ Startup rejects unknown types, missing or malformed technology families, malform
 families or selection groups on nontechnologies,
 unknown, mistyped, duplicate, or self-referencing capability links, incompatible category types,
 missing or invalid priorities,
-unreferenced or duplicate role options, soft skill options, malformed JSON, duplicate keys/IDs,
+unreferenced or duplicate role options, soft or experience-only skill options, malformed JSON, duplicate keys/IDs,
 alias collisions, invalid references, duplicate requirements and seniority ranks, and missing or
 duplicate category assignments. Source authoring now requires `type` and `skill_options`; these
 are deliberate data-schema additions. Existing `get_roadmap` clients retain their response schema.

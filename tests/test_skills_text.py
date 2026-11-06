@@ -78,14 +78,16 @@ def test_compact_format_lists_category_names_and_skill_priorities(example_skills
     assert format_skills(example_skills) == (
         "categories: APIs & Service Integration, Backend Frameworks & Runtimes, "
         "Product Management\n"
-        "skills: (RESTful APIs:P0), (FastAPI:P1), (Product roadmapping:P2)"
+        "skills: (RESTful APIs:P0), (FastAPI:P1), (Product roadmapping:P2)\n"
+        "industry_context: "
     )
 
 
 def test_compact_preserves_category_order_and_skill_priorities_across_roles(service):
     for role in service.catalog.roles:
         result = service.get_skills(role)
-        categories, skills = format_skills(result).splitlines()
+        categories, skills, context = format_skills(result).splitlines()
+        assert context == "industry_context: "
         expected_categories = {response_category(s.id, s.category) for s in result.skills}
         assert categories == "categories: " + ", ".join(
             name
@@ -96,9 +98,9 @@ def test_compact_preserves_category_order_and_skill_priorities_across_roles(serv
         assert entries == [(s.name, str(s.priority - 1)) for s in result.skills], role
 
 
-def test_empty_selection_has_two_empty_lines(example_skills):
+def test_empty_selection_has_three_empty_lines(example_skills):
     result = example_skills.model_copy(update={"skills": [], "returned_count": 0})
-    assert format_skills(result) == "categories: \nskills: "
+    assert format_skills(result) == "categories: \nskills: \nindustry_context: "
     response = SkillsResponse.from_result(result)
     assert response.categories == []
     assert response.skills.model_dump() == {"P0": [], "P1": [], "P2": []}
@@ -164,11 +166,13 @@ async def test_text_tool_preserves_structured_selection_and_contract(
         assert text.splitlines()[0] == title
     else:
         assert text.startswith("categories: ")
-        assert len(text.splitlines()) == 2
+        assert len(text.splitlines()) == 3
     assert "eligible options" not in text
     assert "Role catalog across all seniorities" not in text
     if output_format == "detailed":
-        assert sum(line.startswith("  - ") for line in text.splitlines()) == result.returned_count
+        assert sum(line.startswith("  - ") for line in text.splitlines()) == (
+            result.returned_count + len(result.industry_context)
+        )
     assert "[implementation_capability;" not in text
     assert "[professional_method;" not in text
     for skill in result.skills:

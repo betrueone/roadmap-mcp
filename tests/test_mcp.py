@@ -26,6 +26,7 @@ async def test_real_mcp_discovery_structured_output_and_lookup_errors(catalog):
         assert set(tools["get_roadmap"].output_schema["properties"]) == {
             "hard_skills",
             "soft_skills",
+            "industry_context",
         }
         assert set(tools["get_roadmap"].output_schema["required"]) == {
             "hard_skills",
@@ -43,15 +44,21 @@ async def test_real_mcp_discovery_structured_output_and_lookup_errors(catalog):
         )
         assert not result.is_error
         roadmap = Roadmap.model_validate(result.structured_content)
-        assert set(result.structured_content) == {"hard_skills", "soft_skills"}
+        assert set(result.structured_content) == {"hard_skills", "soft_skills", "industry_context"}
         assert all(
             set(category) == {"name", "skills"} and category["skills"]
-            for section in result.structured_content.values()
+            for section in [
+                result.structured_content["hard_skills"],
+                result.structured_content["soft_skills"],
+            ]
             for category in section
         )
         assert all(
             set(skill) == {"name", "description"}
-            for section in result.structured_content.values()
+            for section in [
+                result.structured_content["hard_skills"],
+                result.structured_content["soft_skills"],
+            ]
             for category in section
             for skill in category["skills"]
         )
@@ -59,6 +66,7 @@ async def test_real_mcp_discovery_structured_output_and_lookup_errors(catalog):
         assert [skill.name for skill in roadmap.soft_skills[0].skills] == ["Technical leadership"]
         assert len(all_categories(roadmap)) == 14
         assert all_skills(roadmap)[0].name == "Python"
+        assert "Financial ledger modeling" in {c.name for c in roadmap.industry_context}
         assert {
             "Java",
             "Spring Boot",
@@ -111,14 +119,15 @@ async def test_mcp_omits_descriptions_from_structured_and_text_results(catalog, 
         assert not result.is_error
         payload = result.structured_content
         roadmap = Roadmap.model_validate(payload)
-        assert set(payload) == {"hard_skills", "soft_skills"}
+        assert set(payload) == {"hard_skills", "soft_skills", "industry_context"}
         assert all_skills(roadmap)
         assert all(
             set(skill) == {"name"}
-            for categories in payload.values()
+            for categories in [payload["hard_skills"], payload["soft_skills"]]
             for category in categories
             for skill in category["skills"]
         )
+        assert all(set(concept) == {"name"} for concept in payload["industry_context"])
         assert json.loads(result.content[0].text) == payload
         if level == "Junior":
             assert payload["soft_skills"] == []

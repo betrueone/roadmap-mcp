@@ -7,8 +7,11 @@ from roadmap_mcp.server import create_server
 from .conftest import all_skills
 
 
-def hard_names(roadmap):
-    return {skill.name for category in roadmap.hard_skills for skill in category.skills}
+def technical_and_context_names(roadmap):
+    return {
+        *[skill.name for category in roadmap.hard_skills for skill in category.skills],
+        *[concept.name for concept in roadmap.industry_context],
+    }
 
 
 def test_broad_catalog_has_explicit_complete_industry_coverage(catalog, service):
@@ -150,7 +153,7 @@ def test_new_roles_return_concrete_relevant_hard_skills(
     service, role, industry, included, excluded
 ):
     roadmap = service.get_roadmap(role, industry, "senior")
-    names = hard_names(roadmap)
+    names = technical_and_context_names(roadmap)
     assert included <= names
     assert excluded.isdisjoint(names)
     assert names.isdisjoint(s.name for c in roadmap.soft_skills for s in c.skills)
@@ -176,8 +179,10 @@ def test_new_roles_return_concrete_relevant_hard_skills(
 def test_new_industries_distinguish_implementation_and_analytics(
     service, industry, app_skill, analytical_skill
 ):
-    backend = hard_names(service.get_roadmap("Backend Engineer", industry, "senior"))
-    analyst = hard_names(service.get_roadmap("Data Analyst", industry, "senior"))
+    backend = technical_and_context_names(
+        service.get_roadmap("Backend Engineer", industry, "senior")
+    )
+    analyst = technical_and_context_names(service.get_roadmap("Data Analyst", industry, "senior"))
     assert app_skill in backend and app_skill not in analyst
     assert analytical_skill in analyst and analytical_skill not in backend
 
@@ -210,7 +215,9 @@ def test_new_profiles_gate_advanced_skills_and_remain_cumulative(
 
 def test_design_and_management_keep_methods_hard_and_interpersonal_skills_soft(service):
     roadmap = service.get_roadmap("Engineering Manager", "SaaS", "senior")
-    assert {"Engineering budget planning", "Hiring process design"} <= hard_names(roadmap)
+    assert {"Engineering budget planning", "Hiring process design"} <= technical_and_context_names(
+        roadmap
+    )
     soft = {skill.name for category in roadmap.soft_skills for skill in category.skills}
     assert {"Mentoring and coaching", "Delegation", "Conflict resolution"} <= soft
     assert {"Engineering budget planning", "Hiring process design"}.isdisjoint(soft)
@@ -232,4 +239,4 @@ async def test_mcp_serves_new_roles_and_industries_with_aliases(catalog, role, i
         )
         assert not result.is_error
         roadmap = Roadmap.model_validate(result.structured_content)
-        assert expected in hard_names(roadmap)
+        assert expected in technical_and_context_names(roadmap)

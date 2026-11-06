@@ -98,7 +98,7 @@ def test_ui_payment_roles_keep_client_flows_without_server_api_operations(servic
     assert "Stripe API" in {skill.name for skill in all_skills(backend)}
 
 
-def test_domain_access_testing_is_available_with_mid_level_workflows(service):
+def test_domain_access_context_stays_in_mid_level_roadmaps(service):
     for industry, control in [
         ("saas", "tenant-isolation"),
         ("banking", "banking-authorization"),
@@ -106,7 +106,9 @@ def test_domain_access_testing_is_available_with_mid_level_workflows(service):
         ("government", "public-information-controls"),
     ]:
         skills = indexed(service.get_skills("qa-engineer", industry, "mid"))
-        assert skills[control].priority == 3
+        assert control not in skills
+        roadmap = service.get_roadmap("qa-engineer", industry, "mid")
+        assert service.catalog.skills[control].name in {s.name for s in all_skills(roadmap)}
 
 
 def test_native_component_capabilities_do_not_create_web_framework_categories(service):

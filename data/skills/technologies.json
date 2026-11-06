@@ -1895,5 +1895,70 @@
     "technology_ecosystems": [
       "Python"
     ]
+  },
+  "lti": {
+    "name": "Learning Tools Interoperability (LTI)",
+    "description": "Integrate learning tools with learning platforms using LTI launches, roles, and grade services.",
+    "type": "standard",
+    "technology_family": "Learning Interoperability",
+    "related_capabilities": [
+      "learning-platform-integration"
+    ]
+  },
+  "iso20022": {
+    "name": "ISO 20022",
+    "description": "Map financial messages to ISO 20022 business concepts, message structures, and validation rules.",
+    "type": "standard",
+    "technology_family": "Financial Messaging Standards",
+    "related_capabilities": [
+      "payment-event-modeling"
+    ]
+  },
+  "tmforum-api": {
+    "name": "TM Forum Open APIs",
+    "description": "Integrate telecom business capabilities using TM Forum resource models and API contracts.",
+    "type": "standard",
+    "technology_family": "Telecom Service APIs",
+    "related_capabilities": [
+      "telecom-provisioning"
+    ]
+  },
+  "hls": {
+    "name": "HTTP Live Streaming (HLS)",
+    "description": "Deliver adaptive media using HLS playlists, renditions, segments, and playback compatibility checks.",
+    "type": "protocol",
+    "technology_family": "Media Streaming Protocols",
+    "related_capabilities": [
+      "media-player-interfaces",
+      "stream-delivery-operations"
+    ]
+  },
+  "opc-ua": {
+    "name": "OPC UA",
+    "description": "Exchange industrial information using OPC UA information models, services, and secure connections.",
+    "type": "standard",
+    "technology_family": "Industrial Interoperability",
+    "related_capabilities": [
+      "production-integration"
+    ]
+  },
+  "reso-web-api": {
+    "name": "RESO Web API",
+    "description": "Integrate real estate listings using RESO Web API resources, queries, and standardized fields.",
+    "type": "standard",
+    "technology_family": "Property Data APIs",
+    "related_capabilities": [
+      "property-search"
+    ]
+  },
+  "dcat": {
+    "name": "DCAT",
+    "description": "Describe public datasets, distributions, and data services using the W3C Data Catalog Vocabulary.",
+    "type": "standard",
+    "technology_family": "Data Catalog Standards",
+    "related_capabilities": [
+      "data-catalogs",
+      "public-record-publication"
+    ]
   }
 }

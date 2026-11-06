@@ -304,7 +304,7 @@ def test_metadata_links_can_reference_skills_outside_filtered_response(service):
     # Family metadata also survives industry selection, limits, and description modes.
     industrial = indexed(service.get_skills("Backend Engineer", "Manufacturing"))
     assert industrial["opc-ua"].technology_family == "Industrial Interoperability"
-    assert industrial["opc-ua"].related_capabilities == ["Production system integration"]
+    assert industrial["opc-ua"].related_capabilities == []
 
 
 def test_industry_additions_do_not_promote_role_defaults(service, editable_data):
@@ -318,16 +318,17 @@ def test_industry_additions_do_not_promote_role_defaults(service, editable_data)
     baseline = indexed(service.get_skills("AI Engineer"))
     skills = indexed(contextual)
     assert skills["rag"].priority == baseline["rag"].priority == 1
-    assert "saas-knowledge-retrieval" in skills
-    assert skills["saas-knowledge-retrieval"].priority == 3
+    assert "saas-knowledge-retrieval" not in skills
     assert all(skills[key].priority == value.priority for key, value in baseline.items())
     assert contextual.industry == "SaaS"
 
 
 def test_priority_order_limit_and_description_modes(service):
-    full = service.get_skills("Data Engineer", "Fintech")
-    compact = service.get_skills("Data Engineer", "Fintech", limit=7)
-    described = service.get_skills("Data Engineer", "Fintech", limit=7, include_descriptions=True)
+    full = service.get_skills("Backend Engineer", "Fintech")
+    compact = service.get_skills("Backend Engineer", "Fintech", limit=7)
+    described = service.get_skills(
+        "Backend Engineer", "Fintech", limit=7, include_descriptions=True
+    )
     assert compact.skills == full.skills[:7]
     assert compact.returned_count == 7
     assert compact.available_count == described.available_count == full.available_count
@@ -338,7 +339,7 @@ def test_priority_order_limit_and_description_modes(service):
         "skills": [s.model_dump(exclude={"description"}) for s in described.skills],
     }
     assert all(s.description for s in described.skills)
-    assert service.get_skills("Data Engineer", "Fintech") == full
+    assert service.get_skills("Backend Engineer", "Fintech") == full
 
 
 def test_seniority_filters_do_not_change_role_priorities_or_reintroduce_skills(
@@ -376,13 +377,23 @@ def test_every_role_and_combination_has_valid_bounded_skill_options(service, cat
                 assert all(s.type != "soft_skill" for s in result.skills)
                 assert all(s.category for s in result.skills)
                 assert {s.id for s in result.skills} <= catalog.skills.keys()
+                context_names = {concept.name for concept in result.industry_context}
+                assert len(context_names) == len(result.industry_context)
+                assert context_names.isdisjoint(skill.name for skill in result.skills)
+                assert (
+                    result.industry_context
+                    == service.get_roadmap(role.id, industry.id, level.id).industry_context
+                )
                 for skill in result.skills:
                     stored = catalog.skills[skill.id]
+                    assert stored.resume_section == "skills"
                     assert skill.technology_family == stored.technology_family
                     assert skill.selection_group == stored.selection_group
                     assert skill.technology_ecosystems == stored.technology_ecosystems
                     assert skill.related_capabilities == [
-                        catalog.skills[key].name for key in stored.related_capabilities
+                        catalog.skills[key].name
+                        for key in stored.related_capabilities
+                        if catalog.skills[key].resume_section == "skills"
                     ]
                     assert bool(skill.technology_family) == (skill.layer == "core_technology")
 
@@ -442,6 +453,7 @@ async def test_mcp_skills_discovery_summary(catalog, service, args):
             "seniority",
             "categories",
             "skills",
+            "industry_context",
         }
         assert tool.output_schema["properties"]["categories"]["items"]["type"] == "string"
         for descriptions in [False, True]:

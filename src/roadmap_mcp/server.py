@@ -45,18 +45,24 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
             "Discover supported roles, industries, seniority levels, and combinations with "
             "list_catalog. For resume skills discovery, use get_skills with a role and optional "
             "industry and seniority. It returns role, industry, seniority, ordered categories "
-            "as names, and skill names grouped under P0, P1, and P2. "
+            "as names, skill names grouped under P0, P1, and P2, and separate industry_context. "
             "Categories cover only returned skills after filters and limit and follow each "
             "role's explicit response_categories order, omitting empty categories. P0 means core, "
             "P1 supporting, and P2 specialized or optional. "
             "These map to source priorities 1, 2, and 3. "
             "Priorities are editorial role defaults, not job-specific rankings or measured hiring "
             "frequency. Industry additions use P2; seniority filters eligibility without changing "
-            "role priorities. Technical roles use only the 21 technical categories; UX, product, "
+            "role priorities. Technical roles use only the 23 technical categories; UX, product, "
             "and engineering management roles retain their applicable nontechnical categories. "
-            "Legacy industry labels are excluded. Categories are available options. "
-            "get_skills_text defaults to two linear lines: category names, then skills "
-            "with priorities. Use output_format='detailed' for technology metadata and optional "
+            "Industry concepts marked for experience are returned only in industry_context, "
+            "with names and descriptions, outside skills and capability links. "
+            "Context follows role, industry, and seniority and is independent of the skills limit; "
+            "omitted industry returns an empty context list. Use it for evidenced experience "
+            "bullets, never as entries in the resume Skills section. Named industry APIs, "
+            "protocols, and standards remain eligible skills. Categories are available options. "
+            "get_skills_text defaults to three lines: category names, skills with priorities, "
+            "and industry_context names. Use output_format='detailed' for context descriptions, "
+            "technology metadata, and optional skill "
             "descriptions. Families and selection groups provide selection hints, not exclusion "
             "rules; ecosystems and capability links never prove candidate experience. "
             "The resume generator computes a separate jd_priority from the job description "
@@ -68,11 +74,12 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
             "Do not copy the entire catalog into a resume. Categories vary with the selected role. "
             "get_roadmap is the compatibility endpoint for the full cumulative inventory using "
             "all three dimensions. Its response separates "
-            "hard_skills and soft_skills, with named categories within each. Hard skills include "
-            "technologies, learned methods, and industry knowledge; soft skills cover leadership "
-            "and collaboration. Use hard skills for the resume Skills section and demonstrate "
-            "soft skills through experience bullets. Languages and frameworks are "
-            "candidate stack choices. Include resume skills only when "
+            "hard_skills and soft_skills, with named categories within each, and a separate "
+            "industry_context list for domain concepts. Hard skills include technologies and "
+            "learned methods; soft skills cover leadership and collaboration. "
+            "Use get_skills to select entries for the resume Skills section. Demonstrate domain "
+            "concepts and soft skills through evidenced experience bullets. Languages and "
+            "frameworks are candidate stack choices. Include resume skills only when "
             "supported by the user's experience. Set include_descriptions=false to omit skill "
             "descriptions from get_roadmap results. Use list_bullet_catalog to discover the "
             "separate bullet taxonomy and get_bullets to retrieve editorial baseline examples "
@@ -106,19 +113,24 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         """Return category names and skill names grouped by priority for a role.
 
         Only role_name is required. Accept names, IDs, and aliases from list_catalog.
-        Return role, industry, seniority, categories [names], and skills
-        {P0: [names], P1: [names], P2: [names]}. P0 is core, P1 supporting, P2 optional.
+        Return role, industry, seniority, categories [names], skills
+        {P0: [names], P1: [names], P2: [names]}, and industry_context [{name, description}].
+        P0 is core, P1 supporting, P2 optional.
         All three priority groups are present, even when empty. Categories follow the role's
         explicit response_categories order, omitting categories with no selected skills.
-        Technical roles use only the 21-category taxonomy. Design, product, and management
+        Technical roles use only the 23-category taxonomy. Design, product, and management
         categories are allowed for their corresponding nontechnical roles. No industry categories.
-        Categories are available options, not mandatory requirements. Excludes soft skills.
+        Categories are available options, not mandatory requirements. Excludes soft skills
+        and experience-only industry concepts. Named APIs, protocols, and standards remain eligible.
         Preserve curated order within each priority; role options precede industry additions.
         Industry adds contextual options at P2 without changing existing role priorities.
         All role and industry options must belong to a category configured for the requested role.
         Omitted industry selects role options only. Omitted seniority includes all levels;
         a supplied level includes that level and below. limit is 1-50 (default 50).
-        include_descriptions is accepted for compatibility; this summary always omits them.
+        industry_context holds domain concepts for evidenced experience bullets, never Skills
+        entries. It follows role/industry/seniority filters, ignores the skills limit and role
+        category map, and is empty when industry is omitted. Context always includes descriptions.
+        include_descriptions is accepted for compatibility; skill names have no descriptions.
         Use get_skills_text with output_format='detailed' for metadata and descriptions.
         Priorities are editorial baselines, not JD rankings or verified candidate experience.
         Unknown inputs and unsupported combinations return an error without substitution.
@@ -142,13 +154,16 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         """Return the get_skills selection as compact or detailed plain text.
 
         Accept the same role, industry, seniority, and limit filters as get_skills.
-        Compact output contains exactly two lines: categories: name, name, ...
-        and skills: (name:P0), (name:P1), ... . Categories follow the role's configured order,
+        Compact output contains exactly three lines: categories: name, name, ...;
+        skills: (name:P0), (name:P1), ...; industry_context: name, name, ... .
+        Categories follow the role's configured order,
         omitting categories with no returned skills after filters and limit.
         Skills preserve selection order. P0 is core, P1 supporting, P2 specialized or optional.
         output_format='detailed' includes types, categories, families, ecosystems, selection
         groups, and capability links. include_descriptions=true adds descriptions only in
-        detailed output. Compact output always contains only category names and skill priorities.
+        detailed output. Detailed context always includes descriptions for writing experience
+        bullets. Compact context contains names only. Domain concepts appear only in the separate
+        context line/section, outside skill groups and capability links.
         Returns MCP text content without a JSON wrapper or structured output schema.
         Unknown inputs and unsupported combinations return the same errors as get_skills.
         """
@@ -173,13 +188,16 @@ def create_server(catalog: Catalog, bullet_catalog: BulletCatalog | None = None)
         Accepts canonical names, IDs, or listed aliases, case-insensitively.
         Example: role_name='Backend Engineer', industry='Fintech', seniority_level='Senior'.
         Includes literal technology names such as Python, PostgreSQL, Redis, and Apache Kafka.
-        Returns hard_skills and soft_skills, each a list of named categories with skills.
-        Both sections are always present; a section with no matching skills is an empty list.
+        Returns hard_skills and soft_skills, each a list of named categories with skills,
+        and industry_context, a separate list of domain concepts for experience bullets.
+        All three fields are always present; a field with no matches is an empty list.
         Empty categories are omitted. Category types are defined in the source catalog.
         include_descriptions defaults to true: skills contain name and description.
         Set include_descriptions=false to return each skill as {"name": "Python"}, omitting
         description entirely while preserving the categories and hard/soft sections.
         Technology alternatives are candidates for resume selection based on actual experience.
+        Domain concepts are excluded from hard_skills and soft_skills and appear only in
+        industry_context. Use them for evidenced experience bullets, never resume Skills entries.
         Unknown inputs and unsupported combinations return an error; there is no fallback.
         """
         try:

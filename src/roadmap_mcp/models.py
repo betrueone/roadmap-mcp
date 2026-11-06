@@ -75,6 +75,13 @@ class TechnologyMetadata(Model):
 
 class StoredSkill(Skill, TechnologyMetadata):
     type: SkillType
+    resume_section: Literal["skills", "experience"] = Field(
+        default="skills",
+        description=(
+            "Resume placement: experience-only concepts are excluded from skill groups "
+            "and capability links, and returned separately as industry context."
+        ),
+    )
     # Canonical references remain internal; responses resolve them to catalog names.
     related_capabilities: list[Identifier] = Field(default_factory=list)
 
@@ -166,6 +173,10 @@ class SkillCategory(Model):
 class Roadmap(Model):
     hard_skills: list[SkillCategory]
     soft_skills: list[SkillCategory]
+    industry_context: list[Skill | SkillNameOnly] = Field(
+        default_factory=list,
+        description="Industry concepts for evidenced experience bullets, separate from skills.",
+    )
 
 
 class RankedSkill(TechnologyMetadata):
@@ -193,6 +204,7 @@ class SkillsResult(Model):
     returned_count: int = Field(ge=0, le=50)
     skills: list[DescribedRankedSkill | RankedSkill] = Field(max_length=50)
     category_order: list[Text] = Field(default_factory=list)
+    industry_context: list[Skill] = Field(default_factory=list)
 
 
 class SkillPriorities(Model):
@@ -207,6 +219,14 @@ class SkillsResponse(Model):
     seniority: Text | None
     categories: list[Text]
     skills: SkillPriorities
+    industry_context: list[Skill] = Field(
+        default_factory=list,
+        description=(
+            "Role- and seniority-filtered industry concepts with descriptions for evidenced "
+            "experience bullets. Separate from skills, priorities, category coverage, and limit; "
+            "empty when industry is omitted."
+        ),
+    )
 
     @classmethod
     def from_result(cls, result: SkillsResult) -> "SkillsResponse":
@@ -226,4 +246,5 @@ class SkillsResponse(Model):
                 if name in selected_categories
             ],
             skills=SkillPriorities(**priorities),
+            industry_context=result.industry_context,
         )

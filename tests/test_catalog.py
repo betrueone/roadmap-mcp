@@ -158,7 +158,16 @@ def test_stored_skills_have_explicit_classification(editable_data):
                 "soft_skill",
             }:
                 expected |= {"technology_family", "related_capabilities"}
-            assert expected <= set(skill) <= expected | {"selection_group", "technology_ecosystems"}
+            assert (
+                expected
+                <= set(skill)
+                <= expected
+                | {
+                    "selection_group",
+                    "technology_ecosystems",
+                    "resume_section",
+                }
+            )
 
 
 def test_all_catalog_skills_are_used_by_selection_rules(catalog):

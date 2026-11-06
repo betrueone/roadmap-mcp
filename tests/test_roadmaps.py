@@ -125,7 +125,7 @@ def test_all_supported_combinations_return_only_unique_skills_and_descriptions(s
         assert all_skills(roadmap)
         assert len({skill.name for skill in all_skills(roadmap)}) == len(all_skills(roadmap))
         payload = roadmap.model_dump()
-        assert set(payload) == {"hard_skills", "soft_skills"}
+        assert set(payload) == {"hard_skills", "soft_skills", "industry_context"}
         names = [category.name for category in all_categories(roadmap)]
         assert len(names) == len(set(names))
         for kind in ("hard", "soft"):
@@ -186,11 +186,13 @@ def test_backend_fintech_groups_skills_by_technical_area(service, catalog):
     assert {"PostgreSQL", "Redis", "SQL"} <= categories["databases-caching"]
     assert {"Apache Kafka", "RabbitMQ"} <= categories["messaging-streaming"]
     assert {"Docker", "Kubernetes"} <= categories["containers-deployment"]
-    assert {"Stripe API", "Financial reconciliation"} <= categories["payments-finance"]
+    assert "Stripe API" in categories["payments-finance"]
+    assert "Financial reconciliation" not in categories["payments-finance"]
+    assert "Financial reconciliation" in {concept.name for concept in roadmap.industry_context}
     assert {"healthcare", "e-commerce", "frontend-frameworks"}.isdisjoint(categories)
 
 
-def test_backend_fintech_separates_technical_and_domain_skills_from_leadership(service):
+def test_backend_fintech_separates_technical_skills_domain_context_and_leadership(service):
     roadmap = service.get_roadmap("backend-engineer", "fintech", "staff")
     hard = {s.name for category in roadmap.hard_skills for s in category.skills}
     soft = {s.name for category in roadmap.soft_skills for s in category.skills}
@@ -202,8 +204,10 @@ def test_backend_fintech_separates_technical_and_domain_skills_from_leadership(s
         "Transactional outbox and sagas",
         "Architecture decision records (ADRs)",
         "Incident triage and recovery",
-        "Financial reconciliation",
     } <= hard
+    context = {concept.name for concept in roadmap.industry_context}
+    assert "Financial reconciliation" in context
+    assert context.isdisjoint(hard | soft)
     assert soft == {
         "Technical leadership",
         "Cross-team technical strategy",
@@ -466,6 +470,8 @@ def test_description_option_preserves_skills_categories_and_catalog(service, rol
             for category in categories
         ]
         for section, categories in full.model_dump().items()
+        if section != "industry_context"
     }
+    expected["industry_context"] = [{"name": concept.name} for concept in full.industry_context]
     assert compact.model_dump() == expected
     assert service.get_roadmap(role, industry, level) == full

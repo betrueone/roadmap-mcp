@@ -14,7 +14,10 @@ def all_categories(roadmap):
 
 
 def all_skills(roadmap):
-    return [skill for category in all_categories(roadmap) for skill in category.skills]
+    return [
+        *[skill for category in all_categories(roadmap) for skill in category.skills],
+        *roadmap.industry_context,
+    ]
 
 
 @pytest.fixture(scope="session")

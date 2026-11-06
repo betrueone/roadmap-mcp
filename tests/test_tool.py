@@ -46,7 +46,7 @@ if __name__ == "__main__":
         "--descriptions",
         action=argparse.BooleanOptionalAction,
         default=False,
-        help="Include descriptions in detailed output; compact and JSON summaries omit them.",
+        help="Include skill descriptions in detailed output; context retains descriptions.",
     )
     parser.add_argument(
         "--output-format",
